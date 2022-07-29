@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+.App{
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.header-text-center {
+    padding: 40px ;
+    
+}
+.createplan{
+    width: 300px;
+    margin-top: 20px;
+    font-size:x-large;
+    font-weight: 500;
+    
+}
+.title-event{
+    margin-top: -40px;
+    margin-bottom: 60px;
+}
+
+
+
+ 
+.container {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+  }
+  
+  .createplan {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background-color: #92caff;
+    border: 1px solid #91C9FF;
+    outline: none;
+    transition: 0.25s ease-in-out;
+  }
+  .carousel{
+    box-sizing: content-box;
+    font-size: 3rem;
+  }
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 0.25s ease-in-out;
+  }
+  
+  .createplan:hover {
+    transition: 0.3s ease-in-out;
+    background: #1be87e;
+    height: 80px;
+    width: 220px;
+    font-size:xx-large;
+    border: #1be87e;
+    
+   
+  }
+  
+  .btn:hover svg {
+    stroke-dashoffset: -480;
+    
+  }
+  
+  .btn span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  } 
+
+.my-events{
+    font-size: 2rem;
+}

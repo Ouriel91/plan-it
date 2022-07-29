@@ -1,0 +1,45 @@
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
+
+const PlacesAutocomplete = ({ setSelected, setEventObj }) => {
+    const {
+      setValue,
+      suggestions: {data},
+      clearSuggestions,
+    } = usePlacesAutocomplete();
+  
+    const handleSelect = async (address) => {
+     
+      setValue(address, false);
+      clearSuggestions();
+  
+      const results = await getGeocode({ address });
+      const { lat, lng } = await getLatLng(results[0]);
+      setSelected({ lat, lng });
+      setEventObj(prevState => ({...prevState, location: address}))
+      setValue('')
+    };
+
+    const places = data.map(({ description, place_id }) => (
+      {label: description, id: place_id}
+    ))
+    
+    return (
+      <Autocomplete
+        disablePortal
+        options={places}
+        sx={{ width: 200 }}
+        onInputChange={(e,inputValue) => setValue(inputValue)}
+        onChange={(e, selectedValue) =>selectedValue !== null ? handleSelect(selectedValue.label) : null}
+        isOptionEqualToValue={(option, inputValue)=> true}
+        id="tags-standard"
+        renderInput={(params) => <TextField {...params} label="Place" />}
+      />
+    );
+  };
+
+  export default PlacesAutocomplete
