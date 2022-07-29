@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import ConfirmDialog from "./ConfirmDialog";
-import{addEventAction} from "../../../../actions/plansActions";
+import{addEventAction} from "../../../../redux/actions/plansActions";
 
 const mapStateToProps = (state, ownProps) => {   
     return {};

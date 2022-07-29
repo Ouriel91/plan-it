@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import AppContainer from '../AppContainer/AppContainer';
+//import video_logo from '../../images/picnic-logo.mp4';
+import app_logo from '../../images/app-logo.png';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -28,9 +31,11 @@ function Navbar() {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
+        {/* <video src={video_logo} autoPlay loop muted></video> */}
+        <img src={app_logo} alt="Plan_It" height="60px" width="60px"></img>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            Plan It
-            <i className='fab fa-typo3' />
+            Plan It .
+            {/* <i className='fab fa-typo3' /> */}
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -47,7 +52,7 @@ function Navbar() {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Services
+                About Us
               </Link>
             </li>
             <li className='nav-item'>
@@ -56,7 +61,7 @@ function Navbar() {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                About
+                My Events
               </Link>
             </li>
 
@@ -72,6 +77,7 @@ function Navbar() {
           </ul>
           {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
         </div>
+        <AppContainer/>
       </nav>
     </>
   );
