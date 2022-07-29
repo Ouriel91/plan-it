@@ -7,7 +7,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import { useLoadScript} from "@react-google-maps/api";
-import "@reach/combobox/styles.css";
+//import "@reach/combobox/styles.css";
 import Map from './Map';
 
 const libraries = ["places"]
