@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import AppContainer from '../AppContainer/AppContainer';
-//import video_logo from '../../images/picnic-logo.mp4';
+import video_logo from '../../images/picnic-logo.mp4';
 import app_logo from '../../images/app-logo.png';
 
 function Navbar() {
@@ -31,7 +31,7 @@ function Navbar() {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-        {/* <video src={video_logo} autoPlay loop muted></video> */}
+        <video src={video_logo} autoPlay loop muted></video>
         <img src={app_logo} alt="Plan_It" height="60px" width="60px"></img>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             Plan It .

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display&display=swap');
   .navbar{
-    background: url('../../images/img-sunset.jpg') center center/cover no-repeat;
+    /* background: url('../../images/img-sunset.jpg') center center/cover no-repeat; */
     height: 100vh;
     width: 100%;
     display: flex;
