@@ -1,8 +1,6 @@
 import './App.css';
 import AppContainer from './components/AppContainer/AppContainer';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'font-awesome/css/font-awesome.min.css'
 import EventPage from './components/EventPage/EventPage';
 
 
