@@ -1,29 +1,10 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import {useState} from 'react'
-import MultiStepDialog from '../MultiStepDialog/MultiStepDialog'
-import "./AppContainer.css"
-import Navbar from '../Navbar/Navbar';
-import ItemList from '../ItemList/ItemList'
+import React from 'react'
+import LandingPage from '../LandingPage/LandingPage'
 
-const  AppContainer = () => {
-  const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
-
+function AppContainer() {
   return (
-    <div className="App">
-      {isCreateEventClicked && <MultiStepDialog setIsCreateEventClicked={setIsCreateEventClicked}/>}
-      <div className="header-text-center">
-        <button
-          className ="createplan"
-          onClick={() => setIsCreateEventClicked(true)}>
-          Create Plan
-        </button>
-       
-      </div>
-      {/* <ItemList/> */}
-      {/*<CardListConnector />*/}
-      {/* <Footer /> */}
-    </div>
-  );
+    <LandingPage/>
+  )
 }
 
-export default AppContainer;
+export default AppContainer
