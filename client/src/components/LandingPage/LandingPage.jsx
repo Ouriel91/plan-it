@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import MultiStepDialog from '../MultiStepDialog/MultiStepDialog'
 import "./LandingPage.css"
 //import { Button } from './Button';
@@ -34,8 +34,8 @@ const LandingPage = () => {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-        <video src={video_logo} autoPlay loop muted></video>
-        <img src={app_logo} alt="Plan_It" height="60px" width="60px"></img>
+          <video src={video_logo} autoPlay loop muted></video>
+          <img src={app_logo} alt="Plan_It" height="60px" width="60px"></img>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             Plan It .
             {/* <i className='fab fa-typo3' /> */}
@@ -82,23 +82,22 @@ const LandingPage = () => {
           {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
         </div>
         <div className="App">
-      {isCreateEventClicked && <MultiStepDialog setIsCreateEventClicked={setIsCreateEventClicked}/>}
-      <div className="header-text-center">
-        <button
-          className ="createplan"
-          onClick={() => setIsCreateEventClicked(true)}>
-          Create Plan
-        </button>
-       
-      </div>
-      {/* <ItemList/> */}
-      {/*<CardListConnector />*/}
-      {/* <Footer /> */}
-    </div>
+          {isCreateEventClicked && <MultiStepDialog setIsCreateEventClicked={setIsCreateEventClicked} />}
+          <div className="header-text-center">
+            <button
+              className="createplan"
+              onClick={() => setIsCreateEventClicked(true)}>
+              Create Plan
+            </button>
+          </div>
+          {/* <ItemList/> */}
+          {/*<CardListConnector />*/}
+          {/* <Footer /> */}
+        </div>
       </nav>
     </>
   );
-  
+
 }
 
 export default LandingPage;

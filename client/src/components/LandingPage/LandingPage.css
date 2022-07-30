@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display&display=swap');
-.App{
-    font-family: 'Poppins', sans-serif;
-    
-}
+ 
 
-.header-text-center {
-    margin-bottom: 200px;
-    
-}
+
 .createplan {
   width: 400px;
   height: 60px;
@@ -23,6 +17,7 @@
   border-radius: 30px;
   color: white;
   font-family: 'Abel', sans-serif;
+  margin-top: 370px;
 }
 
 .createplan:hover {
@@ -40,8 +35,6 @@
     margin-top: -40px;
     margin-bottom: 60px;
 }
-
-
 
  
 .container {
@@ -94,7 +87,7 @@
     font-size: 2rem;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display&display=swap');
+
   .navbar{
     /* background: url('../../images/img-sunset.jpg') center center/cover no-repeat; */
     height: 100vh;
@@ -138,7 +131,7 @@ video{
     align-items: center;
     height: 80px;
     max-width: 1500px;
-    margin-top: 150px;
+    margin-bottom: 150px;
   }
   
   .navbar-logo {
@@ -175,14 +168,12 @@ video{
   }
   
   .nav-item {
-    margin-bottom: 425px;
     height: 80px;
     font-family: 'Abel', sans-serif;
     font-size: 18px;
   }
   
   .nav-links {
-    margin-bottom: 470px;
     color: #fff;
     display: flex;
     align-items: center;
