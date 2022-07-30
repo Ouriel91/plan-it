@@ -6,7 +6,6 @@ import "./LandingPage.css"
 import { Link } from 'react-router-dom';
 import video_logo from '../../images/picnic-logo.mp4';
 import app_logo from '../../images/app-logo.png';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const LandingPage = () => {
   const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
@@ -91,9 +90,7 @@ const LandingPage = () => {
               Create Plan
             </button>
           </div>
-          {/* <ItemList/> */}
           {/*<CardListConnector />*/}
-          {/* <Footer /> */}
         </div>
       </nav>
     </>
