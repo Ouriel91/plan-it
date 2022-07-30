@@ -9,14 +9,16 @@ import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
 import './ConfirmDialog.css'
+import {useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+
  
 const Confirm = ({nextStep, prevStep, closeDialog, style, setIsCreateEventClicked, eventObj,addEventAction}) => {
   
     const handleNextButton = (e) => {
         e.preventDefault();
         nextStep();
-        setIsCreateEventClicked(false)
-        addEventAction(eventObj)
+      
     };
 
     const handlePrevButton = (e) => {
@@ -24,6 +26,16 @@ const Confirm = ({nextStep, prevStep, closeDialog, style, setIsCreateEventClicke
         prevStep();
     }  
     
+
+const navigate = useNavigate();
+  
+  
+  const navigateToEventPage = () => {
+    setIsCreateEventClicked(false)
+    addEventAction(eventObj)
+    navigate('/event-page')
+  };
+
     return (
       <MuiThemeProvider>
         <>
@@ -86,7 +98,7 @@ const Confirm = ({nextStep, prevStep, closeDialog, style, setIsCreateEventClicke
           color="secondary"
           style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px' }}
           variant="contained"
-          onClick={handleNextButton}
+          onClick={navigateToEventPage}
         >Confirm
         </Button>
             </div>
