@@ -34,8 +34,9 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
     display: 'flex', 
     alignItems: 'center', 
     justifyContent: 'space-between', 
-    padding:'5px'
+    padding:'20px'
   }
+
 
   console.log(eventObj)
 
