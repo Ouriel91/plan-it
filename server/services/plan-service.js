@@ -1,5 +1,21 @@
 const plansData = "./services/dummy-data.json"
-const {Event} = require('../db/models')
+const {Event} = require('../db/models/event')
+const {Item} = require('../db/models/item')
+
+
+
+
+async function getAllEvents() {
+    const events = await getAllPlans();
+    events.forEach(event => {
+        event.evenItems = await Item.findAll({where:{eventId:event.eventId}})
+    })
+    return events;
+
+
+
+    
+}
 
 async function getAllPlans() {
     let events = await Event.findAll()
