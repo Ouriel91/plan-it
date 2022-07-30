@@ -8,6 +8,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core/';
+import {useNavigate} from 'react-router-dom';
 
  
 const Confirm = ({nextStep, prevStep, closeDialog, style, setIsCreateEventClicked, eventObj,addEventAction}) => {
@@ -24,6 +25,15 @@ const Confirm = ({nextStep, prevStep, closeDialog, style, setIsCreateEventClicke
         prevStep();
     }  
     
+
+
+  const navigate = useNavigate();
+  
+  const navigateToEventPage = () => {
+    // 👇️ navigate to /event-page
+    navigate('/event-page');
+  };
+
     return (
       <MuiThemeProvider>
         <>
@@ -67,7 +77,7 @@ const Confirm = ({nextStep, prevStep, closeDialog, style, setIsCreateEventClicke
                 <Button
                 color="primary"
                 variant="contained"
-                onClick={handleNextButton}
+                onClick={navigateToEventPage}
                 >Confirm</Button>
             </div>
           </Dialog>
