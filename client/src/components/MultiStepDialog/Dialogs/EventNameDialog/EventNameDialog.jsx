@@ -4,70 +4,79 @@ import Button from '@material-ui/core/Button'
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import Grid from "@material-ui/core/Grid";
-import  TextField  from '@mui/material/TextField';
+import  Grid from "@material-ui/core/Grid";
+import TextField from '@mui/material/TextField';
 import CloseIcon from "@material-ui/icons/Close";
+import { borderRadius } from '@mui/system';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
-function EventNameDialog({nextStep, setEventObj, closeDialog}) {
-    const [input,setInput] = useState('')
 
-    const handleChange = (e) => {
-        setInput(e.target.value)
+
+function EventNameDialog({ nextStep, setEventObj, closeDialog, style2 }) {
+  const [input, setInput] = useState('')
+
+  const handleChange = (e) => {
+    setInput(e.target.value)
+  }
+
+  const handleNextButton = (e) => {
+    e.preventDefault()
+
+    if (input === '') {
+      alert('Event can not be empty')
+      return
     }
+    setEventObj(prevState => ({ ...prevState, eventName: input }))
+    nextStep()
+  }
 
-    const handleNextButton = (e) => {
-        e.preventDefault()
-
-        if(input === '') {
-          alert('Event can not be empty')
-          return
-        }
-        setEventObj(prevState => ({...prevState, eventName: input}))
-        nextStep()
-    }
 
   return (
-        <Dialog
-          PaperProps={{ style: {
-          minHeight: '70%',
+    <Dialog
+      PaperProps={{
+        style: {
+          minHeight: '45%',
           maxHeight: '70%',
-          mb:40
-        }}}
-          open
-          fullWidth
-          minHeight = '80vh'
-          maxWidth='sm'
-        >
-          <DialogTitle>
-            <Grid container justify="space-between" alignItems="center">
-              <Typography variant="h2">Event name</Typography>
-              <IconButton onClick={closeDialog}>
-                <CloseIcon />
-              </IconButton>
-            </Grid>
-          </DialogTitle>
-          <TextField 
-            sx={{ m:2,mb: 16}}
-            id="outlined-basic" label="Event Name" variant="outlined" 
-            placeholder="Enter Your Event Name"
-            color="secondary"
-            focused
-            value={input}
-            type = "text"
-            onChange={handleChange}
-            required
-          />
-          <br />
-          
+          backgroundColor: "#ffffffd6",
+          borderRadius: "10px",
+          boxShadow: "3px 3px 13px 6px #00000092"
+        }
+      }}
+      open
+      fullWidth
+      minHeight='80vh'
+      maxWidth='sm'
+    >
+      <DialogTitle>
+        <Grid container justify="space-between" alignItems="center">
+          <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px' }}>Event name</Typography>
+          <IconButton onClick={closeDialog}>
+            <CloseIcon />
+          </IconButton>
+        </Grid>
+      </DialogTitle>
+      <TextField
+        sx={{ mt: 3, ml: 4, mr: 4, mb: 21}}
+        id="outlined-basic" label="Event Name" variant="outlined"
+        placeholder="Enter Your Event Name"
+        color="primary"
+        focused
+        value={input}
+        type="text"
+        onChange={handleChange}
+        required
+      />
+
+      <Grid container justify="flex-end" direction='row' item md={11}>
           <Button
             color="secondary"
-            style={{height:'60px' , }}
-            sx={{ mt: 10 }} 
+            style={{ height: "40px" , width: "100px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px' }}
             variant="contained"
             onClick={handleNextButton}
           >Next
           </Button>
-        </Dialog>
+      </Grid>
+    </Dialog>
   )
 }
 

@@ -6,6 +6,7 @@ import "./LandingPage.css"
 import { Link } from 'react-router-dom';
 import video_logo from '../../images/picnic-logo.mp4';
 import app_logo from '../../images/app-logo.png';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const LandingPage = () => {
   const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
@@ -35,9 +36,9 @@ const LandingPage = () => {
       <nav className='navbar'>
         <div className='navbar-container'>
           <video src={video_logo} autoPlay loop muted></video>
-          <img src={app_logo} alt="Plan_It" height="60px" width="60px"></img>
+          {/* <img src={app_logo} alt="Plan_It" height="60px" width="60px"></img> */}
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            Plan It .
+            Plan it.
             {/* <i className='fab fa-typo3' /> */}
           </Link>
           <div className='menu-icon' onClick={handleClick}>

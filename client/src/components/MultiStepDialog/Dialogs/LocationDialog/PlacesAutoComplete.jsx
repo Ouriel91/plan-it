@@ -32,7 +32,7 @@ const PlacesAutocomplete = ({ setSelected, setEventObj }) => {
       <Autocomplete
         disablePortal
         options={places}
-        sx={{ width: 200 }}
+        sx={{ mt: 1, ml: 20, mb: 5, width: 300 }}
         onInputChange={(e,inputValue) => setValue(inputValue)}
         onChange={(e, selectedValue) =>selectedValue !== null ? handleSelect(selectedValue.label) : null}
         isOptionEqualToValue={(option, inputValue)=> true}
