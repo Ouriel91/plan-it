@@ -1,4 +1,5 @@
 const  EventPage = () => {
+  console.log("EventPage")
   return (
     <div>
       EVENT PAGE
