@@ -1,21 +1,18 @@
 const plansData = "./services/dummy-data.json"
-const {Event} = require('../db/models/event')
-const {Item} = require('../db/models/item')
+const {Event} = require('../db/models')
+//const {Item} = require('../db/models')
 
 
 
 
-async function getAllEvents() {
-    const events = await getAllPlans();
-    events.forEach(event => {
-        event.evenItems = await Item.findAll({where:{eventId:event.eventId}})
-    })
-    return events;
-
-
-
+// async function getAllEventsState() {
+//     const events = await getAllPlans();
+//     events.forEach(event => {
+//         event.evenItems = await Item.findAll({where:{eventId:event.eventId}})
+//     })
+//     return events;
     
-}
+// }
 
 async function getAllPlans() {
     let events = await Event.findAll()
@@ -39,7 +36,7 @@ const generateId = () => {
 async function addPlan(plan){
     const eventId = generateId()
     const {headline, date, type, location} = plan
-    await Event.create({eventId,headline, date, type, location})
+    await Event.create({headline, date, type, location,eventId})
     return plan
 }
 
