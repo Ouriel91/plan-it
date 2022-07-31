@@ -7,9 +7,9 @@ import Weather from "../../components/Weather/Weather";
 import ItemList from "../../components/TableList/ItemList"
 import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 
-const Home = () => {
+const Home = ({event}) => {
   
-  
+  console.log(event,'lastEvent')
   return (
     <div className="home">
      

@@ -38,7 +38,10 @@ async function addPlan(plan){
     const {headline, date, type, location} = plan
     await Event.create({headline, date, type, location})
     const events = await Event.findAll();
-    return events[events.length-1];
+    const event = events[events.length-1]
+    event.eventItems = [];
+    event.eventsUders = [];
+    return event
 }
 
 async function deletePlan(id){
