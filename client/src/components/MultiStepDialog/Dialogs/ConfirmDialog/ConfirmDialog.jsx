@@ -30,9 +30,9 @@ const Confirm = ({nextStep, prevStep, closeDialog, style, setIsCreateEventClicke
 const navigate = useNavigate();
   
   
-  const navigateToEventPage = () => {
+  const navigateToEventPage = async() => {
     setIsCreateEventClicked(false)
-    addEventAction(eventObj)
+    await addEventAction(eventObj)
     navigate('/event-page')
   };
 

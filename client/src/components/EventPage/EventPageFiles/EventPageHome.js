@@ -1,17 +1,17 @@
-import Home from "./pages/home/Home";
-import "./style/dark.scss";
-import { useContext } from "react";
-import { DarkModeContext } from "./colormode/darkModeContext";
+// import Home from "./pages/home/Home";
+// import "./style/dark.scss";
+// import { useContext } from "react";
+// import { DarkModeContext } from "./colormode/darkModeContext";
 
-function EventPageHome() {
-  const { darkMode } = useContext(DarkModeContext);
+// function EventPageHome() {
+//   const { darkMode } = useContext(DarkModeContext);
 
-  return (
-    <div className={darkMode ? "app dark" : "app"}>
-    <Home />
+//   return (
+//     <div className={darkMode ? "app dark" : "app"}>
+//     <Home />
      
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
-export default EventPageHome;
+// export default EventPageHome;
