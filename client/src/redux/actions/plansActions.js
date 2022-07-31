@@ -15,7 +15,7 @@ export const fetchEventAction = () => {
 
 export const addPlan = (newEvent) => ({
   type: actionTypes.ADD_PLAN,
-  payload: newEvent,
+  payload: [newEvent],
 });
 
 export const addEventAction = (newEvent) => {

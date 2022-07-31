@@ -6,6 +6,7 @@ import { DarkModeContextProvider } from "./EventPageFiles/context/darkModeContex
 
 
 const  EventPage = () => {
+  console.log("EventPage")
   return (
     
       <DarkModeContextProvider>
