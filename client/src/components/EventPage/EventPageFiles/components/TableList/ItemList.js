@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState } from "react";
 import CreateIcon from "@material-ui/icons/Create";
 import {
@@ -41,10 +37,8 @@ function ItemList({event}) {
 
 	// Defining a state named rows
 	// which we can update by calling on setRows function
-	const [rows, setRows] = useState([
-		{ eventId:event.id ,bringName: "", quantity: "", status: "", itemId: "" },
-	]);
-	console.log("rows",rows);
+	const [rows, setRows] = useState([]);
+	console.log("event",event);
 	// Initial states
 	const [open, setOpen] = React.useState(false);
 	const [isEdit, setEdit] = React.useState(false);
