@@ -5,10 +5,10 @@ import { DarkModeContextProvider } from "./EventPageFiles/colormode/darkModeCont
 const  EventPage = () => {
   console.log("EventPage")
   return (
-    
-      <DarkModeContextProvider>
+   /*  
+      <DarkModeContextProvider> */
       <EventPageHome />
-      </DarkModeContextProvider>
+      /* </DarkModeContextProvider> */
     
   
     
