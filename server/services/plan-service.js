@@ -1,6 +1,6 @@
 const plansData = "./services/dummy-data.json"
 const {Event} = require('../db/models')
-//const {Item} = require('../db/models')
+const {Item} = require('../db/models')
 
 
 
@@ -41,7 +41,6 @@ async function addPlan(plan){
     const event = events[events.length-1]
     event.eventItems =  [];
     event.eventsUsers = [];
-    console.log(event,'server')
     return event
 }
 
@@ -62,10 +61,19 @@ const getEventPageById = async (id) => {
     return event
 }
 
+const itemAdding = async (item) => {
+    console.log(item,'item!!!')
+   const {itemId, itemName, bringName, quantity, status, eventId} = item
+    await Item.create({itemId, itemName, bringName, quantity, status, eventId})
+console.log(item,'server')
+
+}
+
 module.exports = {
     getAllPlans,
     addPlan,
     deletePlan,
     editPlan,
-    getEventPageById
+    getEventPageById,
+    itemAdding
 }

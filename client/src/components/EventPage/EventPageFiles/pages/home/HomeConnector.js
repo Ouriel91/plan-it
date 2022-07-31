@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Home from "./Home";
-//import{addEventAction} from "../../../../redux/actions/plansActions";
+
 
 
 const mapStateToProps = (state, ownProps) => {

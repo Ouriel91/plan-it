@@ -14,14 +14,17 @@ module.exports = {
       eventId: {
         type: Sequelize.STRING
       },
+      itemName: {
+        type: Sequelize.STRING
+      },
       bringName: {
         type: Sequelize.STRING
       },
       quantity: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
      
     });
