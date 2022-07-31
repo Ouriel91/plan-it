@@ -8,6 +8,7 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 // import { DarkModeContext } from "../../context/darkModeContext";
 // import { useContext } from "react";
+import logo from '../../../../../images/app-logo.png'
 
 const Navbar = () => {
   // const { dispatch } = useContext(DarkModeContext);
@@ -15,11 +16,17 @@ const Navbar = () => {
   return (
     <div className="navbar-event">
       <div className="wrapper-event">
-        <div className="search">
-          <input type="text" placeholder="Search..." />
-          <SearchOutlinedIcon />
+        <div className="logo-container">
+          <img src={logo} alt="Plan it." height={90} width={90} />
+          <div className="navbar-title" >
+            Plan it.
+            <p className="navbar-sub-title">
+              Friends, Plan, Travel
+            </p>
+          </div>
         </div>
-        <div className="items">
+        
+        {/* <div className="items">
         
           <div className="item">
             <DarkModeOutlinedIcon
@@ -48,7 +55,7 @@ const Navbar = () => {
               className="avatar"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

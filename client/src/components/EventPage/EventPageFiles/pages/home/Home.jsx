@@ -9,30 +9,20 @@ import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 
 const Home = () => {
   
-  
   return (
     <div className="home">
-     
       <div className="homeContainer">
         <Navbar />
         <div className="EventsTypes">
+          Don't Miss The Upcoming Event...
           <EventsType  />
-         
         </div>
         <div className="charts">
-          <Location />
-          <div><h1>Dates: 10/10/2010 </h1></div>
-          <Weather/>
-          <ImgUploader/>
+          {/* <Location /> */}
+          {/* <Weather/>
+          <ImgUploader/> */}
         </div>
-        <div className="listContainer">
-          <div className="listTitle">Event List</div>
         
-          <ItemList/>
-      
-          
-          
-        </div>
       </div>
     </div>
   );

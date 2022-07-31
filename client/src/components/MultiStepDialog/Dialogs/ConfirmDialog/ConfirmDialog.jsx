@@ -62,7 +62,7 @@ const Confirm = ({ nextStep, prevStep, closeDialog, style, setIsCreateEventClick
             </Grid>
           </DialogTitle>
           <AppBar title="Confirm User Data" />
-          <Grid container justifyContent="center">
+          <Grid >
             <List>
               <ListItem>
                 <ListItemText
