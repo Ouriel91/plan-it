@@ -1,59 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display&display=swap');
 
-ul{
-    align-items: center;
-    justify-content: space-evenly;
-    text-align: center;
-    display: flex;
-    margin: auto;
+.about-us-container{
+
 }
 
-
-.first-card{
-    border-right: 3px double lightcoral;
-    padding-right: 50px;
-    display: grid;
-    align-items: center;
-    flex-direction: column;
-    /* background-color: rgba(255, 255, 255, 0.663); */
-    width: 300px;
-    color: white;
-    /* box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.2); */
+.card{
+   box-shadow: 3px 3px 13px 6px #00000092; 
+   background-color: #f0fcbad6;
+   margin-top: 60px;
 }
 
-.second-card{
-    border-right: 3px double lightcoral;
-    padding-right: 150px;
-    display: grid;
-    align-items: center;
-    flex-direction: column;
-    /* background-color: rgba(255, 255, 255, 0.663); */
-    width: 300px;
-    color: white;
-    /* box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.2); */
-}
-
-.third-card{
-    display: grid;
-    align-items: center;
-    flex-direction: column;
-    /* background-color: rgba(255, 255, 255, 0.663); */
-    width: 300px;
-    color: white;
-    /* box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.2); */
-}
-
-
-.card-title{
+.card-header{
     font-size: 23px;
     font-weight: bold;
-    font-family: 'Abel', sans-serif;
-    text-decoration: underline;
-
+    font-family: 'Playfair Display', serif;
 }
 
 p{
-    font-size: 18px;
-    font-weight: normal;
+    font-size: 15px;
+    font-weight: bold;
     text-decoration: none;
+    font-family: 'Playfair Display', serif;
 }
