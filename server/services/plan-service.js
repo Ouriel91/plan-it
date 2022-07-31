@@ -37,10 +37,11 @@ async function addPlan(plan){
     //const eventId = generateId()
     const {headline, date, type, location} = plan
     await Event.create({headline, date, type, location})
-    const events = await Event.findAll();
+    const events = await Event.findAll({ raw: true });
     const event = events[events.length-1]
-    event.eventItems = [];
-    event.eventsUders = [];
+    event.eventItems =  [];
+    event.eventsUsers = [];
+    console.log(event,'server')
     return event
 }
 
