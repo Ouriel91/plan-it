@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState } from "react";
 import CreateIcon from "@material-ui/icons/Create";
 import {
@@ -19,7 +15,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-
+import "./ItemList.scss"
 // Creating styles
 const useStyles = makeStyles({
 	root: {
@@ -35,16 +31,15 @@ const useStyles = makeStyles({
 	},
 });
 
-function ItemList() {
+function ItemList({event,saveItemAction}) {
 	// Creating style object
 	const classes = useStyles();
 
 	// Defining a state named rows
 	// which we can update by calling on setRows function
-	const [rows, setRows] = useState([
-		{ id: 1, firstname: "", lastname: "", city: "" },
-	]);
-
+	const [rows, setRows] = useState([]);
+	console.log("event",event);
+	console.log("rows",rows);
 	// Initial states
 	const [open, setOpen] = React.useState(false);
 	const [isEdit, setEdit] = React.useState(false);
@@ -61,11 +56,12 @@ function ItemList() {
 
 	// Function For adding new row object
 	const handleAdd = () => {
+		
+		
 		setRows([
 			...rows,
 			{
-				id: rows.length + 1, firstname: "",
-				lastname: "", city: ""
+				 itemName:"" ,bringName: "", quantity: "", status: "", itemId: rows.length+1
 			},
 		]);
 		setEdit(true);
@@ -76,6 +72,7 @@ function ItemList() {
 		// If edit mode is true setEdit will
 		// set it to false and vice versa
 		setEdit(!isEdit);
+		
 	};
 
 	// Function to handle save
@@ -85,6 +82,7 @@ function ItemList() {
 		console.log("saved : ", rows);
 		setDisable(true);
 		setOpen(true);
+		saveItemAction(rows[rows.length-1],event.id);
 	};
 
 	// The handleInputChange handler can be set up to handle
@@ -119,23 +117,24 @@ function ItemList() {
 	};
 
 return (
-	<TableBody>
+	<TableBody className="datagrid">
 	<Snackbar
 		open={open}
 		autoHideDuration={2000}
 		onClose={handleClose}
-		className={classes.snackbar}
+		className="datagrid"
+        
 	>
 		<Alert onClose={handleClose} severity="success">
 		Record saved successfully!
 		</Alert>
-	</Snackbar>
+	</Snackbar >
 	<Box margin={1}>
 		<div style={{ display: "flex", justifyContent: "space-between" }}>
 		<div>
 			{isEdit ? (
 			<div>
-				<Button onClick={handleAdd}>
+				<Button className="link" onClick={handleAdd}>
 				<AddBoxIcon onClick={handleAdd} />
 				ADD
 				</Button>
@@ -176,7 +175,7 @@ return (
 		size="small"
 		aria-label="a dense table"
 		>
-		<TableHead>
+		<TableHead className="datatableTitle">
 			<TableRow>
 			<TableCell>Item to bring</TableCell>
 			<TableCell>Quntity</TableCell>
@@ -189,35 +188,51 @@ return (
 			{rows.map((row, i) => {
 			return (
 				<div>
-				<TableRow>
+				<TableRow id={row.itemId}>
 					{isEdit ? (
 					<div>
 						<TableCell padding="none">
 						<input
-							value={row.firstname}
-							name="firstname"
+							value={row.itemName}
+							name="itemName"
 							onChange={(e) => handleInputChange(e, i)}
 						/>
 						</TableCell>
 						<TableCell padding="none">
 						<input
-							value={row.lastname}
-							name="lastname"
+							value={row.bringName}
+							name="bringName"
 							onChange={(e) => handleInputChange(e, i)}
 						/>
 						</TableCell>
-						
+						<TableCell padding="none">
+						<input
+							value={row.quantity}
+							name="quantity"
+							onChange={(e) => handleInputChange(e, i)}
+						/>
+						</TableCell>
+						<TableCell padding="none">
+						<input
+							value={row.status}
+							name="status"
+							onChange={(e) => handleInputChange(e, i)}
+						/>
+						</TableCell>
 					</div>
 					) : (
 					<div>
 						<TableCell component="th" scope="row">
-						{row.firstname}
+						{row.itemName}
 						</TableCell>
 						<TableCell component="th" scope="row">
-						{row.lastname}
+						{row.itemToBring}
 						</TableCell>
 						<TableCell component="th" scope="row" align="center">
-						{row.city}
+						{row.quantity}
+						</TableCell>
+						<TableCell component="th" scope="row" align="center">
+						{row.status}
 						</TableCell>
 						<TableCell
 						component="th"
@@ -282,4 +297,3 @@ return (
 }
 
 export default ItemList;
-

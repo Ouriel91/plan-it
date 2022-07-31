@@ -16,12 +16,14 @@ module.exports = (sequelize, DataTypes) => {
   Item.init({
     itemId: DataTypes.STRING,
     eventId: DataTypes.STRING,
+    itemName: DataTypes.STRING,
     bringName: DataTypes.STRING,
-    quantity: DataTypes.INTEGER,
-    status: DataTypes.BOOLEAN
+    quantity: DataTypes.STRING,
+    status: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Item',
+    timestamps: false
   });
   return Item;
 };
