@@ -13,6 +13,7 @@ const plansReducer = (state = initialState, action) => {
                 plans: [...action.payload],
             }
         case actionTypes.ADD_PLAN:
+            console.log('add plan',action.payload)
             return {
                 ...state,
                 plans: [...state.plans, ...action.payload],

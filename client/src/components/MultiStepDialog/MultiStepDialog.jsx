@@ -4,6 +4,7 @@ import EventTypeDialog from "./Dialogs/EventTypeDialog/EventTypeDialog";
 import LocationDialog from "./Dialogs/LocationDialog/LocationDialog";
 import ConfirmDialogConnector from "./Dialogs/ConfirmDialog/ConfirmDialogConnector";
 
+
 import { useState } from "react";
 
 const MultiStepDialog = ({setIsCreateEventClicked}) => {
@@ -29,6 +30,8 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
   const closeDialog = () => {
     setIsCreateEventClicked(false);
   }
+
+
 
   const style = {
     display: 'flex', 

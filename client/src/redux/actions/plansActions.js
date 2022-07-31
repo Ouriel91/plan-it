@@ -15,11 +15,10 @@ export const fetchEventAction = () => {
 
 export const addPlan = (newEvent) => ({
   type: actionTypes.ADD_PLAN,
-  payload: newEvent,
+  payload: [newEvent],
 });
 
 export const addEventAction = (newEvent) => {
-  console.log('add event',newEvent)
   return async (dispatch) => {
     await postPlan(newEvent)
     dispatch(addPlan(newEvent));
