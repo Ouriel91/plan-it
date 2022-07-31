@@ -34,10 +34,15 @@ const generateId = () => {
 
 
 async function addPlan(plan){
-    const eventId = generateId()
+    //const eventId = generateId()
     const {headline, date, type, location} = plan
-    await Event.create({headline, date, type, location,eventId})
-    return plan
+    await Event.create({headline, date, type, location})
+    const events = await Event.findAll({ raw: true });
+    const event = events[events.length-1]
+    event.eventItems =  [];
+    event.eventsUsers = [];
+    console.log(event,'server')
+    return event
 }
 
 async function deletePlan(id){
@@ -52,9 +57,15 @@ async function editPlan(id, plan){
     return editedPlan
 }
 
+const getEventPageById = async (id) => {
+    const event = await Event.findOne({where:{id}})
+    return event
+}
+
 module.exports = {
     getAllPlans,
     addPlan,
     deletePlan,
     editPlan,
+    getEventPageById
 }

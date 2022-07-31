@@ -1,14 +1,14 @@
 import "./EventsType.scss";
 
 
-const EventsType = ({ type }) => {
+const EventsType = ({ event }) => {
   
 
   
 
   return (
     <div className= "head-section">
-    <h1 className="title-head-section">My Event</h1></div>
+    <h1 className="title-head-section">{event.headline}</h1></div>
     
   
   );

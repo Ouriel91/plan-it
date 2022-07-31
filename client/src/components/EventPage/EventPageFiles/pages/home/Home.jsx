@@ -7,17 +7,17 @@ import Weather from "../../components/Weather/Weather";
 import ItemList from "../../components/TableList/ItemList"
 import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 
-const Home = () => {
+const Home = ({event}) => {
+  console.log(event,'home')
   
-  
+  console.log(event,'lastEvent')
   return (
     <div className="home">
      
       <div className="homeContainer">
         <Navbar />
         <div className="EventsTypes">
-          <EventsType  />
-         
+          <EventsType event={event} />
         </div>
         <div className="charts">
           <Location />
@@ -28,7 +28,7 @@ const Home = () => {
         <div className="listContainer">
           <div className="listTitle">Event List</div>
         
-          <ItemList/>
+          <ItemList event={event} />
       
           
           
