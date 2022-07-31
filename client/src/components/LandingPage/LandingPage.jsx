@@ -6,6 +6,10 @@ import "./LandingPage.css"
 import { Link } from 'react-router-dom';
 import video_logo from '../../images/picnic-logo.mp4';
 import app_logo from '../../images/app-logo.png';
+import AboutUsCards from '../AboutUsCards/AboutUsCards';
+import Footer from '../Footer/Footer'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const LandingPage = () => {
   const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
@@ -25,7 +29,9 @@ const LandingPage = () => {
   };
 
   useEffect(() => {
+    
     showButton();
+    Aos.init();
   }, []);
 
   window.addEventListener('resize', showButton);
@@ -93,6 +99,8 @@ const LandingPage = () => {
           {/*<CardListConnector />*/}
         </div>
       </nav>
+      <AboutUsCards/>
+      <Footer/>
     </>
   );
 
