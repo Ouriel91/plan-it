@@ -1,8 +1,5 @@
-
-import ItemList from "../ItemList/ItemList";
-import {BrowserRouter as Router} from 'react-router-dom';
 import EventPageHome from "./EventPageFiles/EventPageHome";
-import { DarkModeContextProvider } from "./EventPageFiles/context/darkModeContext";
+import { DarkModeContextProvider } from "./EventPageFiles/colormode/darkModeContext";
 
 
 const  EventPage = () => {
@@ -11,7 +8,7 @@ const  EventPage = () => {
     
       <DarkModeContextProvider>
       <EventPageHome />
-    </DarkModeContextProvider>
+      </DarkModeContextProvider>
     
   
     

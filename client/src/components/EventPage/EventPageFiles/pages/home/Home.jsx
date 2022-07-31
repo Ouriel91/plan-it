@@ -1,13 +1,10 @@
-import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
 import EventsType from "../../components/EventsType/EventsType";
 import Location from "../../components/Location/Location";
 import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
-import Datatable from "../../components/datatable/Datatable";
-import ItemList from "../../components/ItemList/ItemList"
-import Example from "../../components/ItemList/TableList";
+import ItemList from "../../components/TableList/ItemList"
 import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 
 const Home = () => {
@@ -15,7 +12,7 @@ const Home = () => {
   
   return (
     <div className="home">
-      {/* <Sidebar /> */}
+     
       <div className="homeContainer">
         <Navbar />
         <div className="EventsTypes">
@@ -30,9 +27,8 @@ const Home = () => {
         </div>
         <div className="listContainer">
           <div className="listTitle">Event List</div>
-          <Example/>
-          {/* <Table /> */}
-          <Datatable/>
+        
+          <ItemList/>
       
           
           
