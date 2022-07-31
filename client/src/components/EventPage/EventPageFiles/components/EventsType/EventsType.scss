@@ -12,6 +12,12 @@
 //   background-color: rgba(235, 232, 232, 0.942);
 // }
 
+.events-type-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
 .head-section {
   display: flex;
   flex-direction: column;
@@ -20,24 +26,18 @@
   justify-content: flex-start;
   padding: 10px;
   box-shadow: 2px 14px 20px 1px rgba(201, 201, 201, 0.47);
-  border-radius: 50px;
   margin: auto;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 100px;
+  margin-bottom: 180px;
   width: 1000px;
-  background-color: rgba(235, 232, 232, 0.942);
+  background-color: rgb(255, 255, 255);
 }
 
 .title-head-section{
   font-size: 40px;
   color: #555;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-bottom: 1px solid lightgray;
-
+  font-family: 'Poiret One', cursive;
+  font-style: normal;
 }
 
 .event-page-details{
@@ -52,12 +52,30 @@
   margin: 20px;
 }
 
+.weather-event-page{
+  margin: auto;
+}
+.participants-event-page{
+  display: flex;
+  flex-direction: row;
+}
+
 .event-page-details{
   display: flex;
   flex-direction: column;
 }
 
-  
+.btn-holder{
+  font-size: 33px;
+  margin-left: 10px;
+  font-family: 'Poiret One', cursive;
+}
+
+.li-container{
+  font-size: 18px;
+  font-style: normal;
+  font-family: 'Abel';
+}
 
     .counter {
       font-size: 28px;

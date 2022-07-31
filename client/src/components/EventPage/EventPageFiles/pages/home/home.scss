@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Megrim&family=Playfair+Display:wght@400;500;700&family=Poiret+One&display=swap');
 .home {
-  display: flex;
+
 
 .homeContainer {
   flex: 6;
-  background-color: rgba(240, 255, 255, 0.832);
-  // background: url('../../../../../images/friends.jpg') center center/cover no-repeat;
+  background-color: rgba(240, 240, 240, 0.832);
 }
     
 
@@ -15,6 +14,7 @@
       font-family: 'Playfair Display', serif;
       font-style: italic;
       margin-top: 60px;
+      margin-bottom: 100px;
     }
 
     .widgets,
@@ -26,6 +26,7 @@
 
     .charts {
       padding: 5px 20px;
+      
     }
 
     

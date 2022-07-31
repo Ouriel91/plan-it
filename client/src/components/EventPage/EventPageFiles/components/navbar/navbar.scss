@@ -31,7 +31,29 @@ img{
   color: #555;
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.131);
   object-fit: contain;
+  position: relative;
   background: url('../../../../../images/friends.jpg') center center/cover no-repeat;
+
+  .centered-title {
+    position: absolute;
+    top: 45%;
+    width: 95%;
+    text-align: center;
+    font-size: 80px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .centered-date {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+  }
 
   .wrapper-event {
     width: 100%;

@@ -23,7 +23,14 @@ const Navbar = () => {
             <p className="navbar-sub-title">
               Friends, Plan, Travel
             </p>
+            
           </div>
+          <div className="centered-title">
+            Event name
+          <div className="centered-date">
+            30/10/2022, 19:20
+            </div>
+            </div>
         </div>
         
         {/* <div className="items">
@@ -56,7 +63,9 @@ const Navbar = () => {
             />
           </div>
         </div> */}
+       
       </div>
+      
     </div>
   );
 };

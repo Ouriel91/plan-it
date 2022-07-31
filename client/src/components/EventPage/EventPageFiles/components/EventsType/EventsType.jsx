@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import "./EventsType.scss";
 import "../../pages/home/Home";
 import ItemList from "../TableList/ItemList";
@@ -11,79 +11,119 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Weather from "../../components/Weather/Weather";
+import Map from '../../../../MultiStepDialog/Dialogs/LocationDialog/Map'
+import map_img from '../../../../../images/map-img.png'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
-const EventsType = ({ type }) => {
+
+
+const EventsType = ({ type, setEventObj }) => {
   const [expanded, setExpanded] = useState(false);
+  const [input, setInput] = useState('');
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 
+  const handleParticipantsChange = (e) => {
+    setInput(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if(input===''){
+      alert('Event can not be empty')
+      return
+    }
+    setInput('')
+  }
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <>
-
+    <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container'>
       <div className="head-section">
         <div className="title-head-section">
-          Event Name
+          Add friends:
         </div>
         {/* <WatchLaterOutlinedIcon /> */}
-        <div className="date-event-page">
-          30/10/2022, 19:20
-        </div>
         <div className="participants-event-page">
           <Autocomplete
             options={top100Films}
             sx={{ width: 300 }}
-            renderInput={(params) => <TextField {...params} label="Add participants" />}
-          />
+            renderInput={(params) => <TextField {...params} label="Add participants" />
+          }/>
+          <div className='btn-holder'>
+            <button onSubmit={handleSubmit}>Add</button>
+          </div>
         </div>
-        
-          <div className="location-event-page">
-            <Accordion sx={{ width: '300' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1bh-content"
-                id="panel1bh-header"
-              >
-                <Typography sx={{ width: '300', flexShrink: 0 }}>
-                  Location
-                </Typography>
-                <Typography sx={{ color: 'text.secondary' }}>הירדנית, הכנרת, ישראל</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Location in map picture
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </div>
-          <div className="weather-event-page">
-            <Accordion sx={{ width: '80%' }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel2bh-content"
-                id="panel2bh-header"
-              >
-                <Typography sx={{ width: '33%', flexShrink: 0 }}>Weather</Typography>
-                <Typography sx={{ color: 'text.secondary' }}>
-                  It's going too be sunny
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  <Weather />
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </div>
+        <div className='li-container'>
+          <ol>
+              <li>gmail1@gmail.com</li>
+              <li>gmail2@gmail.com</li>
+              <li>gmail3@gmail.com</li>
+            </ol>
+        </div>
+            
+        <div className="location-event-page">
+          <Accordion sx={{ width: '300' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <Typography sx={{ width: '300', flexShrink: 0 }}>
+                Location
+              </Typography>
+              <Typography sx={{ color: 'text.secondary' }}>הירדנית, הכנרת, ישראל</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Location in map picture
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </div>
+        {/* <div className="weather-event-page">
+          <Accordion sx={{ width: '80%' }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2bh-content"
+              id="panel2bh-header"
+            >
+              <Typography sx={{ width: '33%', flexShrink: 0 }}>Weather</Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                It's going too be sunny
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <Weather />
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </div> */}
+      </div>
+      <div data-aos="fade-down-left" data-aos-offset="100" data-aos-easing="ease-in-out-cubic" data-aos-duration="1000" className="weather-event-page">
+        <Weather />
+      </div>
+      
+    </section>
+    <section data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+      <div className="listContainer">
+          <ItemList />
+        </div>
+    </section>
 
-          <div className="listContainer">
-            <ItemList />
-          </div>
-        </div>
+    <section data-aos="fade-down-right" data-aos-delay="500" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+        <img alt='map' src={map_img} width={700} height={300}></img>
+    </section>
 
     </>
-
   );
 };
 

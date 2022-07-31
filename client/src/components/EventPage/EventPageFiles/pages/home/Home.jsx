@@ -6,7 +6,7 @@ import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import ItemList from "../../components/TableList/ItemList"
 import ImgUploader from "../../components/ImgUploader/ImgUploader,";
-
+import Footer from '../../../../Footer/Footer'
 const Home = () => {
   
   return (
@@ -14,7 +14,6 @@ const Home = () => {
       <div className="homeContainer">
         <Navbar />
         <div className="EventsTypes">
-          Don't Miss The Upcoming Event...
           <EventsType  />
         </div>
         <div className="charts">
@@ -24,6 +23,7 @@ const Home = () => {
         </div>
         
       </div>
+      <Footer/>
     </div>
   );
 };
