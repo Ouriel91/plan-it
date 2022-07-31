@@ -18,11 +18,11 @@ const plansReducer = (state = initialState, action) => {
                 plans: [...state.plans, ...action.payload],
               };
         default:
-            return state;
+            return {
+                ...state
+            }
     }
 
 };
 
 export default plansReducer;
-
-

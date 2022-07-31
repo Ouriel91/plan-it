@@ -16,7 +16,7 @@ const Home = ({event}) => {
       <div className="homeContainer">
         <Navbar />
         <div className="EventsTypes">
-          <EventsType  />
+          <EventsType  event={event}/>
          
         </div>
         <div className="charts">

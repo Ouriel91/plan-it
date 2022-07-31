@@ -4,7 +4,8 @@ import Home from "./Home"
 //import{addEventAction} from "../../../../redux/actions/plansActions";
 
 const mapStateToProps = (state, ownProps) => {   
-    const event = state.plans[state.plans.length - 1];
+    const event = state.plansReducer.plans[0]
+    console.log("connector",event)
     return {event};
 };
   
