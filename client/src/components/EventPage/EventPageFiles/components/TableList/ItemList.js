@@ -35,14 +35,14 @@ const useStyles = makeStyles({
 	},
 });
 
-function ItemList() {
+function ItemList({event}) {
 	// Creating style object
 	const classes = useStyles();
 
 	// Defining a state named rows
 	// which we can update by calling on setRows function
 	const [rows, setRows] = useState([
-		{ id: 1, firstname: "", lastname: "", city: "" },
+		{ eventId:event.id ,bringName: "", quantity: "", status: "" },
 	]);
 
 	// Initial states
@@ -64,8 +64,7 @@ function ItemList() {
 		setRows([
 			...rows,
 			{
-				id: rows.length + 1, firstname: "",
-				lastname: "", city: ""
+				eventId:event.id ,bringName: "", quantity: "", status: ""
 			},
 		]);
 		setEdit(true);
@@ -76,6 +75,7 @@ function ItemList() {
 		// If edit mode is true setEdit will
 		// set it to false and vice versa
 		setEdit(!isEdit);
+		
 	};
 
 	// Function to handle save
@@ -85,6 +85,7 @@ function ItemList() {
 		console.log("saved : ", rows);
 		setDisable(true);
 		setOpen(true);
+		//saveItemAction(item)
 	};
 
 	// The handleInputChange handler can be set up to handle
