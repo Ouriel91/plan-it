@@ -42,9 +42,9 @@ function ItemList({event}) {
 	// Defining a state named rows
 	// which we can update by calling on setRows function
 	const [rows, setRows] = useState([
-		{ eventId:event.id ,bringName: "", quantity: "", status: "" },
+		{ eventId:event.id ,bringName: "", quantity: "", status: "", itemId: "" },
 	]);
-
+	console.log("rows",rows);
 	// Initial states
 	const [open, setOpen] = React.useState(false);
 	const [isEdit, setEdit] = React.useState(false);
@@ -64,7 +64,7 @@ function ItemList({event}) {
 		setRows([
 			...rows,
 			{
-				eventId:event.id ,bringName: "", quantity: "", status: ""
+				eventId:event.id, itemName:"" ,bringName: "", quantity: "", status: "", itemId: rows.length+1
 			},
 		]);
 		setEdit(true);
@@ -191,35 +191,51 @@ return (
 			{rows.map((row, i) => {
 			return (
 				<div>
-				<TableRow>
+				<TableRow id={row.itemId}>
 					{isEdit ? (
 					<div>
 						<TableCell padding="none">
 						<input
-							value={row.firstname}
-							name="firstname"
+							value={row.itemName}
+							name="itemName"
 							onChange={(e) => handleInputChange(e, i)}
 						/>
 						</TableCell>
 						<TableCell padding="none">
 						<input
-							value={row.lastname}
-							name="lastname"
+							value={row.bringName}
+							name="bringName"
 							onChange={(e) => handleInputChange(e, i)}
 						/>
 						</TableCell>
-						
+						<TableCell padding="none">
+						<input
+							value={row.quantity}
+							name="quantity"
+							onChange={(e) => handleInputChange(e, i)}
+						/>
+						</TableCell>
+						<TableCell padding="none">
+						<input
+							value={row.status}
+							name="status"
+							onChange={(e) => handleInputChange(e, i)}
+						/>
+						</TableCell>
 					</div>
 					) : (
 					<div>
 						<TableCell component="th" scope="row">
-						{row.firstname}
+						{row.itemName}
 						</TableCell>
 						<TableCell component="th" scope="row">
-						{row.lastname}
+						{row.itemToBring}
 						</TableCell>
 						<TableCell component="th" scope="row" align="center">
-						{row.city}
+						{row.quantity}
+						</TableCell>
+						<TableCell component="th" scope="row" align="center">
+						{row.status}
 						</TableCell>
 						<TableCell
 						component="th"
