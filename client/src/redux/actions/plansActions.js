@@ -20,7 +20,10 @@ export const addPlan = (newEvent) => ({
 
 export const addEventAction = (newEvent) => {
   return async (dispatch) => {
-    await postPlan(newEvent)
+   const plan =  await postPlan(newEvent)
+   console.log(plan,'here is the plan')
     dispatch(addPlan(newEvent));
+    console.log('herre is the plan')
+    return plan
   };
 };

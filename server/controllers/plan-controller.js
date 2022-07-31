@@ -14,8 +14,8 @@ async function planAdding(req, res){
     }
 
     try{
-        const plans = await planService.addPlan(postedPlan)
-        return res.status(200).json(plans);
+        const plan = await planService.addPlan(postedPlan)
+        return res.status(200).json(plan);
     }catch(err){
         return res.status(500).json({error: err.toString()})
     }
@@ -42,11 +42,22 @@ async function planEditing(req, res) {
     }catch(err){
         return res.status(500).json({error: err.toString()})
     }
+
+}
+const getEventPage = async (req, res) => {
+    const id = parseInt(req.params.id)
+    try{
+        const event = await planService.getEventPageById(id)
+        return res.status(200).json(event);
+    }catch(err){
+        return res.status(500).json({error: err.toString()})
+    }
 }
 
 module.exports = {
     plansList,
     planAdding,
     planDeleting,
-    planEditing
+    planEditing,
+    getEventPage
 }

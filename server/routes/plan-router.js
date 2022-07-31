@@ -7,5 +7,6 @@ planRouter.get("/", planController.plansList);
 planRouter.post("/", planController.planAdding);
 planRouter.delete("/:id", planController.planDeleting)
 planRouter.put("/:id", planController.planEditing)
+planRouter.get("/event-page/:id", planController.getEventPage);
 
 module.exports =  planRouter;
