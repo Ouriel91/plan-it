@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<AppContainer />} />
-          <Route path="/event-page" element={<EventPage />} />
+          <Route path="/event-page/:id" element={<EventPage />} />
           {/* <Route index element={<Footer />} /> */}
         </Route>
       </Routes>
