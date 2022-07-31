@@ -5,7 +5,6 @@ import Home from "./Home"
 
 const mapStateToProps = (state, ownProps) => {   
     const event = state.plansReducer.plans[0]
-    console.log("connector",event)
     return {event};
 };
   
