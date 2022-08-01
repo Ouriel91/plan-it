@@ -4,21 +4,29 @@
 
 }
 
+.about-us-description{
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
 .card{
    box-shadow: 3px 3px 13px 6px #00000092; 
    background-color: #f0fcbad6;
-   margin-top: 60px;
+   margin-top: 40px;
 }
 
 .card-header{
-    font-size: 23px;
+    font-size: 25px;
     font-weight: bold;
     font-family: 'Playfair Display', serif;
 }
 
 p{
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 17px;
     text-decoration: none;
     font-family: 'Playfair Display', serif;
 }
