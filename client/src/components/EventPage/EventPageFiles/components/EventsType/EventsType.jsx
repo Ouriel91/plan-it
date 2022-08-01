@@ -46,6 +46,10 @@ const EventsType = ({ type, setEventObj }) => {
 
   return (
     <>
+    <section className='date-counter-holder'>
+      <text>30/10/2022, 19:20</text>
+      <text>Counter widget</text>
+    </section>
     <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
       <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
       <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'> and let us help you with the arrangments</p>

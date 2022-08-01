@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Megrim&family=Playfair+Display:wght@400;500;700&family=Poiret+One&display=swap');
-.logo-container{
+
+.logo-container {
   display: flex;
   flex-direction: row;
 }
 
-img{
+img {
   margin-right: 10px;
 }
 
-.navbar-title{
+.navbar-title {
   display: flex;
   flex-direction: column;
   font-size: 30px;
@@ -19,7 +20,7 @@ img{
   letter-spacing: 2px;
 }
 
-.navbar-sub-title{
+.navbar-sub-title {
   font-family: 'Poiret One', cursive;
   font-size: 13px;
 }
@@ -35,25 +36,21 @@ img{
   background: url('../../../../../images/friends.jpg') center center/cover no-repeat;
 
   .centered-title {
+    background-color: rgb(246, 246, 246);
     position: absolute;
-    top: 45%;
-    width: 95%;
+    top: 90%;
+    left: 20%;
+    width: 60%;
     text-align: center;
+    height: 130px;
+  }
+
+  text {
     font-size: 80px;
-    color: white;
     font-weight: bold;
     font-family: 'Playfair Display', serif;
   }
 
-  .centered-date {
-    position: absolute;
-    top: 80%;
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    font-weight: bold;
-  }
 
   .wrapper-event {
     width: 100%;
@@ -65,14 +62,6 @@ img{
     margin-left: 80px;
     margin-right: 80px;
 
-    .search {
-     
-      
-
-      input {
-        
-      }
-    }
 
     .items {
       display: flex;

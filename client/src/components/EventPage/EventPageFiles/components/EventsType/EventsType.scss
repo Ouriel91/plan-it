@@ -18,12 +18,29 @@
   justify-content: space-around;
 }
 
+.date-counter-holder{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+// .centered-date {
+//   position: absolute;
+//   top: 80%;
+//   width: 100%;
+//   text-align: center;
+//   font-size: 30px;
+//   color: white;
+//   font-weight: bold;
+// }
+
 .events-type-container-first-img{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   position: relative;
   margin-left: 450px;
+  margin-top: 280px;
 }
 
 
