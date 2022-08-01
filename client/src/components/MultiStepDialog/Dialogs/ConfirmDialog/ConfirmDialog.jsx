@@ -50,175 +50,58 @@ const Confirm = ({
           }}
           open
           fullWidth
-          maxWidth="sm"
+          maxWidth='sm'
         >
           <DialogTitle>
             <Grid container justify="space-between" alignItems="center">
-              <Typography
-                style={{
-                  color: "#9da275ce",
-                  fontFamily: "Playfair Display",
-                  fontSize: "35px",
-                }}
-              >
-                Confirmation
-              </Typography>
+              <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px' }}>Confirmation</Typography>
               <IconButton onClick={closeDialog}>
                 <CloseIcon onClick={closeDialog} />
               </IconButton>
             </Grid>
           </DialogTitle>
           <AppBar title="Confirm User Data" />
-          <List>
-            <ListItem>
-              <ListItemText
-                disableTypography
-                primary={
-                  <Typography
-                    style={{
-                      color: "#85cf48",
-                      fontFamily: "Playfair Display",
-                      textDecoration: "underline",
-                      fontSize: "20px",
-                    }}
-                  >
-                    Event Name
-                  </Typography>
-                }
-                secondary={
-                  <Typography
-                    style={{
-                      color: "grey",
-                      fontFamily: "Abel",
-                      fontSize: "18px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    {eventObj.eventName}
-                  </Typography>
-                }
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                disableTypography
-                primary={
-                  <Typography
-                    style={{
-                      color: "#85cf48",
-                      fontFamily: "Playfair Display",
-                      textDecoration: "underline",
-                      fontSize: "20px",
-                    }}
-                  >
-                    Dates
-                  </Typography>
-                }
-                secondary={
-                  <Typography
-                    style={{
-                      color: "grey",
-                      fontFamily: "Abel",
-                      fontSize: "18px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    {eventObj.dates}
-                  </Typography>
-                }
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                disableTypography
-                primary={
-                  <Typography
-                    style={{
-                      color: "#85cf48",
-                      fontFamily: "Playfair Display",
-                      textDecoration: "underline",
-                      fontSize: "20px",
-                    }}
-                  >
-                    Event Type
-                  </Typography>
-                }
-                secondary={
-                  <Typography
-                    style={{
-                      color: "grey",
-                      fontFamily: "Abel",
-                      fontSize: "18px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    {eventObj.eventType}
-                  </Typography>
-                }
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                disableTypography
-                primary={
-                  <Typography
-                    style={{
-                      color: "#85cf48",
-                      fontFamily: "Playfair Display",
-                      textDecoration: "underline",
-                      fontSize: "20px",
-                    }}
-                  >
-                    Location
-                  </Typography>
-                }
-                secondary={
-                  <Typography
-                    style={{
-                      color: "grey",
-                      fontFamily: "Abel",
-                      fontSize: "18px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    {eventObj.location}
-                  </Typography>
-                }
-              />
-            </ListItem>
-          </List>
+          <Grid >
+            <List>
+              <ListItem>
+                <ListItemText
+                  disableTypography
+                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '20px' }}>Event Name</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '18px' }}>{eventObj.eventName}</Typography>} />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  disableTypography
+                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Dates</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.dates}</Typography>} />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  disableTypography
+                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Event Type</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.eventType}</Typography>} />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  disableTypography
+                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Location</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.location}</Typography>} />
+              </ListItem>
+            </List>
+          </Grid>
+
           <br />
 
           <div style={style}>
             <Button
-              style={{
-                height: "40px",
-                width: "100px",
-                backgroundColor: "#8b8b8bce",
-                fontFamily: "Playfair Display",
-                letterSpacing: "2px",
-                fontSize: "16px"
-              }}
+              style={{ height: "40px", width: "100px", backgroundColor: '#8b8b8bce', fontFamily: 'Playfair Display', letterSpacing: '2px' }}
               color="secondary"
               variant="contained"
-              onClick={handlePrevButton}
-            >
+              onClick={handlePrevButton}>
               Back
             </Button>
             <Button
               color="secondary"
-              style={{
-                height: "40px",
-                width: "100px",
-                fontSize: "16px",
-                backgroundColor: "#98a153ce",
-                fontFamily: "Playfair Display",
-                letterSpacing: "2px",
-              }}
+              style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px' }}
               variant="contained"
               onClick={navigateToEventPage}
-            >
-              Confirm
+            >Confirm
             </Button>
           </div>
         </Dialog>

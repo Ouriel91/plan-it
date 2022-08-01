@@ -5,6 +5,8 @@ import Location from "../../components/Location/Location";
 import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import ItemListConnector from "../../components/ItemList/ItemListConnector"
+import ItemList from "../../components/ItemList/ItemList";
+import Footer from "../../../../Footer/Footer";
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
 const Home = ({event}) => {
@@ -14,23 +16,24 @@ const Home = ({event}) => {
     <div className="home">
 
       <div className="homeContainer">
-        <Navbar />
-        <h1 style={{color: '#000'}}>{event.headline}</h1>
+        <Navbar event={event}/>
+        {/* <h1 style={{color: '#000'}}>{event.headline}</h1> */}
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>
         <div className="charts">
-          <Location />
+          {/* <Location />
           <div><h1>Dates: 10/10/2010 </h1></div>
-          <Weather/>
+          <Weather/> */}
           {/* <ImgUploader/> */}
           {/* <UserList/> */}
         </div>
-        <div className="listContainer">
+        {/* <div className="listContainer">
           <div className="listTitle">Event List</div>
           <ItemListConnector event={event} />
-        </div>
+        </div> */}
       </div>
+      <Footer/>
     </div>
   );
 };

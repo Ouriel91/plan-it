@@ -58,7 +58,7 @@ function EventNameDialog({ nextStep, setEventObj, closeDialog, style2 }) {
         sx={{ mt: 3, ml: 4, mr: 4, mb: 21}}
         id="outlined-basic"
         label={
-          <Typography variant="h3"> Event Name </Typography>
+          <Typography variant="h7"> Event Name </Typography>
         }
         placeholder="Enter Your Event Name"
         color="primary"

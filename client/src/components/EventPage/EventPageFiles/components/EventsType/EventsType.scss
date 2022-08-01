@@ -1,24 +1,126 @@
+// .event-page-container{
+//   display: flex;
+//   flex-direction: row;
+//   align-items: flex-start;
+//   justify-content: flex-start;
+//   padding: 10px;
+//   box-shadow: 2px 14px 20px 1px rgba(201, 201, 201, 0.47);
+//   border-radius: 50px;
+//   margin: auto;
+//   margin-top: 80px;
+//   margin-bottom: 80px;
+//   background-color: rgba(235, 232, 232, 0.942);
+// }
+
+.events-type-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.date-counter-holder{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 150px;
+}
+
+// .centered-date {
+//   position: absolute;
+//   top: 80%;
+//   width: 100%;
+//   text-align: center;
+//   font-size: 30px;
+//   color: white;
+//   font-weight: bold;
+// }
+
+.events-type-container-first-img{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  margin-left: 450px;
+  margin-top: 280px;
+}
+
+
+.description-event-page{
+  position: absolute;
+  top: 180px;
+  left: -86px;
+  font-size: 28px;
+  color: rgb(167, 167, 167);
+}
+
+.description2-event-page{
+  position: absolute;
+  top: 210px;
+  left: -86px;
+  font-size: 28px;
+  color: rgb(167, 167, 167);
+}
+
 .head-section {
   display: flex;
-  justify-content: space-between;
-  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  justify-content: flex-start;
   padding: 10px;
+  box-shadow: 2px 14px 20px 1px rgba(201, 201, 201, 0.47);
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 180px;
+  border-radius: 5px;
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.443);
+}
+
+.title-head-section{
+  font-size: 40px;
+  color: #555;
+  font-family: 'Poiret One', cursive;
+  font-style: normal;
+  padding: 15px;
+}
+
+.event-page-details{
+  display: flex;
+  margin-top: 120px;
+  flex-direction: row;
+}
+.listContainer {
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-  border-radius: 10px;
-  height: 100px;
+  padding: 20px;
+  margin: 20px;
+}
 
-  .left,
-  .right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.weather-event-page{
+  margin: auto;
+}
+.participants-event-page{
+  display: flex;
+  flex-direction: row;
+}
 
-    .title {
-      font-weight: bold;
-      font-size: 14px;
-      color: rgb(160, 160, 160);
-    }
+.event-page-details{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-holder{
+  font-size: 33px;
+  margin-left: 10px;
+  font-family: 'Poiret One', cursive;
+}
+
+.li-container{
+  font-size: 18px;
+  font-style: normal;
+  font-family: 'Abel';
+}
 
     .counter {
       font-size: 28px;
@@ -50,10 +152,6 @@
       border-radius: 5px;
       align-self: flex-end;
     }
-  }
-}
+  
 
 
-.title-head-section{
-  margin-left: 460px;
-}

@@ -42,8 +42,8 @@ const PlacesAutocomplete = ({ setSelected, setEventObj }) => {
         isOptionEqualToValue={(option, inputValue)=> true}
         id="tags-standard"
         renderInput={(params) => <TextField {...params} label={
-          <Typography variant="h4"> pick a date </Typography>
-        }/>
+          <Typography variant="h7"> Location </Typography>}
+          placeholder="Enter Location"/>
         
       }
       />

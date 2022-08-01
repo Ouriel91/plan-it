@@ -16,6 +16,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import "./ItemList.scss"
+import { withTheme } from "@material-ui/styles";
 // Creating styles
 const useStyles = makeStyles({
 	root: {

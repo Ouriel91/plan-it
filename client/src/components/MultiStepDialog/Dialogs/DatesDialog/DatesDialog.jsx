@@ -60,7 +60,7 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
         <DateTimePicker
           renderInput={(props) => <TextField {...props} sx={{ mt: 3, ml: 4, mr: 4, mb: 21 }} />}
           label={
-            <Typography variant="h5"> pick a date</Typography>
+            <Typography variant="h7"> pick a date</Typography>
           }
           inputProps={{style: {fontSize: 20}}}
           value={startDate}
