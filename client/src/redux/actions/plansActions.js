@@ -1,4 +1,4 @@
-import {postPlan, fetchPlans} from "../../api/plan";
+import {postPlan, fetchPlans,postItem} from "../../api/plan";
 import actionTypes from "./constants";
 
 export const fetchAllPlans = (fetchedEvents) => ({
@@ -20,7 +20,24 @@ export const addPlan = (newEvent) => ({
 
 export const addEventAction = (newEvent) => {
   return async (dispatch) => {
-    await postPlan(newEvent)
-    dispatch(addPlan(newEvent));
+   const plan =  await postPlan(newEvent)
+    dispatch(addPlan(plan));
+    return plan
   };
 };
+
+
+export const saveItem = (newItem) => ({
+  type: actionTypes.SAVE_ITEM,
+  payload: [newItem],
+});
+
+export const saveItemAction = (newItem,eventId) => {
+  return async (dispatch) => {
+   const item =  await postItem(newItem,eventId)
+    dispatch(saveItem(item));
+    return item
+  };
+};
+
+

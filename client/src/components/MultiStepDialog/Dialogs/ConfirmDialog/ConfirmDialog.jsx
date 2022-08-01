@@ -1,39 +1,38 @@
-import Dialog from '@material-ui/core/Dialog'
-import Button from '@material-ui/core/Button'
+import Dialog from "@material-ui/core/Dialog";
+import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import { List, ListItem, ListItemText } from '@material-ui/core/';
-import './ConfirmDialog.css'
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import AppBar from "@material-ui/core/AppBar";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import { List, ListItem, ListItemText } from "@material-ui/core/";
+import "./ConfirmDialog.css";
+import { useNavigate } from "react-router-dom";
 
-
-const Confirm = ({ nextStep, prevStep, closeDialog, style, setIsCreateEventClicked, eventObj, addEventAction }) => {
-
-  const handleNextButton = (e) => {
-    e.preventDefault();
-    nextStep();
-
-  };
+const Confirm = ({
+  nextStep,
+  prevStep,
+  closeDialog,
+  style,
+  setIsCreateEventClicked,
+  eventObj,
+  addEventAction,
+  events,
+}) => {
 
   const handlePrevButton = (e) => {
     e.preventDefault();
     prevStep();
-  }
-
+  };
 
   const navigate = useNavigate();
 
-
-  const navigateToEventPage = () => {
-    setIsCreateEventClicked(false)
-    addEventAction(eventObj)
-    navigate('/event-page')
+  const navigateToEventPage = async () => {
+    setIsCreateEventClicked(false);
+    const plan = await addEventAction(eventObj);
+    navigate(`/event-page/${plan.id.toString()}`);
   };
 
   return (
@@ -42,12 +41,12 @@ const Confirm = ({ nextStep, prevStep, closeDialog, style, setIsCreateEventClick
         <Dialog
           PaperProps={{
             style: {
-              minHeight: '45%',
-              maxHeight: '70%',
+              minHeight: "45%",
+              maxHeight: "70%",
               backgroundColor: "#ffffffd6",
               borderRadius: "10px",
-              boxShadow: "3px 3px 13px 6px #00000092"
-            }
+              boxShadow: "3px 3px 13px 6px #00000092",
+            },
           }}
           open
           fullWidth
@@ -67,7 +66,7 @@ const Confirm = ({ nextStep, prevStep, closeDialog, style, setIsCreateEventClick
               <ListItem>
                 <ListItemText
                   disableTypography
-                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Event Name</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.eventName}</Typography>} />
+                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '20px' }}>Event Name</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '18px' }}>{eventObj.eventName}</Typography>} />
               </ListItem>
               <ListItem>
                 <ListItemText
@@ -109,7 +108,6 @@ const Confirm = ({ nextStep, prevStep, closeDialog, style, setIsCreateEventClick
       </>
     </MuiThemeProvider>
   );
-
-}
+};
 
 export default Confirm;

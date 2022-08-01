@@ -1,6 +1,5 @@
 import "./navbar.scss";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
@@ -11,7 +10,7 @@ import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import logo from '../../../../../images/app-logo.png'
 
 const Navbar = () => {
-  // const { dispatch } = useContext(DarkModeContext);
+  /* const { dispatch } = useContext(DarkModeContext); */
 
   return (
     <div className="navbar-event">
@@ -35,7 +34,7 @@ const Navbar = () => {
           <div className="item">
             <DarkModeOutlinedIcon
               className="icon"
-              // onClick={() => dispatch({ type: "TOGGLE" })}
+               onClick={() => dispatch({ type: "TOGGLE" })} 
             />
           </div>
           <div className="item">

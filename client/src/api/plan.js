@@ -18,7 +18,7 @@ export const postPlan = async (plan) => {
         type: plan.eventType,
         location: plan.location
     }
-    await axios({
+    const  response = await axios({
         method: 'post',
         url,
         headers: {"Content-Type": "application/json"}, 
@@ -26,6 +26,7 @@ export const postPlan = async (plan) => {
             postedPlan
         }
     })
+    return response.data;
 }
 
 export const deletePlan = async(id) => {
@@ -48,4 +49,37 @@ export const editPlan = async(id, plan) => {
     })
 
     return editeddItem
+}
+
+export const getEventPageById = async(url) => {
+    const response = await axios({
+        method: 'get',
+         url,
+    })
+
+    return response.data
+}
+
+
+export const postItem = async (item,eventId) => {
+    
+    
+    const postedItem = {
+        itemId :item.itemId,
+        itemName: item.itemName,
+        bringName: item.bringName,
+        quantity: item.quantity,
+        status: item.status,
+        eventId: eventId
+    }
+    console.log(postedItem)
+    const response = await axios({
+        method: 'post',
+        url: `${url}/event-page/${item.eventId}/items`,
+        headers: {"Content-Type": "application/json"}, 
+        data: {
+            postedItem
+        }
+    })
+    return response.data;
 }

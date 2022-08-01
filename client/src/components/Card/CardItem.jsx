@@ -38,35 +38,35 @@ const CardItem = ({plan}) => {
 
   let typeStyle = {}
   switch (plan.type) {
-    case 'bbq':
+    case 'BBQ with friends':
       typeStyle = {
         primaryColor : "#e31809",
         secondaryColor : "#FDF1F1",
         image : bbqImage
       }
       break;
-      case 'party':
+      case 'Party':
         typeStyle = {
           primaryColor : "#B964F7",
           secondaryColor : "#F3F0FD",
           image : partyImage
         }
       break;
-      case 'pool day':
+      case 'Pool party':
         typeStyle = {
           primaryColor : "#5D93E1",
           secondaryColor : "#ECF3FC",
           image : poolImage
         }
       break;
-      case 'camping':
+      case 'Camping':
         typeStyle = {
           primaryColor : "#5DC250",
           secondaryColor : "#F2FAF1",
           image : campingImage
         }
       break;
-      case 'other':
+      case 'Other':
         typeStyle = {
           primaryColor : "#F9D288",
           secondaryColor : "#FEFAF1",
