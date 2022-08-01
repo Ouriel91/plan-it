@@ -62,7 +62,7 @@ const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, e
                     <Map setEventObj={setEventObj} />
                     <div style={style}>
                         <Button
-                            style={{ height: "40px", width: "100px", backgroundColor: '#8b8b8bce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
+                            style={{ height: "40px", width: "100px", backgroundColor: '#8b8b8bce',fontSize: '16px', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
                             color="secondary"
                             variant="contained"
                             onClick={handlePrevButton}>
@@ -70,7 +70,7 @@ const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, e
                         </Button>
                         <Button
                             color="secondary"
-                            style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
+                            style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontSize: '16px', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
                             variant="contained"
                             onClick={handleNextButton}
                         >Next

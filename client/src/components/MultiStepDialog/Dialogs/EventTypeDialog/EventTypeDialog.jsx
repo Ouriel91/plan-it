@@ -62,7 +62,9 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
       </DialogTitle>
       <div>
         <FormControl sx={{ m: 1, mb: 20, width: "70%" }}>
-          <InputLabel id="demo-simple-select-required-label">Type</InputLabel>
+          <InputLabel id="demo-simple-select-required-label">
+            <Typography variant="h4">Type</Typography>
+          </InputLabel>
           <Select
             labelId="demo-simple-select-required-label"
             id="demo-simple-select-required"
@@ -71,22 +73,37 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
             autoWidth
             label="Type"
             color="success"
+            size="big"
           >
-              <MenuItem value={"Pool party"}>Pool party</MenuItem>
-              <MenuItem value={"BBQ with friends"}>BBQ with friends</MenuItem>
-              <MenuItem value={"Party"}>Party</MenuItem>
-              <MenuItem value={"Camping"}>Camping</MenuItem>
-              <MenuItem value={"Picnic"}>Picnic</MenuItem>
-              <MenuItem value={"Other"}>Other</MenuItem>
+              <MenuItem value={"Pool party"}>
+                <Typography variant="h5">pool party</Typography>
+              </MenuItem>
+              <MenuItem value={"BBQ with friends"}>
+                <Typography variant="h5">BBQ with friends</Typography>
+              </MenuItem>
+              <MenuItem value={"Party"}>
+                <Typography variant="h5">Party</Typography>
+              </MenuItem>
+              <MenuItem value={"Camping"}>
+                <Typography variant="h5">Camping</Typography> 
+              </MenuItem>
+              <MenuItem value={"Picnic"}>
+                <Typography variant="h5">Picnic</Typography> 
+              </MenuItem>
+              <MenuItem value={"Other"}>
+                <Typography variant="h5">Other</Typography>  
+              </MenuItem>
           </Select>
-          <FormHelperText>Required</FormHelperText>
+          <FormHelperText>
+            <Typography variant="h5">Required</Typography> 
+          </FormHelperText>
         </FormControl>
       </div>
 
 
       <div style={style}>
         <Button
-          style={{ height: "40px", width: "100px", backgroundColor: '#8b8b8bce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
+          style={{ height: "40px", width: "100px", backgroundColor: '#8b8b8bce',fontSize: "16px", fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
           color="secondary"
           variant="contained"
           onClick={handlePrevButton}>
@@ -94,7 +111,7 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
         </Button>
         <Button
           color="secondary"
-          style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
+          style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontSize: "16px", fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
           variant="contained"
           onClick={handleNextButton}
         >Next

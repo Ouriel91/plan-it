@@ -34,7 +34,6 @@ export const saveItem = (newItem) => ({
 
 export const saveItemAction = (newItem,eventId) => {
   return async (dispatch) => {
-    console.log(newItem,'newItem')
    const item =  await postItem(newItem,eventId)
     dispatch(saveItem(item));
     return item

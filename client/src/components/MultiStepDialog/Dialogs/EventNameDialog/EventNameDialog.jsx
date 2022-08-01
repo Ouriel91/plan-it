@@ -38,7 +38,7 @@ function EventNameDialog({ nextStep, setEventObj, closeDialog, style2 }) {
           maxHeight: '70%',
           backgroundColor: "#ffffffd6",
           borderRadius: "10px",
-          boxShadow: "3px 3px 13px 6px #00000092"
+          boxShadow: "3px 3px 13px 6px #00000092",
         }
       }}
       open
@@ -56,9 +56,13 @@ function EventNameDialog({ nextStep, setEventObj, closeDialog, style2 }) {
       </DialogTitle>
       <TextField
         sx={{ mt: 3, ml: 4, mr: 4, mb: 21}}
-        id="outlined-basic" label="Event Name" variant="outlined"
+        id="outlined-basic"
+        label={
+          <Typography variant="h3"> Event Name </Typography>
+        }
         placeholder="Enter Your Event Name"
         color="primary"
+        inputProps={{style: {fontSize: 20}}}
         focused
         value={input}
         type="text"
@@ -69,7 +73,7 @@ function EventNameDialog({ nextStep, setEventObj, closeDialog, style2 }) {
       <Grid container justify="flex-end" direction='row' item md={11}>
           <Button
             color="secondary"
-            style={{ height: "40px" , width: "100px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px' }}
+            style={{ height: "40px" , width: "100px", backgroundColor: '#98a153ce', fontSize: "16px" ,fontFamily: 'Playfair Display', letterSpacing: '2px' }}
             variant="contained"
             onClick={handleNextButton}
           >Next

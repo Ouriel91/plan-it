@@ -8,14 +8,14 @@ import ItemListConnector from "../../components/ItemList/ItemListConnector"
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
 const Home = ({event}) => {
-  console.log(event,'home')
+  console.log("home",event)
   
-  console.log(event,'lastEvent')
   return (
     <div className="home">
-     
+
       <div className="homeContainer">
         <Navbar />
+        <h1 style={{color: '#000'}}>{event.headline}</h1>
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>
@@ -28,11 +28,7 @@ const Home = ({event}) => {
         </div>
         <div className="listContainer">
           <div className="listTitle">Event List</div>
-        
           <ItemListConnector event={event} />
-      
-          
-          
         </div>
       </div>
     </div>
