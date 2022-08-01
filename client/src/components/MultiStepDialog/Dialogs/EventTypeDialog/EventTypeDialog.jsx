@@ -87,9 +87,6 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
               <MenuItem value={"Camping"}>
                 <Typography variant="h5">Camping</Typography> 
               </MenuItem>
-              <MenuItem value={"Picnic"}>
-                <Typography variant="h5">Picnic</Typography> 
-              </MenuItem>
               <MenuItem value={"Other"}>
                 <Typography variant="h5">Other</Typography>  
               </MenuItem>

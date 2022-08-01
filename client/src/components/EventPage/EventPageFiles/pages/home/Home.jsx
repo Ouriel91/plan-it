@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
 import EventsType from "../../components/EventsType/EventsType";
@@ -9,20 +10,37 @@ import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 import UserList from "../../components/UserCard/UserList";
 const Home = ({event}) => {
   console.log("home",event)
+  const [lat, setLat] = useState("")
+  const [lng, setLng] = useState("")
   
+  const getGeocode = async() => {
+    const orgAddress = event.location
+    let address = orgAddress.replaceAll(" ", "+")
+    
+    const data = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`)
+    const response = await data.json()
+    const results = response.results
+    setLat(results[0].geometry.location.lat)
+    setLng(results[0].geometry.location.lng)
+  }
+
+  useEffect(() => {
+    getGeocode()
+  },[])
+
   return (
     <div className="home">
 
       <div className="homeContainer">
         <Navbar />
-        <h1 style={{color: '#000'}}>{event.headline}</h1>
+        <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.headline}</h1>
+        <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.date}</h1>
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>
         <div className="charts">
           <Location />
-          <div><h1>Dates: 10/10/2010 </h1></div>
-          <Weather/>
+          <Weather lat={lat} lng={lng} location={event.location}/>
           {/* <ImgUploader/> */}
           <UserList/>
         </div>

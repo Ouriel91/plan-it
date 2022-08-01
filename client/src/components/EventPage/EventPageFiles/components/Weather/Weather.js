@@ -1,10 +1,12 @@
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
-const Weather = () => {
+const Weather = ({lng, lat, location}) => {
+  console.log("lng", lng);
+  console.log("lat", lat);
   const { data, isLoading, errorMessage } = useOpenWeather({
-    key: '79bdb1f1d2a7353cea791e9d167ec309',
-    lat: '48.137154',
-    lon: '11.576124',
+    key: "594a5f10e868634b3d1262fc6f29d121",
+    lat: lat,
+    lon: lng,
     lang: 'en',
     unit: 'metric', // values are (metric, standard, imperial)
   });
@@ -15,7 +17,7 @@ const Weather = () => {
       errorMessage={errorMessage}
       data={data}
       lang="en"
-      locationLabel="Tel-Aviv"
+      locationLabel={location}
       unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
       showForecast
     />
