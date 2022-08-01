@@ -39,7 +39,7 @@ const Home = ({event}) => {
           <EventsType event={event} />
         </div>
         <div className="charts">
-          <Location />
+          <Location lat={lat} lng={lng}/>
           <Weather lat={lat} lng={lng} location={event.location}/>
           {/* <ImgUploader/> */}
           <UserList/>

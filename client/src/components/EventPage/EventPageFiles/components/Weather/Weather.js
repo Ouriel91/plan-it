@@ -1,8 +1,7 @@
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
 const Weather = ({lng, lat, location}) => {
-  console.log("lng", lng);
-  console.log("lat", lat);
+  console.log(lng, lat, location)
   const { data, isLoading, errorMessage } = useOpenWeather({
     key: "594a5f10e868634b3d1262fc6f29d121",
     lat: lat,
