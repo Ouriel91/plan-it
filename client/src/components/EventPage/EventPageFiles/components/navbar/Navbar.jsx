@@ -9,7 +9,7 @@ import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 // import { useContext } from "react";
 import logo from '../../../../../images/app-logo.png'
 
-const Navbar = () => {
+const Navbar = ({event}) => {
   /* const { dispatch } = useContext(DarkModeContext); */
 
   return (
@@ -25,7 +25,7 @@ const Navbar = () => {
 
           </div>
           <div className="centered-title">
-            <text>Event name</text>
+            <text>{event.headline}</text>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="item">
             <DarkModeOutlinedIcon
               className="icon"
-               onClick={() => dispatch({ type: "TOGGLE" })} 
+              /* onClick={() => dispatch({ type: "TOGGLE" })} 
             />
           </div>
           <div className="item">

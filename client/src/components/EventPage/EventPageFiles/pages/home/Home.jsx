@@ -16,8 +16,8 @@ const Home = ({event}) => {
     <div className="home">
 
       <div className="homeContainer">
-        <Navbar />
-        <h1 style={{color: '#000'}}>{event.headline}</h1>
+        <Navbar event={event}/>
+        {/* <h1 style={{color: '#000'}}>{event.headline}</h1> */}
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>

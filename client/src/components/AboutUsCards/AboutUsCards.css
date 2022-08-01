@@ -12,13 +12,8 @@
 
 .card{
    box-shadow: 3px 3px 13px 6px #00000092; 
-<<<<<<< HEAD
-   background-color: #fcfcbad6;
-   margin-top: 60px;
-=======
    background-color: #f0fcbad6;
    margin-top: 40px;
->>>>>>> 89ace12eddb30616db84ac1a0865d3db9d27e86c
 }
 
 .card-header{

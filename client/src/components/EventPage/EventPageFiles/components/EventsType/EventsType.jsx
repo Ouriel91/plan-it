@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import "./EventsType.scss";
 import "../../pages/home/Home";
-import ItemList from "../TableList/ItemList";
+import ItemList from "../ItemList/ItemList";
 import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
