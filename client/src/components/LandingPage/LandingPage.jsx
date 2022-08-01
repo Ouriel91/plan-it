@@ -96,7 +96,6 @@ const LandingPage = () => {
               Create Plan
             </button>
           </div>
-          {/*<CardListConnector />*/}
         </div>
       </nav>
       <AboutUsCards/>

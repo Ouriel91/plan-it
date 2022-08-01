@@ -6,20 +6,17 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import AppBar from "@material-ui/core/AppBar";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import { List, ListItem, ListItemText } from "@material-ui/core/";
 import "./ConfirmDialog.css";
 import { useNavigate } from "react-router-dom";
 
 const Confirm = ({
-  nextStep,
   prevStep,
   closeDialog,
   style,
   setIsCreateEventClicked,
   eventObj,
   addEventAction,
-  events,
 }) => {
 
   const handlePrevButton = (e) => {
@@ -36,7 +33,6 @@ const Confirm = ({
   };
 
   return (
-    <MuiThemeProvider>
       <>
         <Dialog
           PaperProps={{
@@ -53,7 +49,7 @@ const Confirm = ({
           maxWidth="sm"
         >
           <DialogTitle>
-            <Grid container justify="space-between" alignItems="center">
+            <Grid container justifyContent="space-between" alignItems="center">
               <Typography
                 style={{
                   color: "#9da275ce",
@@ -64,7 +60,7 @@ const Confirm = ({
                 Confirmation
               </Typography>
               <IconButton onClick={closeDialog}>
-                <CloseIcon onClick={closeDialog} />
+                <CloseIcon />
               </IconButton>
             </Grid>
           </DialogTitle>
@@ -223,7 +219,6 @@ const Confirm = ({
           </div>
         </Dialog>
       </>
-    </MuiThemeProvider>
   );
 };
 

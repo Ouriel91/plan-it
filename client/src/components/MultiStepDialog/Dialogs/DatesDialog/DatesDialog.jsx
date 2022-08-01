@@ -30,7 +30,7 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
 
   const theme = createTheme({
     typography: {
-      fontSize: '30px',
+      fontSize: 25
   }})
   return (
     <Dialog
@@ -48,8 +48,8 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
       maxWidth='sm'
     >
       <DialogTitle>
-        <Grid container justify="space-between" alignItems="center">
-          <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px' }}>Pick a date</Typography>
+        <Grid container justifyContent="space-between" alignItems="center">
+          <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: 35 }}>Pick a date</Typography>
           <IconButton onClick={closeDialog}>
             <CloseIcon />
           </IconButton>
@@ -60,7 +60,7 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
         <DateTimePicker
           renderInput={(props) => <TextField {...props} sx={{ mt: 3, ml: 4, mr: 4, mb: 21 }} />}
           label={
-            <Typography variant="h5"> pick a date</Typography>
+            <Typography variant={"h5"}> pick a date</Typography>
           }
           inputProps={{style: {fontSize: 20}}}
           value={startDate}
@@ -72,7 +72,7 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
       </LocalizationProvider>
       <div style={style}>
         <Button
-          style={{ height: "40px", width: "100px", fontSize: "16px", backgroundColor: '#8b8b8bce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
+          style={{ height: "40px", width: "100px", fontSize: 16, backgroundColor: '#8b8b8bce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
           color="secondary"
           variant="contained"
           onClick={handlePrevButton}>
@@ -80,7 +80,7 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
         </Button>
         <Button
           color="secondary"
-          style={{ height: "40px", width: "100px", fontSize: "16px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
+          style={{ height: "40px", width: "100px", fontSize: 16, backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
           variant="contained"
           onClick={handleNextButton}
         >Next

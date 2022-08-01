@@ -1,5 +1,5 @@
 import React from 'react';
-import { CDBFooter, CDBFooterLink, CDBBtn, CDBIcon, CDBBox } from 'cdbreact';
+import { CDBFooter, CDBBtn, CDBIcon, CDBBox } from 'cdbreact';
 import "./Footer.css"
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
         justifyContent="between"
         alignItems="center"
         className="mx-auto py-4 flex-wrap"
-        style={{ width: '90%' }}
+        style={{ width: '90%', fontSize: '20px' }}
       >
         <CDBBox className="plan-it" display="flex" alignItems="center">
           <a href="/" className="d-flex align-items-center p-0 text-dark">

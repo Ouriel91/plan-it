@@ -87,7 +87,6 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
 
       case 5: return (
         <ConfirmDialogConnector
-          nextStep={nextStep}
           prevStep={prevStep}
           closeDialog={closeDialog}
           style={style}
