@@ -21,12 +21,7 @@ const Confirm = ({
   addEventAction,
   events,
 }) => {
-  // const handleNextButton = (e) => {
-  //     e.preventDefault();
-  //     nextStep();
 
-  // };
-  
   const handlePrevButton = (e) => {
     e.preventDefault();
     prevStep();
@@ -81,10 +76,10 @@ const Confirm = ({
                 primary={
                   <Typography
                     style={{
-                      color: "#b2b887ce",
+                      color: "#85cf48",
                       fontFamily: "Playfair Display",
                       textDecoration: "underline",
-                      fontSize: "17px",
+                      fontSize: "20px",
                     }}
                   >
                     Event Name
@@ -95,7 +90,8 @@ const Confirm = ({
                     style={{
                       color: "grey",
                       fontFamily: "Abel",
-                      fontSize: "15px",
+                      fontSize: "18px",
+                      fontWeight: "bold"
                     }}
                   >
                     {eventObj.eventName}
@@ -109,10 +105,10 @@ const Confirm = ({
                 primary={
                   <Typography
                     style={{
-                      color: "#b2b887ce",
+                      color: "#85cf48",
                       fontFamily: "Playfair Display",
                       textDecoration: "underline",
-                      fontSize: "17px",
+                      fontSize: "20px",
                     }}
                   >
                     Dates
@@ -123,7 +119,8 @@ const Confirm = ({
                     style={{
                       color: "grey",
                       fontFamily: "Abel",
-                      fontSize: "15px",
+                      fontSize: "18px",
+                      fontWeight: "bold"
                     }}
                   >
                     {eventObj.dates}
@@ -137,10 +134,10 @@ const Confirm = ({
                 primary={
                   <Typography
                     style={{
-                      color: "#b2b887ce",
+                      color: "#85cf48",
                       fontFamily: "Playfair Display",
                       textDecoration: "underline",
-                      fontSize: "17px",
+                      fontSize: "20px",
                     }}
                   >
                     Event Type
@@ -151,7 +148,8 @@ const Confirm = ({
                     style={{
                       color: "grey",
                       fontFamily: "Abel",
-                      fontSize: "15px",
+                      fontSize: "18px",
+                      fontWeight: "bold"
                     }}
                   >
                     {eventObj.eventType}
@@ -165,10 +163,10 @@ const Confirm = ({
                 primary={
                   <Typography
                     style={{
-                      color: "#b2b887ce",
+                      color: "#85cf48",
                       fontFamily: "Playfair Display",
                       textDecoration: "underline",
-                      fontSize: "17px",
+                      fontSize: "20px",
                     }}
                   >
                     Location
@@ -179,7 +177,8 @@ const Confirm = ({
                     style={{
                       color: "grey",
                       fontFamily: "Abel",
-                      fontSize: "15px",
+                      fontSize: "18px",
+                      fontWeight: "bold"
                     }}
                   >
                     {eventObj.location}
@@ -198,6 +197,7 @@ const Confirm = ({
                 backgroundColor: "#8b8b8bce",
                 fontFamily: "Playfair Display",
                 letterSpacing: "2px",
+                fontSize: "16px"
               }}
               color="secondary"
               variant="contained"
@@ -210,6 +210,7 @@ const Confirm = ({
               style={{
                 height: "40px",
                 width: "100px",
+                fontSize: "16px",
                 backgroundColor: "#98a153ce",
                 fontFamily: "Playfair Display",
                 letterSpacing: "2px",

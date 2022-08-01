@@ -52,8 +52,10 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
       </DialogTitle>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DateTimePicker
-          renderInput={(props) => <TextField {...props} sx={{ mt: 3, ml: 4, mr: 4, mb: 21 }} />}
-          label="Pick a date"
+          renderInput={(props) => <TextField {...props} sx={{ mt: 3, ml: 4, mr: 4, mb: 21 }} inputProps={{style: {fontSize: 15}}} />}
+          label={
+            <Typography variant="h4"> pick a date </Typography>
+          }
           value={startDate}
           onChange={(newValue) => {
             setStartDate(newValue);
@@ -62,7 +64,7 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
       </LocalizationProvider>
       <div style={style}>
         <Button
-          style={{ height: "40px", width: "100px", backgroundColor: '#8b8b8bce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
+          style={{ height: "40px", width: "100px", fontSize: "16px", backgroundColor: '#8b8b8bce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
           color="secondary"
           variant="contained"
           onClick={handlePrevButton}>
@@ -70,7 +72,7 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
         </Button>
         <Button
           color="secondary"
-          style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
+          style={{ height: "40px", width: "100px", fontSize: "16px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
           variant="contained"
           onClick={handleNextButton}
         >Next
