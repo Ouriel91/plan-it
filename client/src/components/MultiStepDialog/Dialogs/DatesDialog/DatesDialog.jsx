@@ -10,6 +10,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import {ThemeProvider , createTheme } from '@mui/material/styles';
 import './DatesDialog.css'
 
 function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style }) {
@@ -27,6 +28,10 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
     prevStep();
   }
 
+  const theme = createTheme({
+    typography: {
+      fontSize: '30px',
+  }})
   return (
     <Dialog
       PaperProps={{
@@ -51,16 +56,19 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
         </Grid>
       </DialogTitle>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <ThemeProvider theme={theme}>
         <DateTimePicker
-          renderInput={(props) => <TextField {...props} sx={{ mt: 3, ml: 4, mr: 4, mb: 21 }} inputProps={{style: {fontSize: 15}}} />}
+          renderInput={(props) => <TextField {...props} sx={{ mt: 3, ml: 4, mr: 4, mb: 21 }} />}
           label={
-            <Typography variant="h4"> pick a date </Typography>
+            <Typography variant="h5"> pick a date</Typography>
           }
+          inputProps={{style: {fontSize: 20}}}
           value={startDate}
           onChange={(newValue) => {
             setStartDate(newValue);
           }}
         />
+        </ThemeProvider>
       </LocalizationProvider>
       <div style={style}>
         <Button
