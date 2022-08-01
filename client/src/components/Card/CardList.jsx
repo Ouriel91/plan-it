@@ -11,7 +11,7 @@ function CardList({fetchEventAction, plans}) {
     useEffect(() => {
         fetchEventAction()
         setAllPlans(plans)
-    },[fetchEventAction, plans])
+    },[fetchEventAction])
     
     const renderItems = allPlans.map(plan => <CardItem key={plan.id} plan={plan}/>)
     const renderings = allPlans.length === 0 ? 

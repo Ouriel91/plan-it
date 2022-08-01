@@ -45,6 +45,7 @@ function ItemList({event,saveItemAction}) {
 	const [isEdit, setEdit] = React.useState(false);
 	const [disable, setDisable] = React.useState(true);
 	const [showConfirm, setShowConfirm] = React.useState(false);
+	const [itemId, setItemId] = React.useState(-1);
 
 	// Function For closing the alert snackbar
 	const handleClose = (event, reason) => {
@@ -56,33 +57,43 @@ function ItemList({event,saveItemAction}) {
 
 	// Function For adding new row object
 	const handleAdd = () => {
-		
-		
+		const id = rows.length+1
 		setRows([
 			...rows,
 			{
-				 itemName:"" ,bringName: "", quantity: "", status: "", itemId: rows.length+1
+				itemName:"",
+				bringName: "", 
+				quantity: "", 
+				status: "", 
+				itemId: id, 
+				eventId:event.id
 			},
 		]);
-		setEdit(true);
+		setItemId(id);
 	};
 
 	// Function to handle edit
-	const handleEdit = (i) => {
+	const handleEdit = (itemId) => {
 		// If edit mode is true setEdit will
 		// set it to false and vice versa
-		setEdit(!isEdit);
+		/* setEdit(!isEdit); */
+		setItemId(itemId);
 		
 	};
 
 	// Function to handle save
 	const handleSave = () => {
-		setEdit(!isEdit);
 		setRows(rows);
 		console.log("saved : ", rows);
 		setDisable(true);
 		setOpen(true);
-		saveItemAction(rows[rows.length-1],event.id);
+		if(itemId !== -1){ //edit
+			const id = rows.findIndex(row => row.id === itemId)
+			saveItemAction(rows[id]);
+		}else{ //add new one
+			saveItemAction(rows[rows.length-1]);
+		}	
+		setItemId(-1);
 	};
 
 	// The handleInputChange handler can be set up to handle
@@ -132,40 +143,18 @@ return (
 	<Box margin={1}>
 		<div style={{ display: "flex", justifyContent: "space-between" }}>
 		<div>
-			{isEdit ? (
 			<div>
 				<Button className="link" onClick={handleAdd}>
 				<AddBoxIcon onClick={handleAdd} />
 				ADD
 				</Button>
-				{rows.length !== 0 && (
 				<div>
-					{disable ? (
-					<Button disabled align="right" onClick={handleSave}>
-						<DoneIcon />
-						SAVE
-					</Button>
-					) : (
 					<Button align="right" onClick={handleSave}>
 						<DoneIcon />
 						SAVE
-					</Button>
-					)}
+					</Button>		
 				</div>
-				)}
 			</div>
-			) : (
-			<div>
-				<Button onClick={handleAdd}>
-				<AddBoxIcon onClick={handleAdd} />
-				ADD
-				</Button>
-				<Button align="right" onClick={handleEdit}>
-				<CreateIcon />
-				EDIT
-				</Button>
-			</div>
-			)}
 		</div>
 		</div>
 		<TableRow align="center"></TableRow>
@@ -189,10 +178,11 @@ return (
 			return (
 				<div>
 				<TableRow id={row.itemId}>
-					{isEdit ? (
+					{itemId === row.itemId ? (
 					<div>
 						<TableCell padding="none">
 						<input
+							style={{border: "1px solid green", width: "20px"}}
 							value={row.itemName}
 							name="itemName"
 							onChange={(e) => handleInputChange(e, i)}
@@ -200,6 +190,7 @@ return (
 						</TableCell>
 						<TableCell padding="none">
 						<input
+							style={{border: "1px solid green", width: "20px"}}
 							value={row.bringName}
 							name="bringName"
 							onChange={(e) => handleInputChange(e, i)}
@@ -207,6 +198,7 @@ return (
 						</TableCell>
 						<TableCell padding="none">
 						<input
+							style={{border: "1px solid green", width: "20px"}}
 							value={row.quantity}
 							name="quantity"
 							onChange={(e) => handleInputChange(e, i)}
@@ -214,6 +206,7 @@ return (
 						</TableCell>
 						<TableCell padding="none">
 						<input
+							style={{border: "1px solid green", width: "20px"}}
 							value={row.status}
 							name="status"
 							onChange={(e) => handleInputChange(e, i)}
@@ -226,7 +219,7 @@ return (
 						{row.itemName}
 						</TableCell>
 						<TableCell component="th" scope="row">
-						{row.itemToBring}
+						{row.bringName}
 						</TableCell>
 						<TableCell component="th" scope="row" align="center">
 						{row.quantity}
@@ -234,22 +227,15 @@ return (
 						<TableCell component="th" scope="row" align="center">
 						{row.status}
 						</TableCell>
-						<TableCell
-						component="th"
-						scope="row"
-						align="center"
-						></TableCell>
 					</div>
 					)}
-					{isEdit ? (
-					<Button className="mr10" onClick={handleConfirm}>
-						<ClearIcon />
-					</Button>
-					) : (
+					<Button align="right" onClick={() => handleEdit(row.itemId)}>
+						<CreateIcon />
+						Edit
+					</Button>			
 					<Button className="mr10" onClick={handleConfirm}>
 						<DeleteOutlineIcon />
 					</Button>
-					)}
 					{showConfirm && (
 					<div>
 						<Dialog

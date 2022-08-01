@@ -66,7 +66,6 @@ const itemAdding = async (item) => {
    const {itemId, itemName, bringName, quantity, status, eventId} = item
     await Item.create({itemId, itemName, bringName, quantity, status, eventId})
 console.log(item,'server')
-
 }
 
 module.exports = {
