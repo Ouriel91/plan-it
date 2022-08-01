@@ -1,22 +1,30 @@
 import React from 'react';
 import { CDBFooter, CDBFooterLink, CDBBtn, CDBIcon, CDBBox } from 'cdbreact';
 import "./Footer.css"
+import logo from "../../images/app-logo.png"
 
 const Footer = () => {
   return (
-    <CDBFooter className="shadow" backgoundColor ="fff" >
+    <CDBFooter >
       <CDBBox
         display="flex"
         justifyContent="between"
         alignItems="center"
         className="mx-auto py-4 flex-wrap"
-        style={{ width: '90%' }}
+        style={{ width: '80%' }}
       >
-        <CDBBox className="plan-it" display="flex" alignItems="center">
+        <CDBBox display="flex" alignItems="center">
           <a href="/" className="d-flex align-items-center p-0 text-dark">
+            <img
+              alt="logo"
+              src={logo}
+              width="30px"
+            />
             <span className="ml-4 h5 mb-0 font-weight-bold">Plan it.</span>
           </a>
-          <small className="ml-2">&copy; Plan it, 2022. All rights reserved.</small>
+        </CDBBox>
+        <CDBBox>
+          <small className="ml-2">&copy; Plan it. 2022. All rights reserved.</small>
         </CDBBox>
         <CDBBox display="flex">
           <CDBBtn flat color="dark" className="p-2">

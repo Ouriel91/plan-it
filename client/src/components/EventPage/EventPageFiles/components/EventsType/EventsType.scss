@@ -15,8 +15,32 @@
 .events-type-container{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  
+  justify-content: space-around;
+}
+
+.events-type-container-first-img{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  margin-left: 450px;
+}
+
+
+.description-event-page{
+  position: absolute;
+  top: 180px;
+  left: -86px;
+  font-size: 28px;
+  color: rgb(167, 167, 167);
+}
+
+.description2-event-page{
+  position: absolute;
+  top: 210px;
+  left: -86px;
+  font-size: 28px;
+  color: rgb(167, 167, 167);
 }
 .head-section {
   display: flex;
@@ -29,8 +53,9 @@
   margin: auto;
   margin-top: 100px;
   margin-bottom: 180px;
-  width: 1000px;
-  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.443);
 }
 
 .title-head-section{
@@ -38,6 +63,7 @@
   color: #555;
   font-family: 'Poiret One', cursive;
   font-style: normal;
+  padding: 15px;
 }
 
 .event-page-details{

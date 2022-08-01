@@ -15,7 +15,8 @@ import Map from '../../../../MultiStepDialog/Dialogs/LocationDialog/Map'
 import map_img from '../../../../../images/map-img.png'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-
+import friends_img from '../../../../../images/friends2.gif'
+import bbq_img from '../../../../../images/bbq.jpg'
 
 
 const EventsType = ({ type, setEventObj }) => {
@@ -45,6 +46,11 @@ const EventsType = ({ type, setEventObj }) => {
 
   return (
     <>
+    <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
+      <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
+      <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'> and let us help you with the arrangments</p>
+      <img width={850} height={500} alt='BBQ' src={bbq_img}></img>
+    </section>
     <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container'>
       <div className="head-section">
         <div className="title-head-section">
@@ -69,7 +75,7 @@ const EventsType = ({ type, setEventObj }) => {
             </ol>
         </div>
             
-        <div className="location-event-page">
+        {/* <div className="location-event-page">
           <Accordion sx={{ width: '300' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -87,7 +93,7 @@ const EventsType = ({ type, setEventObj }) => {
               </Typography>
             </AccordionDetails>
           </Accordion>
-        </div>
+        </div> */}
         {/* <div className="weather-event-page">
           <Accordion sx={{ width: '80%' }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
             <AccordionSummary
@@ -111,12 +117,12 @@ const EventsType = ({ type, setEventObj }) => {
       <div data-aos="fade-down-left" data-aos-offset="100" data-aos-easing="ease-in-out-cubic" data-aos-duration="1000" className="weather-event-page">
         <Weather />
       </div>
-      
     </section>
-    <section data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+    <section className='events-type-container' data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
       <div className="listContainer">
           <ItemList />
         </div>
+        <img alt='friends' src={friends_img}></img>
     </section>
 
     <section data-aos="fade-down-right" data-aos-delay="500" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
