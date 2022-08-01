@@ -38,7 +38,7 @@ function ItemList({event,saveItemAction}) {
 	// Defining a state named rows
 	// which we can update by calling on setRows function
 	const [rows, setRows] = useState([]);
-	console.log("rows",rows);
+	
 	// Initial states
 	const [open, setOpen] = React.useState(false);
 	const [isEdit, setEdit] = React.useState(false);

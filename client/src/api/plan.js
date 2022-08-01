@@ -63,6 +63,7 @@ export const getEventPageById = async(url) => {
 
 export const postItem = async (item,eventId) => {
     
+    
     const postedItem = {
         itemId :item.itemId,
         itemName: item.itemName,

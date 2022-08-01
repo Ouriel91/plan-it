@@ -5,8 +5,8 @@ import Location from "../../components/Location/Location";
 import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import ItemListConnector from "../../components/ItemList/ItemListConnector"
-import ImgUploader from "../../components/ImgUploader/ImgUploader,";
-import UserList from "../../components/UserCard/UserList";
+// import ImgUploader from "../../components/ImgUploader/ImgUploader,";
+// import UserList from "../../components/UserCard/UserList";
 const Home = ({event}) => {
   console.log(event,'home')
   
@@ -24,7 +24,7 @@ const Home = ({event}) => {
           <div><h1>Dates: 10/10/2010 </h1></div>
           <Weather/>
           {/* <ImgUploader/> */}
-          <UserList/>
+          {/* <UserList/> */}
         </div>
         <div className="listContainer">
           <div className="listTitle">Event List</div>
