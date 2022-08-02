@@ -6,7 +6,7 @@ const NewItemInput = ({event,addItemAction}) => {
   const [state, setState] = useState({
     itemName: "",
     quantity: "",
-    whoBrings: "",
+    bringName: "",
     status: "",
   });
 
@@ -21,13 +21,14 @@ const NewItemInput = ({event,addItemAction}) => {
   const handlePressClick = async () => {
     try {
       //   showLoaderAction();
+      console.log(state,'add action');
        await addItemAction(state,event.id);
       // hideLoaderAction();
 
       setState({
         itemName: "",
         quantity: "",
-        whoBrings: "",
+        bringName: "",
         status: "",
       });
     } catch (err) {
@@ -41,7 +42,7 @@ const NewItemInput = ({event,addItemAction}) => {
         <input
           id="taskInput"
           type="text"
-          placeholder="Add your new item"
+          placeholder="What to bring"
           value={state.itemName}
           name="itemName"
           onChange={handleInputValue}
@@ -60,8 +61,8 @@ const NewItemInput = ({event,addItemAction}) => {
           type="text"
           placeholder="Who brings"
           onChange={handleInputValue}
-          value={state.whoBrings}
-          name="whoBrings"
+          value={state.bringName}
+          name="bringName"
         />
         <input
           id="taskInput"

@@ -1,4 +1,3 @@
-
 const { Event } = require("../db/models");
 const { Item } = require("../db/models");
 
@@ -35,9 +34,9 @@ async function addPlan(plan) {
   await Event.create({ headline, date, type, location });
   const events = await Event.findAll({ raw: true });
   const event = events[events.length - 1];
-   event.eventItems = [];
+  event.eventItems = [];
   event.eventsUsers = [];
-  console.log(event, 'event!!!!')
+  // console.log(event, 'event!!!!')
   return event;
 }
 
@@ -66,21 +65,28 @@ const itemAdding = async (newItem) => {
     order: [["id", "DESC"]],
     raw: true,
   });
-  console.log(item,'item!!!!!!')
+  console.log(item, "item!!!!!!");
   return item;
 };
 
 const itemEdittig = async (item) => {
+  console.log(item, "editItem!!!!!!");
   try {
-   const editItem =  await Item.update({ item }, { where: { id: item.id } });
-    // const item = await Item.findOne({ where: { id: item.id } });
-    console,log(editItem,'editItem!!!!!!')
+    const idx = parseInt(item.id);
+    const editItem = await Item.update(
+      {
+        itemName: item.itemName,
+        quantity: item.quantity,
+        bringName: item.bringName,
+        status: item.status,
+      },
+      { where: { id: idx }, returning: true, raw: true }
+    );
     return editItem;
   } catch (err) {
     throw new Error(err);
-  
-}
-}
+  }
+};
 module.exports = {
   getAllPlans,
   addPlan,

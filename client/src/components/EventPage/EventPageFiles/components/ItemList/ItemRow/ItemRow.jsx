@@ -1,4 +1,4 @@
-import {  TableCell, TableRow } from "@material-ui/core";
+import { TableCell, TableRow } from "@material-ui/core";
 import React from "react";
 import { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
@@ -6,49 +6,35 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
 
-const ItemRow = ({ item, saveItemAction,eventId }) => {;
-
-  console.log("item", item);
-  // Initial states
-  const [editItem, setEditItem] = useState({
-    itemName: "",
-    quantity: "",
-    whoBrings: "",
-    status: "",
-  });
-  const [isEditClicked, setEditClicked] = useState(true);
+const ItemRow = ({ item, saveItemAction, eventId }) => {
+  const [itemName, setItemName] = useState(item.itemName);
+  const [quantity, setQuantity] = useState(item.quantity);
+  const [bringName, setBringName] = useState(item.bringName);
+  const [status, setStatus] = useState(item.status);
+  const [isEditClicked, setEditClicked] = useState(false);
 
   const handleEditButtonClick = () => {
-    console.log("edit button clicked");
-    setEditClicked(false);
+    setEditClicked(true);
   };
 
-  // Function to handle save
-  const handleSaveButtonClick = async  () => {
+  const handleSaveButtonClick = async () => {
     try {
-      setEditClicked(true);
-         await saveItemAction(editItem, item.id,eventId);
+      const editItem = {
+        itemName,
+        quantity,
+        bringName,
+        status,
+      };
+      console.log(editItem, "editItem");
+      await saveItemAction(editItem, item.id, item.eventId);
+      setEditClicked(false);
     } catch (err) {
       throw new Error(err);
     }
   };
 
-
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setEditItem({
-      ...editItem,
-      [e.target.name]: value,
-    });
-    console.log("editItem", editItem);
-  };
-
-  const handleDeleteClick = (i) => {
-    // const list = [...rows];
-    // list.splice(i, 1);
-    // setRows(list);
-    // setShowConfirm(false);
-  };
+  const handleDeleteClick = () => {
+     };
 
   return (
     <TableRow id={item.id}>
@@ -56,55 +42,41 @@ const ItemRow = ({ item, saveItemAction,eventId }) => {;
         <TableCell>
           <input
             style={{ border: "1px solid green", width: "100px" }}
-            value={item.itemName}
-            readOnly={isEditClicked}
-            onChange={handleInputChange}
+            type="text"
+            value={itemName}
+            readOnly={!isEditClicked}
+            onChange={(e) => setItemName(e.target.value)}
             name="itemName"
           />
         </TableCell>
         <TableCell>
           <input
             style={{ border: "1px solid green", width: "100px" }}
-            value={item.bringName}
-            name="bringName"
-            readOnly={isEditClicked}
-            onChange={handleInputChange}
-          />
-        </TableCell>
-        <TableCell>
-          <input
-            style={{ border: "1px solid green", width: "100px" }}
-            value={item.quantity}
+            value={quantity}
             name="quantity"
-            readOnly={isEditClicked}
-            onChange={handleInputChange}
+            readOnly={!isEditClicked}
+            onChange={(e) => setQuantity(e.target.value)}
           />
         </TableCell>
         <TableCell>
           <input
             style={{ border: "1px solid green", width: "100px" }}
-            value={item.status}
+            value={bringName}
+            name="bringName"
+            readOnly={!isEditClicked}
+            onChange={(e) => setBringName(e.target.value)}
+          />
+        </TableCell>
+        <TableCell>
+          <input
+            style={{ border: "1px solid green", width: "100px" }}
+            value={status}
             name="status"
-            readOnly={isEditClicked}
-            onChange={handleInputChange}
+            readOnly={!isEditClicked}
+            onChange={(e) => setStatus(e.target.value)}
           />
         </TableCell>
       </div>
-
-      {/* <div>
-						<TableCell component="th" scope="row">
-						{item.itemName}
-						</TableCell>
-						<TableCell component="th" scope="row">
-						{item.bringName}
-						</TableCell>
-						<TableCell component="th" scope="row" align="center">
-						{item.quantity}
-						</TableCell>
-						<TableCell component="th" scope="row" align="center">
-						{item.status}
-						</TableCell>
-					</div> */}
 
       <IconButton
         aria-label="delete"
@@ -114,7 +86,7 @@ const ItemRow = ({ item, saveItemAction,eventId }) => {;
       >
         <DeleteIcon className="deleteButton" fontSize="inherit" />
       </IconButton>
-      {isEditClicked && (
+      {!isEditClicked && (
         <IconButton
           onClick={handleEditButtonClick}
           aria-label="edit"
@@ -123,7 +95,7 @@ const ItemRow = ({ item, saveItemAction,eventId }) => {;
           <EditIcon className="editIcon" fontSize="inherit" />
         </IconButton>
       )}
-      {!isEditClicked && (
+      {isEditClicked && (
         <IconButton
           onClick={handleSaveButtonClick}
           aria-label="save"
