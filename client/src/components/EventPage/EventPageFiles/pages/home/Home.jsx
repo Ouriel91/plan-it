@@ -54,6 +54,7 @@ const Home = ({event}) => {
         </div>
         {/* <div className="listContainer">
           <div className="listTitle">Event List</div>
+          <NewItemInputConnector event ={event}/> 
           <ItemListConnector event={event} />
         </div> */}
       </div>

@@ -66,7 +66,7 @@ function ItemList({event,saveItemAction}) {
 				bringName: "", 
 				quantity: "", 
 				status: "", 
-				itemId: id, 
+				 itemId: id, 
 				eventId:event.id
 			},
 		]);
@@ -88,6 +88,7 @@ function ItemList({event,saveItemAction}) {
 		console.log("saved : ", rows);
 		setDisable(true);
 		setOpen(true);
+		console.log('rows')
 		if(itemId !== -1){ //edit
 			const id = rows.findIndex(row => row.id === itemId)
 			saveItemAction(rows[id]);
@@ -105,7 +106,10 @@ function ItemList({event,saveItemAction}) {
 		const { name, value } = e.target;
 		const list = [...rows];
 		list[index][name] = value;
+		list[index].eventId = event.id
+		console.log("rows!!", list);
 		setRows(list);
+		
 	};
 
 	// Showing delete confirmation to users
