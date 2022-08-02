@@ -1,9 +1,8 @@
 import { useState } from "react";
 import FormControl from "@mui/material/FormControl";
-import FormHelperText from '@mui/material/FormHelperText';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import Dialog from '@material-ui/core/Dialog'
 import Button from '@material-ui/core/Button'
 import Typography from "@material-ui/core/Typography";
@@ -11,8 +10,6 @@ import IconButton from "@material-ui/core/IconButton";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
-import app_logo from '../../../../images/app-logo.png'
-
 
 const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }) => {
   const [type, setType] = useState('');
@@ -50,9 +47,10 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
       open
       fullWidth
       maxWidth='sm'
+      disableEnforceFocus
     >
       <DialogTitle>
-        <Grid container justify="space-between" alignItems="center">
+        <Grid container justifyContent="space-between" alignItems="center">
           {/* <img src={app_logo} alt="logo" height={100} width={100}></img> */}
           <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px' }}>Choose Event type</Typography>
           <IconButton onClick={closeDialog}>
@@ -63,7 +61,7 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
       <div>
         <FormControl sx={{ m: 1, mb: 20, width: "70%" }}>
           <InputLabel id="demo-simple-select-required-label">
-            <Typography variant="h4">Type</Typography>
+            <Typography variant={'h6'}>Type</Typography>
           </InputLabel>
           <Select
             labelId="demo-simple-select-required-label"
@@ -76,27 +74,21 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
             size="big"
           >
               <MenuItem value={"Pool party"}>
-                <Typography variant="h5">pool party</Typography>
+                <Typography variant={'h5'}>pool party</Typography>
               </MenuItem>
               <MenuItem value={"BBQ with friends"}>
-                <Typography variant="h5">BBQ with friends</Typography>
+                <Typography variant={'h5'}>BBQ with friends</Typography>
               </MenuItem>
               <MenuItem value={"Party"}>
-                <Typography variant="h5">Party</Typography>
+                <Typography variant={'h5'}>Party</Typography>
               </MenuItem>
               <MenuItem value={"Camping"}>
-                <Typography variant="h5">Camping</Typography> 
-              </MenuItem>
-              <MenuItem value={"Picnic"}>
-                <Typography variant="h5">Picnic</Typography> 
+                <Typography variant={'h5'}>Camping</Typography> 
               </MenuItem>
               <MenuItem value={"Other"}>
-                <Typography variant="h5">Other</Typography>  
+                <Typography variant={'h5'}>Other</Typography>  
               </MenuItem>
           </Select>
-          <FormHelperText>
-            <Typography variant="h5">Required</Typography> 
-          </FormHelperText>
         </FormControl>
       </div>
 

@@ -5,7 +5,6 @@ import Home from "./Home";
 
 
 const mapStateToProps = (state, ownProps) => {
-console.log('events:',state)
   const event = state.plansReducer.plans[state.plansReducer.plans.length - 1];
   return { event };
 };

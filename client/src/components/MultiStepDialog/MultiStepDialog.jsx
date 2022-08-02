@@ -31,8 +31,6 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
     setIsCreateEventClicked(false);
   }
 
-
-
   const style = {
     display: 'flex', 
     alignItems: 'center', 
@@ -40,9 +38,6 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
     padding:'20px',
     fontSize: '20px',
   }
-
-
-  console.log(eventObj)
 
   switch (step) {
     case 1:
@@ -87,7 +82,6 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
 
       case 5: return (
         <ConfirmDialogConnector
-          nextStep={nextStep}
           prevStep={prevStep}
           closeDialog={closeDialog}
           style={style}
