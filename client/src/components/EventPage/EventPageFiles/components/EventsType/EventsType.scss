@@ -25,6 +25,33 @@
   margin-top: 150px;
 }
 
+.timer-container {
+  border: 1px solid white;
+  border-radius: 3px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  position: relative;
+}
+
+#confetti{
+  position: absolute;
+}
+
+.date-holder{
+  margin-top: 50px;
+}
+.date-number{
+  font-size: 30px;
+}
+
+.date-text{
+  margin: 20px;
+}
+
 // .centered-date {
 //   position: absolute;
 //   top: 80%;

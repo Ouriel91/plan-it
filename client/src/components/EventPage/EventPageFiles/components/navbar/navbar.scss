@@ -36,7 +36,7 @@ img {
   background: url('../../../../../images/friends.jpg') center center/cover no-repeat;
 
   .centered-title {
-    background-color: rgb(246, 246, 246);
+    background-color: rgba(255, 253, 235, 0.862);
     position: absolute;
     top: 90%;
     left: 20%;
@@ -44,6 +44,7 @@ img {
     text-align: center;
     height: 130px;
   }
+
 
   text {
     font-size: 80px;
@@ -74,11 +75,11 @@ img {
         margin-right: 20px;
         position: relative;
 
-        .icon {
-          font-size: 50px;
-          padding: 10px;
-          justify-content: space-between;
-        }
+        // .icon {
+        //   font-size: 50px;
+        //   padding: 10px;
+        //   justify-content: space-between;
+        // }
 
         .avatar {
           width: 50px;
