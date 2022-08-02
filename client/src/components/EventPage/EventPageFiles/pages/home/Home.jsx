@@ -9,7 +9,7 @@ import ItemListConnector from "../../components/ItemList/ItemListConnector"
 import ItemList from "../../components/ItemList/ItemList";
 import Footer from "../../../../Footer/Footer";
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
-// import UserList from "../../components/UserCard/UserList";
+import UserList from "../../components/UserCard/UserList";
 const Home = ({event}) => {
   console.log("home",event)
   const [lat, setLat] = useState("")
@@ -42,7 +42,9 @@ const Home = ({event}) => {
 
         <Navbar event={event}/>
         <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.headline}</h1>
+
         <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.date}</h1>
+        <UserList/>
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>
@@ -50,7 +52,7 @@ const Home = ({event}) => {
         <Weather lat={lat} lng={lng} location={event.location} date={date}/>
         <div className="charts">
           {/* <ImgUploader/> */}
-          {/* <UserList/> */}
+          
         </div>
         {/* <div className="listContainer">
           <div className="listTitle">Event List</div>
