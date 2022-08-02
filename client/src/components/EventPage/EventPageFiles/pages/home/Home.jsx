@@ -43,7 +43,7 @@ const Home = ({event}) => {
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>
-        <Location lat={parseFloat(lat)} lng={parseFloat(lng)} />
+        <Location lat={parseInt(lat)} lng={parseInt(lng)} />
         <Weather lat={lat} lng={lng} location={event.location} date={date}/>
         <div className="charts">
           
