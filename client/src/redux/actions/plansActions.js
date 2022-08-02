@@ -28,7 +28,7 @@ export const addEventAction = (newEvent) => {
 
 
 export const saveItem = (newItem) => ({
-  type: actionTypes.ADD_PLAN,
+  type: actionTypes.SAVE_ITEM,
   payload: [newItem],
 });
 

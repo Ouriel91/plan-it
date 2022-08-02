@@ -6,8 +6,10 @@ import Location from "../../components/Location/Location";
 import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import ItemListConnector from "../../components/ItemList/ItemListConnector"
-import ImgUploader from "../../components/ImgUploader/ImgUploader,";
-import UserList from "../../components/UserCard/UserList";
+import ItemList from "../../components/ItemList/ItemList";
+import Footer from "../../../../Footer/Footer";
+// import ImgUploader from "../../components/ImgUploader/ImgUploader,";
+// import UserList from "../../components/UserCard/UserList";
 const Home = ({event}) => {
   console.log("home",event)
   const [lat, setLat] = useState("")
@@ -37,7 +39,8 @@ const Home = ({event}) => {
     <div className="home">
 
       <div className="homeContainer">
-        <Navbar />
+
+        <Navbar event={event}/>
         <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.headline}</h1>
         <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.date}</h1>
         <div className="EventsTypes">
@@ -46,15 +49,15 @@ const Home = ({event}) => {
         <Location lat={parseInt(lat)} lng={parseInt(lng)} />
         <Weather lat={lat} lng={lng} location={event.location} date={date}/>
         <div className="charts">
-          
           {/* <ImgUploader/> */}
           {/* <UserList/> */}
         </div>
-        <div className="listContainer">
+        {/* <div className="listContainer">
           <div className="listTitle">Event List</div>
           <ItemListConnector event={event} />
-        </div>
+        </div> */}
       </div>
+      <Footer/>
     </div>
   );
 };

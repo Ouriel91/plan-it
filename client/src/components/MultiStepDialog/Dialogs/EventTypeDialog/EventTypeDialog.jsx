@@ -1,6 +1,5 @@
 import { useState } from "react";
 import FormControl from "@mui/material/FormControl";
-import FormHelperText from '@mui/material/FormHelperText';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@mui/material/Select';
@@ -62,7 +61,7 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
       <div>
         <FormControl sx={{ m: 1, mb: 20, width: "70%" }}>
           <InputLabel id="demo-simple-select-required-label">
-            <Typography variant="h4">Type</Typography>
+            <Typography variant="h7">Type</Typography>
           </InputLabel>
           <Select
             labelId="demo-simple-select-required-label"

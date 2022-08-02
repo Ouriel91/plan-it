@@ -5,25 +5,36 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
-/* import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext } from "react"; */
+// import { DarkModeContext } from "../../context/darkModeContext";
+// import { useContext } from "react";
+import logo from '../../../../../images/app-logo.png'
 
-const Navbar = () => {
+const Navbar = ({event}) => {
   /* const { dispatch } = useContext(DarkModeContext); */
 
   return (
     <div className="navbar-event">
       <div className="wrapper-event">
-        <div className="search">
-          <input type="text" placeholder="Search..." />
-          <SearchOutlinedIcon />
+        <div className="logo-container">
+          <img src={logo} alt="Plan it." height={90} width={90} />
+          <div className="navbar-title" >
+            Plan it.
+            <p className="navbar-sub-title">
+              Friends, Plan, Travel
+            </p>
+
+          </div>
+          <div className="centered-title">
+            <text>{event.headline}</text>
+          </div>
         </div>
-        <div className="items">
+
+        {/* <div className="items">
         
           <div className="item">
             <DarkModeOutlinedIcon
               className="icon"
-              /* onClick={() => dispatch({ type: "TOGGLE" })} */
+              /* onClick={() => dispatch({ type: "TOGGLE" })} 
             />
           </div>
           <div className="item">
@@ -47,7 +58,7 @@ const Navbar = () => {
               className="avatar"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
