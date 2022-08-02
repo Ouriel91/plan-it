@@ -65,17 +65,16 @@ export const postItem = async (item,eventId) => {
     
     
     const postedItem = {
-        itemId :item.itemId,
         itemName: item.itemName,
-        bringName: item.bringName,
+        bringName: item.whoBrings,
         quantity: item.quantity,
         status: item.status,
         eventId: eventId
     }
-    console.log(postedItem)
+    console.log(postedItem,'postedItem!!!!!!')
     const response = await axios({
         method: 'post',
-        url: `${url}/event-page/${item.eventId}/items`,
+        url: `${url}/event-page/${eventId}/items`,
         headers: {"Content-Type": "application/json"}, 
         data: {
             postedItem
