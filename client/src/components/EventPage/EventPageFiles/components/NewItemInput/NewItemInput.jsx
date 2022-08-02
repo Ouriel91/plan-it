@@ -11,7 +11,6 @@ const NewItemInput = ({event,addItemAction}) => {
   });
 
   const handleInputValue = (e) => {
-    console.log("e", e.target.value);
     const value = e.target.value;
     setState({
       ...state,
@@ -46,6 +45,7 @@ const NewItemInput = ({event,addItemAction}) => {
           value={state.itemName}
           name="itemName"
           onChange={handleInputValue}
+          
         />
         <input
           id="taskInput"

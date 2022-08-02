@@ -78,3 +78,23 @@ export const postItem = async (item, eventId) => {
   });
   return response.data;
 };
+
+export const editItem = async (item, itemId) => {
+
+  const editItem = {
+    itemName: item.itemName,
+    bringName: item.whoBrings,
+    quantity: item.quantity,
+    status: item.status,
+    id: itemId,
+  };
+  const response = await axios({
+    method: "put",
+    url: `${url}/event-page/${eventId}/items`,
+    headers: { "Content-Type": "application/json" },
+    data: {
+      editItem
+    },
+  });
+  return response.data;
+}

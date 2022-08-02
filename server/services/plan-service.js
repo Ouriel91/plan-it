@@ -70,6 +70,7 @@ const itemAdding = async (newItem) => {
   return item;
 };
 
+
 module.exports = {
   getAllPlans,
   addPlan,
@@ -77,4 +78,5 @@ module.exports = {
   editPlan,
   getEventPageById,
   itemAdding,
+  itemEditing,
 };

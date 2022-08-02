@@ -41,21 +41,21 @@ const Home = ({event}) => {
 
       <div className="homeContainer">
 
-        <Navbar event={event}/>
+        {/* <Navbar event={event}/>
         <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.headline}</h1>
         <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.date}</h1>
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>
         <Location lat={parseInt(lat)} lng={parseInt(lng)} />
-        <Weather lat={lat} lng={lng} location={event.location} date={date}/>
+        <Weather lat={lat} lng={lng} location={event.location} date={date}/> */}
         <div className="charts">
           {/* <ImgUploader/> */}
           {/* <UserList/> */}
         </div>
         <div className="listContainer">
           <div className="listTitle">Event List</div>
-          <NewItemInputConnector event ={event}/> 
+          <NewItemInputConnector event={event}/> 
           <ItemListConnector event={event} />
         </div>
       </div>

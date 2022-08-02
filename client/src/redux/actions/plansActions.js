@@ -1,4 +1,4 @@
-import {postPlan, fetchPlans,postItem} from "../../api/plan";
+import {postPlan, fetchPlans,postItem,editItem} from "../../api/plan";
 import actionTypes from "./constants";
 
 export const fetchAllPlans = (fetchedEvents) => ({
@@ -32,10 +32,10 @@ export const saveItem = (newItem) => ({
   payload: [newItem],
 });
 
-export const saveItemAction = (newItem,eventId) => {
+export const saveItemAction = (editItem,itemId) => {
   console.log(newItem,eventId,'item and event id')
   return async (dispatch) => {
-   const item =  await postItem(newItem,eventId)
+   const item =  await editItem(item,itemId)
    // dispatch(saveItem(item));
     return item
   };

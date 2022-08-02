@@ -56,7 +56,7 @@ const getEventPage = async (req, res) => {
 
 const itemAdding = async (req, res) => {
     const {postedItem} = req.body; 
-    console.log(postedItem,'postedItem')
+    
 
     if(!postedItem){
         return res.status(400).json({error: "Invalid item, item is null"});
@@ -64,6 +64,22 @@ const itemAdding = async (req, res) => {
 
     try{
         const item = await planService.itemAdding(postedItem)
+        return res.status(200).json(item);
+    }catch(err){
+        return res.status(500).json({error: err.toString()})
+    }
+}
+
+const itemEditing = async (req, res) => {
+    const {editItem} = req.body; 
+    
+
+    if(!editItem){
+        return res.status(400).json({error: "Invalid edit item,  item to edit is null"});
+    }
+
+    try{
+        const item = await planService.itemEdittig(editItem)
         return res.status(200).json(item);
     }catch(err){
         return res.status(500).json({error: err.toString()})
@@ -78,4 +94,5 @@ module.exports = {
     planEditing,
     getEventPage,
     itemAdding,
+    itemEditing,
 }
