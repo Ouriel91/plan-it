@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
 
-const ItemRow = ({ item, saveItemAction, eventId }) => {
+const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
   const [itemName, setItemName] = useState(item.itemName);
   const [quantity, setQuantity] = useState(item.quantity);
   const [bringName, setBringName] = useState(item.bringName);
@@ -25,7 +25,6 @@ const ItemRow = ({ item, saveItemAction, eventId }) => {
         bringName,
         status,
       };
-      console.log(editItem, "editItem");
       await saveItemAction(editItem, item.id, item.eventId);
       setEditClicked(false);
     } catch (err) {
@@ -33,7 +32,8 @@ const ItemRow = ({ item, saveItemAction, eventId }) => {
     }
   };
 
-  const handleDeleteClick = () => {
+  const handleDeleteClick = async  () => {
+    await deleteItemAction(item.id, item.eventId);
      };
 
   return (

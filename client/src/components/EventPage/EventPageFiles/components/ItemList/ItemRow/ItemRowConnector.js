@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import ItemRow from "./ItemRow";
-import{saveItemAction}  from "../../../../../../redux/actions/plansActions"
+import{saveItemAction,deleteItemAction}  from "../../../../../../redux/actions/plansActions"
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return bindActionCreators({
-    saveItemAction
+    saveItemAction,deleteItemAction
   }, dispatch);
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ItemRow);

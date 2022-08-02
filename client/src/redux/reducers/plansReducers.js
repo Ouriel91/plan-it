@@ -27,6 +27,7 @@ const plansReducer = (state = initialState, action) => {
         ),
       };
     case actionTypes.SAVE_ITEM:
+      console.log( "hereeeeeeeeeee*******");
       const newPlans = [...state.plans];
       const plan = newPlans.find((plan) => plan.id == action.eventId);
       const idx = plan.eventItems.findIndex(

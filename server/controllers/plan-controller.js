@@ -87,6 +87,22 @@ const itemEditing = async (req, res) => {
 }
 
 
+const itemDeleting = async (req, res) => {
+    const {itemId} = req.body; 
+
+    if(!itemId){
+        return res.status(400).json({error: "Invalid itemid"});
+    }
+
+    try{
+         await planService.itemDeleting(itemId)
+        return res.status(200).json("deleted successfully");
+    }catch(err){
+        return res.status(500).json({error: err.toString()})
+    }
+}
+
+
 module.exports = {
     plansList,
     planAdding,
@@ -95,4 +111,5 @@ module.exports = {
     getEventPage,
     itemAdding,
     itemEditing,
+    itemDeleting,
 }

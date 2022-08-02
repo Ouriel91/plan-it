@@ -82,12 +82,24 @@ const itemEdittig = async (item) => {
       },
       { where: { id: idx }, returning: true, raw: true }
     );
-    console.log('editItem&&&&&&&&&&&&&&&&&&&&&&&', editItem[1])
+
     return editItem[1];
   } catch (err) {
     throw new Error(err);
   }
 };
+
+
+
+const itemDeleting = async (id) => {
+  try{
+  await Item.destroy({ where: { id: id } });
+  
+} catch (err) {
+  throw `There is no item with id: ${id} `;
+}
+
+}
 module.exports = {
   getAllPlans,
   addPlan,
@@ -96,4 +108,5 @@ module.exports = {
   getEventPageById,
   itemAdding,
   itemEdittig,
+  itemDeleting,
 };

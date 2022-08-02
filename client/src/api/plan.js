@@ -98,3 +98,14 @@ export const itemToEdit = async (item, itemId,eventId) => {
   });
   return response.data;
 }
+
+
+export const deleteItem = async (itemId,eventId) => {
+  const removedItem = await axios({
+    method: "delete",
+    url:`${url}/event-page/${eventId}/items`,
+    data: {itemId
+  }});
+
+  return removedItem;
+}
