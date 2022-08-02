@@ -17,6 +17,11 @@ const plansReducer = (state = initialState, action) => {
                 ...state,
                 plans: [...state.plans, ...action.payload],
               };
+        case actionTypes.DELETE_PLAN: 
+            return {
+                ...state,
+                plans: state.plans.filter(plan => plan.id !== action.payload)
+            }
         default:
             return {
                 ...state
