@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./userList.css";
-import { deepOrange, deepPurple } from '@mui/material/colors';
-// import Avatar from '@mui/material/Avatar';
 import Avatar from "react-avatar";
-import AvatarGroup from '@mui/material/AvatarGroup';
+import Dialog from "@material-ui/core/Dialog";
+import Button from '@mui/material/Button';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import Stack from '@mui/material/Stack';
+
+
 const getLocalData = () => {
   const lists = localStorage.getItem("UsersList");
 
@@ -26,9 +31,13 @@ const UserList = () => {
   
 
   const handleClick = (event) => {
-    setIsShown((current) => !current);
-    // setIsShown(true);
+    setIsShown(!isShown);
+    
   };
+  const handleClickAdd = () =>{
+    addItem();
+    setIsShown(!isShown);
+  }
 
   const addItem = () => {
     if (!data) {
@@ -95,26 +104,34 @@ const UserList = () => {
           
           <button onClick={handleClick} className="fa fa-plus add-btn"></button>
           <div className="addItems">
-          {isShown && 
+          
             
-            <input
-              type="text"
-              placeholder="Enter Full User Name..."
+            <Dialog open={isShown} onClose={handleClick}>
+            <DialogTitle>Add New User</DialogTitle>
+                <DialogContent>
+                  
+                    <input
+                 type="text"
+                placeholder="Enter Full User Name..."
               className="form-control"
               value={data}
               onChange={(event) => {
-                setData(event.target.value);
-                
-              }
-              }
-            />
+                setData(event.target.value);}}
+                />
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={handleClick}>Cancel</Button>
+                <Button onClick={handleClickAdd}>Add</Button>
+                </DialogActions>
+            </Dialog>
+        
             
-          }
+          
             { toggleButton ? (
             <button className="far fa-edit add-btn" onClick={addItem}>Edit</button>
               
             ) : (
-            <button className="far fa-plus add-btn" onClick={addItem}>Add</button>
+            <button className="far fa-plus add-btn" onClick={addItem}></button>
               
             )}
           
