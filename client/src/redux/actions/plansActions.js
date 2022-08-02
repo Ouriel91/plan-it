@@ -41,8 +41,9 @@ export const saveItemAction = (newItem,eventId) => {
   };
 };
 
-export const addItem = (newItem) => ({
+export const addItem = (newItem,eventId) => ({
   type: actionTypes.ADD_ITEM,
+  eventId,
   payload: [newItem],
 });
 
@@ -51,7 +52,8 @@ export const addItemAction =  (newItem,eventId) => {
   console.log(newItem,eventId,'item and event id')
   return async (dispatch) => {
    const item =  await postItem(newItem,eventId)
-  //  dispatch(addItem(item));
+   console.log(item,'item')
+    dispatch(addItem(item));
     return item
   };
 };

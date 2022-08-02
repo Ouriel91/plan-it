@@ -1,8 +1,6 @@
 import { useState } from "react";
-//import "./ListControls.css";
 import { Button } from "monday-ui-react-core";
 import "monday-ui-react-core/dist/main.css";
-import EventNameDialog from "../../../../MultiStepDialog/Dialogs/EventNameDialog/EventNameDialog";
 
 const NewItemInput = ({event,addItemAction}) => {
   const [state, setState] = useState({
@@ -24,8 +22,6 @@ const NewItemInput = ({event,addItemAction}) => {
   const handlePressClick = async () => {
     try {
       //   showLoaderAction();
-      console.log("state", state);
-      console.log(event)
        await addItemAction(state,event.id);
       // hideLoaderAction();
 
