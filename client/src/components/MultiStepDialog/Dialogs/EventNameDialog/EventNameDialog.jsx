@@ -7,9 +7,6 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import  Grid from "@material-ui/core/Grid";
 import TextField from '@mui/material/TextField';
 import CloseIcon from "@material-ui/icons/Close";
-import { borderRadius } from '@mui/system';
-
-
 
 function EventNameDialog({ nextStep, setEventObj, closeDialog, style2 }) {
   const [input, setInput] = useState('')
@@ -29,13 +26,10 @@ function EventNameDialog({ nextStep, setEventObj, closeDialog, style2 }) {
     nextStep()
   }
 
-
   return (
     <Dialog
       PaperProps={{
         style: {
-          minHeight: '45%',
-          maxHeight: '70%',
           backgroundColor: "#ffffffd6",
           borderRadius: "10px",
           boxShadow: "3px 3px 13px 6px #00000092",
@@ -43,11 +37,9 @@ function EventNameDialog({ nextStep, setEventObj, closeDialog, style2 }) {
       }}
       open
       fullWidth
-      minHeight='80vh'
-      maxWidth='sm'
     >
       <DialogTitle>
-        <Grid container justify="space-between" alignItems="center">
+        <Grid container justifyContent="space-between" alignItems="center">
           <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px' }}>Event name</Typography>
           <IconButton onClick={closeDialog}>
             <CloseIcon />
@@ -70,7 +62,7 @@ function EventNameDialog({ nextStep, setEventObj, closeDialog, style2 }) {
         required
       />
 
-      <Grid container justify="flex-end" direction='row' item md={11}>
+      <Grid container justifyContent="flex-end" direction='row' item md={11}>
           <Button
             color="secondary"
             style={{ height: "40px" , width: "100px", backgroundColor: '#98a153ce', fontSize: "16px" ,fontFamily: 'Playfair Display', letterSpacing: '2px' }}

@@ -1,10 +1,19 @@
+import { GoogleMap, MarkerF } from "@react-google-maps/api";
+import './Location.css'
 
-const Location= () => {
-  return (
+function Location({lat, lng}) {
+  
+    return (
+        <>
+        <GoogleMap
+            zoom={10}
+            center={{lat, lng}}
+            mapContainerClassName="map-container"
+        >
+            {{lat, lng} && <MarkerF position={{lat, lng}} />}
+        </GoogleMap>
+        </>
+    );
+}
 
-    <div><h1>LOCATION</h1></div>
-   
-  );
-};
-
-export default Location;
+export default Location

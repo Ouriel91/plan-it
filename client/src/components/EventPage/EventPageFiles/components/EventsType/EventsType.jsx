@@ -18,7 +18,6 @@ import 'aos/dist/aos.css'
 import friends_img from '../../../../../images/friends2.gif'
 import bbq_img from '../../../../../images/bbq.jpg'
 
-
 const EventsType = ({ type, setEventObj }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
@@ -132,7 +131,6 @@ const EventsType = ({ type, setEventObj }) => {
     <section data-aos="fade-down-right" data-aos-delay="500" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
         <img alt='map' src={map_img} width={700} height={300}></img>
     </section>
-
     </>
   );
 };

@@ -44,7 +44,6 @@ const PlacesAutocomplete = ({ setSelected, setEventObj }) => {
         renderInput={(params) => <TextField {...params} label={
           <Typography variant="h7"> Location </Typography>}
           placeholder="Enter Location"/>
-        
       }
       />
     );
