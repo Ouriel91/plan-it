@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./userList.css";
 import { deepOrange, deepPurple } from '@mui/material/colors';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
+import Avatar from "react-avatar";
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Stack from '@mui/material/Stack';
 const getLocalData = () => {
@@ -95,10 +96,11 @@ const UserList = () => {
       <div className="main-div">
         <div className="child-div">
           
-          <button onClick={handleClick} className="fa fa-plus add-btn"><h1> Users</h1></button>
+          <button onClick={handleClick} className="fa fa-plus add-btn"></button>
           <div className="addItems">
           
           {isShown && 
+            
             <input
               type="text"
               placeholder="Enter Full User Name..."
@@ -107,14 +109,16 @@ const UserList = () => {
               onChange={(event) => {
                 setData(event.target.value);
                 
-              }}
+              }
+              }
             />
+            
           }
-            {isShown && toggleButton ? (
+            { toggleButton ? (
             <button className="far fa-edit add-btn" onClick={addItem}>Edit</button>
               
             ) : (
-            <button className="far fa-plus add-btn" onClick={addItem}>add</button>
+            <button className="far fa-plus add-btn" onClick={addItem}>Add</button>
               
             )}
           
@@ -127,11 +131,17 @@ const UserList = () => {
                 <div className="item-div" key={curElem.id}>
                 <span>
                 <Stack direction="row" spacing={-1}>
-                    <Avatar
-                      round={true} 
+                
+                     <Avatar
+                        round={true} 
                       size="30px"
-                      sx={{ bgcolor: [500] }}
-                    >{curElem.name}</Avatar>
+                      color={Avatar.getRandomColor("sitebase", [
+                        "red",
+                        "green",
+                        "blue"
+                      ])}
+                      name={curElem.name}
+                    />
                       </Stack>
                       </span>  
       
