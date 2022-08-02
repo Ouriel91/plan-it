@@ -82,7 +82,8 @@ const itemEdittig = async (item) => {
       },
       { where: { id: idx }, returning: true, raw: true }
     );
-    return editItem;
+    console.log('editItem&&&&&&&&&&&&&&&&&&&&&&&', editItem[1])
+    return editItem[1];
   } catch (err) {
     throw new Error(err);
   }

@@ -27,8 +27,9 @@ export const addEventAction = (newEvent) => {
 };
 
 
-export const saveItem = (newItem) => ({
+export const saveItem = (newItem,eventId) => ({
   type: actionTypes.SAVE_ITEM,
+  eventId,
   payload: newItem,
 });
 
@@ -36,8 +37,7 @@ export const saveItemAction = (editItem,itemId,eventId) => {
   console.log(editItem,itemId,eventId,'edit!! and event id')
   return async (dispatch) => {
    const item =  await itemToEdit(editItem,itemId,eventId)
-   // dispatch(saveItem(item));
-    return item
+    dispatch(saveItem(item,eventId));
   };
 };
 
