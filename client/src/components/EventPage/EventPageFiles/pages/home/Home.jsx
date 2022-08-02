@@ -42,13 +42,15 @@ const Home = ({event}) => {
       <div className="homeContainer">
 
         <Navbar event={event}/>
-        <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.headline}</h1>
-        <h1 style={{color: '#000', fontWeight: 'bold'}}>{event.date}</h1>
+
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>
-        <Location lat={parseInt(lat)} lng={parseInt(lng)} />
-        <Weather lat={lat} lng={lng} location={event.location} date={date}/>
+        <div className='weather-location-container'>
+          <Location lat={parseInt(lat)} lng={parseInt(lng)} />
+          <Weather lat={lat} lng={lng} location={event.location} date={date}/>
+        </div>
+
         <div className="charts">
           {/* <ImgUploader/> */}
           {/* <UserList/> */}
