@@ -68,7 +68,7 @@ const itemToDelete = (itemId,eventId) => ({
 export const deleteItemAction = (itemId,eventId) => {
   return async (dispatch) => {
     await deleteItem(itemId,eventId);
-    //dispatch(itemToDelete(itemId,eventId));
+    dispatch(itemToDelete(itemId,eventId));
   };
 };
 

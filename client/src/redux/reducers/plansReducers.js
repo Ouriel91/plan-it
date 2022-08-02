@@ -27,7 +27,7 @@ const plansReducer = (state = initialState, action) => {
         ),
       };
     case actionTypes.SAVE_ITEM:
-      console.log( "hereeeeeeeeeee*******");
+      console.log("hereeeeeeeeeee*******");
       const newPlans = [...state.plans];
       const plan = newPlans.find((plan) => plan.id == action.eventId);
       const idx = plan.eventItems.findIndex(
@@ -39,6 +39,22 @@ const plansReducer = (state = initialState, action) => {
       return {
         ...state,
         plans: newPlans,
+      };
+
+    case actionTypes.DELETE_ITEM:
+
+      return {
+        ...state,
+        plans: state.plans.map((plan) =>
+          plan.id === parseInt(action.eventId)
+            ? {
+                ...plan,
+                eventItems: plan.eventItems.filter(
+                  (item) => item.id !== action.payload
+                ),
+              }
+            : plan
+        ),
       };
     default:
       return state;
