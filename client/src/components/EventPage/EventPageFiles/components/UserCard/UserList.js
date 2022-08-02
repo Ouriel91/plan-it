@@ -25,10 +25,7 @@ const UserList = () => {
   
 
   const handleClick = (event) => {
-    
     setIsShown((current) => !current);
-
-    
     // setIsShown(true);
   };
 
@@ -94,10 +91,8 @@ const UserList = () => {
     <>
       <div className="main-div">
         <div className="child-div">
-          
           <button onClick={handleClick} className="fa fa-plus add-btn"><h1> Users</h1></button>
           <div className="addItems">
-          
           {isShown && 
             <input
               type="text"
@@ -120,13 +115,13 @@ const UserList = () => {
           
             {/* todo-row */}
           </div>
-          <div className="">
+          <div className="avatars-container">
             {items.map((curElem) => {
               return (
                 
                 <div className="item-div" key={curElem.id}>
                 <span>
-                <Stack direction="row" spacing={-1}>
+                <Stack >
                     <Avatar
                       round={true} 
                       size="30px"
@@ -136,7 +131,7 @@ const UserList = () => {
                       </span>  
       
 
-                  {/* <div className="delete-btn">
+                  <div className="delete-btn">
                     <i
                       className="far fa-edit add-btn"
                       onClick={() => editItem(curElem.id)}
@@ -145,7 +140,7 @@ const UserList = () => {
                       className="far fa-trash-alt add-btn"
                       onClick={() => deleteItem(curElem.id)}
                     ></i>
-                  </div> */}
+                  </div>
                 </div>
               );
             })}

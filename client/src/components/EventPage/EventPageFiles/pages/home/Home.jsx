@@ -7,10 +7,9 @@ import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import ItemListConnector from "../../components/ItemList/ItemListConnector"
 import NewItemInputConnector from "../../components/NewItemInput/NewItemInputConnector"
-
 import Footer from "../../../../Footer/Footer";
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
-import UserList from "../../components/UserCard/UserList";
+
 const Home = ({event}) => {
   console.log("home",event)
   const [lat, setLat] = useState("")
@@ -40,8 +39,6 @@ const Home = ({event}) => {
     <div className="home">
       <div className="homeContainer">
         <Navbar event={event}/>
-
-        <UserList/>
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>

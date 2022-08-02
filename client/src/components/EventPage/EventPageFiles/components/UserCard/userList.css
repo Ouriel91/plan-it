@@ -18,16 +18,19 @@ html {
 }
 
 .main-div {
-  min-height: 100vh;
-  
   display: flex;
   justify-content: center;
   /* align-items: center; */
 }
 
+.avatars-container{
+  display: flex;
+  flex-direction: row;
+}
+
 .child-div {
   text-align: center;
-  margin-top: 12rem;
+  margin-top: 50px;
 }
 
 .child-div figure img {
@@ -112,8 +115,7 @@ input:focus {
   font-size: 1.5rem;
 }
 .item-div{
-  display:inline;
- 
+  margin-top: 10px;
 }
 .showItems {
   text-indent: -2em;
@@ -159,6 +161,12 @@ input:focus {
   transition: color 0.15s linear;
   font-size: 2rem;
 }
+
+.addItems{
+  display: flex;
+  flex-direction: row;
+}
+
 
 .addItems .fa-edit {
   color: rgb(47, 214, 122);
