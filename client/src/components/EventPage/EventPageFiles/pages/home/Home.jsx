@@ -5,6 +5,7 @@ import Location from "../../components/Location/Location";
 import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import ItemListConnector from "../../components/ItemList/ItemListConnector"
+import NewItemInputConnector from "../../components/NewItemInput/NewItemInputConnector"
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
 const Home = ({event}) => {
@@ -28,6 +29,7 @@ const Home = ({event}) => {
         </div>
         <div className="listContainer">
           <div className="listTitle">Event List</div>
+          <NewItemInputConnector event ={event}/> 
           <ItemListConnector event={event} />
         </div>
       </div>

@@ -5,6 +5,7 @@ import{saveItemAction}  from "../../../../../redux/actions/plansActions"
 
 
 const mapStateToProps = (state, ownProps) => {
+   console.log(state,'see the state')
   return {  };
 };
 
