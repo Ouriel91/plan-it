@@ -18,8 +18,8 @@ import 'aos/dist/aos.css'
 import friends_img from '../../../../../images/friends2.gif'
 import bbq_img from '../../../../../images/bbq.jpg'
 import confetti from '../../../../../images/confetti.gif'
-
-const EventsType = ({ type, setEventObj }) => {
+import UserList from "../UserCard/UserList"
+const EventsType = ({ type, setEventObj, event }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
   const [timerDays, setTimerDays] = useState('00')
@@ -82,41 +82,45 @@ const EventsType = ({ type, setEventObj }) => {
   return (
     <>
       <div className='date-counter-holder'>
-        <text className='date-holder'>30/10/2022, 19:20</text>
+        <text className='date-holder'>{event.date}</text>
         <div className='timer-container'>
           <section >
             <p className='date-number'>{timerDays}</p>
-            <p className='date-text'>Days:</p>
+            <p className='date-text'>Days</p>
           </section>
           <section>
             <p className='date-number'>{timerHours}</p>
-            <p className='date-text'>Hours:</p>
+            <p className='date-text'>Hours</p>
           </section>
           <section>
             <p className='date-number'>{timerMins}</p>
-            <p className='date-text'>Minutes:</p>
+            <p className='date-text'>Minutes</p>
           </section>
           <section>
             <p className='date-number'>{timerSecs}</p>
-            <p className='date-text'>Seconds:</p>
+            <p className='date-text'>Seconds</p>
           </section>
           <img width={500} height={170} id="confetti" alt='party' src={confetti} hidden={timerEnded}></img>
         </div>
       </div>
-      <section data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-
-      </section>
+      {/* <section data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+        <div className="listContainer">
+          <ItemList />
+        </div>
+      </section> */}
+      <div className='participants-container'>
+      <UserList/>
+      </div>
       <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'> and let us help you with the arrangments</p>
         <img width={850} height={500} alt='BBQ' src={bbq_img}></img>
       </section>
       <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container'>
-        <div className="head-section">
+        {/* <div className="head-section">
           <div className="title-head-section">
             Add friends:
           </div>
-          {/* <WatchLaterOutlinedIcon /> */}
           <div className="participants-event-page">
             <Autocomplete
               options={top100Films}
@@ -127,15 +131,9 @@ const EventsType = ({ type, setEventObj }) => {
               <button onSubmit={handleSubmit}>Add</button>
             </div>
           </div>
-          <div className='li-container'>
-            <ol>
-              <li>gmail1@gmail.com</li>
-              <li>gmail2@gmail.com</li>
-              <li>gmail3@gmail.com</li>
-            </ol>
-          </div>
 
-          {/* <div className="location-event-page">
+
+          <div className="location-event-page">
           <Accordion sx={{ width: '300' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -153,8 +151,8 @@ const EventsType = ({ type, setEventObj }) => {
               </Typography>
             </AccordionDetails>
           </Accordion>
-        </div> */}
-          {/* <div className="weather-event-page">
+        </div>
+          <div className="weather-event-page">
           <Accordion sx={{ width: '80%' }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -172,8 +170,8 @@ const EventsType = ({ type, setEventObj }) => {
               </Typography>
             </AccordionDetails>
           </Accordion>
-        </div> */}
         </div>
+        </div> */}
       </section>
 
     </>

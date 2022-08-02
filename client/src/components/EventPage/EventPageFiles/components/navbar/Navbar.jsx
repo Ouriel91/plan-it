@@ -22,7 +22,7 @@ const Navbar = ({ event }) => {
         <div className="logo-container">
           <img src={logo} alt="Plan it." height={90} width={90} />
           <div className="navbar-title" >
-            Plan it.
+            <a style={{color: "#555", textDecoration: "none"}} href="/" >Plan it.</a>
             <p className="navbar-sub-title">
               Friends, Plan, Travel
             </p>
