@@ -30,7 +30,7 @@ function DatePickerDialog({ nextStep, prevStep, setEventObj, closeDialog, style 
 
   const theme = createTheme({
     typography: {
-      fontSize: 25
+      fontSize: 18
   }})
   return (
     <Dialog

@@ -61,7 +61,7 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
       <div>
         <FormControl sx={{ m: 1, mb: 20, width: "70%" }}>
           <InputLabel id="demo-simple-select-required-label">
-            <Typography variant="h7">Type</Typography>
+            <Typography variant={'h6'}>Type</Typography>
           </InputLabel>
           <Select
             labelId="demo-simple-select-required-label"

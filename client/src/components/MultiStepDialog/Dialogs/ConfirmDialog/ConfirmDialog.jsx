@@ -52,9 +52,9 @@ const Confirm = ({
             <Grid container justifyContent="space-between" alignItems="center">
               <Typography
                 style={{
-                  color: "#9da275ce",
+                  color: "#494d47",
                   fontFamily: "Playfair Display",
-                  fontSize: "35px",
+                  fontSize: 35,
                 }}
               >
                 Confirmation
@@ -70,22 +70,22 @@ const Confirm = ({
               <ListItem>
                 <ListItemText
                   disableTypography
-                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '20px' }}>Event Name</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '18px' }}>{eventObj.eventName}</Typography>} />
+                  primary={<Typography style={{ color: '#54ab29', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: 20 }}>Event Name</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize:18, fontWeight: 'bold' }}>{eventObj.eventName}</Typography>} />
               </ListItem>
               <ListItem>
                 <ListItemText
                   disableTypography
-                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Dates</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.dates}</Typography>} />
+                  primary={<Typography style={{ color: '#54ab29', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: 17 }}>Dates</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: 18 , fontWeight: 'bold'}}>{eventObj.dates}</Typography>} />
               </ListItem>
               <ListItem>
                 <ListItemText
                   disableTypography
-                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Event Type</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.eventType}</Typography>} />
+                  primary={<Typography style={{ color: '#54ab29', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: 17 }}>Event Type</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: 18 , fontWeight: 'bold'}}>{eventObj.eventType}</Typography>} />
               </ListItem>
               <ListItem>
                 <ListItemText
                   disableTypography
-                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Location</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.location}</Typography>} />
+                  primary={<Typography style={{ color: '#54ab29', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: 17 }}>Location</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: 18 , fontWeight: 'bold'}}>{eventObj.location}</Typography>} />
               </ListItem>
             </List>
           </Grid>

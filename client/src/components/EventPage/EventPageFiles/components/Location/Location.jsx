@@ -8,7 +8,7 @@ function Location({lat, lng}) {
         <GoogleMap
             zoom={10}
             center={{lat, lng}}
-            mapContainerClassName="map-container"
+            mapContainerClassName="my-map-container-location"
         >
             {{lat, lng} && <MarkerF position={{lat, lng}} />}
         </GoogleMap>

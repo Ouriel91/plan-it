@@ -42,7 +42,7 @@ const PlacesAutocomplete = ({ setSelected, setEventObj }) => {
         isOptionEqualToValue={(option, inputValue)=> true}
         id="tags-standard"
         renderInput={(params) => <TextField {...params} label={
-          <Typography variant="h7"> Location </Typography>}
+          <Typography variant={'h5'}> Location </Typography>}
           placeholder="Enter Location"/>
       }
       />
