@@ -79,7 +79,7 @@ export const postItem = async (item, eventId) => {
   return response.data;
 };
 
-export const editItem = async (item, itemId) => {
+export const editItem = async (item, itemId,eventId) => {
 
   const editItem = {
     itemName: item.itemName,

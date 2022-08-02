@@ -5,8 +5,8 @@ import{saveItemAction}  from "../../../../../../redux/actions/plansActions"
 
 
 const mapStateToProps = (state, ownProps) => {
-  
-  return { } 
+  const eventId = ownProps.eventId;
+  return {eventId} 
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

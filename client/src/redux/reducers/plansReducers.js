@@ -17,6 +17,7 @@ const plansReducer = (state = initialState, action) => {
         plans: [...state.plans, ...action.payload],
       };
     case actionTypes.ADD_ITEM:
+        console.log('heere',action.payload)
       return {
         ...state,
         plans: state.plans.map((plan) =>

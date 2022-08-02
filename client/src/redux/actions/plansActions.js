@@ -29,13 +29,13 @@ export const addEventAction = (newEvent) => {
 
 export const saveItem = (newItem) => ({
   type: actionTypes.SAVE_ITEM,
-  payload: [newItem],
+  payload: newItem,
 });
 
-export const saveItemAction = (editItem,itemId) => {
-  console.log(newItem,eventId,'item and event id')
+export const saveItemAction = (editItem,itemId,eventId) => {
+  console.log(editItem,itemId,eventId,'edit!! and event id')
   return async (dispatch) => {
-   const item =  await editItem(item,itemId)
+   const item =  await editItem(item,itemId,eventId)
    // dispatch(saveItem(item));
     return item
   };
@@ -44,7 +44,7 @@ export const saveItemAction = (editItem,itemId) => {
 export const addItem = (newItem,eventId) => ({
   type: actionTypes.ADD_ITEM,
   eventId,
-  payload: [newItem],
+  payload: newItem,
 });
 
 export const addItemAction =  (newItem,eventId) => {

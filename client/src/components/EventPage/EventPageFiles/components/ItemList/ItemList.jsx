@@ -71,7 +71,6 @@ function ItemList({ event, items }) {
           </TableHead>
           <TableBody>
             {items.map((item) => {
-              console.log(item);
               return <ItemRowConnector item={item} key={item.id} />;
             })}
           </TableBody>

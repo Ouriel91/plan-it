@@ -35,7 +35,7 @@ async function addPlan(plan) {
   await Event.create({ headline, date, type, location });
   const events = await Event.findAll({ raw: true });
   const event = events[events.length - 1];
-  event.eventItems = [];
+   event.eventItems = [];
   event.eventsUsers = [];
   console.log(event, 'event!!!!')
   return event;
@@ -70,7 +70,17 @@ const itemAdding = async (newItem) => {
   return item;
 };
 
-
+const itemEdittig = async (item) => {
+  try {
+   const editItem =  await Item.update({ item }, { where: { id: item.id } });
+    // const item = await Item.findOne({ where: { id: item.id } });
+    console,log(editItem,'editItem!!!!!!')
+    return editItem;
+  } catch (err) {
+    throw new Error(err);
+  
+}
+}
 module.exports = {
   getAllPlans,
   addPlan,
@@ -78,5 +88,5 @@ module.exports = {
   editPlan,
   getEventPageById,
   itemAdding,
-  itemEditing,
+  itemEdittig,
 };

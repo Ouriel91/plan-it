@@ -6,9 +6,9 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
 
-const ItemRow = ({ item, saveItemAction }) => {;
+const ItemRow = ({ item, saveItemAction,eventId }) => {;
 
-  console.log("items", item);
+  console.log("item", item);
   // Initial states
   const [editItem, setEditItem] = useState({
     itemName: "",
@@ -19,16 +19,17 @@ const ItemRow = ({ item, saveItemAction }) => {;
   const [isEditClicked, setEditClicked] = useState(true);
 
   const handleEditButtonClick = () => {
+    console.log("edit button clicked");
     setEditClicked(false);
   };
 
   // Function to handle save
-  const handleSaveButtonClick =async  () => {
+  const handleSaveButtonClick = async  () => {
     try {
       setEditClicked(true);
-         await saveItemAction(editItem, item.id);
+         await saveItemAction(editItem, item.id,eventId);
     } catch (err) {
-      throw new Error("failed to edit task in db");
+      throw new Error(err);
     }
   };
 
