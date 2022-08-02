@@ -38,11 +38,8 @@ const Home = ({event}) => {
 
   return (
     <div className="home">
-
       <div className="homeContainer">
-
         <Navbar event={event}/>
-
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>
@@ -50,7 +47,6 @@ const Home = ({event}) => {
           <Location lat={parseInt(lat)} lng={parseInt(lng)} />
           <Weather lat={lat} lng={lng} location={event.location} date={date}/>
         </div>
-
         <div className="charts">
           {/* <ImgUploader/> */}
           {/* <UserList/> */}

@@ -103,9 +103,11 @@ const EventsType = ({ type, setEventObj }) => {
           <img width={500} height={170} id="confetti" alt='party' src={confetti} hidden={timerEnded}></img>
         </div>
       </div>
-      <section data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-
-      </section>
+      {/* <section data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+        <div className="listContainer">
+          <ItemList />
+        </div>
+      </section> */}
       <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'> and let us help you with the arrangments</p>
