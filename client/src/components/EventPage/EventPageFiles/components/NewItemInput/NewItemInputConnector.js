@@ -6,8 +6,7 @@ import NewItemInput from "./NewItemInput";
 
 
 const mapStateToProps = (state, ownProps) => {
-console.log('events:',state)
- 
+
   return { };
 };
 

@@ -6,7 +6,8 @@ import Location from "../../components/Location/Location";
 import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import ItemListConnector from "../../components/ItemList/ItemListConnector"
-import ItemList from "../../components/ItemList/ItemList";
+import NewItemInputConnector from "../../components/NewItemInput/NewItemInputConnector"
+
 import Footer from "../../../../Footer/Footer";
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
@@ -52,11 +53,11 @@ const Home = ({event}) => {
           {/* <ImgUploader/> */}
           {/* <UserList/> */}
         </div>
-        {/* <div className="listContainer">
+        <div className="listContainer">
           <div className="listTitle">Event List</div>
           <NewItemInputConnector event ={event}/> 
           <ItemListConnector event={event} />
-        </div> */}
+        </div>
       </div>
       <Footer/>
     </div>
