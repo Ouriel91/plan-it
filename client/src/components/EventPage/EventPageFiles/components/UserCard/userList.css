@@ -10,7 +10,7 @@
   font-size: x-large;
 }
 h1 {
-    color: white;
+    color: rgb(15, 15, 15);
     text-align: center ;
   }
 html {
@@ -19,7 +19,7 @@ html {
 
 .main-div {
   min-height: 100vh;
-  background: #424242;
+  
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -44,10 +44,10 @@ html {
 
 input {
   /* display: block; */
-  min-width: 40rem;
+  min-width: 30rem;
   height: 3.4rem;
   padding: 2rem 1.2rem;
-  font-size: 1.8rem;
+  font-size: 3rem;
   line-height: 1.42857143;
   margin-top: 2rem;
   color: rgb(58, 57, 57);
@@ -83,7 +83,8 @@ input:focus {
 /* Click Here: https://www.youtube.com/thapatechnical  */
 
 .delete-btn {
-  width: 5rem;
+  width: 2rem;
+  color: #666;
   display: flex;
   justify-content: space-around;
 }
@@ -103,17 +104,24 @@ input:focus {
 .fa:hover {
   color: rgb(47, 214, 122);
 }
-
+.fa-plus{
+  font-size: large;
+}
 .fa-plus:before {
   content: "\f067";
   font-size: 1.5rem;
 }
-
+.item-div{
+  display:inline;
+ 
+}
 .showItems {
+  text-indent: -2em;
+  
   margin-top: 3rem;
   text-align: center;
 }
-
+/* 
 .eachItem {
   background: #fff;
   padding: 1.2rem 1rem;
@@ -126,7 +134,7 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 .eachItem:hover {
   background: rgb(249, 249, 252);
@@ -137,6 +145,7 @@ input:focus {
   padding-left: 1rem;
   font-size: 1.6rem;
   color: #fff;
+  display: inline-block;
 }
 
 .fa-trash-alt,
@@ -187,7 +196,10 @@ input:focus {
 .btn:hover {
   text-decoration: none;
 }
-
+.add-btn{
+  background: none;
+  border: none;
+}
 .effect04 {
   --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
   display: var(--uismLinkDisplay);
