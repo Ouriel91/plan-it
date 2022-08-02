@@ -2,16 +2,15 @@ import { useState } from "react";
 import { Button } from "monday-ui-react-core";
 import "monday-ui-react-core/dist/main.css";
 
-const NewItemInput = ({event,addItemAction}) => {
+const NewItemInput = ({ event, addItemAction }) => {
   const [state, setState] = useState({
     itemName: "",
     quantity: "",
-    whoBrings: "",
+    bringName: "",
     status: "",
   });
 
   const handleInputValue = (e) => {
-    console.log("e", e.target.value);
     const value = e.target.value;
     setState({
       ...state,
@@ -21,14 +20,12 @@ const NewItemInput = ({event,addItemAction}) => {
 
   const handlePressClick = async () => {
     try {
-      //   showLoaderAction();
-       await addItemAction(state,event.id);
-      // hideLoaderAction();
+      await addItemAction(state, event.id);
 
       setState({
         itemName: "",
         quantity: "",
-        whoBrings: "",
+        bringName: "",
         status: "",
       });
     } catch (err) {
@@ -42,7 +39,7 @@ const NewItemInput = ({event,addItemAction}) => {
         <input
           id="taskInput"
           type="text"
-          placeholder="Add your new item"
+          placeholder="What to bring"
           value={state.itemName}
           name="itemName"
           onChange={handleInputValue}
@@ -60,8 +57,8 @@ const NewItemInput = ({event,addItemAction}) => {
           type="text"
           placeholder="Who brings"
           onChange={handleInputValue}
-          value={state.whoBrings}
-          name="whoBrings"
+          value={state.bringName}
+          name="bringName"
         />
         <input
           id="taskInput"
@@ -75,7 +72,7 @@ const NewItemInput = ({event,addItemAction}) => {
           id="add-button"
           type="submit"
           onClick={handlePressClick}
-          //   loading={showLoader}
+
         >
           +
         </Button>
