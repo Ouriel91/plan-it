@@ -7,10 +7,9 @@ import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import ItemListConnector from "../../components/ItemList/ItemListConnector"
 import NewItemInputConnector from "../../components/NewItemInput/NewItemInputConnector"
-
 import Footer from "../../../../Footer/Footer";
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
-// import UserList from "../../components/UserCard/UserList";
+
 const Home = ({event}) => {
   console.log("home",event)
   const [lat, setLat] = useState("")
@@ -38,19 +37,18 @@ const Home = ({event}) => {
 
   return (
     <div className="home">
-
       <div className="homeContainer">
-
-        {  <Navbar event={event}/>}
-    
+        <Navbar event={event}/>
         <div className="EventsTypes">
           <EventsType event={event} />
         </div>
-        <Location lat={parseInt(lat)} lng={parseInt(lng)} />
-        <Weather lat={lat} lng={lng} location={event.location} date={date}/> 
+        <div className='weather-location-container'>
+          <Location lat={parseInt(lat)} lng={parseInt(lng)} />
+          <Weather lat={lat} lng={lng} location={event.location} date={date}/>
+        </div>
         <div className="charts">
           {/* <ImgUploader/> */}
-          {/* <UserList/> */}
+          
         </div>
         <div className="listContainer">
           <div className="listTitle">Event List</div>

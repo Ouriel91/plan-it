@@ -8,8 +8,12 @@ import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 // import { DarkModeContext } from "../../context/darkModeContext";
 // import { useContext } from "react";
 import logo from '../../../../../images/app-logo.png'
+import Box from '@mui/material/Box';
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
 
-const Navbar = ({event}) => {
+
+const Navbar = ({ event }) => {
   /* const { dispatch } = useContext(DarkModeContext); */
 
   return (
@@ -18,17 +22,17 @@ const Navbar = ({event}) => {
         <div className="logo-container">
           <img src={logo} alt="Plan it." height={90} width={90} />
           <div className="navbar-title" >
-            Plan it.
+            <a style={{color: "#555", textDecoration: "none"}} href="/" >Plan it.</a>
             <p className="navbar-sub-title">
               Friends, Plan, Travel
             </p>
-
           </div>
+
           <div className="centered-title">
             <text>{event.headline}</text>
           </div>
+         
         </div>
-
         {/* <div className="items">
         
           <div className="item">
