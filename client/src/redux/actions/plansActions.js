@@ -34,7 +34,6 @@ export const saveItem = (newItem,eventId) => ({
 });
 
 export const saveItemAction = (editItem,itemId,eventId) => {
-  console.log(editItem,itemId,eventId,'edit!! and event id')
   return async (dispatch) => {
    const item =  await itemToEdit(editItem,itemId,eventId)
     dispatch(saveItem(item,eventId));
@@ -48,11 +47,8 @@ export const addItem = (newItem,eventId) => ({
 });
 
 export const addItemAction =  (newItem,eventId) => {
-
-  console.log(newItem,eventId,'item and event id')
   return async (dispatch) => {
    const item =  await postItem(newItem,eventId)
-   console.log(item,'item')
     dispatch(addItem(item));
     return item
   };

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "monday-ui-react-core";
 import "monday-ui-react-core/dist/main.css";
 
-const NewItemInput = ({event,addItemAction}) => {
+const NewItemInput = ({ event, addItemAction }) => {
   const [state, setState] = useState({
     itemName: "",
     quantity: "",
@@ -20,10 +20,7 @@ const NewItemInput = ({event,addItemAction}) => {
 
   const handlePressClick = async () => {
     try {
-      //   showLoaderAction();
-      console.log(state,'add action');
-       await addItemAction(state,event.id);
-      // hideLoaderAction();
+      await addItemAction(state, event.id);
 
       setState({
         itemName: "",
@@ -46,7 +43,6 @@ const NewItemInput = ({event,addItemAction}) => {
           value={state.itemName}
           name="itemName"
           onChange={handleInputValue}
-          
         />
         <input
           id="taskInput"
@@ -76,7 +72,7 @@ const NewItemInput = ({event,addItemAction}) => {
           id="add-button"
           type="submit"
           onClick={handlePressClick}
-          //   loading={showLoader}
+
         >
           +
         </Button>
