@@ -102,6 +102,11 @@ const EventsType = ({ type, setEventObj }) => {
           <img width={500} height={170} id="confetti" alt='party' src={confetti} hidden={timerEnded}></img>
         </div>
       </div>
+      <section data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+        <div className="listContainer">
+          <ItemList />
+        </div>
+      </section>
       <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'> and let us help you with the arrangments</p>
@@ -173,12 +178,6 @@ const EventsType = ({ type, setEventObj }) => {
         <div data-aos="fade-down-left" data-aos-offset="100" data-aos-easing="ease-in-out-cubic" data-aos-duration="1000" className="weather-event-page">
           <Weather />
         </div>
-      </section>
-      <section className='events-type-container' data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-        <div className="listContainer">
-          <ItemList />
-        </div>
-        <img alt='friends' src={friends_img}></img>
       </section>
 
       <section data-aos="fade-down-right" data-aos-delay="500" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
