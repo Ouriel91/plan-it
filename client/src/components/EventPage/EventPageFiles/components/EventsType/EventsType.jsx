@@ -17,8 +17,10 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import friends_img from '../../../../../images/friends2.gif'
 import bbq_img from '../../../../../images/bbq.jpg'
+import NewItemInputConnector from "../NewItemInput/NewItemInputConnector"
+import ItemListConnector from '../ItemList/ItemListConnector';
 
-const EventsType = ({ type, setEventObj }) => {
+const EventsType = ({ type, setEventObj,event }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
 
@@ -123,7 +125,8 @@ const EventsType = ({ type, setEventObj }) => {
     </section>
     <section className='events-type-container' data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
       <div className="listContainer">
-          <ItemList />
+          <NewItemInputConnector event={event}/> 
+          <ItemListConnector event={event} />
         </div>
         <img alt='friends' src={friends_img}></img>
     </section>

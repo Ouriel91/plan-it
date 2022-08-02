@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import CreateIcon from "@material-ui/icons/Create";
+
 import {
   Box,
-  Button,
-  Snackbar,
   Table,
   TableBody,
   TableCell,
@@ -11,7 +9,7 @@ import {
   TableRow,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Alert from "@material-ui/lab/Alert";
+
 
 import "./ItemList.scss";
 import ItemRowConnector from "./ItemRow/ItemRowConnector";
@@ -30,27 +28,11 @@ const useStyles = makeStyles({
   },
 });
 
-
-const handleClose = () => {
-
-}
-
-function ItemList({ event, items }) {
-  // Creating style object
+function ItemList({ items }) {
   const classes = useStyles();
 
   return (
     <TableBody className="datagrid">
-      <Snackbar
-        // open={open}
-        autoHideDuration={2000}
-        onClose={handleClose}
-        className="datagrid"
-      >
-        <Alert onClose={handleClose} severity="success">
-          Record saved successfully!
-        </Alert>
-      </Snackbar>
       <Box margin={1}>
         <div style={{ display: "flex", justifyContent: "space-between" }}></div>
         <TableRow align="center"></TableRow>
