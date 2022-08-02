@@ -56,6 +56,7 @@ const getEventPage = async (req, res) => {
 
 const itemAdding = async (req, res) => {
     const {postedItem} = req.body; 
+    console.log(postedItem,'postedItem')
 
     if(!postedItem){
         return res.status(400).json({error: "Invalid item, item is null"});

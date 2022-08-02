@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Megrim&family=Playfair+Display:wght@400;500;700&family=Poiret+One&display=swap');
 .home {
 
+.weather-location-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 150px;
+}
 
 .homeContainer {
   flex: 6;
   background-color: rgba(240, 240, 240, 0.832);
 }
-    
-
     .EventsTypes{
       font-size: 45px;
       text-align: center;
