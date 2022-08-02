@@ -17,7 +17,7 @@ function Map({setEventObj}) {
         <GoogleMap
             zoom={10}
             center={center}
-            mapContainerClassName="map-container"
+            mapContainerClassName="my-map-container"
         >
             {selected && <MarkerF position={selected} />}
         </GoogleMap>

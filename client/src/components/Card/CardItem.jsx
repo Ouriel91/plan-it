@@ -116,15 +116,6 @@ const CardItem = ({plan}) => {
             <IconButton aria-label="delete">
               <DeleteIcon onClick={() => deletePlan(plan.id)}/>
             </IconButton>
-            <Box p={2}>
-              <IconButton aria-label="edit">
-                <EditIcon onClick={() => {
-                    const cpyPlan = {...plan}
-                    cpyPlan.type = 'camping'
-                    editPlan(plan.id, cpyPlan)
-                  }}/>
-              </IconButton>
-            </Box>
             <IconButton aria-label="share">
             <a 
               href={`https://web.whatsapp.com/send?text=${plan.headline} - ${plan.type} event in ${plan.location} at ${plan.date}`}  

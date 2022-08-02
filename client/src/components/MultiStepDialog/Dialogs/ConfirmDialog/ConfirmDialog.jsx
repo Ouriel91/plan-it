@@ -6,20 +6,17 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import AppBar from "@material-ui/core/AppBar";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import { List, ListItem, ListItemText } from "@material-ui/core/";
 import "./ConfirmDialog.css";
 import { useNavigate } from "react-router-dom";
 
 const Confirm = ({
-  nextStep,
   prevStep,
   closeDialog,
   style,
   setIsCreateEventClicked,
   eventObj,
   addEventAction,
-  events,
 }) => {
 
   const handlePrevButton = (e) => {
@@ -36,7 +33,6 @@ const Confirm = ({
   };
 
   return (
-    <MuiThemeProvider>
       <>
         <Dialog
           PaperProps={{
@@ -53,10 +49,18 @@ const Confirm = ({
           maxWidth='sm'
         >
           <DialogTitle>
-            <Grid container justify="space-between" alignItems="center">
-              <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px' }}>Confirmation</Typography>
+            <Grid container justifyContent="space-between" alignItems="center">
+              <Typography
+                style={{
+                  color: "#494d47",
+                  fontFamily: "Playfair Display",
+                  fontSize: 35,
+                }}
+              >
+                Confirmation
+              </Typography>
               <IconButton onClick={closeDialog}>
-                <CloseIcon onClick={closeDialog} />
+                <CloseIcon />
               </IconButton>
             </Grid>
           </DialogTitle>
@@ -66,22 +70,22 @@ const Confirm = ({
               <ListItem>
                 <ListItemText
                   disableTypography
-                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '20px' }}>Event Name</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '18px' }}>{eventObj.eventName}</Typography>} />
+                  primary={<Typography style={{ color: '#54ab29', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: 20 }}>Event Name</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize:18, fontWeight: 'bold' }}>{eventObj.eventName}</Typography>} />
               </ListItem>
               <ListItem>
                 <ListItemText
                   disableTypography
-                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Dates</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.dates}</Typography>} />
+                  primary={<Typography style={{ color: '#54ab29', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: 17 }}>Dates</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: 18 , fontWeight: 'bold'}}>{eventObj.dates}</Typography>} />
               </ListItem>
               <ListItem>
                 <ListItemText
                   disableTypography
-                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Event Type</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.eventType}</Typography>} />
+                  primary={<Typography style={{ color: '#54ab29', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: 17 }}>Event Type</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: 18 , fontWeight: 'bold'}}>{eventObj.eventType}</Typography>} />
               </ListItem>
               <ListItem>
                 <ListItemText
                   disableTypography
-                  primary={<Typography style={{ color: '#b2b887ce', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: '17px' }}>Location</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: '15px' }}>{eventObj.location}</Typography>} />
+                  primary={<Typography style={{ color: '#54ab29', fontFamily: 'Playfair Display', textDecoration: 'underline', fontSize: 17 }}>Location</Typography>} secondary={<Typography style={{ color: 'grey', fontFamily: 'Abel', fontSize: 18 , fontWeight: 'bold'}}>{eventObj.location}</Typography>} />
               </ListItem>
             </List>
           </Grid>
@@ -106,7 +110,6 @@ const Confirm = ({
           </div>
         </Dialog>
       </>
-    </MuiThemeProvider>
   );
 };
 

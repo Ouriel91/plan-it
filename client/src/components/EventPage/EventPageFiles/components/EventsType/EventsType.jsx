@@ -17,7 +17,11 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import friends_img from '../../../../../images/friends2.gif'
 import bbq_img from '../../../../../images/bbq.jpg'
+<<<<<<< HEAD
 import confetti from '../../../../../images/confetti.gif'
+=======
+
+>>>>>>> 764d199084b0c4a9749bfbac37882d8717705818
 const EventsType = ({ type, setEventObj }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
@@ -182,8 +186,12 @@ const EventsType = ({ type, setEventObj }) => {
 
       <section data-aos="fade-down-right" data-aos-delay="500" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
         <img alt='map' src={map_img} width={700} height={300}></img>
+<<<<<<< HEAD
       </section>
 
+=======
+    </section>
+>>>>>>> 764d199084b0c4a9749bfbac37882d8717705818
     </>
   );
 };

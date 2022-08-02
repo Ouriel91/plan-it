@@ -33,11 +33,32 @@ export const saveItem = (newItem) => ({
 });
 
 export const saveItemAction = (newItem,eventId) => {
+  console.log(newItem,eventId,'item and event id')
   return async (dispatch) => {
    const item =  await postItem(newItem,eventId)
-    dispatch(saveItem(item));
+   // dispatch(saveItem(item));
     return item
   };
 };
+
+export const addItem = (newItem,eventId) => ({
+  type: actionTypes.ADD_ITEM,
+  eventId,
+  payload: [newItem],
+});
+
+export const addItemAction =  (newItem,eventId) => {
+
+  console.log(newItem,eventId,'item and event id')
+  return async (dispatch) => {
+   const item =  await postItem(newItem,eventId)
+   console.log(item,'item')
+    dispatch(addItem(item));
+    return item
+  };
+};
+
+
+
 
 

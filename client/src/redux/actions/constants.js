@@ -5,6 +5,7 @@ const ACTIONS = {
   SHOWLOADER: "SHOWLOADER",
   HIDELOADER: "HIDELOADER",
   ADD_PLAN: "ADD_PLAN",
+  ADD_ITEM: "ADD_ITEM",
 };
 
 export default ACTIONS;
