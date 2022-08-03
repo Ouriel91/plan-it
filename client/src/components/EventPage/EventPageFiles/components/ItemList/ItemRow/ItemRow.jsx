@@ -76,34 +76,40 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             onChange={(e) => setStatus(e.target.value)}
           />
         </TableCell>
-      </div>
-
-      <IconButton
-        aria-label="delete"
-        size="large"
-        color="error"
-        onClick={handleDeleteClick}
-      >
-        <DeleteIcon className="deleteButton" fontSize="inherit" />
-      </IconButton>
+        <TableCell>
+          <IconButton
+            aria-label="delete"
+            size="large"
+            color="error"
+            onClick={handleDeleteClick}
+          >
+            <DeleteIcon className="deleteButton" fontSize="inherit" />
+          </IconButton>
+        </TableCell>
       {!isEditClicked && (
-        <IconButton
-          onClick={handleEditButtonClick}
-          aria-label="edit"
-          size="large"
-        >
-          <EditIcon className="editIcon" fontSize="inherit" />
-        </IconButton>
+        <TableCell>
+          <IconButton
+            onClick={handleEditButtonClick}
+            aria-label="edit"
+            size="large"
+          >
+            <EditIcon className="editIcon" fontSize="inherit" />
+          </IconButton>
+        </TableCell>
       )}
       {isEditClicked && (
-        <IconButton
-          onClick={handleSaveButtonClick}
-          aria-label="save"
-          size="large"
-        >
-          <SaveIcon className="saveIcon" fontSize="inherit" />
-        </IconButton>
+        <TableCell>
+          <IconButton
+            onClick={handleSaveButtonClick}
+            aria-label="save"
+            size="large"
+          >
+            <SaveIcon className="saveIcon" fontSize="inherit" />
+          </IconButton>
+        </TableCell>
       )}
+      
+      </div>
     </TableRow>
   );
 };

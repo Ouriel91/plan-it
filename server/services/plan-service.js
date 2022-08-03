@@ -1,19 +1,36 @@
 const { Event } = require("../db/models");
 const { Item } = require("../db/models");
 
+async function fetchPlans() {
+  const events = await Event.findAll({ raw: true });
+  const items = await getAllItems();
+  const plans = [];
+  events.forEach((event) => {
+    const plan = { ...event };
+    plan.eventItems = items.filter((item) => parseInt(item.eventId) === event.id);
+    plans.push(plan);
+  });
+
+  return plans;
+}
+async function getAllItems() {
+  const items = await Item.findAll({ raw: true });
+  return items;
+}
+
 async function getAllPlans() {
     let events = await Event.findAll()
     return events
 }
 
-async function addPlan(plan){
-    const {headline, date, type, location} = plan
-    await Event.create({headline, date, type, location})
-    const events = await Event.findAll({ raw: true });
-    const event = events[events.length-1]
-    event.eventItems =  [];
-    event.eventsUsers = [];
-    return event
+async function addPlan(plan) {
+  const { headline, date, type, location } = plan;
+  await Event.create({ headline, date, type, location });
+  const events = await Event.findAll({ raw: true });
+  const event = events[events.length - 1];
+  event.eventItems = [];
+  event.eventsUsers = [];
+  return event;
 }
 
 async function deletePlan(id) {
@@ -64,13 +81,12 @@ const itemEdittig = async (item) => {
 };
 
 const itemDeleting = async (id) => {
-    try{
-        await Item.destroy({ where: { id: id } });
-    } catch (err) {
-        throw `There is no item with id: ${id} `;
-    }
-}
-
+  try {
+    await Item.destroy({ where: { id: id } });
+  } catch (err) {
+    throw `There is no item with id: ${id} `;
+  }
+};
 module.exports = {
   getAllPlans,
   addPlan,
@@ -80,4 +96,5 @@ module.exports = {
   itemAdding,
   itemEdittig,
   itemDeleting,
-}
+  fetchPlans,
+};
