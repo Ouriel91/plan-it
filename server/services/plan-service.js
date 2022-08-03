@@ -35,10 +35,8 @@ const getEventPageById = async (id) => {
 }
 
 const itemAdding = async (item) => {
-    console.log(item,'item!!!')
-   const {itemId, itemName, bringName, quantity, status, eventId} = item
+    const {itemId, itemName, bringName, quantity, status, eventId} = item
     await Item.create({itemId, itemName, bringName, quantity, status, eventId})
-console.log(item,'server')
 }
 
 module.exports = {
