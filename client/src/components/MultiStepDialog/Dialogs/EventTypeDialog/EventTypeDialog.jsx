@@ -15,7 +15,7 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
   const [type, setType] = useState('');
 
   const handleChange = (e) => {
-    setEventObj(e.target.value);
+    setType(e.target.value);
   };
 
   const handleNextButton = (e) => {
