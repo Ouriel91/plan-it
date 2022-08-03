@@ -5,12 +5,16 @@ import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select'
 
 const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
   const [itemName, setItemName] = useState(item.itemName);
   const [quantity, setQuantity] = useState(item.quantity);
   const [bringName, setBringName] = useState(item.bringName);
-  const [status, setStatus] = useState(item.status);
+  const [status, setStatus] = useState("pending");
   const [isEditClicked, setEditClicked] = useState(false);
 
   const handleEditButtonClick = () => {
@@ -68,13 +72,21 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
           />
         </TableCell>
         <TableCell>
-          <input
-            style={{ border: "1px solid green", width: "100px" }}
-            value={status}
-            name="status"
+        <FormControl sx={{ m: 0, minWidth: 200 }} size="small">
+      <InputLabel id="demo-select-small">Status</InputLabel>
+      <Select
+        
+        value={status}
+        label="Status"
+        name="status"
             readOnly={!isEditClicked}
             onChange={(e) => setStatus(e.target.value)}
-          />
+      >
+        
+        <MenuItem value= "pending">Pending</MenuItem>
+        <MenuItem value="done"> Done</MenuItem>
+      </Select>
+    </FormControl>
         </TableCell>
         <TableCell>
           <IconButton

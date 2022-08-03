@@ -4,7 +4,6 @@ import CardListConnector from  './components/Card/CardListConnector'
 import AppContainerConnector from './components/AppContainer/AppContainerConnector';
 import EventPageConnector from './components/EventPage/EventPageConnector';
 
-import AppContainerConnector from "./components/AppContainer/AppContainerConnector"
 import {Helmet} from "react-helmet";
 function App() {
   return (

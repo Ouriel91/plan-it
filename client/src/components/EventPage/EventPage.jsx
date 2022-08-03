@@ -13,7 +13,7 @@ const EventPage = ({ fetchPlansWithItemsAction, events }) => {
     }
   }, []);
   const { id } = useParams();
-  return <HomeConnector eventId={id} />;
+  return <HomeConnector paramId={id} />;
 };
 
 export default EventPage;
