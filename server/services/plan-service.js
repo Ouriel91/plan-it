@@ -1,20 +1,27 @@
 const { Event } = require("../db/models");
 const { Item } = require("../db/models");
 
-// async function getAllEventsState() {
-//     const events = await getAllPlans();
-//     events.forEach(event => {
-//         event.evenItems = await Item.findAll({where:{eventId:event.eventId}})
-//     })
-//     return events;
+async function fetchPlans() {
+  const events = await Event.findAll({ raw: true });
+  const items = await getAllItems();
+  const plans = [];
+  events.forEach((event) => {
+    const plan = { ...event };
+    plan.eventItems = items.filter((item) => item.eventId === event.id);
+    plans.push(plan);
+  });
 
-// }
+  return plans;
+}
+async function getAllItems() {
+  const items = await Item.findAll({ raw: true });
+  return items;
+}
 
 async function getAllPlans() {
   let events = await Event.findAll();
   return events;
 }
-
 
 async function addPlan(plan) {
   const { headline, date, type, location } = plan;
@@ -73,17 +80,13 @@ const itemEdittig = async (item) => {
   }
 };
 
-
-
 const itemDeleting = async (id) => {
-  try{
-  await Item.destroy({ where: { id: id } });
-  
-} catch (err) {
-  throw `There is no item with id: ${id} `;
-}
-
-}
+  try {
+    await Item.destroy({ where: { id: id } });
+  } catch (err) {
+    throw `There is no item with id: ${id} `;
+  }
+};
 module.exports = {
   getAllPlans,
   addPlan,
@@ -93,4 +96,5 @@ module.exports = {
   itemAdding,
   itemEdittig,
   itemDeleting,
+  fetchPlans,
 };

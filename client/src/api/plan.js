@@ -109,3 +109,11 @@ export const deleteItem = async (itemId,eventId) => {
 
   return removedItem;
 }
+export const fetchPlansWithItems = async () => {
+  const response = await axios({
+    method: "get",
+    url: `${url}/events`,
+  });
+
+  return response.data;
+}
