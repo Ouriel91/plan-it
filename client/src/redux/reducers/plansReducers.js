@@ -16,8 +16,12 @@ const plansReducer = (state = initialState, action) => {
         ...state,
         plans: [...state.plans, ...action.payload],
       };
+    case actionTypes.DELETE_PLAN: 
+      return {
+          ...state,
+          plans: state.plans.filter(plan => plan.id !== action.payload)
+      }
     case actionTypes.ADD_ITEM:
-      console.log("heere", action.payload);
       return {
         ...state,
         plans: state.plans.map((plan) =>
@@ -33,7 +37,6 @@ const plansReducer = (state = initialState, action) => {
         (item) => item.id == action.payload[0].id
       );
       plan.eventItems[idx] = action.payload[0];
-
 
       return {
         ...state,
