@@ -12,7 +12,6 @@ import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 import ShareIcon from '@mui/icons-material/Share';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Box from '@mui/material/Box'
 import bbqImage from '../../images/bbq-img.jpg'
@@ -20,7 +19,7 @@ import poolImage from '../../images/pool-party.jpg'
 import otherImage from '../../images/other.jpg'
 import campingImage from '../../images/camping.jpg'
 import partyImage from '../../images/party.jpg'
-import {deletePlan, editPlan} from '../../api/plan'
+import {useNavigate} from 'react-router-dom'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -33,8 +32,9 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-const CardItem = ({plan}) => {
+const CardItem = ({plan, deleteEventAction}) => {
   const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate()
 
   let typeStyle = {}
   switch (plan.type) {
@@ -105,18 +105,21 @@ const CardItem = ({plan}) => {
           height="194"
           src={typeStyle.image}
           alt={plan.type}
+          style={{cursor: 'pointer'}}
+          onClick={() => navigate(`/event-page/${plan.id}`)}
         />
         <CardContent>
-          <Typography variant="h5" color="text.secondary">
+          <Typography variant="h4" color="text.secondary" style={{textAlign: 'center'}}>
             {plan.headline}
           </Typography>
         </CardContent>
         <Box p={1}>
-          <CardActions disableSpacing>
-            <IconButton aria-label="delete">
-              <DeleteIcon onClick={() => deletePlan(plan.id)}/>
+          <CardActions>
+            <div style={{padding: '5px'}}>
+            <IconButton aria-label="delete" onClick={() => deleteEventAction(plan.id)}>
+              <DeleteIcon/>
             </IconButton>
-            <IconButton aria-label="share">
+            <IconButton aria-label="share" style={{marginLeft: '10px'}}>
             <a 
               href={`https://web.whatsapp.com/send?text=${plan.headline} - ${plan.type} event in ${plan.location} at ${plan.date}`}  
               rel="nofollow noopener noreferrer" 
@@ -124,6 +127,7 @@ const CardItem = ({plan}) => {
               <ShareIcon />
             </a>              
             </IconButton>
+            </div>
             <ExpandMore
               expand={expanded}
               onClick={handleExpandClick}

@@ -63,7 +63,7 @@ export const getEventPageById = async (url) => {
 export const postItem = async (item, eventId) => {
   const postedItem = {
     itemName: item.itemName,
-    bringName: item.whoBrings,
+    bringName: item.bringName,
     quantity: item.quantity,
     status: item.status,
     eventId: eventId,
@@ -78,3 +78,43 @@ export const postItem = async (item, eventId) => {
   });
   return response.data;
 };
+
+export const itemToEdit = async (item, itemId,eventId) => {
+
+  const editItem = {
+    itemName: item.itemName,
+    bringName: item.bringName,
+    quantity: item.quantity,
+    status: item.status,
+    id: itemId,
+  };
+  const response = await axios({
+    method: "put",
+    url: `${url}/event-page/${eventId}/items`,
+    headers: { "Content-Type": "application/json" },
+    data: {
+      editItem
+    },
+  });
+  return response.data;
+}
+
+
+export const deleteItem = async (itemId,eventId) => {
+  const removedItem = await axios({
+    method: "delete",
+    url:`${url}/event-page/${eventId}/items`,
+    data: {itemId
+  }});
+
+  return removedItem;
+}
+export const fetchPlansWithItems = async () => {
+  console.log('api')
+  const response = await axios({
+    method: "get",
+    url: `${url}/events`,
+  });
+
+  return response.data;
+}

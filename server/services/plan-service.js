@@ -1,44 +1,47 @@
-
 const { Event } = require("../db/models");
 const { Item } = require("../db/models");
 
-// async function getAllEventsState() {
-//     const events = await getAllPlans();
-//     events.forEach(event => {
-//         event.evenItems = await Item.findAll({where:{eventId:event.eventId}})
-//     })
-//     return events;
+async function fetchPlans() {
+  const events = await Event.findAll({ raw: true });
+  const items = await getAllItems();
+  const plans = [];
+  events.forEach((event) => {
+    const plan = { ...event };
+    plan.eventItems = items.filter((item) => parseInt(item.eventId) === event.id);
+    plans.push(plan);
+  });
 
-// }
-
-async function getAllPlans() {
-  let events = await Event.findAll();
-  return events;
+  return plans;
+}
+async function getAllItems() {
+  const items = await Item.findAll({ raw: true });
+  return items;
 }
 
-const generateId = () => {
-  let dt = new Date().getTime();
-  const uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
-    /[xy]/g,
-    function (c) {
-      const r = (dt + Math.random() * 16) % 16 | 0;
-      dt = Math.floor(dt / 16);
-      return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
-    }
-  );
-  return uuid;
-};
+async function getAllPlans() {
+    let events = await Event.findAll()
+    return events
+}
 
+<<<<<<< HEAD
 async function addPlan(plan) {
-  //const eventId = generateId()
   const { headline, date, type, location } = plan;
   await Event.create({ headline, date, type, location });
   const events = await Event.findAll({ raw: true });
   const event = events[events.length - 1];
   event.eventItems = [];
   event.eventsUsers = [];
-  console.log(event, 'event!!!!')
   return event;
+=======
+async function addPlan(plan){
+    const {headline, date, type, location} = plan
+    await Event.create({headline, date, type, location})
+    const events = await Event.findAll({ raw: true });
+    const event = events[events.length-1]
+    event.eventItems =  [];
+    event.eventsUsers = [];
+    return event
+>>>>>>> d0ae71854f493889e217a10bc808099d351f0e09
 }
 
 async function deletePlan(id) {
@@ -66,10 +69,45 @@ const itemAdding = async (newItem) => {
     order: [["id", "DESC"]],
     raw: true,
   });
-  console.log(item,'item!!!!!!')
   return item;
 };
 
+const itemEdittig = async (item) => {
+  try {
+    const idx = parseInt(item.id);
+    const editItem = await Item.update(
+      {
+        itemName: item.itemName,
+        quantity: item.quantity,
+        bringName: item.bringName,
+        status: item.status,
+      },
+      { where: { id: idx }, returning: true, raw: true }
+    );
+
+    return editItem[1];
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+const itemDeleting = async (id) => {
+<<<<<<< HEAD
+  try {
+    await Item.destroy({ where: { id: id } });
+  } catch (err) {
+    throw `There is no item with id: ${id} `;
+  }
+};
+=======
+    try{
+        await Item.destroy({ where: { id: id } });
+    } catch (err) {
+        throw `There is no item with id: ${id} `;
+    }
+}
+
+>>>>>>> d0ae71854f493889e217a10bc808099d351f0e09
 module.exports = {
   getAllPlans,
   addPlan,
@@ -77,4 +115,11 @@ module.exports = {
   editPlan,
   getEventPageById,
   itemAdding,
+  itemEdittig,
+  itemDeleting,
+<<<<<<< HEAD
+  fetchPlans,
 };
+=======
+}
+>>>>>>> d0ae71854f493889e217a10bc808099d351f0e09

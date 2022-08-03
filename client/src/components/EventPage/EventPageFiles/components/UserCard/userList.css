@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
+  font-size: x-large;
 }
 .user-name{
   font-size: x-large;
@@ -25,7 +26,10 @@ html {
 
 .avatars-container{
   display: flex;
+  margin: 1rem;
   flex-direction: row;
+  justify-content:flex-end;
+  
 }
 
 .child-div {
@@ -123,20 +127,7 @@ input:focus {
   margin-top: 3rem;
   text-align: center;
 }
-/* 
-.eachItem {
-  background: #fff;
-  padding: 1.2rem 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 0.7rem;
-  margin-left: 1rem;
-  min-width: 40rem;
-  word-break: break-word;
-  background: rgb(85, 41, 220);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
+
 
 .eachItem:hover {
   background: rgb(249, 249, 252);
@@ -147,7 +138,7 @@ input:focus {
   padding-left: 1rem;
   font-size: 1.6rem;
   color: #fff;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .fa-trash-alt,
@@ -156,10 +147,11 @@ input:focus {
   cursor: pointer;
   pointer-events: auto;
   z-index: 10;
-  color: rgb(251, 251, 251);
+  color: rgb(117, 117, 117);
   -webkit-transition: color 0.15s linear;
   transition: color 0.15s linear;
-  font-size: 2rem;
+  font-size: 1rem;
+  
 }
 
 .addItems{
@@ -173,7 +165,7 @@ input:focus {
 }
 
 .fa-edit {
-  margin-left: -3.5rem;
+  margin-left: -1.5rem;
 }
 
 
@@ -205,7 +197,11 @@ input:focus {
   text-decoration: none;
 }
 .add-btn{
+  border: aquamarine;
+  border-radius: 20px;
   background: none;
+  position:absolute;
+  left: 600px;
   border: none;
 }
 .effect04 {
@@ -253,7 +249,7 @@ input:focus {
 
 .todo-row {
   display: flex;
-  justify-content: space-between;
+  font-size: x-large;
   align-items: center;
   margin: 4px auto;
   color: #fff;

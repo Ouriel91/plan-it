@@ -3,18 +3,23 @@ import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
 import EventsType from "../../components/EventsType/EventsType";
 import Location from "../../components/Location/Location";
-import React,{useState} from "react";
+import {useState} from "react";
 import Weather from "../../components/Weather/Weather";
-import ItemListConnector from "../../components/ItemList/ItemListConnector"
-import NewItemInputConnector from "../../components/NewItemInput/NewItemInputConnector"
+import UserList from '../../components/UserCard/UserList';
 import Footer from "../../../../Footer/Footer";
+import {useParams} from 'react-router-dom'
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
+// import UserList from "../../components/UserCard/UserList";
 
-const Home = ({event}) => {
-  console.log("home",event)
-  const [lat, setLat] = useState("")
-  const [lng, setLng] = useState("")
+const Home = ({event, getEvent}) => {
+  //console.log("home",event)
+  const [lat, setLat] = useState(0.0)
+  const [lng, setLng] = useState(0.0)
   const [date, setDate] = useState("")
+  /*const params = useParams();
+  
+   const currentEvent = params.id? getEvent(params.id) : event;
+  console.log('currentEvent', currentEvent); */
   
   const getGeocode = async() => {
     const orgAddress = event.location
@@ -23,8 +28,10 @@ const Home = ({event}) => {
     const data = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`)
     const response = await data.json()
     const results = response.results
-    setLat(results[0].geometry.location.lat)
-    setLng(results[0].geometry.location.lng)
+    const currLat = parseFloat(results[0].geometry.location.lat)
+    const currLng = parseFloat(results[0].geometry.location.lng)
+    setLat(currLat)
+    setLng(currLng)
 
     const orgDate = event.date
     let date = new Date(orgDate).toISOString().slice(0, 10)   
@@ -40,21 +47,20 @@ const Home = ({event}) => {
       <div className="homeContainer">
         <Navbar event={event}/>
         <div className="EventsTypes">
+          <UserList/>
           <EventsType event={event} />
-        </div>
+        </div> 
         <div className='weather-location-container'>
-          <Location lat={parseInt(lat)} lng={parseInt(lng)} />
+          <Location lat={lat} lng={lng} />
           <Weather lat={lat} lng={lng} location={event.location} date={date}/>
         </div>
         <div className="charts">
-          {/* <ImgUploader/> */}
+          
           
         </div>
         <div className="listContainer">
           <div className="listTitle">Event List</div>
-          <NewItemInputConnector event ={event}/> 
-          <ItemListConnector event={event} />
-        </div>
+        </div> 
       </div>
       <Footer/>
     </div>

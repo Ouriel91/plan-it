@@ -1,4 +1,4 @@
-import {postPlan, fetchPlans,postItem} from "../../api/plan";
+import {postPlan, fetchPlans,postItem,itemToEdit,deleteItem,fetchPlansWithItems} from "../../api/plan";
 import actionTypes from "./constants";
 
 export const fetchAllPlans = (fetchedEvents) => ({
@@ -20,43 +20,81 @@ export const addPlan = (newEvent) => ({
 
 export const addEventAction = (newEvent) => {
   return async (dispatch) => {
-   const plan =  await postPlan(newEvent)
+   const plan = await postPlan(newEvent)
     dispatch(addPlan(plan));
     return plan
   };
 };
 
+export const removePlan = (id) => ({
+  type: actionTypes.DELETE_PLAN,
+  payload: id,
+})
 
-export const saveItem = (newItem) => ({
+export const deleteEventAction = (id) => {
+  return async (dispatch) => {
+    const plan = await deletePlan(id)
+     dispatch(removePlan(id));
+     return plan
+  }
+}
+
+
+export const saveItem = (newItem,eventId) => ({
   type: actionTypes.SAVE_ITEM,
-  payload: [newItem],
+  eventId,
+  payload: newItem,
 });
 
-export const saveItemAction = (newItem,eventId) => {
-  console.log(newItem,eventId,'item and event id')
+export const saveItemAction = (editItem,itemId,eventId) => {
   return async (dispatch) => {
-   const item =  await postItem(newItem,eventId)
-   // dispatch(saveItem(item));
-    return item
+   const item =  await itemToEdit(editItem,itemId,eventId)
+    dispatch(saveItem(item,eventId));
   };
 };
 
 export const addItem = (newItem,eventId) => ({
   type: actionTypes.ADD_ITEM,
   eventId,
-  payload: [newItem],
+  payload: newItem,
 });
 
 export const addItemAction =  (newItem,eventId) => {
-
-  console.log(newItem,eventId,'item and event id')
   return async (dispatch) => {
    const item =  await postItem(newItem,eventId)
-   console.log(item,'item')
     dispatch(addItem(item));
     return item
   };
 };
+
+
+const itemToDelete = (itemId,eventId) => ({
+  type: actionTypes.DELETE_ITEM,
+  eventId,
+  payload: itemId,
+});
+
+export const deleteItemAction = (itemId,eventId) => {
+  return async (dispatch) => {
+    await deleteItem(itemId,eventId);
+    dispatch(itemToDelete(itemId,eventId));
+  };
+};
+
+
+export const addPlansWithItemsToState = (fetchedPlans) => ({
+  type: actionTypes.FETCH_ALL_PLANS_AND_ITEMS,
+  payload: fetchedPlans
+})
+
+export const fetchPlansWithItemsAction = () => {
+  console.log('fetching plans with items action')
+  return async (dispatch) => {
+    console.log('action')
+    const fetchedPlans = await fetchPlansWithItems()
+    dispatch(fetchAllPlans(fetchedPlans));
+  };
+}
 
 
 

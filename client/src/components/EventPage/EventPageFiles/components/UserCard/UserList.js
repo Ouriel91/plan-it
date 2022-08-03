@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./userList.css";
-import { deepOrange, deepPurple } from '@mui/material/colors';
-import Avatar from '@mui/material/Avatar';
-import AvatarGroup from '@mui/material/AvatarGroup';
+import { Avatar, Grid } from "@nextui-org/react";
+import Dialog from "@material-ui/core/Dialog";
+import Button from '@mui/material/Button';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import Stack from '@mui/material/Stack';
+
+
 const getLocalData = () => {
   const lists = localStorage.getItem("UsersList");
 
@@ -22,12 +28,25 @@ const UserList = () => {
   const [isEditItem, setIsEditItem] = useState("");
   const [toggleButton, setToggleButton] = useState(false);
   const [isShown, setIsShown] = useState(false);
+  const [color,setColor] =useState(['default',
+  'primary',
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'gradient']);
+
+
   
 
   const handleClick = (event) => {
-    setIsShown((current) => !current);
-    // setIsShown(true);
+    setIsShown(!isShown);
+    
   };
+  const handleClickAdd = () =>{
+    addItem();
+    setIsShown(!isShown);
+  }
 
   const addItem = () => {
     if (!data) {
@@ -91,25 +110,45 @@ const UserList = () => {
     <>
       <div className="main-div">
         <div className="child-div">
-          <button onClick={handleClick} className="fa fa-plus add-btn"><h1> Users</h1></button>
+          
+          <button onClick={handleClick} className="fa fa-plus add-btn"></button>
           <div className="addItems">
-          {isShown && 
-            <input
-              type="text"
-              placeholder="Enter Full User Name..."
+          
+            
+            <Dialog open={isShown} onClose={handleClick}>
+            <DialogTitle>Add New User</DialogTitle>
+                <DialogContent>
+                  
+                    <input
+                 type="text"
+                placeholder="Enter Full User Name..."
               className="form-control"
               value={data}
               onChange={(event) => {
-                setData(event.target.value);
-                
-              }}
-            />
-          }
-            {isShown && toggleButton ? (
-            <button className="far fa-edit add-btn" onClick={addItem}>Edit</button>
+                setData(event.target.value);}}
+                />
+                    <input
+                 type="text"
+                placeholder="Enter Email..."
+              className="form-control"
+            //   value={...data}
+            //   onChange={(event) => {
+            //     setData(event.target.value);}}
+                />
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={handleClick}>Cancel</Button>
+                <Button onClick={handleClickAdd}>Add</Button>
+                </DialogActions>
+            </Dialog>
+        
+            
+          
+            { toggleButton ? (
+            <button className="far fa-edit add-btn" onClick={addItem}></button>
               
             ) : (
-            <button className="far fa-plus add-btn" onClick={addItem}>add</button>
+            <button className="far fa-plus add-btn" onClick={addItem}></button>
               
             )}
           
@@ -120,15 +159,28 @@ const UserList = () => {
               return (
                 
                 <div className="item-div" key={curElem.id}>
-                <span>
-                <Stack >
-                    <Avatar
-                      round={true} 
-                      size="30px"
-                      sx={{ bgcolor: [500] }}
-                    >{curElem.name}</Avatar>
-                      </Stack>
-                      </span>  
+                <Grid.Container gap={1}>
+                    <Grid xs={12}>
+                      <Avatar.Group>
+                        <Avatar
+                        className="todo-row"
+                          key={curElem.id}
+                          textColor="white"
+                          size="xl"
+                          pointer
+                          text={curElem.name}
+                          stacked
+                          NormalWeights ='black'
+                          bordered
+                          color={
+                            color[Math.floor(Math.random() * color.length)]
+                          }
+                          
+                        />
+                      </Avatar.Group>
+                    </Grid>
+                    <Grid xs={12}></Grid>
+                  </Grid.Container>
       
 
                   <div className="delete-btn">
@@ -145,7 +197,7 @@ const UserList = () => {
               );
             })}
           </div>
-          <div className="showItems">
+          { toggleButton ? <div className="showItems">
             <button
               className="btn effect04"
               data-sm-link-text="Remove all"
@@ -153,7 +205,8 @@ const UserList = () => {
             >
               <span>USER LIST</span>
             </button>
-          </div>
+          </div>: <></>}
+          
         </div>
       </div>
     </>
