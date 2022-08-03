@@ -5,7 +5,7 @@ import logo from "../../images/app-logo.png"
 
 const Footer = () => {
   return (
-    <CDBFooter >
+    <CDBFooter className='shadow'>
       <CDBBox
         display="flex"
         justifyContent="between"
