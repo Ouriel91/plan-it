@@ -16,11 +16,11 @@ const Home = ({event, getEvent}) => {
   const [lat, setLat] = useState(0.0)
   const [lng, setLng] = useState(0.0)
   const [date, setDate] = useState("")
-  /*const params = useParams();
+  const params = useParams();
   
-   const currentEvent = params.id? getEvent(params.id) : event;
-  console.log('currentEvent', currentEvent); */
-  
+  event = params.id ? getEvent(params.id) : event;
+/*   console.log('currentEvent', currentEvent);
+ */  
   const getGeocode = async() => {
     const orgAddress = event.location
     let address = orgAddress.replaceAll(" ", "+")

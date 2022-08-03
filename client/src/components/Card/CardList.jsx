@@ -3,12 +3,12 @@ import CardItem from '../Card/CardItem'
 import Box from '@mui/material/Box'
 import Grid from "@mui/material/Grid";
 
-function CardList({fetchEventAction,deleteEventAction, plans}) {
+function CardList({fetchPlansWithItemsAction,deleteEventAction, plans}) {
 
     console.log("plans",plans)
 
     useEffect(() => {
-        fetchEventAction()
+        fetchPlansWithItemsAction()
     },[])
     
     const renderItems = plans.map(plan => <CardItem key={plan.id} plan={plan} deleteEventAction={deleteEventAction}/>)
