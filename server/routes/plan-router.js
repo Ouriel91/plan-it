@@ -10,5 +10,7 @@ planRouter.put("/:id", planController.planEditing)
 planRouter.get("/event-page/:id", planController.getEventPage);
 //items
 planRouter.post("/event-page/:id/items", planController.itemAdding)
+planRouter.put("/event-page/:id/items", planController.itemEditing)
+planRouter.delete("/event-page/:id/items", planController.itemDeleting)
 
 module.exports =  planRouter;

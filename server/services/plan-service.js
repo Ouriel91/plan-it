@@ -1,6 +1,5 @@
-const plansData = "./services/dummy-data.json"
-const {Event} = require('../db/models')
-const {Item} = require('../db/models')
+const { Event } = require("../db/models");
+const { Item } = require("../db/models");
 
 async function getAllPlans() {
     let events = await Event.findAll()
@@ -17,33 +16,68 @@ async function addPlan(plan){
     return event
 }
 
-async function deletePlan(id){
-    const removedPlan = await Event.findOne({where:{id}})
-    await removedPlan.destroy()
-    return removedPlan
+async function deletePlan(id) {
+  const removedPlan = await Event.findOne({ where: { id } });
+  await removedPlan.destroy();
+  return removedPlan;
 }
 
-async function editPlan(id, plan){
-    const editedPlan = await Event.findOne({where:{id}})
-    await editedPlan.update({...plan})
-    return editedPlan
+async function editPlan(id, plan) {
+  const editedPlan = await Event.findOne({ where: { id } });
+  await editedPlan.update({ ...plan });
+  return editedPlan;
 }
 
 const getEventPageById = async (id) => {
-    const event = await Event.findOne({where:{id}})
-    return event
-}
+  const event = await Event.findOne({ where: { id } });
+  return event;
+};
 
-const itemAdding = async (item) => {
-    const {itemId, itemName, bringName, quantity, status, eventId} = item
-    await Item.create({itemId, itemName, bringName, quantity, status, eventId})
+const itemAdding = async (newItem) => {
+  const { itemName, bringName, quantity, status, eventId } = newItem;
+  await Item.create({ itemName, bringName, quantity, status, eventId });
+  const item = await Item.findAll({
+    limit: 1,
+    order: [["id", "DESC"]],
+    raw: true,
+  });
+  return item;
+};
+
+const itemEdittig = async (item) => {
+  try {
+    const idx = parseInt(item.id);
+    const editItem = await Item.update(
+      {
+        itemName: item.itemName,
+        quantity: item.quantity,
+        bringName: item.bringName,
+        status: item.status,
+      },
+      { where: { id: idx }, returning: true, raw: true }
+    );
+
+    return editItem[1];
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+const itemDeleting = async (id) => {
+    try{
+        await Item.destroy({ where: { id: id } });
+    } catch (err) {
+        throw `There is no item with id: ${id} `;
+    }
 }
 
 module.exports = {
-    getAllPlans,
-    addPlan,
-    deletePlan,
-    editPlan,
-    getEventPageById,
-    itemAdding
+  getAllPlans,
+  addPlan,
+  deletePlan,
+  editPlan,
+  getEventPageById,
+  itemAdding,
+  itemEdittig,
+  itemDeleting,
 }

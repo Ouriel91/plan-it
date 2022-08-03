@@ -3,14 +3,15 @@ import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
 import EventsType from "../../components/EventsType/EventsType";
 import Location from "../../components/Location/Location";
-import React,{useState} from "react";
+import {useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import ItemListConnector from "../../components/ItemList/ItemListConnector"
-import ItemList from "../../components/ItemList/ItemList";
+import NewItemInputConnector from "../../components/NewItemInput/NewItemInputConnector"
 import Footer from "../../../../Footer/Footer";
 import {useParams} from 'react-router-dom'
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
+
 const Home = ({event, getEvent}) => {
   //console.log("home",event)
   const [lat, setLat] = useState(0.0)
@@ -44,23 +45,23 @@ const Home = ({event, getEvent}) => {
 
   return (
     <div className="home">
-
       <div className="homeContainer">
-
         <Navbar event={event}/>
-        {/* <div className="EventsTypes">
+        <div className="EventsTypes">
           <EventsType event={event} />
-        </div> */}
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-around', marginTop: '80px'}}>
+        </div> 
+        <div className='weather-location-container'>
           <Location lat={lat} lng={lng} />
           <Weather lat={lat} lng={lng} location={event.location} date={date}/>
         </div>
           {/* <ImgUploader/> */}
           {/* <UserList/> */}
         {/* <div className="listContainer">
+        <div className="charts">
+          {/* <ImgUploader/> */}  
+        <div className="listContainer">
           <div className="listTitle">Event List</div>
-          <ItemListConnector event={event} />
-        </div> */}
+        </div>
       </div>
       <Footer/>
     </div>

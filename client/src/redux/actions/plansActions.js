@@ -1,4 +1,4 @@
-import {postPlan, fetchPlans,postItem, deletePlan} from "../../api/plan";
+import {postPlan, fetchPlans,deletePlan,postItem,itemToEdit,deleteItem} from "../../api/plan";
 import actionTypes from "./constants";
 
 export const fetchAllPlans = (fetchedEvents) => ({
@@ -40,17 +40,48 @@ export const deleteEventAction = (id) => {
 }
 
 
-export const saveItem = (newItem) => ({
+export const saveItem = (newItem,eventId) => ({
   type: actionTypes.SAVE_ITEM,
-  payload: [newItem],
+  eventId,
+  payload: newItem,
 });
 
-export const saveItemAction = (newItem,eventId) => {
+export const saveItemAction = (editItem,itemId,eventId) => {
+  return async (dispatch) => {
+   const item =  await itemToEdit(editItem,itemId,eventId)
+    dispatch(saveItem(item,eventId));
+  };
+};
+
+export const addItem = (newItem,eventId) => ({
+  type: actionTypes.ADD_ITEM,
+  eventId,
+  payload: newItem,
+});
+
+export const addItemAction =  (newItem,eventId) => {
   return async (dispatch) => {
    const item =  await postItem(newItem,eventId)
-    dispatch(saveItem(item));
+    dispatch(addItem(item));
     return item
   };
 };
+
+
+const itemToDelete = (itemId,eventId) => ({
+  type: actionTypes.DELETE_ITEM,
+  eventId,
+  payload: itemId,
+});
+
+export const deleteItemAction = (itemId,eventId) => {
+  return async (dispatch) => {
+    await deleteItem(itemId,eventId);
+    dispatch(itemToDelete(itemId,eventId));
+  };
+};
+
+
+
 
 
