@@ -17,14 +17,11 @@ const Home = ({event,fetchPlansWithItemsAction}) => {
   const [lat, setLat] = useState(0.0)
   const [lng, setLng] = useState(0.0)
   const [date, setDate] = useState("")
-
-
+  const params = useParams();
   
-  /*const params = useParams();
-  
-   const currentEvent = params.id? getEvent(params.id) : event;
-  console.log('currentEvent', currentEvent); */
-  
+  event = params.id ? getEvent(params.id) : event;
+/*   console.log('currentEvent', currentEvent);
+ */  
   const getGeocode = async() => {
     const orgAddress = event.location
     let address = orgAddress.replaceAll(" ", "+")
@@ -51,20 +48,12 @@ const Home = ({event,fetchPlansWithItemsAction}) => {
       <div className="homeContainer">
         <Navbar event={event}/>
         <div className="EventsTypes">
-          <UserList/>
           <EventsType event={event} />
         </div> 
         <div className='weather-location-container'>
           <Location lat={lat} lng={lng} />
           <Weather lat={lat} lng={lng} location={event.location} date={date}/>
         </div>
-        <div className="charts">
-          
-          
-        </div>
-        <div className="listContainer">
-          <div className="listTitle">Event List</div>
-        </div> 
       </div>
       <Footer/>
     </div>

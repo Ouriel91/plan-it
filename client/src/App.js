@@ -4,8 +4,16 @@ import CardListConnector from  './components/Card/CardListConnector'
 import AppContainerConnector from './components/AppContainer/AppContainerConnector';
 import EventPageConnector from './components/EventPage/EventPageConnector';
 
+import AppContainerConnector from "./components/AppContainer/AppContainerConnector"
+import {Helmet} from "react-helmet";
 function App() {
   return (
+    <>
+    <Helmet>
+    <meta charSet="utf-8" />
+    <title>Plan it.</title>
+    <link rel="canonical" href="http://mysite.com/example" />
+</Helmet>
     <BrowserRouter>
       <Routes>
         <Route path="/">
@@ -16,6 +24,8 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </>
+    
   );
 }
 

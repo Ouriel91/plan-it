@@ -50,7 +50,7 @@ html {
 }
 
 input {
-  /* display: block; */
+  
   min-width: 30rem;
   height: 3.4rem;
   padding: 2rem 1.2rem;
@@ -86,9 +86,6 @@ input:focus {
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
 }
 
-/*  Please Subscribe to ThapaTechnical Youtube Channel
-/* Click Here: https://www.youtube.com/thapatechnical  */
-
 .delete-btn {
   width: 2rem;
   color: #666;
@@ -119,7 +116,7 @@ input:focus {
   font-size: 1.5rem;
 }
 .item-div{
-  margin-top: 10px;
+  display: inline-block
 }
 .showItems {
   text-indent: -2em;
@@ -127,8 +124,20 @@ input:focus {
   margin-top: 3rem;
   text-align: center;
 }
-
-
+ .my-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  background: #868384;
+  color: white; 
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.my-button:hover {
+  background: #07fd97;
+}
 .eachItem:hover {
   background: rgb(249, 249, 252);
   color: rgb(85, 41, 220);
@@ -138,12 +147,12 @@ input:focus {
   padding-left: 1rem;
   font-size: 1.6rem;
   color: #fff;
-  /* display: inline-block; */
+  
 }
 
 .fa-trash-alt,
 .fa-edit {
-  /* margin-left: -2.5rem; */
+  
   cursor: pointer;
   pointer-events: auto;
   z-index: 10;
@@ -204,7 +213,7 @@ input:focus {
   left: 600px;
   border: none;
 }
-.effect04 {
+.remove-all-btn {
   --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
   display: var(--uismLinkDisplay);
   color: #000;
@@ -214,23 +223,23 @@ input:focus {
   overflow: hidden;
 }
 
-.effect04::before,
-.effect04 span {
+.remove-all-btn::before,
+.remove-all-btn span {
   margin: 0 auto;
   transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
   transition-duration: 0.4s;
 }
 
-.effect04:hover {
+.remove-all-btn:hover {
   background-color: rgb(85, 41, 220);
 }
 
-.effect04:hover span {
+.remove-all-btn:hover span {
   -webkit-transform: translateY(-400%) scale(-0.1, 20);
   transform: translateY(-400%) scale(-0.1, 20);
 }
 
-.effect04::before {
+.remove-all-btn::before {
   content: attr(data-sm-link-text);
   color: #fff;
   position: absolute;
@@ -241,63 +250,9 @@ input:focus {
   transform: translateY(500%) scale(-0.1, 20);
 }
 
-.effect04:hover::before {
+.remove-all-btn:hover::before {
   letter-spacing: 0.05em;
   -webkit-transform: translateY(0) scale(1, 1);
   transform: translateY(0) scale(1, 1);
 }
 
-.todo-row {
-  display: flex;
-  font-size: x-large;
-  align-items: center;
-  margin: 4px auto;
-  color: #fff;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
-  );
-
-  padding: 16px;
-  border-radius: 5px;
-  width: 90%;
-}
-
-.todo-row:nth-child(4n + 1) {
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
-}
-
-.todo-row:nth-child(4n + 2) {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
-  );
-}
-
-.todo-row:nth-child(4n + 3) {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
-}
-.todo-row:nth-child(4n + 4) {
-  background: linear-gradient(
-    90deg,
-    rgb(77, 235, 15) 0%,
-    rgb(1, 146, 62) 100%
-  );
-}
-.todo-row:nth-child(4n + 5) {
-  background: linear-gradient(
-    90deg,
-    rgb(253, 157, 14) 0%,
-    rgb(214, 142, 7) 100%
-  );
-}
