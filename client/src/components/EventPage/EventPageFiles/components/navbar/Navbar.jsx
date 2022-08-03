@@ -8,9 +8,7 @@ import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 // import { DarkModeContext } from "../../context/darkModeContext";
 // import { useContext } from "react";
 import logo from '../../../../../images/app-logo.png'
-import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
+
 
 
 const Navbar = ({ event }) => {
