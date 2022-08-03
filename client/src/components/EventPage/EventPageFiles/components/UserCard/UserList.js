@@ -111,7 +111,7 @@ const UserList = () => {
       <div className="main-div">
         <div className="child-div">
           
-          <button onClick={handleClick} className="fa fa-plus add-btn"></button>
+          <button onClick={handleClick} className="my-button">+</button>
           <div className="addItems">
           
             
@@ -159,10 +159,9 @@ const UserList = () => {
               return (
                 
                 <div className="item-div" key={curElem.id}>
-                <Grid.Container gap={1}>
-                    <Grid xs={12}>
-                      <Avatar.Group>
-                        <Avatar
+                
+                 
+                        <Avatar 
                         className="todo-row"
                           key={curElem.id}
                           textColor="white"
@@ -177,11 +176,8 @@ const UserList = () => {
                           }
                           
                         />
-                      </Avatar.Group>
-                    </Grid>
-                    <Grid xs={12}></Grid>
-                  </Grid.Container>
-      
+          
+             
 
                   <div className="delete-btn">
                     <i
@@ -199,7 +195,7 @@ const UserList = () => {
           </div>
           { toggleButton ? <div className="showItems">
             <button
-              className="btn effect04"
+              className="btn remove-all-btn"
               data-sm-link-text="Remove all"
               onClick={removeAll}
             >
