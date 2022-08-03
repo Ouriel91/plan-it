@@ -23,7 +23,6 @@ async function getAllPlans() {
     return events
 }
 
-<<<<<<< HEAD
 async function addPlan(plan) {
   const { headline, date, type, location } = plan;
   await Event.create({ headline, date, type, location });
@@ -32,16 +31,6 @@ async function addPlan(plan) {
   event.eventItems = [];
   event.eventsUsers = [];
   return event;
-=======
-async function addPlan(plan){
-    const {headline, date, type, location} = plan
-    await Event.create({headline, date, type, location})
-    const events = await Event.findAll({ raw: true });
-    const event = events[events.length-1]
-    event.eventItems =  [];
-    event.eventsUsers = [];
-    return event
->>>>>>> d0ae71854f493889e217a10bc808099d351f0e09
 }
 
 async function deletePlan(id) {
