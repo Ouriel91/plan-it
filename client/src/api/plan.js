@@ -110,6 +110,7 @@ export const deleteItem = async (itemId,eventId) => {
   return removedItem;
 }
 export const fetchPlansWithItems = async () => {
+  console.log('api')
   const response = await axios({
     method: "get",
     url: `${url}/events`,

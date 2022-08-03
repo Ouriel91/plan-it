@@ -7,7 +7,7 @@ async function fetchPlans() {
   const plans = [];
   events.forEach((event) => {
     const plan = { ...event };
-    plan.eventItems = items.filter((item) => item.eventId === event.id);
+    plan.eventItems = items.filter((item) => parseInt(item.eventId) === event.id);
     plans.push(plan);
   });
 

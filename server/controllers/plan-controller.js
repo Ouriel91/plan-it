@@ -101,6 +101,7 @@ const itemDeleting = async (req, res) => {
 
 const fetchPlans = async (req, res) => {
   try {
+    console.log('controller');
     const plans = await planService.fetchPlans();
     return res.status(200).json(plans);
   } catch (err) {
