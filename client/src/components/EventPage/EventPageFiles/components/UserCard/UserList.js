@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./userList.css";
-import Avatar from "react-avatar";
+import { Avatar, Grid } from "@nextui-org/react";
 import Dialog from "@material-ui/core/Dialog";
 import Button from '@mui/material/Button';
 import DialogActions from '@mui/material/DialogActions';
@@ -28,6 +28,15 @@ const UserList = () => {
   const [isEditItem, setIsEditItem] = useState("");
   const [toggleButton, setToggleButton] = useState(false);
   const [isShown, setIsShown] = useState(false);
+  const [color,setColor] =useState(['default',
+  'primary',
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'gradient']);
+
+
   
 
   const handleClick = (event) => {
@@ -118,6 +127,14 @@ const UserList = () => {
               onChange={(event) => {
                 setData(event.target.value);}}
                 />
+                    <input
+                 type="text"
+                placeholder="Enter Email..."
+              className="form-control"
+            //   value={...data}
+            //   onChange={(event) => {
+            //     setData(event.target.value);}}
+                />
                 </DialogContent>
                 <DialogActions>
                 <Button onClick={handleClick}>Cancel</Button>
@@ -128,7 +145,7 @@ const UserList = () => {
             
           
             { toggleButton ? (
-            <button className="far fa-edit add-btn" onClick={addItem}>Edit</button>
+            <button className="far fa-edit add-btn" onClick={addItem}></button>
               
             ) : (
             <button className="far fa-plus add-btn" onClick={addItem}></button>
@@ -142,21 +159,28 @@ const UserList = () => {
               return (
                 
                 <div className="item-div" key={curElem.id}>
-                <span>
-                <Stack direction="row" spacing={-1}>
-                
-                     <Avatar
-                        round={true} 
-                      size="30px"
-                      color={Avatar.getRandomColor("sitebase", [
-                        "red",
-                        "green",
-                        "blue"
-                      ])}
-                      name={curElem.name}
-                    />
-                      </Stack>
-                      </span>  
+                <Grid.Container gap={1}>
+                    <Grid xs={12}>
+                      <Avatar.Group>
+                        <Avatar
+                        className="todo-row"
+                          key={curElem.id}
+                          textColor="white"
+                          size="xl"
+                          pointer
+                          text={curElem.name}
+                          stacked
+                          NormalWeights ='black'
+                          bordered
+                          color={
+                            color[Math.floor(Math.random() * color.length)]
+                          }
+                          
+                        />
+                      </Avatar.Group>
+                    </Grid>
+                    <Grid xs={12}></Grid>
+                  </Grid.Container>
       
 
                   <div className="delete-btn">
@@ -173,7 +197,7 @@ const UserList = () => {
               );
             })}
           </div>
-          <div className="showItems">
+          { toggleButton ? <div className="showItems">
             <button
               className="btn effect04"
               data-sm-link-text="Remove all"
@@ -181,7 +205,8 @@ const UserList = () => {
             >
               <span>USER LIST</span>
             </button>
-          </div>
+          </div>: <></>}
+          
         </div>
       </div>
     </>

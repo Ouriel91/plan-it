@@ -5,6 +5,7 @@ import EventsType from "../../components/EventsType/EventsType";
 import Location from "../../components/Location/Location";
 import React,{useState} from "react";
 import Weather from "../../components/Weather/Weather";
+import UserList from '../../components/UserCard/UserList';
 import ItemListConnector from "../../components/ItemList/ItemListConnector"
 import NewItemInputConnector from "../../components/NewItemInput/NewItemInputConnector"
 import Footer from "../../../../Footer/Footer";
@@ -40,6 +41,7 @@ const Home = ({event}) => {
       <div className="homeContainer">
         <Navbar event={event}/>
         <div className="EventsTypes">
+          <UserList/>
           <EventsType event={event} />
         </div>
         <div className='weather-location-container'>
@@ -47,7 +49,7 @@ const Home = ({event}) => {
           <Weather lat={lat} lng={lng} location={event.location} date={date}/>
         </div>
         <div className="charts">
-          {/* <ImgUploader/> */}
+          
           
         </div>
         <div className="listContainer">
