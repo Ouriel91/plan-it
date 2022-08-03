@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Megrim&family=Playfair+Display:wght@400;500;700&family=Poiret+One&display=swap');
 .react-calendar { 
-  width: 450px;
+  width: 350px;
   height: 100%;
   background-color: rgb(214, 214, 214);
   color: white;
   border-radius: 8px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   line-height: 0.3em;
-  padding-right: 15px;
+  padding-right: 20px;
+  margin-top: 100px;
+  padding-bottom: 10px;
  }
 
  .react-calendar__navigation button {
@@ -64,12 +66,15 @@ margin-bottom: 10px;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
 }
 .react-calendar__month-view__weekdays__weekday {
   padding: 0.5em;
+  margin: 1px;
   text-decoration: underline;
   font-weight: bold;
+  font-size: 10px;
+  font-style: normal
 }
 .react-calendar__month-view__weekNumbers .react-calendar__tile {
   display: flex;

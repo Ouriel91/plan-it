@@ -36,7 +36,8 @@ const EventsType = ({ type, setEventObj, event }) => {
 
 
   const startTimer = () => {
-    const countDownDate = new Date('August 2, 2022 22:58:00').getTime()
+
+    const countDownDate = new Date(`${event.date}`).getTime()
     setInterval(() => {
       const now = new Date().getTime()
       const distance = countDownDate - now;

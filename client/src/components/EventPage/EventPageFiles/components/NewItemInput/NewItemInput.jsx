@@ -47,7 +47,7 @@ const NewItemInput = ({ event, addItemAction }) => {
         <input
           id="taskInput"
           type="text"
-          placeholder="Quntity"
+          placeholder="Quantity"
           name="quantity"
           value={state.quantity}
           onChange={handleInputValue}
