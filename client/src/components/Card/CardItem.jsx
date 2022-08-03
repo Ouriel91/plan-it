@@ -109,15 +109,15 @@ const CardItem = ({plan, deleteEventAction}) => {
           onClick={() => navigate(`/event-page/${plan.id}`)}
         />
         <CardContent>
-          <Typography variant="h5" color="text.secondary">
+          <Typography variant="h4" color="text.secondary" style={{textAlign: 'center'}}>
             {plan.headline}
           </Typography>
         </CardContent>
         <Box p={1}>
           <CardActions>
             <div style={{padding: '5px'}}>
-            <IconButton aria-label="delete">
-              <DeleteIcon onClick={() => deleteEventAction(plan.id)}/>
+            <IconButton aria-label="delete" onClick={() => deleteEventAction(plan.id)}>
+              <DeleteIcon/>
             </IconButton>
             <IconButton aria-label="share" style={{marginLeft: '10px'}}>
             <a 
