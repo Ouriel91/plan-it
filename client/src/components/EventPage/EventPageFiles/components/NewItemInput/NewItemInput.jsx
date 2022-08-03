@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "monday-ui-react-core";
 import "monday-ui-react-core/dist/main.css";
+import "./NewItemInput.css"
 
 const NewItemInput = ({ event, addItemAction }) => {
   const [state, setState] = useState({
@@ -35,8 +36,9 @@ const NewItemInput = ({ event, addItemAction }) => {
 
   return (
     <div>
-      <div className="list-controls">
+      <div className="list-controls-container">
         <input
+          className="input-table"
           id="taskInput"
           type="text"
           placeholder="What to bring"
@@ -45,6 +47,7 @@ const NewItemInput = ({ event, addItemAction }) => {
           onChange={handleInputValue}
         />
         <input
+          className="input-table"
           id="taskInput"
           type="text"
           placeholder="Quntity"
@@ -53,6 +56,7 @@ const NewItemInput = ({ event, addItemAction }) => {
           onChange={handleInputValue}
         />
         <input
+          className="input-table"
           id="taskInput"
           type="text"
           placeholder="Who brings"
@@ -61,6 +65,7 @@ const NewItemInput = ({ event, addItemAction }) => {
           name="bringName"
         />
         <input
+          className="input-table"
           id="taskInput"
           type="text"
           placeholder="status"
@@ -72,7 +77,7 @@ const NewItemInput = ({ event, addItemAction }) => {
           id="add-button"
           type="submit"
           onClick={handlePressClick}
-
+          className="input-button"
         >
           +
         </Button>
