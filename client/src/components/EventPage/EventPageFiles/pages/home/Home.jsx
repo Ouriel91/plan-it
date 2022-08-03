@@ -59,9 +59,9 @@ const Home = ({event, getEvent}) => {
         {/* <div className="listContainer">
         <div className="charts">
           {/* <ImgUploader/> */}  
-        <div className="listContainer">
+        {/* <div className="listContainer">
           <div className="listTitle">Event List</div>
-        </div>
+        </div> */}
       </div>
       <Footer/>
     </div>
