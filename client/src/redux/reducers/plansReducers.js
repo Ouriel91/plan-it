@@ -58,6 +58,11 @@ const plansReducer = (state = initialState, action) => {
             : plan
         ),
       };
+      case actionTypes.FETCH_ALL_PLANS_AND_ITEMS:
+      return {
+        ...state,
+        plans: [...action.payload],
+      };
     default:
       return state;
   }
