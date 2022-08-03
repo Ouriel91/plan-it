@@ -110,12 +110,8 @@ const UserList = () => {
     <>
       <div className="main-div">
         <div className="child-div">
-<<<<<<< HEAD
-        <button onClick={handleClick} className="fa fa-plus add-btn"></button>
-=======
           
           <button onClick={handleClick} className="my-button">+</button>
->>>>>>> 822974249eef43c7b0831ad8b55679cd989bfa27
           <div className="addItems">
             <Dialog open={isShown} onClose={handleClick}>
               <DialogTitle>Add New User</DialogTitle>
@@ -161,19 +157,10 @@ const UserList = () => {
               return (
 
                 <div className="item-div" key={curElem.id}>
-<<<<<<< HEAD
-
-                  <Grid.Container gap={1}>
-                    <Grid xs={12}>
-                      <Avatar.Group>
-                        <Avatar
-                          className="todo-row"
-=======
                 
                  
                         <Avatar 
                         className="todo-row"
->>>>>>> 822974249eef43c7b0831ad8b55679cd989bfa27
                           key={curElem.id}
                           textColor="white"
                           size="xl"
@@ -187,16 +174,8 @@ const UserList = () => {
                           }
 
                         />
-<<<<<<< HEAD
-                      </Avatar.Group>
-                    </Grid>
-                    <Grid xs={12}></Grid>
-                  </Grid.Container>
-
-=======
           
              
->>>>>>> 822974249eef43c7b0831ad8b55679cd989bfa27
 
                   <div className="delete-btn">
                     <i
