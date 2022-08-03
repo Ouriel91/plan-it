@@ -17,10 +17,14 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import friends_img from '../../../../../images/friends2.gif'
 import bbq_img from '../../../../../images/bbq.jpg'
+import camping_img from '../../../../../images/camping.jpg'
+import other_img from '../../../../../images/other.jpg'
+import pool_img from '../../../../../images/pool-party.jpg'
+import party_img from '../../../../../images/party.jpg'
 import NewItemInputConnector from "../NewItemInput/NewItemInputConnector"
 import ItemListConnector from '../ItemList/ItemListConnector';
 
-const EventsType = ({ type, setEventObj,event }) => {
+const EventsType = ({ event }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
 
@@ -45,24 +49,48 @@ const EventsType = ({ type, setEventObj,event }) => {
     Aos.init();
   }, []);
 
+  let image
+
+  switch (event.type) {
+    case "BBQ with friends":
+      image = bbq_img
+      break;
+    case "Pool party":
+      image = pool_img
+      break;
+    case "Party":
+      image = party_img
+      break
+    case "Camping":
+      image = camping_img
+      break
+    case "Other":
+      image = other_img
+      break
+    default:
+      image = bbq_img
+  }
+
   return (
     <>
     <section className='date-counter-holder'>
-      <text>30/10/2022, 19:20</text>
+      <text>{event.date}</text>
       <text>Counter widget</text>
     </section>
     <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
       <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
       <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'> and let us help you with the arrangments</p>
-      <img width={850} height={500} alt='BBQ' src={bbq_img}></img>
+      <img width={850} height={500} alt={event.type} src={image}></img>
     </section>
     <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container'>
       <div className="head-section">
-        <div className="title-head-section">
+        {/* <div className="title-head-section">
           Add friends:
-        </div>
+        </div> */}
+
         {/* <WatchLaterOutlinedIcon /> */}
-        <div className="participants-event-page">
+
+        {/* <div className="participants-event-page">
           <Autocomplete
             options={top100Films}
             sx={{ width: 300 }}
@@ -71,14 +99,15 @@ const EventsType = ({ type, setEventObj,event }) => {
           <div className='btn-holder'>
             <button onSubmit={handleSubmit}>Add</button>
           </div>
-        </div>
-        <div className='li-container'>
+        </div> */}
+
+        {/* <div className='li-container'>
           <ol>
               <li>gmail1@gmail.com</li>
               <li>gmail2@gmail.com</li>
               <li>gmail3@gmail.com</li>
             </ol>
-        </div>
+        </div> */}
             
         {/* <div className="location-event-page">
           <Accordion sx={{ width: '300' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -99,6 +128,7 @@ const EventsType = ({ type, setEventObj,event }) => {
             </AccordionDetails>
           </Accordion>
         </div> */}
+
         {/* <div className="weather-event-page">
           <Accordion sx={{ width: '80%' }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
             <AccordionSummary
@@ -118,10 +148,11 @@ const EventsType = ({ type, setEventObj,event }) => {
             </AccordionDetails>
           </Accordion>
         </div> */}
+
       </div>
-      <div data-aos="fade-down-left" data-aos-offset="100" data-aos-easing="ease-in-out-cubic" data-aos-duration="1000" className="weather-event-page">
+      {/* <div data-aos="fade-down-left" data-aos-offset="100" data-aos-easing="ease-in-out-cubic" data-aos-duration="1000" className="weather-event-page">
         <Weather />
-      </div>
+      </div> */}
     </section>
     <section className='events-type-container' data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
       <div className="listContainer">
@@ -131,9 +162,9 @@ const EventsType = ({ type, setEventObj,event }) => {
         <img alt='friends' src={friends_img}></img>
     </section>
 
-    <section data-aos="fade-down-right" data-aos-delay="500" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+    {/* <section data-aos="fade-down-right" data-aos-delay="500" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
         <img alt='map' src={map_img} width={700} height={300}></img>
-    </section>
+    </section> */}
     </>
   );
 };
