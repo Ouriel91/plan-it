@@ -14,7 +14,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
   const [itemName, setItemName] = useState(item.itemName);
   const [quantity, setQuantity] = useState(item.quantity);
   const [bringName, setBringName] = useState(item.bringName);
-  const [status, setStatus] = useState("pending");
+  const [status, setStatus] = useState(item.status);
   const [isEditClicked, setEditClicked] = useState(false);
 
   const handleEditButtonClick = () => {
@@ -83,7 +83,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             onChange={(e) => setStatus(e.target.value)}
       >
         
-        <MenuItem value= "pending">Pending</MenuItem>
+        <MenuItem value="pending">Pending</MenuItem>
         <MenuItem value="done"> Done</MenuItem>
       </Select>
     </FormControl>
