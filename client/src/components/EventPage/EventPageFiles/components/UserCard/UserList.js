@@ -28,22 +28,22 @@ const UserList = () => {
   const [isEditItem, setIsEditItem] = useState("");
   const [toggleButton, setToggleButton] = useState(false);
   const [isShown, setIsShown] = useState(false);
-  const [color,setColor] =useState(['default',
-  'primary',
-  'secondary',
-  'success',
-  'warning',
-  'error',
-  'gradient']);
+  const [color, setColor] = useState(['default',
+    'primary',
+    'secondary',
+    'success',
+    'warning',
+    'error',
+    'gradient']);
 
 
-  
+
 
   const handleClick = (event) => {
     setIsShown(!isShown);
-    
+
   };
-  const handleClickAdd = () =>{
+  const handleClickAdd = () => {
     addItem();
     setIsShown(!isShown);
   }
@@ -104,7 +104,7 @@ const UserList = () => {
   }, [items]);
 
 
-  
+
 
   return (
     <>
@@ -113,51 +113,49 @@ const UserList = () => {
           
           <button onClick={handleClick} className="my-button">+</button>
           <div className="addItems">
-          
-            
             <Dialog open={isShown} onClose={handleClick}>
-            <DialogTitle>Add New User</DialogTitle>
-                <DialogContent>
-                  
-                    <input
-                 type="text"
-                placeholder="Enter Full User Name..."
-              className="form-control"
-              value={data}
-              onChange={(event) => {
-                setData(event.target.value);}}
+              <DialogTitle>Add New User</DialogTitle>
+              <DialogContent>
+                <input
+                  type="text"
+                  placeholder="Enter Full User Name..."
+                  className="form-control"
+                  value={data}
+                  onChange={(event) => {
+                    setData(event.target.value);
+                  }}
                 />
-                    <input
-                 type="text"
-                placeholder="Enter Email..."
-              className="form-control"
-            //   value={...data}
-            //   onChange={(event) => {
-            //     setData(event.target.value);}}
+                <input
+                  type="text"
+                  placeholder="Enter Email..."
+                  className="form-control"
+                //   value={...data}
+                //   onChange={(event) => {
+                //     setData(event.target.value);}}
                 />
-                </DialogContent>
-                <DialogActions>
+              </DialogContent>
+              <DialogActions>
                 <Button onClick={handleClick}>Cancel</Button>
                 <Button onClick={handleClickAdd}>Add</Button>
-                </DialogActions>
+              </DialogActions>
             </Dialog>
-        
-            
-          
-            { toggleButton ? (
-            <button className="far fa-edit add-btn" onClick={addItem}></button>
-              
+
+
+
+            {toggleButton ? (
+              <button className="far fa-edit add-btn" onClick={addItem}></button>
+
             ) : (
-            <button className="far fa-plus add-btn" onClick={addItem}></button>
-              
+              <button className="far fa-plus add-btn" onClick={addItem}></button>
+
             )}
-          
+
             {/* todo-row */}
           </div>
           <div className="avatars-container">
             {items.map((curElem) => {
               return (
-                
+
                 <div className="item-div" key={curElem.id}>
                 
                  
@@ -169,12 +167,12 @@ const UserList = () => {
                           pointer
                           text={curElem.name}
                           stacked
-                          NormalWeights ='black'
+                          NormalWeights='black'
                           bordered
                           color={
                             color[Math.floor(Math.random() * color.length)]
                           }
-                          
+
                         />
           
              
@@ -193,7 +191,7 @@ const UserList = () => {
               );
             })}
           </div>
-          { toggleButton ? <div className="showItems">
+          {toggleButton ? <div className="showItems">
             <button
               className="btn remove-all-btn"
               data-sm-link-text="Remove all"
@@ -201,8 +199,8 @@ const UserList = () => {
             >
               <span>USER LIST</span>
             </button>
-          </div>: <></>}
-          
+          </div> : <></>}
+
         </div>
       </div>
     </>

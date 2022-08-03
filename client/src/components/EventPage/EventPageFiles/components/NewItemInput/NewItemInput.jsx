@@ -50,7 +50,7 @@ const NewItemInput = ({ event, addItemAction }) => {
           className="input-table"
           id="taskInput"
           type="text"
-          placeholder="Quntity"
+          placeholder="Quantity"
           name="quantity"
           value={state.quantity}
           onChange={handleInputValue}
