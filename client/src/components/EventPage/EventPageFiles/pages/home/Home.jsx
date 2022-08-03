@@ -8,17 +8,18 @@ import Weather from "../../components/Weather/Weather";
 import UserList from '../../components/UserCard/UserList';
 import Footer from "../../../../Footer/Footer";
 import {useParams} from 'react-router-dom'
+
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
 
-const Home = ({event, getEvent}) => {
+const Home = ({event}) => {
   //console.log("home",event)
   const [lat, setLat] = useState(0.0)
   const [lng, setLng] = useState(0.0)
   const [date, setDate] = useState("")
   const params = useParams();
   
-  event = params.id ? getEvent(params.id) : event;
+  // event = params.id ? getEvent(params.id) : event;
 /*   console.log('currentEvent', currentEvent);
  */  
   const getGeocode = async() => {

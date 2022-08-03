@@ -2,6 +2,7 @@ const { Event } = require("../db/models");
 const { Item } = require("../db/models");
 
 async function fetchPlans() {
+  console.log('here2')
   const events = await Event.findAll({ raw: true });
   const items = await getAllItems();
   const plans = [];
