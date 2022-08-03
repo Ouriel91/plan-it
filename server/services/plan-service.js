@@ -81,13 +81,12 @@ const itemEdittig = async (item) => {
 };
 
 const itemDeleting = async (id) => {
-    try{
-        await Item.destroy({ where: { id: id } });
-    } catch (err) {
-        throw `There is no item with id: ${id} `;
-    }
-}
-
+  try {
+    await Item.destroy({ where: { id: id } });
+  } catch (err) {
+    throw `There is no item with id: ${id} `;
+  }
+};
 module.exports = {
   getAllPlans,
   addPlan,
@@ -97,4 +96,5 @@ module.exports = {
   itemAdding,
   itemEdittig,
   itemDeleting,
-}
+  fetchPlans,
+};

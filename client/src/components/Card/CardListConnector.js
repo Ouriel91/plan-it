@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import CardList from "./CardList";
-import {fetchEventAction, deleteEventAction} from "../../redux/actions/plansActions";
+import {fetchPlansWithItemsAction, deleteEventAction} from "../../redux/actions/plansActions";
 import {getPlans} from "../../redux/selectors/eventsSelector"
 
 const mapStateToProps = (state, ownProps) => {  
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
 return bindActionCreators(
   {
-    fetchEventAction,
+    fetchPlansWithItemsAction,
     deleteEventAction
   },
   dispatch

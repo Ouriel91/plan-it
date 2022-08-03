@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import EventPage from './components/EventPage/EventPage';
 import CardListConnector from  './components/Card/CardListConnector'
-import AppContainerConnector from './components/AppContainer/AppContainerConnector';
+import AppContainerConnector from "./components/AppContainer/AppContainerConnector"
 
 function App() {
   return (
