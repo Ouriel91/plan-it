@@ -44,11 +44,10 @@ function ItemList({ items }) {
         >
           <TableHead className="datatableTitle">
             <TableRow>
-              <TableCell>Item to bring</TableCell>
-              <TableCell>Quntity</TableCell>
-              <TableCell>Who bring</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell></TableCell>
+              <TableCell style={{width: "20%"}}>Item to bring</TableCell>
+              <TableCell style={{width: "20%"}}>Quntity</TableCell>
+              <TableCell style={{width: "20%"}}>Who bring</TableCell>
+              <TableCell style={{width: "20%"}}>Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
