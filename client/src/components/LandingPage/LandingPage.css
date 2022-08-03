@@ -163,6 +163,7 @@ video{
     justify-content: end;
     margin-right: 2rem;
     margin-bottom: 150px;
+    font-family: 'Abel', sans-serif;
   }
   
   .nav-item {
@@ -178,7 +179,9 @@ video{
     text-decoration: none;
     padding: 0.2rem 1rem;
     height: 100%;
-    font-family: 'Abel';
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'Abel', sans-serif;
   }
   
   .nav-links:hover {

@@ -12,22 +12,40 @@
 //   background-color: rgba(235, 232, 232, 0.942);
 // }
 
-.opening-sentence{
+.opening-sentence-container{
   margin-top: 150px;
-  font-size: 40px;
-  color: #ccd5ae;
-  font-weight: bold;
+  padding-bottom: 250px;
 }
+
+.opening-sentence{
+    font-size: 70px;
+    font-weight: bold;
+    color: #dde4c7;
+    text-shadow: 3px 3px 3px #bcbcbc;
+    font-family: 'Poiret One', cursive;
+}
+
+.opening2-sentence{
+  font-size: 40px;
+  font-weight: bold;
+  color: #c6c6c6;
+  font-family: 'Poiret One', cursive;
+}
+
 .events-type-container{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-color: #fffffb;
+  padding-bottom: 200px;
 }
 
 .date-counter-holder{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-color: #fffffb;
+  padding-bottom: 100px;
 }
 
 .timer-container {
@@ -92,8 +110,7 @@
   flex-direction: row;
   justify-content: space-around;
   position: relative;
-  margin-left: 450px;
-  margin-top: 280px;
+  padding: 100px;
 }
 
 
@@ -150,6 +167,7 @@
   margin-left: 100px;
   margin-right: 100px;
   margin-top: 180px;
+  
 }
 
 .weather-event-page{
@@ -158,6 +176,11 @@
 .participants-event-page{
   display: flex;
   flex-direction: row;
+}
+
+.participants-container{
+  padding-top: 100px;
+  padding-bottom: 150px;
 }
 
 .event-page-details{
