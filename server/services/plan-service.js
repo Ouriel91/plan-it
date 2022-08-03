@@ -19,10 +19,11 @@ async function getAllItems() {
 }
 
 async function getAllPlans() {
-  let events = await Event.findAll();
-  return events;
+    let events = await Event.findAll()
+    return events
 }
 
+<<<<<<< HEAD
 async function addPlan(plan) {
   const { headline, date, type, location } = plan;
   await Event.create({ headline, date, type, location });
@@ -31,6 +32,16 @@ async function addPlan(plan) {
   event.eventItems = [];
   event.eventsUsers = [];
   return event;
+=======
+async function addPlan(plan){
+    const {headline, date, type, location} = plan
+    await Event.create({headline, date, type, location})
+    const events = await Event.findAll({ raw: true });
+    const event = events[events.length-1]
+    event.eventItems =  [];
+    event.eventsUsers = [];
+    return event
+>>>>>>> d0ae71854f493889e217a10bc808099d351f0e09
 }
 
 async function deletePlan(id) {
@@ -81,12 +92,22 @@ const itemEdittig = async (item) => {
 };
 
 const itemDeleting = async (id) => {
+<<<<<<< HEAD
   try {
     await Item.destroy({ where: { id: id } });
   } catch (err) {
     throw `There is no item with id: ${id} `;
   }
 };
+=======
+    try{
+        await Item.destroy({ where: { id: id } });
+    } catch (err) {
+        throw `There is no item with id: ${id} `;
+    }
+}
+
+>>>>>>> d0ae71854f493889e217a10bc808099d351f0e09
 module.exports = {
   getAllPlans,
   addPlan,
@@ -96,5 +117,9 @@ module.exports = {
   itemAdding,
   itemEdittig,
   itemDeleting,
+<<<<<<< HEAD
   fetchPlans,
 };
+=======
+}
+>>>>>>> d0ae71854f493889e217a10bc808099d351f0e09

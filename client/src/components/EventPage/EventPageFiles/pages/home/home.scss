@@ -12,34 +12,33 @@
   flex: 6;
   background-color: rgba(240, 240, 240, 0.832);
 }
-    .EventsTypes{
-      font-size: 45px;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      margin-top: 60px;
-      margin-bottom: 100px;
-    }
 
-    .widgets,
-    .charts {
-      display: flex;
-      padding: 20px;
-      gap: 20px;
-    }
+.EventsTypes{
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
 
-    .charts {
-      padding: 5px 20px;
-      
-    }
+.widgets,
+.charts {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
 
-    
+.charts {
+  padding: 5px 20px;
+  
+}
 
-      .listTitle {
-        font-weight: 500;
-        color: gray;
-        margin-bottom: 15px;
-      }
-    }
+.listTitle {
+    font-weight: 500;
+    color: gray;
+    margin-bottom: 15px;
+  }
+}
   
 

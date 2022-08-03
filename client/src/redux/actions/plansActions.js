@@ -20,11 +20,24 @@ export const addPlan = (newEvent) => ({
 
 export const addEventAction = (newEvent) => {
   return async (dispatch) => {
-   const plan =  await postPlan(newEvent)
+   const plan = await postPlan(newEvent)
     dispatch(addPlan(plan));
     return plan
   };
 };
+
+export const removePlan = (id) => ({
+  type: actionTypes.DELETE_PLAN,
+  payload: id,
+})
+
+export const deleteEventAction = (id) => {
+  return async (dispatch) => {
+    const plan = await deletePlan(id)
+     dispatch(removePlan(id));
+     return plan
+  }
+}
 
 
 export const saveItem = (newItem,eventId) => ({
