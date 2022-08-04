@@ -18,6 +18,7 @@ const Home = ({event, getEvent}) => {
   const [date, setDate] = useState("")
   const params = useParams();
   
+  
   event = params.id ? getEvent(params.id) : event;
 /*   console.log('currentEvent', currentEvent);
  */  
