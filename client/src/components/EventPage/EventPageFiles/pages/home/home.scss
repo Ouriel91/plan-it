@@ -5,12 +5,35 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 150px;
+  background-color: white;
+  padding-top: 60px;
+  padding-bottom: 100px;
 }
 
 .homeContainer {
   flex: 6;
-  background-color: rgba(240, 240, 240, 0.832);
+  background-color: #f7f7f7;
+}
+
+.date-counter-holder-sentence{
+  background-color: white;
+}
+
+.title{
+  text-align: center;
+  margin: auto;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Abel';
+  padding-top: 30px;
+}
+
+.description{
+  color: #b7b7b7;
+  font-family: 'Abel';
+  font-style: normal;
+  margin: auto;
+  text-align: center;
 }
 
 .EventsTypes{

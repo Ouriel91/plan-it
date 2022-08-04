@@ -26,8 +26,8 @@ const Navbar = ({ event }) => {
             </p>
           </div>
 
-          <div className="centered-title">
-            <h1>{event.headline}</h1>
+          <div className="centered-title-container">
+            <p className="centered-title">{event.headline}</p>
           </div>
          
         </div>

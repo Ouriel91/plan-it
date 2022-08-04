@@ -23,7 +23,7 @@ import pool_img from '../../../../../images/pool-party.jpg'
 import party_img from '../../../../../images/party.jpg'
 import NewItemInputConnector from "../NewItemInput/NewItemInputConnector"
 import ItemListConnector from '../ItemList/ItemListConnector';
-
+import clock_gif from '../../../../../images/clock2.gif'
 const EventsType = ({ type, setEventObj, event }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
@@ -32,7 +32,7 @@ const EventsType = ({ type, setEventObj, event }) => {
   const [timerMins, setTimerMins] = useState('00')
   const [timerSecs, setTimerSecs] = useState('00')
   const [timerEnded, setTimerEnded] = useState(false)
-  const [calendar, setCalendar] = useState(new Date());
+  const [calendar, setCalendar] = useState(new Date(`${event.date}`));
 
 
   const startTimer = () => {
@@ -44,7 +44,6 @@ const EventsType = ({ type, setEventObj, event }) => {
       const days = Math.floor(distance / (1000 * 60 * 60 * 24))
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-      const seconds = Math.floor((distance % (1000 * 60)) / (1000))
 
       if (distance <= 0) {
         setTimerEnded(true)
@@ -53,66 +52,70 @@ const EventsType = ({ type, setEventObj, event }) => {
       setTimerDays(days)
       setTimerHours(hours)
       setTimerMins(minutes)
-      setTimerSecs(seconds)
     }, 1000)
   }
 
-    const handleChange = (panel) => (event, isExpanded) => {
-      setExpanded(isExpanded ? panel : false);
-    };
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
-    const handleParticipantsChange = (e) => {
-      setInput(e.target.value);
+  const handleParticipantsChange = (e) => {
+    setInput(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (input === '') {
+      alert('Event can not be empty')
+      return
     }
+    setInput('')
+  }
 
-    const handleSubmit = (e) => {
-      e.preventDefault()
-      if (input === '') {
-        alert('Event can not be empty')
-        return
-      }
-      setInput('')
-    }
+  startTimer()
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
-    startTimer()
-    useEffect(() => {
-      Aos.init();
-    }, []);
+  let image
 
-    let image
+  switch (event.type) {
+    case "BBQ with friends":
+      image = bbq_img
+      break;
+    case "Pool party":
+      image = pool_img
+      break;
+    case "Party":
+      image = party_img
+      break
+    case "Camping":
+      image = camping_img
+      break
+    case "Other":
+      image = other_img
+      break
+    default:
+      image = bbq_img
+  }
 
-    switch (event.type) {
-      case "BBQ with friends":
-        image = bbq_img
-        break;
-      case "Pool party":
-        image = pool_img
-        break;
-      case "Party":
-        image = party_img
-        break
-      case "Camping":
-        image = camping_img
-        break
-      case "Other":
-        image = other_img
-        break
-      default:
-        image = bbq_img
-    }
+  return (
+    <>
+      <section className='opening-sentence-container'>
+        <p className='opening-sentence'>Life is short and the world is wide </p>
+        <p className='opening2-sentence'>So let's get the best advanture we can! <br /> All of the necessities to plan a great gathering with your friends - in one page! <br /> Counting the days till the hangout, adding pals and making sure to bring everything you need.  </p>
+      </section>
 
-    return (
-      <>
-        <p className='opening-sentence'>Life is short and the world is wide, <br /> So let's get the best advanture experience we can! </p>
+      <section >
+        <div className='date-counter-holder-sentence'>
+          <p className='title'>Organize your time properly</p>
+          <p className='description'>A daily reminder of your event <img className='clock' width={40} height={40} alt='clock' src={clock_gif}></img></p>
+        </div>
         <div className='date-counter-holder'>
           <Calendar
             onChange={setCalendar}
             value={calendar}
             locale="en-GB" />
-          {/* <div class='datepicker'>
-          <div class="datepicker-header"></div>
-        </div> */}
-          {/* <text className='date-holder'>{event.date}</text> */}
           <div className='timer-container'>
             <section >
               <p className='date-number'>{timerDays}</p>
@@ -126,29 +129,40 @@ const EventsType = ({ type, setEventObj, event }) => {
               <p className='date-number'>{timerMins}</p>
               <p className='date-text'>Minutes</p>
             </section>
-            <section>
-              <p className='date-number'>{timerSecs}</p>
-              <p className='date-text'>Seconds</p>
-            </section>
+            <img width={400} height={220} id="confetti" alt='party' src={confetti} hidden={!timerEnded ? true : undefined}></img>
+          </div>
 
-            <img width={500} height={220} id="confetti" alt='party' src={confetti} hidden={!timerEnded ? true : undefined}></img>
+        </div>
+      </section>
+
+      <div className='participants-container'>
+        <p className='title'>Invite Friends</p>
+        <p className='description'>Add your buddies to enjoy with you!</p>
+        <UserList />
+      </div>
+
+      <section >
+        <div className='date-counter-holder-sentence'>
+          <p className='title'>What to bring</p>
+          <p className='description'>First and foremost, bring yourself. The rest is already written here</p>
+        </div>
+        <div className='events-type-container'>
+          <div className="listContainer">
+            <p className="listTitle">Event Equipment List</p>
+            <NewItemInputConnector event={event} />
+            <ItemListConnector event={event} />
           </div>
         </div>
-        {/* <section data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-        <div className="listContainer">
-          <ItemList />
-        </div>
-      </section> */}
-        <div className='participants-container'>
-          <UserList />
-        </div>
-        <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
-          <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
-          <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'> and let us help you with the arrangments</p>
-          <img width={850} height={500} alt={event.type} src={image}></img>
-        </section>
-        {/* <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container'> */}
-        {/* <div className="head-section">
+
+      </section>
+
+      <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
+        <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
+        <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'>and let us help you with the arrangments</p>
+        <img width={850} height={500} alt={event.type} src={image}></img>
+      </section>
+      {/* <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container'> */}
+      {/* <div className="head-section">
           <div className="title-head-section">
             Add friends:
           </div>
@@ -174,7 +188,7 @@ const EventsType = ({ type, setEventObj, event }) => {
           </div>
         </div> */}
 
-        {/* <div className="location-event-page">
+      {/* <div className="location-event-page">
           <Accordion sx={{ width: '300' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -194,7 +208,7 @@ const EventsType = ({ type, setEventObj, event }) => {
           </Accordion>
         </div> */}
 
-        {/* <div className="weather-event-page">
+      {/* <div className="weather-event-page">
           <Accordion sx={{ width: '80%' }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -214,19 +228,11 @@ const EventsType = ({ type, setEventObj, event }) => {
           </Accordion>
         </div> */}
 
-        {/* </div>
+      {/* </div>
 
     </section> */}
-        <section className='events-type-container' data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-        <div className="listContainer">
-          <div className="listTitle">Event List</div>
-           <NewItemInputConnector event={event} />
-            <ItemListConnector event={event} />
-        </div> 
-        </section>
-
-      </>
-    );
-  };
+    </>
+  );
+};
 
 export default EventsType;

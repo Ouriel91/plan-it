@@ -8,6 +8,7 @@ import Weather from "../../components/Weather/Weather";
 import UserList from '../../components/UserCard/UserList';
 import Footer from "../../../../Footer/Footer";
 import {useParams} from 'react-router-dom'
+import location2_gif from '../../../../../images/location2.gif'
 
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
@@ -50,6 +51,10 @@ const Home = ({event}) => {
         <div className="EventsTypes">
           <EventsType event={event} />
         </div> 
+        <div className='date-counter-holder-sentence'>
+        <p className='title'>Check out your destination</p>
+        <p className='description'>Don't forget to check up on the weather of your desired location!  <img className='clock' width={30} height={50} loop alt='clock' src={location2_gif}></img></p>
+        </div>
         <div className='weather-location-container'>
           <Location lat={lat} lng={lng} />
           <Weather lat={lat} lng={lng} location={event.location} date={date}/>

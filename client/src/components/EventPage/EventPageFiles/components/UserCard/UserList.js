@@ -2,13 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./userList.css";
 import { Avatar, Grid } from "@nextui-org/react";
 import Dialog from "@material-ui/core/Dialog";
-import Button from '@mui/material/Button';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Stack from '@mui/material/Stack';
-
+import Button from "@mui/material/Button";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
 
 const getLocalData = () => {
   const lists = localStorage.getItem("UsersList");
@@ -20,7 +17,7 @@ const getLocalData = () => {
   }
 };
 
-const UserList = () => {
+const App = ({ lists }) => {
   const [data, setData] = useState("");
   const [items, setItems] = useState(getLocalData());
   const [counter, setCounter] = useState(0);
@@ -28,26 +25,25 @@ const UserList = () => {
   const [isEditItem, setIsEditItem] = useState("");
   const [toggleButton, setToggleButton] = useState(false);
   const [isShown, setIsShown] = useState(false);
-  const [color, setColor] = useState(['default',
-    'primary',
-    'secondary',
-    'success',
-    'warning',
-    'error',
-    'gradient']);
-
-
-
+  const [color, setColor] = useState([
+    "default",
+    "primary",
+    "secondary",
+    "success",
+    "warning",
+    "error",
+    "gradient",
+    "orange",
+    "green"
+  ]);
 
   const handleClick = (event) => {
     setIsShown(!isShown);
-
   };
   const handleClickAdd = () => {
     addItem();
     setIsShown(!isShown);
-  }
-
+  };
   const addItem = () => {
     if (!data) {
       alert("Enter new User Name");
@@ -57,21 +53,24 @@ const UserList = () => {
           if (curElem.id === isEditItem) {
             return { ...curElem, name: data };
           }
+
+          setColor(...color);
+          console.log(color);
           setAvatarName(...data);
           setCounter(counter + 1);
           return curElem;
         })
       );
-
+      setColor();
       setData("");
       setIsEditItem(null);
       setToggleButton(false);
     } else {
       const newData = {
         id: new Date().getTime().toString(),
-        name: data
+        name: data,
+        colors: color[Math.floor(Math.random() * color.length)]
       };
-      console.log(data);
 
       setItems([...items, newData]);
       setData("");
@@ -103,15 +102,13 @@ const UserList = () => {
     localStorage.setItem("UsersList", JSON.stringify(items));
   }, [items]);
 
-
-
-
   return (
     <>
       <div className="main-div">
         <div className="child-div">
-          
-          <button onClick={handleClick} className="my-button">+</button>
+          <button onClick={handleClick} className="my-button">
+            +
+          </button>
           <div className="addItems">
             <Dialog open={isShown} onClose={handleClick}>
               <DialogTitle>Add New User</DialogTitle>
@@ -129,9 +126,6 @@ const UserList = () => {
                   type="text"
                   placeholder="Enter Email..."
                   className="form-control"
-                //   value={...data}
-                //   onChange={(event) => {
-                //     setData(event.target.value);}}
                 />
               </DialogContent>
               <DialogActions>
@@ -140,14 +134,16 @@ const UserList = () => {
               </DialogActions>
             </Dialog>
 
-
-
             {toggleButton ? (
-              <button className="far fa-edit add-btn" onClick={addItem}></button>
-
+              <button
+                className="far fa-edit add-btn"
+                onClick={addItem}
+              ></button>
             ) : (
-              <button className="far fa-plus add-btn" onClick={addItem}></button>
-
+              <button
+                className="far fa-plus add-btn"
+                onClick={addItem}
+              ></button>
             )}
 
             {/* todo-row */}
@@ -155,27 +151,19 @@ const UserList = () => {
           <div className="avatars-container">
             {items.map((curElem) => {
               return (
-
                 <div className="item-div" key={curElem.id}>
-                
-                 
-                        <Avatar 
-                        className="todo-row"
-                          key={curElem.id}
-                          textColor="white"
-                          size="xl"
-                          pointer
-                          text={curElem.name}
-                          stacked
-                          NormalWeights='black'
-                          bordered
-                          color={
-                            color[Math.floor(Math.random() * color.length)]
-                          }
-
-                        />
-          
-             
+                  <Avatar
+                    className="todo-row"
+                    key={curElem.id}
+                    textColor="white"
+                    size="xl"
+                    pointer
+                    text={curElem.name}
+                    stacked
+                    NormalWeights="black"
+                    bordered
+                    color={curElem.colors}
+                  />
 
                   <div className="delete-btn">
                     <i
@@ -185,26 +173,29 @@ const UserList = () => {
                     <i
                       className="far fa-trash-alt add-btn"
                       onClick={() => deleteItem(curElem.id)}
-                    ></i>
+                    >-</i>
                   </div>
                 </div>
               );
             })}
           </div>
-          {toggleButton ? <div className="showItems">
-            <button
-              className="btn remove-all-btn"
-              data-sm-link-text="Remove all"
-              onClick={removeAll}
-            >
-              <span>USER LIST</span>
-            </button>
-          </div> : <></>}
-
+          {toggleButton ? (
+            <div className="showItems">
+              <button
+                className="btn remove-all-btn"
+                data-sm-link-text="Remove all"
+                onClick={removeAll}
+              >
+                <span>USER LIST</span>
+              </button>
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </>
   );
 };
 
-export default UserList;
+export default App;
