@@ -1,23 +1,22 @@
 const { Event } = require("../db/models");
 const { Item } = require("../db/models");
+const { User } = require("../db/models");
 
 async function fetchPlans() {
   const events = await Event.findAll({ raw: true });
-  const items = await getAllItems();
+  const items = await Item.findAll({ raw: true });
+  const users = await User.findAll({ raw: true });
   const plans = [];
   events.forEach((event) => {
     const plan = { ...event };
     plan.eventItems = items.filter(
       (item) => parseInt(item.eventId) === event.id
     );
+    plan.eventUsers = users.filter((user) => user.eventId === event.id);
     plans.push(plan);
   });
 
   return plans;
-}
-async function getAllItems() {
-  const items = await Item.findAll({ raw: true });
-  return items;
 }
 
 async function getAllPlans() {
@@ -34,12 +33,27 @@ async function addPlan(plan) {
     limit: 1,
     order: [["id", "DESC"]],
     raw: true,
+<<<<<<< HEAD
   }); */
   value.eventsUsers = [];
   const eventId = value.id.toString();
   const itemsByType = await insertItemsBytype(value.type, eventId);
   value.eventItems = [...itemsByType];
   return value;
+
+  /* const userAdmin =  [ {eventId:event[0].id, fullName:'eventAdmin', email:'admin@gmail.com',isAdmin:true} ];
+  await User.bulkCreate(userAdmin);
+  const user = await User.findAll({
+    limit: 1,
+    order: [["id", "DESC"]],
+    raw: true,
+  });
+
+  event[0].eventsUsers.push(user[0]);
+  const eventId = event[0].id.toString();
+  const itemsByType = await insertItemsBytype(event[0].type, eventId);
+  event[0].eventItems = [...itemsByType];
+  return event[0]; */
 }
 
 const insertItemsBytype = async (type, eventId) => {
@@ -138,6 +152,18 @@ const itemDeleting = async (id) => {
     throw `There is no item with id: ${id} `;
   }
 };
+
+const userAdding = async (newUser) => {
+  const { eventId, fullName, email } = newUser;
+  const isAdmin = false;
+  await User.create({ eventId, fullName, email, eventId, isAdmin });
+  const user = await User.findAll({
+    limit: 1,
+    order: [["id", "DESC"]],
+    raw: true,
+  });
+  return user;
+};
 module.exports = {
   getAllPlans,
   addPlan,
@@ -148,4 +174,5 @@ module.exports = {
   itemEdittig,
   itemDeleting,
   fetchPlans,
+  userAdding,
 };

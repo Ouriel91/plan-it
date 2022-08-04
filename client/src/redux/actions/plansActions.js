@@ -1,4 +1,4 @@
-import {postPlan, fetchPlans,postItem,itemToEdit,deleteItem,fetchPlansWithItems,deletePlan} from "../../api/plan";
+import {postPlan, fetchPlans,postItem,itemToEdit,deleteItem,fetchPlansWithItems,deletePlan,postUser} from "../../api/plan";
 import actionTypes from "./constants";
 
 export const fetchAllPlans = (fetchedEvents) => ({
@@ -95,6 +95,20 @@ export const fetchPlansWithItemsAction = () => {
     dispatch(fetchAllPlans(fetchedPlans));
   };
 }
+
+
+const addUser = (user) => ({
+  type: actionTypes.ADD_USER,
+  payload: user,
+});
+  export const addUserAction = (fullName,email,eventId) => {
+    return async (dispatch) => {
+      const user = await postUser(fullName,email,eventId)
+      dispatch(addUser(user));
+      return user
+    }
+  }
+
 
 
 
