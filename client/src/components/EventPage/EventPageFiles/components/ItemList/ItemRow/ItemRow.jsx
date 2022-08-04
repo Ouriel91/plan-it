@@ -1,4 +1,4 @@
-import { TableCell, TableRow } from "@material-ui/core";
+import { Checkbox, TableCell, TableRow, TextField } from "@material-ui/core";
 import React from "react";
 import { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
@@ -9,6 +9,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select'
+import "./ItemRow.css";
 
 const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
   const [itemName, setItemName] = useState(item.itemName);
@@ -42,52 +43,55 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
 
   return (
     <TableRow id={item.id}>
-      <div>
-        <TableCell>
-          <input
-            style={{ border: "1px solid green", width: "100px" }}
+      <div className="table-row">
+        <div>
+          <TextField
+            style={{ width: "100px" }}
             type="text"
             value={itemName}
-            readOnly={!isEditClicked}
+            disabled={!isEditClicked}
             onChange={(e) => setItemName(e.target.value)}
             name="itemName"
           />
-        </TableCell>
-        <TableCell>
-          <input
-            style={{ border: "1px solid green", width: "100px" }}
+        </div>
+        <div>
+          <TextField
+            style={{ width: "100px" }}
             value={quantity}
             name="quantity"
-            readOnly={!isEditClicked}
+            type="number"
+            disabled={!isEditClicked}
             onChange={(e) => setQuantity(e.target.value)}
           />
-        </TableCell>
-        <TableCell>
-          <input
-            style={{ border: "1px solid green", width: "100px" }}
+        </div>
+        <div>
+          <TextField
+            style={{ width: "100px" }}
             value={bringName}
             name="bringName"
-            readOnly={!isEditClicked}
+            type="text"
+            disabled={!isEditClicked}
             onChange={(e) => setBringName(e.target.value)}
           />
-        </TableCell>
-        <TableCell>
+        </div>
+        <div>
         <FormControl sx={{ m: 0, minWidth: 200 }} size="small">
-      <InputLabel id="demo-select-small">Status</InputLabel>
-      <Select
+  
+      <Checkbox
         
         value={status}
         label="Status"
         name="status"
-            readOnly={!isEditClicked}
+        defaultChecked={status}
+            disabled={!isEditClicked}
             onChange={(e) => setStatus(e.target.value)}
       >
         
         <MenuItem value="pending">Pending</MenuItem>
         <MenuItem value="done"> Done</MenuItem>
-      </Select>
+      </Checkbox>
     </FormControl>
-        </TableCell>
+        </div>
         <TableCell>
           <IconButton
             aria-label="delete"

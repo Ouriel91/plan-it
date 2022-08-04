@@ -35,22 +35,23 @@ html {
 .child-div {
   text-align: center;
   margin-top: 50px;
+  display: flex;
+  flex-direction: row;
 }
 
-.child-div figure img {
+/* .child-div figure img {
   width: 10rem;
   height: 8rem;
-}
+} */
 
-.child-div figure figcaption {
+/* .child-div figure figcaption {
   color: #fff;
   font-size: 2.2rem;
   padding-top: 2rem;
   text-transform: capitalize;
-}
+} */
 
 input {
-  
   min-width: 30rem;
   height: 3.4rem;
   padding: 2rem 1.2rem;
@@ -90,14 +91,12 @@ input:focus {
   width: 2rem;
   color: #666;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .fa {
-  margin-left: -2.5rem;
   cursor: pointer;
   pointer-events: auto;
-  z-index: 10;
   background-color: #fff;
   background-image: none;
   color: #666;
@@ -116,7 +115,7 @@ input:focus {
   font-size: 1.5rem;
 }
 .item-div{
-  display: inline-block
+  display: inline-block;
 }
 .showItems {
   text-indent: -2em;
@@ -132,6 +131,7 @@ input:focus {
   outline: none;
   background: #868384;
   color: white; 
+  margin-top: 9px;
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
@@ -155,12 +155,10 @@ input:focus {
   
   cursor: pointer;
   pointer-events: auto;
-  z-index: 10;
   color: rgb(117, 117, 117);
   -webkit-transition: color 0.15s linear;
   transition: color 0.15s linear;
   font-size: 1rem;
-  
 }
 
 .addItems{
