@@ -148,7 +148,7 @@ const EventsType = ({ type, setEventObj, event }) => {
         </div>
         <div className='events-type-container'>
           <div className="listContainer">
-            <p className="listTitle">Event List</p>
+            <p className="listTitle">Event Equipment List</p>
             <NewItemInputConnector event={event} />
             <ItemListConnector event={event} />
           </div>
