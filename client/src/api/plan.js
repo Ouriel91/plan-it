@@ -117,8 +117,13 @@ export const fetchPlansWithItems = async () => {
   });
 }
 
-  export const postUser = async (user) => { 
-    
+  export const postUser = async (fullName,email,eventId) => { 
+    const user ={
+      fullName,
+      email,
+      eventId
+    }
+
     const response = await axios({
       method: "post",
       url: `${url}/event-page/${eventId}/users`,
