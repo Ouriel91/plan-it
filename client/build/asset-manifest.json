@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6db913d3.css",
-    "main.js": "/static/js/main.3e7a4fd3.js",
+    "main.css": "/static/css/main.7e681ee3.css",
+    "main.js": "/static/js/main.f5a622ac.js",
     "static/js/787.6b507812.chunk.js": "/static/js/787.6b507812.chunk.js",
     "static/media/picnic-logo.mp4": "/static/media/picnic-logo.f3078b73f53a6730087e.mp4",
     "static/media/friends.jpg": "/static/media/friends.fadbb7eb704ea238cd83.jpg",
@@ -18,6 +18,8 @@
     "static/media/bbq.jpg": "/static/media/bbq.083ca2a45dfb91d006cc.jpg",
     "static/media/party.jpg": "/static/media/party.b03d4dfcd0d60d328f8e.jpg",
     "static/media/pool-party.jpg": "/static/media/pool-party.b48a791e194ff4f76bd0.jpg",
+    "static/media/clock2.gif": "/static/media/clock2.be73ba5eb8243fd70927.gif",
+    "static/media/location.gif": "/static/media/location.29b9d8e641c27538033a.gif",
     "static/media/fa-solid-900.woff": "/static/media/fa-solid-900.eeccf4f66002c6f2ba24.woff",
     "static/media/fa-brands-400.woff": "/static/media/fa-brands-400.2285773e6b4b172f07d9.woff",
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.1551f4f60c37af51121f.woff2",
@@ -29,12 +31,12 @@
     "static/media/camping.jpg": "/static/media/camping.243b7771b267bddb971e.jpg",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
     "index.html": "/index.html",
-    "main.6db913d3.css.map": "/static/css/main.6db913d3.css.map",
-    "main.3e7a4fd3.js.map": "/static/js/main.3e7a4fd3.js.map",
+    "main.7e681ee3.css.map": "/static/css/main.7e681ee3.css.map",
+    "main.f5a622ac.js.map": "/static/js/main.f5a622ac.js.map",
     "787.6b507812.chunk.js.map": "/static/js/787.6b507812.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6db913d3.css",
-    "static/js/main.3e7a4fd3.js"
+    "static/css/main.7e681ee3.css",
+    "static/js/main.f5a622ac.js"
   ]
 }

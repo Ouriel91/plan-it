@@ -12,6 +12,9 @@ planRouter.get("/event-page/:id", planController.getEventPage);
 planRouter.post("/event-page/:id/items", planController.itemAdding)
 planRouter.put("/event-page/:id/items", planController.itemEditing)
 planRouter.delete("/event-page/:id/items", planController.itemDeleting)
+//users
+planRouter.post("/event-page/:id/users", planController.userAdding)
+
 
 //fetch plans and items for event
 planRouter.get("/events", planController.fetchPlans)

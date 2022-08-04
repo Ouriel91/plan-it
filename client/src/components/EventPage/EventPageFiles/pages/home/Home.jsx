@@ -8,7 +8,7 @@ import Weather from "../../components/Weather/Weather";
 import UserList from '../../components/UserCard/UserList';
 import Footer from "../../../../Footer/Footer";
 import {useParams} from 'react-router-dom'
-import location2_gif from '../../../../../images/location2.gif'
+import location_gif from '../../../../../images/location.gif'
 
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
@@ -18,11 +18,7 @@ const Home = ({event}) => {
   const [lat, setLat] = useState(0.0)
   const [lng, setLng] = useState(0.0)
   const [date, setDate] = useState("")
-  const params = useParams();
   
-  // event = params.id ? getEvent(params.id) : event;
-/*   console.log('currentEvent', currentEvent);
- */  
   const getGeocode = async() => {
     const orgAddress = event.location
     let address = orgAddress.replaceAll(" ", "+")
@@ -40,10 +36,12 @@ const Home = ({event}) => {
     setDate(date)
   }
 
+
   useEffect(() => {
     getGeocode()
-  },[])
+  },[event])
 
+  if(!event)return <div>Loading ...</div>
   return (
     <div className="home">
       <div className="homeContainer">
@@ -53,7 +51,7 @@ const Home = ({event}) => {
         </div> 
         <div className='date-counter-holder-sentence'>
         <p className='title'>Check out your destination</p>
-        <p className='description'>Don't forget to check up on the weather of your desired location!  <img className='clock' width={30} height={50} loop alt='clock' src={location2_gif}></img></p>
+        <p className='description'>Don't forget to check up on the weather of your desired location!  <img className='clock' width={30} height={50} loop alt='clock' src={location_gif}></img></p>
         </div>
         <div className='weather-location-container'>
           <Location lat={lat} lng={lng} />

@@ -1,62 +1,33 @@
 import React, { useState } from "react";
+import "./ItemList.css";
 
 import {
-  Box,
-  Table,
   TableBody,
   TableCell,
-  TableHead,
   TableRow,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 
-import "./ItemList.scss";
+
 import ItemRowConnector from "./ItemRow/ItemRowConnector";
-// Creating styles
-const useStyles = makeStyles({
-  root: {
-    "& > *": {
-      borderBottom: "unset",
-    },
-  },
-  table: {
-    minWidth: 650,
-  },
-  snackbar: {
-    bottom: "104px",
-  },
-});
+
 
 function ItemList({ items }) {
-  const classes = useStyles();
+
 
   return (
     <TableBody className="datagrid">
-      <Box margin={1}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}></div>
-        <TableRow align="center"></TableRow>
+      <TableRow>
+        <TableCell className="table-titles">Item to bring</TableCell>
+        <TableCell className="table-titles">Quntity</TableCell>
+        <TableCell className="table-titles">Who bring</TableCell>
+        <TableCell className="table-titles">Status</TableCell>
+      </TableRow>
+        {items.map((item) => {
+          return <ItemRowConnector item={item} key={item.id} />;
+        })}
 
-        <Table
-          className={classes.table}
-          size="small"
-          aria-label="a dense table"
-        >
-          <TableHead className="datatableTitle">
-            <TableRow>
-              <TableCell style={{width: "20%"}}>Item to bring</TableCell>
-              <TableCell style={{width: "20%"}}>Quntity</TableCell>
-              <TableCell style={{width: "20%"}}>Who bring</TableCell>
-              <TableCell style={{width: "20%"}}>Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {items.map((item) => {
-              return <ItemRowConnector item={item} key={item.id} />;
-            })}
-          </TableBody>
-        </Table>
-      </Box>
     </TableBody>
   );
 }

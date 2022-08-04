@@ -109,6 +109,21 @@ const fetchPlans = async (req, res) => {
   }
 };
 
+const userAdding = async (req, res) => {
+  const { postedUser } = req.body;
+  if (!postedUser) {
+    return res.status(400).json({ error: "Invalid user, user is null" });
+  }
+
+  try {
+    const user = await planService.userAdding(postedUser);
+    return res.status(200).json(user);
+  } catch (err) {
+    return res.status(500).json({ error: err.toString() });
+  }
+}
+
+
 module.exports = {
   plansList,
   planAdding,
@@ -119,4 +134,5 @@ module.exports = {
   itemEditing,
   itemDeleting,
   fetchPlans,
+  userAdding,
 };

@@ -18,8 +18,10 @@ const getLocalData = () => {
   }
 };
 
-const App = ({ lists }) => {
+const App = ({ lists,addUserAction,eventId }) => {
   const [data, setData] = useState("");
+  const [email, setEmail] = useState("");
+
   const [items, setItems] = useState(getLocalData());
   const [counter, setCounter] = useState(0);
   const [avatarName, setAvatarName] = useState("");
@@ -42,6 +44,7 @@ const App = ({ lists }) => {
     setIsShown(!isShown);
   };
   const handleClickAdd = () => {
+    addUserAction(data,email,eventId);
     addItem();
     setIsShown(!isShown);
   };
@@ -136,9 +139,7 @@ const App = ({ lists }) => {
     <>
       <div className="main-div">
         <div className="child-div">
-          <button onClick={handleClick} className="my-button">
-            +
-          </button>
+         
           <div className="addItems">
             <Dialog open={isShown} onClose={handleClick}>
               <DialogTitle>Add New User</DialogTitle>
@@ -225,6 +226,9 @@ const App = ({ lists }) => {
               );
             })}
           </div>
+          <button onClick={handleClick} className="my-button">
+            +
+          </button>
           {toggleButton ? (
             <div className="showItems">
               <button
