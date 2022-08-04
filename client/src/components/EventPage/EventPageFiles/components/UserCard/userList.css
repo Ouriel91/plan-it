@@ -91,6 +91,7 @@ input:focus {
   color: #666;
   display: flex;
   justify-content: space-around;
+  left :500px;
 }
 
 .fa {
@@ -133,6 +134,7 @@ input:focus {
   background: #868384;
   color: white; 
   cursor: pointer;
+  left: 200px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 .my-button:hover {

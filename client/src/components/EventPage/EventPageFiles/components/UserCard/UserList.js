@@ -166,14 +166,14 @@ const App = ({ lists }) => {
                   />
 
                   <div className="delete-btn">
-                    <i
+                    {/* <i
                       className="far fa-edit add-btn"
                       onClick={() => editItem(curElem.id)}
-                    ></i>
+                    ></i> */}
                     <i
-                      className="far fa-trash-alt add-btn"
+                      className="far fa-trash-alt "
                       onClick={() => deleteItem(curElem.id)}
-                    >-</i>
+                    ></i>
                   </div>
                 </div>
               );
