@@ -115,6 +115,7 @@ const EventsType = ({ type, setEventObj, event }) => {
           <Calendar
             onChange={setCalendar}
             value={calendar}
+            touchUi={true}
             locale="en-GB" />
           <div className='timer-container'>
             <section >

@@ -106,9 +106,7 @@ const App = ({ lists }) => {
     <>
       <div className="main-div">
         <div className="child-div">
-          <button onClick={handleClick} className="my-button">
-            +
-          </button>
+         
           <div className="addItems">
             <Dialog open={isShown} onClose={handleClick}>
               <DialogTitle>Add New User</DialogTitle>
@@ -179,6 +177,9 @@ const App = ({ lists }) => {
               );
             })}
           </div>
+          <button onClick={handleClick} className="my-button">
+            +
+          </button>
           {toggleButton ? (
             <div className="showItems">
               <button
