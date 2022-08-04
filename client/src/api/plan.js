@@ -76,6 +76,7 @@ export const postItem = async (item, eventId) => {
       postedItem,
     },
   });
+  console.log(response.data,'api');
   return response.data;
 };
 
@@ -115,6 +116,7 @@ export const fetchPlansWithItems = async () => {
     method: "get",
     url: `${url}/events`,
   });
+  return response.data;
 }
 
   export const postUser = async (fullName,email,eventId) => { 

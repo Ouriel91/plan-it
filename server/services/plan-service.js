@@ -123,6 +123,7 @@ const itemAdding = async (newItem) => {
     order: [["id", "DESC"]],
     raw: true,
   });
+  console.log(item,'server');
   return item;
 };
 

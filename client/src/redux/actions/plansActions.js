@@ -1,17 +1,17 @@
 import {postPlan, fetchPlans,postItem,itemToEdit,deleteItem,fetchPlansWithItems,deletePlan,postUser} from "../../api/plan";
 import actionTypes from "./constants";
 
-export const fetchAllPlans = (fetchedEvents) => ({
-  type: actionTypes.FETCH_ALL_PLANS,
-  payload: fetchedEvents
-})
+// export const fetchAllPlans = (fetchedEvents) => ({
+//   type: actionTypes.FETCH_ALL_PLANS,
+//   payload: fetchedEvents
+// })
 
-export const fetchEventAction = () => {
-  return async (dispatch) => {
-    const fetchedEvents = await fetchPlans()
-    dispatch(fetchAllPlans(fetchedEvents));
-  };
-}
+// export const fetchEventAction = () => {
+//   return async (dispatch) => {
+//     const fetchedEvents = await fetchPlans()
+//     dispatch(fetchAllPlans(fetchedEvents));
+//   };
+// }
 
 export const addPlan = (newEvent) => ({
   type: actionTypes.ADD_PLAN,
@@ -62,7 +62,8 @@ export const addItem = (newItem,eventId) => ({
 export const addItemAction =  (newItem,eventId) => {
   return async (dispatch) => {
    const item =  await postItem(newItem,eventId)
-    dispatch(addItem(item));
+   console.log('action',item)
+    dispatch(addItem(item,eventId));
     return item
   };
 };
@@ -92,7 +93,8 @@ export const fetchPlansWithItemsAction = () => {
   return async (dispatch) => {
     console.log('action')
     const fetchedPlans = await fetchPlansWithItems()
-    dispatch(fetchAllPlans(fetchedPlans));
+    console.log('fetched plans',fetchedPlans)
+    dispatch(addPlansWithItemsToState(fetchedPlans));
   };
 }
 

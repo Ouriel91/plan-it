@@ -22,10 +22,12 @@ const plansReducer = (state = initialState, action) => {
           plans: state.plans.filter(plan => plan.id !== action.payload)
       }
     case actionTypes.ADD_ITEM:
+      console.log('add item',action.payload)
+      console.log('event',action.eventId)
       return {
         ...state,
         plans: state.plans.map((plan) =>
-          plan.eventId === action.eventId
+          plan.id == action.eventId
             ? { ...plan, eventItems: [...plan.eventItems, ...action.payload] }
             : plan
         ),
