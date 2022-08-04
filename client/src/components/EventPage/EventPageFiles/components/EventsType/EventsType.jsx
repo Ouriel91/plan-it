@@ -24,6 +24,7 @@ import party_img from '../../../../../images/party.jpg'
 import NewItemInputConnector from "../NewItemInput/NewItemInputConnector"
 import ItemListConnector from '../ItemList/ItemListConnector';
 import clock_gif from '../../../../../images/clock2.gif'
+import UserListConnector from '../UserCard/UserListConnector';
 const EventsType = ({ type, setEventObj, event }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
@@ -139,7 +140,7 @@ const EventsType = ({ type, setEventObj, event }) => {
       <div className='participants-container'>
         <p className='title'>Invite Friends</p>
         <p className='description'>Add your buddies to enjoy with you!</p>
-        <UserList />
+        <UserListConnector event={event.id} />
       </div>
 
       <section >

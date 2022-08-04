@@ -17,8 +17,10 @@ const getLocalData = () => {
   }
 };
 
-const App = ({ lists }) => {
+const App = ({ lists,addUserAction,eventId }) => {
   const [data, setData] = useState("");
+  const [email, setEmail] = useState("");
+
   const [items, setItems] = useState(getLocalData());
   const [counter, setCounter] = useState(0);
   const [avatarName, setAvatarName] = useState("");
@@ -41,6 +43,7 @@ const App = ({ lists }) => {
     setIsShown(!isShown);
   };
   const handleClickAdd = () => {
+    addUserAction(data,email,eventId);
     addItem();
     setIsShown(!isShown);
   };
@@ -124,6 +127,7 @@ const App = ({ lists }) => {
                   type="text"
                   placeholder="Enter Email..."
                   className="form-control"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </DialogContent>
               <DialogActions>

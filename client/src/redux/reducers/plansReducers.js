@@ -63,6 +63,16 @@ const plansReducer = (state = initialState, action) => {
         ...state,
         plans: [...action.payload],
       };
+
+      case actionTypes.ADD_USER:
+        return {
+          ...state,
+          plans: state.plans.map((plan) =>
+            plan.eventId === action.payload.eventId
+              ? { ...plan, eventUsers: [...plan.eventUsers, ...action.payload] }
+              : plan
+          ),
+        };
     default:
       return state;
   }
