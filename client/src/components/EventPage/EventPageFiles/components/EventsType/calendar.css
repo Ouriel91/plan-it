@@ -6,9 +6,9 @@
   color: white;
   border-radius: 8px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  line-height: 0.3em;
+  line-height: 0.8em;
   padding-right: 20px;
-  margin-top: 100px;
+  margin-top: 50px;
   padding-bottom: 10px;
  }
 
@@ -102,6 +102,10 @@ margin-bottom: 10px;
   text-align: center;
   padding: 0.75em 0.5em 0.6em 0.2em ;
   background: none;
+}
+
+.react-calendar__navigation__label__labelText{
+    font-size: 18px;
 }
 .react-calendar__tile:disabled {
   background-color: #f0f0f0;

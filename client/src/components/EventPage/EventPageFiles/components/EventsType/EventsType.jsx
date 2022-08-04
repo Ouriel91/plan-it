@@ -23,7 +23,7 @@ import pool_img from '../../../../../images/pool-party.jpg'
 import party_img from '../../../../../images/party.jpg'
 import NewItemInputConnector from "../NewItemInput/NewItemInputConnector"
 import ItemListConnector from '../ItemList/ItemListConnector';
-
+import clock_gif from '../../../../../images/clock2.gif'
 const EventsType = ({ type, setEventObj, event }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
@@ -44,7 +44,6 @@ const EventsType = ({ type, setEventObj, event }) => {
       const days = Math.floor(distance / (1000 * 60 * 60 * 24))
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-      const seconds = Math.floor((distance % (1000 * 60)) / (1000))
 
       if (distance <= 0) {
         setTimerEnded(true)
@@ -53,7 +52,6 @@ const EventsType = ({ type, setEventObj, event }) => {
       setTimerDays(days)
       setTimerHours(hours)
       setTimerMins(minutes)
-      setTimerSecs(seconds)
     }, 1000)
   }
 
@@ -104,55 +102,60 @@ const EventsType = ({ type, setEventObj, event }) => {
   return (
     <>
       <section className='opening-sentence-container'>
-        <p className='opening-sentence'>Life is short and the world is wide, </p>
-        <p className='opening2-sentence'>So let's get the best advanture experience we can!</p>
+        <p className='opening-sentence'>Life is short and the world is wide </p>
+        <p className='opening2-sentence'>So let's get the best advanture we can! <br /> All of the necessities to plan a great gathering with your friends - in one page! <br /> Counting the days till the hangout, adding pals and making sure to bring everything you need.  </p>
       </section>
-      <div className='date-counter-holder'>
-        <Calendar
-          onChange={setCalendar}
-          value={calendar}
-          locale="en-GB" />
-        {/* <div class='datepicker'>
-          <div class="datepicker-header"></div>
-        </div> */}
-        {/* <text className='date-holder'>{event.date}</text> */}
-        <div className='timer-container'>
-          <section >
-            <p className='date-number'>{timerDays}</p>
-            <p className='date-text'>Days</p>
-          </section>
-          <section>
-            <p className='date-number'>{timerHours}</p>
-            <p className='date-text'>Hours</p>
-          </section>
-          <section>
-            <p className='date-number'>{timerMins}</p>
-            <p className='date-text'>Minutes</p>
-          </section>
-          <section>
-            <p className='date-number'>{timerSecs}</p>
-            <p className='date-text'>Seconds</p>
-          </section>
 
-          <img width={500} height={220} id="confetti" alt='party' src={confetti} hidden={!timerEnded ? true : undefined}></img>
+      <section >
+        <div className='date-counter-holder-sentence'>
+          <p className='title'>Organize your time properly</p>
+          <p className='description'>A daily reminder of your event <img className='clock' width={40} height={40} alt='clock' src={clock_gif}></img></p>
         </div>
-      </div>
-      {/* <section data-aos="flip-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-        <div className="listContainer">
-          <ItemList />
+        <div className='date-counter-holder'>
+          <Calendar
+            onChange={setCalendar}
+            value={calendar}
+            locale="en-GB" />
+          <div className='timer-container'>
+            <section >
+              <p className='date-number'>{timerDays}</p>
+              <p className='date-text'>Days</p>
+            </section>
+            <section>
+              <p className='date-number'>{timerHours}</p>
+              <p className='date-text'>Hours</p>
+            </section>
+            <section>
+              <p className='date-number'>{timerMins}</p>
+              <p className='date-text'>Minutes</p>
+            </section>
+            <img width={400} height={220} id="confetti" alt='party' src={confetti} hidden={!timerEnded ? true : undefined}></img>
+          </div>
+
         </div>
-      </section> */}
+      </section>
+
       <div className='participants-container'>
+        <p className='title'>Invite Friends</p>
+        <p className='description'>Add your buddies to enjoy with you!</p>
         <UserList />
       </div>
 
-      <section className='events-type-container'>
-        <div className="listContainer">
-          <div className="listTitle">Event List</div>
-          <NewItemInputConnector event={event} />
-          <ItemListConnector event={event} />
+      <section >
+        <div className='date-counter-holder-sentence'>
+          <p className='title'>What to bring</p>
+          <p className='description'>First and foremost, bring yourself. The rest is already written here</p>
         </div>
+        <div className='events-type-container'>
+          <div className="listContainer">
+            <p className="listTitle">Event List</p>
+            <NewItemInputConnector event={event} />
+            <ItemListConnector event={event} />
+          </div>
+        </div>
+
       </section>
+
       <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'>and let us help you with the arrangments</p>

@@ -14,7 +14,7 @@ function AboutUsCards() {
             </div>
             <div className="card-body">
               {/* <h5 class="card-title">Card title</h5> */}
-              <p className="card-text">Our application gives you a list of places to choose from, <br /> for you and your friends, based on the event type you picked. </p>
+              <p className="card-text">Before you get the party started, you need to find just the right time and of course, the right people. Plan a personal invitation for your friends. </p>
             </div>
           </div>
         </div>
@@ -25,7 +25,7 @@ function AboutUsCards() {
             </div>
             <div className="card-body">
               {/* <h5 class="card-title">Card title</h5> */}
-              <p className="card-text">Nobody wants to get stuck without salt in a bbq right? <br /> No worries, all of the things you need in order to have a great time are listed.</p>
+              <p className="card-text">Nobody wants to get stuck without salt in a bbq, right? <br /> No worries, all of the things you need in order to have a great time are listed.</p>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@ function AboutUsCards() {
             </div>
             <div className="card-body">
               {/* <h5 class="card-title">Card title</h5> */}
-              <p className="card-text">Before you get the party started, you need to find just the right time and of course, the right people. Plan a personal invitation for your friends. </p>
+              <p className="card-text">Our application gives you a list of places to choose from, <br /> for you and your friends, based on the event type you picked.</p>
             </div>
           </div>
         </div>
