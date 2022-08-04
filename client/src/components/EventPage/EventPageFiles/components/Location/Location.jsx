@@ -8,6 +8,9 @@ function Location({lat, lng}) {
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
     });
 
+    console.log("lat", lat)
+    console.log("lng", lng)
+
     if (!isLoaded) return <div>Loading...</div>;
     return (
         <>
