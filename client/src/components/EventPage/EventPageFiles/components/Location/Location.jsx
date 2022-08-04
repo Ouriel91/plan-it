@@ -1,6 +1,7 @@
 import { GoogleMap, MarkerF } from "@react-google-maps/api";
 import './Location.css'
 
+const google = window.google
 function Location({lat, lng}) {
     
     return (
