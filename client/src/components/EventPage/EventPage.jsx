@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 const EventPage = ({ fetchPlansWithItemsAction, events }) => {
   useEffect(() => {
-    console.log("useEffect");
     if (!events.length) {
       fetchPlansWithItemsAction();
     }
