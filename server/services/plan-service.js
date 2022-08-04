@@ -34,9 +34,7 @@ async function addPlan(plan) {
     order: [["id", "DESC"]],
     raw: true,
   });
-  event[0].eventItems = [];
   event[0].eventsUsers = [];
-  
   const eventId = event[0].id.toString();
   const itemsByType = await insertItemsBytype(event[0].type, eventId);
   event[0].eventItems = [...itemsByType];
@@ -51,7 +49,7 @@ const insertItemsBytype = async (type, eventId) => {
       bringName: "",
       quantity: "0",
       status: "pending",
-      eventId: `${eventId}`,
+      eventId: eventId,
     });
     items.push({
       itemName: "Ice",
