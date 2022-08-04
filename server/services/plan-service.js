@@ -2,13 +2,14 @@ const { Event } = require("../db/models");
 const { Item } = require("../db/models");
 
 async function fetchPlans() {
-  console.log('here2')
   const events = await Event.findAll({ raw: true });
   const items = await getAllItems();
   const plans = [];
   events.forEach((event) => {
     const plan = { ...event };
-    plan.eventItems = items.filter((item) => parseInt(item.eventId) === event.id);
+    plan.eventItems = items.filter(
+      (item) => parseInt(item.eventId) === event.id
+    );
     plans.push(plan);
   });
 
@@ -20,19 +21,69 @@ async function getAllItems() {
 }
 
 async function getAllPlans() {
-    let events = await Event.findAll()
-    return events
+  let events = await Event.findAll();
+  return events;
 }
 
 async function addPlan(plan) {
   const { headline, date, type, location } = plan;
+
   await Event.create({ headline, date, type, location });
-  const events = await Event.findAll({ raw: true });
-  const event = events[events.length - 1];
-  event.eventItems = [];
-  event.eventsUsers = [];
-  return event;
+  const event = await Event.findAll({
+    limit: 1,
+    order: [["id", "DESC"]],
+    raw: true,
+  });
+  event[0].eventItems = [];
+  event[0].eventsUsers = [];
+  
+  const eventId = event[0].id.toString();
+  const itemsByType = await insertItemsBytype(event[0].type, eventId);
+  event[0].eventItems = [...itemsByType];
+  return event[0];
 }
+
+const insertItemsBytype = async (type, eventId) => {
+  const items = [];
+  if (type === "BBQ with friends") {
+    items.push({
+      itemName: "Snacks",
+      bringName: "",
+      quantity: "0",
+      status: "pending",
+      eventId: `${eventId}`,
+    });
+    items.push({
+      itemName: "Ice",
+      bringName: "",
+      quantity: "0",
+      status: "pending",
+      eventId: eventId,
+    });
+    items.push({
+      itemName: "Tongs",
+      bringName: "",
+      quantity: "0",
+      status: "pending",
+      eventId: eventId,
+    }),
+      items.push({
+        itemName: "BBQ",
+        bringName: "",
+        quantity: "0",
+        status: "pending",
+        eventId: eventId,
+      });
+
+    await Item.bulkCreate(items);
+    return await Item.findAll({
+      limit: 4,
+      order: [["id", "DESC"]],
+      raw: true,
+    });
+  }
+  return items;
+};
 
 async function deletePlan(id) {
   const removedPlan = await Event.findOne({ where: { id } });
