@@ -8,7 +8,7 @@ const NewItemInput = ({ event, addItemAction }) => {
     itemName: "",
     quantity: "",
     bringName: "",
-    status: "",
+    status: "pending",
   });
 
   const handleInputValue = (e) => {
@@ -50,7 +50,7 @@ const NewItemInput = ({ event, addItemAction }) => {
           className="input-table"
           id="taskInput"
           type="text"
-          placeholder="Quntity"
+          placeholder="Quantity"
           name="quantity"
           value={state.quantity}
           onChange={handleInputValue}
@@ -63,15 +63,6 @@ const NewItemInput = ({ event, addItemAction }) => {
           onChange={handleInputValue}
           value={state.bringName}
           name="bringName"
-        />
-        <input
-          className="input-table"
-          id="taskInput"
-          type="text"
-          placeholder="status"
-          onChange={handleInputValue}
-          value={state.status}
-          name="status"
         />
         <Button
           id="add-button"

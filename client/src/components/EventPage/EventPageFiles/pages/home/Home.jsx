@@ -8,20 +8,17 @@ import Weather from "../../components/Weather/Weather";
 import UserList from '../../components/UserCard/UserList';
 import Footer from "../../../../Footer/Footer";
 import {useParams} from 'react-router-dom'
+import location2_gif from '../../../../../images/location2.gif'
+
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
 
-const Home = ({event, getEvent}) => {
+const Home = ({event}) => {
   //console.log("home",event)
   const [lat, setLat] = useState(0.0)
   const [lng, setLng] = useState(0.0)
   const [date, setDate] = useState("")
-  const params = useParams();
   
-  
-  event = params.id ? getEvent(params.id) : event;
-/*   console.log('currentEvent', currentEvent);
- */  
   const getGeocode = async() => {
     const orgAddress = event.location
     let address = orgAddress.replaceAll(" ", "+")
@@ -48,20 +45,16 @@ const Home = ({event, getEvent}) => {
       <div className="homeContainer">
         <Navbar event={event}/>
         <div className="EventsTypes">
-          <UserList/>
           <EventsType event={event} />
         </div> 
+        <div className='date-counter-holder-sentence'>
+        <p className='title'>Check out your destination</p>
+        <p className='description'>Don't forget to check up on the weather of your desired location!  <img className='clock' width={30} height={50} loop alt='clock' src={location2_gif}></img></p>
+        </div>
         <div className='weather-location-container'>
           <Location lat={lat} lng={lng} />
           <Weather lat={lat} lng={lng} location={event.location} date={date}/>
         </div>
-        <div className="charts">
-          
-          
-        </div>
-        <div className="listContainer">
-          <div className="listTitle">Event List</div>
-        </div> 
       </div>
       <Footer/>
     </div>

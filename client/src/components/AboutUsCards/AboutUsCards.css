@@ -3,27 +3,32 @@
 
 .about-us-description{
     font-size: 25px;
-    color: white;
+    color: #fffdecd7;
     text-align: center;
     margin-top: 50px;
     font-weight: bold;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Abel';
+    text-shadow: 3px 7px 3px #969696;
 }
 
 .card{
    box-shadow: 3px 3px 13px 6px #00000092; 
-   background-color: #f0fcbad6;
+   background-color: #fffdecd7;
    margin-top: 40px;
+   height: 200px;
 }
 
 .card-header{
-    font-size: 25px;
+    font-size: 27px;
     font-weight: bold;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Abel';
+    text-shadow: 3px 3px 3px #bcbcbc;
 }
 
-p{
-    font-size: 17px;
+.card-text{
+    font-size: 18px;
     text-decoration: none;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Abel';
+    color: rgb(111, 111, 111);
+    text-shadow: 3px 3px 3px #bcbcbc;
 }

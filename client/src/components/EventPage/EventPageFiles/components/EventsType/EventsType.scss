@@ -12,50 +12,101 @@
 //   background-color: rgba(235, 232, 232, 0.942);
 // }
 
+.opening-sentence-container{
+  margin-top: 180px;
+  padding-bottom: 200px;
+}
+
+.opening-sentence{
+    font-size: 70px;
+    font-weight: bold;
+    color: #dde4c7;
+    text-shadow: 3px 3px 3px #bcbcbc;
+    font-family: 'Poiret One', cursive;
+}
+
+.opening2-sentence{
+  font-size: 25px;
+  font-weight: bold;
+  color: #c6c6c6;
+  font-family: 'Poiret One', cursive;
+}
+
 .events-type-container{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-color: white;
+  padding-bottom: 170px;
 }
 
 .date-counter-holder{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 150px;
+  padding-bottom: 100px;
+  background-color: white;
+}
+
+.row-div{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.date-counter-holder-sentence{
+  background-color: white;
+}
+
+.title{
+  text-align: center;
+  margin: auto;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Abel';
+  padding-top: 30px;
+}
+
+.description{
+  color: #b7b7b7;
+  font-family: 'Abel';
+  font-style: normal;
+  margin: auto;
 }
 
 .timer-container {
-  border: 2px solid white;
+  margin-top: 100px;
+  border: 2px solid #faedcd;
   // background-image: linear-gradient(135deg, #fffcd3ce 60%, #fcffe1ce 69%, #ffffffbe 100%);
   border-radius: 30px;
   border-style:outset;
   box-shadow: 5px 30px 38px #888888;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   padding: 30px;
   padding-left: 40px;
   padding-right: 40px;
   text-align: center;
+  height: 250px;
   position: relative;
+  background-color: #faedcd;
 }
 
 #confetti{
   position: absolute;
+  top: 5%;
 }
 
-.date-holder{
-  margin-top: 50px;
-}
+
 .date-number{
   font-size: 40px;
   background-image: linear-gradient(to top, rgba(237, 237, 237, 0.874), rgba(237, 237, 237, 0.874) 51%, #ffffffbe 100%);
   margin: 20px;
   box-shadow: 1px 8px 15px #888888;
-  padding: 5px;
+  padding: 10px;
   font-weight: 600;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 10px;
   font-family: 'Abel', sans-serif;
   font-style: normal;
@@ -65,7 +116,7 @@
   margin: 20px;
   font-family: 'Abel', sans-serif;
   font-style: normal;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 // .centered-date {
@@ -83,24 +134,25 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-left: 300px;
+  padding: 100px;
   position: relative;
-  margin-left: 450px;
-  margin-top: 280px;
 }
+
 
 
 .description-event-page{
   position: absolute;
-  top: 180px;
-  left: -86px;
+  top: 270px;
+  left: 10px;
   font-size: 28px;
   color: rgb(167, 167, 167);
 }
 
 .description2-event-page{
   position: absolute;
-  top: 210px;
-  left: -86px;
+  top: 305px;
+  left: 86px;
   font-size: 28px;
   color: rgb(167, 167, 167);
 }
@@ -141,7 +193,7 @@
   margin: 20px;
   margin-left: 100px;
   margin-right: 100px;
-  margin-top: 180px;
+  margin-top: 100px;
 }
 
 .weather-event-page{
@@ -150,6 +202,13 @@
 .participants-event-page{
   display: flex;
   flex-direction: row;
+}
+
+.participants-container{
+  padding-top: 100px;
+  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-page-details{
@@ -163,11 +222,7 @@
   font-family: 'Poiret One', cursive;
 }
 
-.li-container{
-  font-size: 18px;
-  font-style: normal;
-  font-family: 'Abel';
-}
+
 
     .counter {
       font-size: 28px;

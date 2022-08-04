@@ -1,4 +1,4 @@
-import {postPlan, fetchPlans,postItem,itemToEdit,deletePlan,fetchPlansWithItems,deleteItem} from "../../api/plan";
+import {postPlan, fetchPlans,postItem,itemToEdit,deleteItem,fetchPlansWithItems,deletePlan} from "../../api/plan";
 import actionTypes from "./constants";
 
 export const fetchAllPlans = (fetchedEvents) => ({
