@@ -43,8 +43,8 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
 
   return (
     <TableRow id={item.id}>
-      <div className="table-row">
-        <div>
+      
+        <TableCell>
           <TextField
             style={{ width: "100px" }}
             type="text"
@@ -53,8 +53,8 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             onChange={(e) => setItemName(e.target.value)}
             name="itemName"
           />
-        </div>
-        <div>
+        </TableCell>
+        <TableCell>
           <TextField
             style={{ width: "100px" }}
             value={quantity}
@@ -63,8 +63,8 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             disabled={!isEditClicked}
             onChange={(e) => setQuantity(e.target.value)}
           />
-        </div>
-        <div>
+        </TableCell>
+        <TableCell>
           <TextField
             style={{ width: "100px" }}
             value={bringName}
@@ -73,8 +73,8 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             disabled={!isEditClicked}
             onChange={(e) => setBringName(e.target.value)}
           />
-        </div>
-        <div>
+        </TableCell>
+        <TableCell>
         <FormControl sx={{ m: 0, minWidth: 200 }} size="small">
   
       <Checkbox
@@ -82,7 +82,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
         value={status}
         label="Status"
         name="status"
-        defaultChecked={status}
+        defaultChecked={status === "true"}
             disabled={!isEditClicked}
             onChange={(e) => setStatus(e.target.value)}
       >
@@ -91,7 +91,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
         <MenuItem value="done"> Done</MenuItem>
       </Checkbox>
     </FormControl>
-        </div>
+        </TableCell>
         <TableCell>
           <IconButton
             aria-label="delete"
@@ -125,7 +125,6 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
         </TableCell>
       )}
       
-      </div>
     </TableRow>
   );
 };

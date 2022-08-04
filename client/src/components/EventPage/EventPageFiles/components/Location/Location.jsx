@@ -1,9 +1,14 @@
+import React from 'react';
 import { GoogleMap, MarkerF } from "@react-google-maps/api";
+import { useLoadScript } from "@react-google-maps/api";
 import './Location.css'
 
-const google = window.google
 function Location({lat, lng}) {
-    
+    const { isLoaded } = useLoadScript({
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    });
+
+    if (!isLoaded) return <div>Loading...</div>;
     return (
         <>
         <GoogleMap

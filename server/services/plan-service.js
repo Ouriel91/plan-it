@@ -28,17 +28,18 @@ async function getAllPlans() {
 async function addPlan(plan) {
   const { headline, date, type, location } = plan;
 
-  await Event.create({ headline, date, type, location });
-  const event = await Event.findAll({
+  const value = await Event.create({ headline, date, type, location });
+  
+  /* const event = await Event.findAll({
     limit: 1,
     order: [["id", "DESC"]],
     raw: true,
-  });
-  event[0].eventsUsers = [];
-  const eventId = event[0].id.toString();
-  const itemsByType = await insertItemsBytype(event[0].type, eventId);
-  event[0].eventItems = [...itemsByType];
-  return event[0];
+  }); */
+  value.eventsUsers = [];
+  const eventId = value.id.toString();
+  const itemsByType = await insertItemsBytype(value.type, eventId);
+  value.eventItems = [...itemsByType];
+  return value;
 }
 
 const insertItemsBytype = async (type, eventId) => {
