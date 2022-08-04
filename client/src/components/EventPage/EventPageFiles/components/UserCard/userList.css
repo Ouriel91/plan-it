@@ -91,12 +91,8 @@ input:focus {
   width: 2rem;
   color: #666;
   display: flex;
-<<<<<<< HEAD
   justify-content: space-around;
   left :500px;
-=======
-  justify-content: center;
->>>>>>> a1b193ff88b70639345b85c021a0e3a77f1133ec
 }
 
 .fa {
