@@ -1,4 +1,5 @@
-import { Checkbox, TableCell, TableRow, TextField } from "@material-ui/core";
+import { Checkbox, TableCell, TextField } from "@material-ui/core";
+import Autocomplete from '@mui/material/Autocomplete';
 import React from "react";
 import { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
@@ -7,7 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
 import "./ItemRow.css";
 
-const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
+const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
   const [itemName, setItemName] = useState(item.itemName);
   const [quantity, setQuantity] = useState(item.quantity);
   const [bringName, setBringName] = useState(item.bringName);
@@ -56,7 +57,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
           />
         </TableCell>
-        <TableCell style={{marginTop:"15px"}}>
+        <TableCell style={{marginTop:"15px", textAlign: "center"}}>
           <TextField
             style={{ width: "200px" }}
             value={quantity}
@@ -69,17 +70,19 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
           />
         </TableCell>
+
         <TableCell style={{marginTop:"15px"}}>
-          <TextField
-            style={{ width: "200px" }}
-            value={bringName}
-            name="bringName"
-            type="text"
-            disabled={!isEditClicked}
-            onChange={(e) => setBringName(e.target.value)}
-            InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
-          />
+        <Autocomplete
+        multiple
+        style = {{width: "200px", fontSize: "20px"}}
+        id="tags-standard"
+        options={users.map(users => users.fullName)}
+        readOnly = {!isEditClicked}
+        renderInput={(params) => (
+          <TextField {...params} label="who brings"  />
+        )}/>
         </TableCell>
+
         <TableCell style={{marginTop:"25px", size:"30px"}}>
             <Checkbox
               value={status}
@@ -102,7 +105,6 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
                 <EditIcon className="editIcon" style={{ fontSize: 25 }} />
               </IconButton>
             )}
-
             {isEditClicked && (
               <IconButton
                 onClick={handleSaveButtonClick}
@@ -114,7 +116,6 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
 
             )}
           </TableCell>
-   
           <TableCell style={{borderBottom:"none"}}>
                     <IconButton
             aria-label="delete"
@@ -124,7 +125,6 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             <DeleteIcon className="deleteButton" style={{ fontSize: 25 }} />
           </IconButton>
           </TableCell>
-
         </TableCell>
       </tr>
     </>
