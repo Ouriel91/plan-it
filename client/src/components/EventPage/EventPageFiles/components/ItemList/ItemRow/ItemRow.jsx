@@ -1,17 +1,15 @@
-import { Checkbox, TableCell, TableRow, TextField } from "@material-ui/core";
+import { Checkbox, TableCell, TextField } from "@material-ui/core";
+import Autocomplete from '@mui/material/Autocomplete';
 import React from "react";
 import { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select'
 import "./ItemRow.css";
 
-const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
+const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
   const [itemName, setItemName] = useState(item.itemName);
   const [quantity, setQuantity] = useState(item.quantity);
   const [bringName, setBringName] = useState(item.bringName);
@@ -74,15 +72,16 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
           />
         </TableCell>
         <TableCell>
-          <TextField
-            style={{ width: "200px" }}
-            value={bringName}
-            name="bringName"
-            type="text"
-            disabled={!isEditClicked}
-            onChange={(e) => setBringName(e.target.value)}
-            InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
-          />
+        <Autocomplete
+        multiple
+        style = {{width: "200px"}}
+        id="tags-standard"
+        options={users.map(users => users.fullName)}
+        readOnly = {!isEditClicked}
+        renderInput={(params) => (
+          <TextField {...params} label="who bring" />
+        )}
+      />
         </TableCell>
         <TableCell>
           <FormControl >
