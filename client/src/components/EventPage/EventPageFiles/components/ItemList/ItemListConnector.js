@@ -6,7 +6,8 @@ import{saveItemAction}  from "../../../../../redux/actions/plansActions"
 
 const mapStateToProps = (state, ownProps) => {
   console.log("ownProps", ownProps)
-  const items = ownProps.event.eventItems ? ownProps.event.eventItems : []
+  const items = ownProps.event.eventItems;  
+  console.log("items in items connector", items)
 /*    const items = state.plansReducer.plans[state.plansReducer.plans.length - 1].eventItems;
  */  return { items };
 };
