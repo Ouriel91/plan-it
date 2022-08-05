@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./userList.css";
+import emailjs from "emailjs-com";
 import { Avatar, Grid } from "@nextui-org/react";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@mui/material/Button";
+
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import emailjs from "emailjs-com";
 
 const getLocalData = () => {
   const lists = localStorage.getItem("UsersList");
@@ -18,16 +19,17 @@ const getLocalData = () => {
   }
 };
 
-const App = ({ lists,addUserAction,eventId }) => {
+const App = ({ lists }) => {
   const [data, setData] = useState("");
-  const [email, setEmail] = useState("");
-
   const [items, setItems] = useState(getLocalData());
   const [counter, setCounter] = useState(0);
   const [avatarName, setAvatarName] = useState("");
   const [isEditItem, setIsEditItem] = useState("");
   const [toggleButton, setToggleButton] = useState(false);
   const [isShown, setIsShown] = useState(false);
+  const [isDeleteShown, setIsDeleteShown] = useState(false);
+  const [show, setShow] = useState(false);
+
   const [color, setColor] = useState([
     "default",
     "primary",
@@ -40,11 +42,14 @@ const App = ({ lists,addUserAction,eventId }) => {
     "green"
   ]);
 
+  const handleShow = () => setShow(true);
   const handleClick = (event) => {
     setIsShown(!isShown);
   };
+  const handleAvatarClick = () => {
+    setIsDeleteShown(!isDeleteShown);
+  };
   const handleClickAdd = () => {
-    addUserAction(data,email,eventId);
     addItem();
     setIsShown(!isShown);
   };
@@ -59,7 +64,7 @@ const App = ({ lists,addUserAction,eventId }) => {
           }
 
           setColor(...color);
-          console.log(color);
+
           setAvatarName(...data);
           setCounter(counter + 1);
           return curElem;
@@ -75,7 +80,7 @@ const App = ({ lists,addUserAction,eventId }) => {
         name: data,
         colors: color[Math.floor(Math.random() * color.length)]
       };
-
+      console.log(newData);
       setItems([...items, newData]);
       setData("");
     }
@@ -91,6 +96,7 @@ const App = ({ lists,addUserAction,eventId }) => {
   };
 
   const deleteItem = (index) => {
+    setIsDeleteShown(!isDeleteShown);
     const updatedItem = items.filter((curElem) => {
       return curElem.id !== index;
     });
@@ -102,23 +108,16 @@ const App = ({ lists,addUserAction,eventId }) => {
     setItems([]);
   };
 
-  useEffect(() => {
-    localStorage.setItem("UsersList", JSON.stringify(items));
-  }, [items]);
-
-
-
-
-  async function sendEmail(e) {
+  function sendEmail(e) {
     e.preventDefault();
-  
-    await emailjs
-    .sendForm(
-      "service_h7okkuk",
-      "template_qf4dk09",
-      e.target,
-      "zmx11m5tKMK8u3SeQ"
-    )
+
+    emailjs
+      .sendForm(
+        "service_h7okkuk",
+        "template_qf4dk09",
+        e.target,
+        "zmx11m5tKMK8u3SeQ"
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -134,12 +133,13 @@ const App = ({ lists,addUserAction,eventId }) => {
     localStorage.setItem("UsersList", JSON.stringify(items));
   }, [items]);
 
-
   return (
     <>
       <div className="main-div">
         <div className="child-div">
-         
+          <button onClick={handleClick} className="my-button">
+            +
+          </button>
           <div className="addItems">
             <Dialog open={isShown} onClose={handleClick}>
               <DialogTitle>Add New User</DialogTitle>
@@ -195,6 +195,7 @@ const App = ({ lists,addUserAction,eventId }) => {
 
             {/* todo-row */}
           </div>
+
           <div className="avatars-container">
             {items.map((curElem) => {
               return (
@@ -206,6 +207,7 @@ const App = ({ lists,addUserAction,eventId }) => {
                     size="xl"
                     pointer
                     text={curElem.name}
+                    onClick={handleAvatarClick}
                     stacked
                     NormalWeights="black"
                     bordered
@@ -216,19 +218,30 @@ const App = ({ lists,addUserAction,eventId }) => {
                     {/* <i
                       className="far fa-edit add-btn"
                       onClick={() => editItem(curElem.id)}
-                    ></i> */}
+                    ></i>
                     <i
                       className="far fa-trash-alt "
                       onClick={() => deleteItem(curElem.id)}
-                    ></i>
+                    ></i> */}
+                    <Dialog open={isDeleteShown} onClose={handleClick}>
+                      <DialogTitle>Delete</DialogTitle>
+                      <DialogContent>Sure? </DialogContent>
+                      <DialogActions>
+                        <Button
+                          onClick={() => deleteItem(curElem.id)}
+                        >
+                          Yes
+                        </Button>
+                        
+                        <Button onClick={handleAvatarClick}>Cancel</Button>
+                      </DialogActions>
+                    </Dialog>
                   </div>
                 </div>
               );
             })}
           </div>
-          <button onClick={handleClick} className="my-button">
-            +
-          </button>
+
           {toggleButton ? (
             <div className="showItems">
               <button
