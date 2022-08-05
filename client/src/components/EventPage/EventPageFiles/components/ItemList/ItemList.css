@@ -1,16 +1,21 @@
-.table-row{
+.table-row2{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     border-bottom: 1px solid rgb(237, 237, 237);
     margin-top: 20px;
-    width: 170%;
+    margin-right: 140px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .table-titles{
-    font-size: 15px;
+    font-size: 27px;
     text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
+    font-weight: bold;
+    font-family: 'Abel';
+    font-style: normal;
+    color:rgb(206, 206, 206);
+    text-shadow: 5px 5px 2px #f0f0f0;
+    letter-spacing: 1px;
 }

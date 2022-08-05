@@ -64,14 +64,14 @@ const NewItemInput = ({ event, addItemAction }) => {
           value={state.bringName}
           name="bringName"
         />
-        <Button
+        <button
           id="add-button"
           type="submit"
           onClick={handlePressClick}
           className="input-button"
         >
           +
-        </Button>
+        </button>
       </div>
     </div>
   );

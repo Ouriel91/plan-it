@@ -4,18 +4,32 @@
     justify-content: space-around; 
     font-size: 16px;
     text-align: center;
+
 }
 
+input{
+
+}
 .input-table {
     width: 20%; 
     height: 30px;
+    background-color: #dde4c7a2;
+    border: 2px solid whitesmoke;
 }
 
-.input-table:focus {
-    outline: none
+.input-table:hover {
+    background-color: whitesmoke;
 }
 
 .input-button {
-    width: 5%;
-    height: 30px;
+    width: 100px;
+    height: 40px;
+    background-color: whitesmoke;
+    margin-top: 25px;
+    border-radius: 5px;
+    border: 2px solid #dde4c7a2;
+}
+
+.input-button:hover {
+    background-color: rgb(231, 231, 231);
 }
