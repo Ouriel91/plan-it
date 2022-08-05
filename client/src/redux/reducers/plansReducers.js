@@ -2,6 +2,10 @@ import actionTypes from "../actions/constants.js";
 
 const initialState = {
   plans: [],
+  user: {
+    name: '',
+    image: '',
+  }
 };
 
 const plansReducer = (state = initialState, action) => {
@@ -67,6 +71,16 @@ const plansReducer = (state = initialState, action) => {
             : plan
         ),
       };
+    case actionTypes.LOGIN: 
+      return {
+        ...state,
+        user: action.payload
+      }
+    case actionTypes.LOGOUT: 
+      return {
+        ...state,
+        user: action.payload
+      }
     default:
       return state;
   }

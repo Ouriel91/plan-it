@@ -1,11 +1,14 @@
 import {GoogleLogin} from 'react-google-login';
 
 
-function Login({clientId, setUser, setUserImageUrl}) {
+function Login({clientId, setIsLoggedIn, loginAction}) {
 
     const onSuccess = (res) => {
-        setUser(res.profileObj.givenName + " " + res.profileObj.familyName)
-        setUserImageUrl(res.profileObj.imageUrl)
+        setIsLoggedIn(true)
+        loginAction({
+            name: res.profileObj.givenName + " " + res.profileObj.familyName,
+            image: res.profileObj.imageUrl
+        })
     }
 
     const onFailure = (res) => {

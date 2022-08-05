@@ -1,7 +1,27 @@
 import {postPlan ,postItem,itemToEdit,deleteItem,fetchPlansWithItems,deletePlan,postUser} from "../../api/plan";
 import actionTypes from "./constants";
 
+export const logout = (user) => ({
+  type: actionTypes.LOGOUT,
+  payload: user
+})
 
+export const logoutAction = (user) => {
+  return async (dispatch) => {
+    dispatch(logout(user));
+  }
+}
+
+export const login = (user) => ({
+  type: actionTypes.LOGIN,
+  payload: user
+})
+
+export const loginAction = (user) => {
+  return async (dispatch) => {
+    dispatch(login(user));
+  }
+}
 
 export const addPlan = (newEvent) => ({
   type: actionTypes.ADD_PLAN,

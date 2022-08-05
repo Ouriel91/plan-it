@@ -1,10 +1,13 @@
 import {GoogleLogout} from 'react-google-login';
 
-function Logout({clientId, setUser, setUserImageUrl}) {
+function Logout({clientId, setIsLoggedIn, logoutAction}) {
 
     const logout = (res) => {
-        setUser('')
-        setUserImageUrl('')
+        setIsLoggedIn(false);
+        logoutAction({
+            name: '',
+            image: '',
+        })
     }
 
     return (

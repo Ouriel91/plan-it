@@ -9,6 +9,13 @@ img {
   margin-right: 10px;
 }
 
+.user-image {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
+
 .navbar-title {
   display: flex;
   flex-direction: column;
@@ -21,6 +28,12 @@ a{
   font-weight: 600;
   margin-top: 10px;
   letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00F
 }
 
 .navbar-sub-title {

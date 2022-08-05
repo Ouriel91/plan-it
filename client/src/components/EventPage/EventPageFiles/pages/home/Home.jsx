@@ -13,7 +13,7 @@ import location_gif from '../../../../../images/location.gif'
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
 
-const Home = ({event}) => {
+const Home = ({event, user}) => {
   //console.log("home",event)
   const [lat, setLat] = useState(0.0)
   const [lng, setLng] = useState(0.0)
@@ -45,7 +45,7 @@ const Home = ({event}) => {
   return (
     <div className="home">
       <div className="homeContainer">
-        <Navbar event={event}/>
+        <Navbar event={event} user={user}/>
         <div className="EventsTypes">
           <EventsType event={event} />
         </div> 
