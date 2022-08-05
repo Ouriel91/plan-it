@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import { useLoadScript } from "@react-google-maps/api";
 import Map from './Map';
+import loading_gif from '../../../../images/loading_gif.gif'
 
 const libraries = ["places"]
 
@@ -31,7 +32,7 @@ const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, e
         libraries
     });
 
-    if (!isLoaded) return <div>Loading...</div>;
+    if (!isLoaded) return <img alt='loading' src={loading_gif}></img>;
     return (
         <>
             <Dialog

@@ -5,10 +5,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select'
 import "./ItemRow.css";
 
 const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
@@ -48,7 +44,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
                 className: !isEditClicked ? 'table-row-edit' : 'table-row',
               }} 
               >
-        <TableCell>
+        <TableCell style={{marginTop:"15px"}}>
           <TextField
             style={{ width: "200px" }}
             type="text"
@@ -60,7 +56,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
           />
         </TableCell>
-        <TableCell>
+        <TableCell style={{marginTop:"15px"}}>
           <TextField
             style={{ width: "200px" }}
             value={quantity}
@@ -73,7 +69,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
           />
         </TableCell>
-        <TableCell>
+        <TableCell style={{marginTop:"15px"}}>
           <TextField
             style={{ width: "200px" }}
             value={bringName}
@@ -84,21 +80,19 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
           />
         </TableCell>
-        <TableCell>
-          <FormControl >
+        <TableCell style={{marginTop:"25px", size:"30px"}}>
             <Checkbox
               value={status}
               label="Status"
               name="status"
-              defaultChecked={status}
+              defaultChecked="false"
               disabled={!isEditClicked}
-              InputProps={{ style: { fontSize: 40 } }}
+              style={{fontSize:"30px"}}
               onChange={(e) => setStatus(e.target.value)}>
             </Checkbox>
-          </FormControl>
         </TableCell>    
         <TableCell className="hello">
-        <TableCell>
+        <TableCell style={{borderBottom:"none"}}>
             {!isEditClicked && (
               <IconButton
                 onClick={handleEditButtonClick}
@@ -121,11 +115,10 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             )}
           </TableCell>
    
-          <TableCell>
+          <TableCell style={{borderBottom:"none"}}>
                     <IconButton
             aria-label="delete"
             size="large"
-            color="error"
             onClick={handleDeleteClick}
           >
             <DeleteIcon className="deleteButton" style={{ fontSize: 25 }} />

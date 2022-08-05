@@ -6,12 +6,13 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     margin-bottom: 15px;
     border-radius: 8px;
+    height: 105px;
 }
 
 .table-row-edit{
     background-color: rgba(255, 255, 255, 0.507);
     transition: 0.4s ease-in-out;
-    width: 1200px;
+    width: 110%;
     height: 130px;
     box-shadow: 0 12px 34px rgba(164, 218, 192, 0.2);
 }

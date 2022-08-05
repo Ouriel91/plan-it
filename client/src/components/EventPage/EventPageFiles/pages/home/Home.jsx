@@ -9,6 +9,7 @@ import UserList from '../../components/UserCard/UserList';
 import Footer from "../../../../Footer/Footer";
 import {useParams} from 'react-router-dom'
 import location_gif from '../../../../../images/location.gif'
+import loading_gif from '../../../../../images/loading_gif.gif'
 
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
@@ -41,7 +42,7 @@ const Home = ({event}) => {
     getGeocode()
   },[event])
 
-  if(!event)return <div>Loading ...</div>
+  if(!event)return <div className='center-loading'><img className='center-loading-img' alt='loading' src={loading_gif}></img></div>
   return (
     <div className="home">
       <div className="homeContainer">
