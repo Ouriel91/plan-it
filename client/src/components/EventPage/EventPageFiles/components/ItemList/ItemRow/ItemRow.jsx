@@ -1,5 +1,5 @@
 import { Checkbox, TableCell, TextField } from "@material-ui/core";
-import Autocomplete from '@mui/material/Autocomplete';
+import Autocomplete from "@mui/material/Autocomplete";
 import React from "react";
 import { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
@@ -8,7 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
 import "./ItemRow.css";
 
-const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
+const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
   const [itemName, setItemName] = useState(item.itemName);
   const [quantity, setQuantity] = useState(item.quantity);
   const [bringName, setBringName] = useState(item.bringName);
@@ -34,18 +34,25 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
     }
   };
 
+ const  handleBringNameChange = (e,value) => {
+  setBringName(value);
+  
+ }
+
   const handleDeleteClick = async () => {
     await deleteItemAction(item.id, item.eventId);
   };
 
   return (
     <>
-      <tr className="table-row" id={item.id}               
-      style={{
-                backgroundColor: !isEditClicked ? 'table-row-edit' : 'table-row',
-              }} 
-              >
-        <TableCell >
+      <tr
+        className="table-row"
+        id={item.id}
+        style={{
+          className: !isEditClicked ? "table-row-edit" : "table-row",
+        }}
+      >
+        <TableCell>
           <TextField
             style={{ width: "200px" }}
             type="text"
@@ -54,7 +61,14 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
             disabled={!isEditClicked}
             onChange={(e) => setItemName(e.target.value)}
             name="itemName"
-            InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
+            InputProps={{
+              style: {
+                fontSize: 20,
+                fontFamily: "Abel",
+                fontStyle: "normal",
+                fontWeight: "bold",
+              },
+            }}
           />
         </TableCell>
         <TableCell >
@@ -64,25 +78,32 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
             name="quantity"
             type="number"
             disabled={!isEditClicked}
-            onChange={(e) => setQuantity(e.target.value < 0
-              ? (e.target.value = 0)
-              : e.target.value)}
-            InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
+            onChange={(e) =>
+              setQuantity(
+                e.target.value < 0 ? (e.target.value = 0) : e.target.value
+              )
+            }
+            InputProps={{
+              style: {
+                fontSize: 20,
+                fontFamily: "Abel",
+                fontStyle: "normal",
+                fontWeight: "bold",
+              },
+            }}
           />
         </TableCell>
-
-        <TableCell >
-        <Autocomplete
-        multiple
-        style = {{width: "200px", fontSize: "20px"}}
-        id="tags-standard"
-        options={users.map(users => users.fullName)}
-        readOnly = {!isEditClicked}
-        renderInput={(params) => (
-          <TextField {...params} label="who brings"  />
-        )}/>
+        <TableCell>
+          <Autocomplete
+            style={{ width: "200px" }}
+            id="tags-standard"
+            options={users.map((users) => users.fullName)}
+            value={bringName}
+            readOnly={!isEditClicked}
+            onChange={handleBringNameChange}
+            renderInput={(params) => <TextField {...params} />}
+          />
         </TableCell>
-
         <div className="margin-checkbox">
             <input
               value={status}
@@ -113,7 +134,6 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
               >
                 <SaveIcon className="saveIcon " style={{ fontSize: 25}} />
               </IconButton>
-
             )}
 
                     <IconButton
@@ -127,7 +147,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
 
       </tr>
     </>
-  )
-}
+  );
+};
 
 export default ItemRow;

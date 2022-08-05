@@ -1,11 +1,15 @@
 import {GoogleLogin} from 'react-google-login';
+import './LoginLogout.css'
 
-
-function Login({clientId, setUser, setUserImageUrl}) {
+function Login({clientId, setIsLoggedIn, loginAction}) {
 
     const onSuccess = (res) => {
-        setUser(res.profileObj.givenName + " " + res.profileObj.familyName)
-        setUserImageUrl(res.profileObj.imageUrl)
+        console.log(res)
+        setIsLoggedIn(true)
+        loginAction({
+            name: res.profileObj.givenName + " " + res.profileObj.familyName,
+            image: res.profileObj.imageUrl
+        })
     }
 
     const onFailure = (res) => {
@@ -18,6 +22,9 @@ function Login({clientId, setUser, setUserImageUrl}) {
             buttonText="Login"
             onSuccess={onSuccess}
             onFailure={onFailure}
+            render={renderProps => (
+                <button className="login-logout-btn" onClick={renderProps.onClick}> Login </button>
+            )}
             cookiePolicy={'single_host_origin'}
             isSignedIn={true}
             />

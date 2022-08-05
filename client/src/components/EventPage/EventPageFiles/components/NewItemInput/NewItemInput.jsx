@@ -7,8 +7,6 @@ const NewItemInput = ({ event, addItemAction }) => {
   const [state, setState] = useState({
     itemName: "",
     quantity: "",
-    bringName: "",
-    status: "pending",
   });
 
   const handleInputValue = (e) => {
@@ -29,8 +27,6 @@ const NewItemInput = ({ event, addItemAction }) => {
       setState({
         itemName: "",
         quantity: "",
-        bringName: "",
-        status: "",
       });
     } catch (err) {
       throw new Error(err);

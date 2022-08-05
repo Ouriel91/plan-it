@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import { gapi } from "gapi-script";
-import Login from './Login'
+import LoginConnector from './LoginConnector'
+import LogoutConnector from './LogoutConnector'
 import Logout from './Logout'
 
 
@@ -8,8 +9,7 @@ const clientId = '149435838456-4offmbhjtl0jlsoejmhnmdrrfsajgaah.apps.googleuserc
 
 function LoginLogout() {
 
-    const [user,setUser] = useState('')
-    const [userImageUrl,setUserImageUrl] = useState('')
+    const [isLoggedIn,setIsLoggedIn] = useState(false)
 
     useEffect(() => {
         function start() {
@@ -21,20 +21,20 @@ function LoginLogout() {
 
         gapi.load('client:auth2', start)
     },[])
-    console.log(userImageUrl)
+    
     return (
         <div>
             {
-                user === '' ? 
-                <Login 
+                !isLoggedIn ? 
+                <LoginConnector 
                     clientId={clientId} 
-                    setUser={setUser}
-                    setUserImageUrl={setUserImageUrl}/> 
+                    setIsLoggedIn={setIsLoggedIn}
+                    /> 
                 : 
-                <Logout 
+                <LogoutConnector 
                     clientId={clientId} 
-                    setUser={setUser}
-                    setUserImageUrl={setUserImageUrl}/>
+                    setIsLoggedIn={setIsLoggedIn}
+                    />
             }
         </div>
     )

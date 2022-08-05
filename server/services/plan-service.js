@@ -27,20 +27,26 @@ async function getAllPlans() {
 async function addPlan(plan) {
   const { headline, date, type, location } = plan;
 
-   await Event.create({ headline, date, type, location });
-   const event = await Event.findAll({
+  await Event.create({ headline, date, type, location });
+  const event = await Event.findAll({
     limit: 1,
     order: [["id", "DESC"]],
     raw: true,
-
-  }); 
+  });
   event[0].eventUsers = [];
   const eventId = event[0].id.toString();
-  console.log('eventId',eventId);
+  console.log("eventId", eventId);
   const itemsByType = await insertItemsBytype(event[0].type, eventId);
   event[0].eventItems = [...itemsByType];
-  console.log('value',event[0]);
-  const userAdmin =  [ {eventId:event[0].id, fullName:'eventAdmin', email:'admin@gmail.com',isAdmin:true} ];
+  console.log("value", event[0]);
+  const userAdmin = [
+    {
+      eventId: event[0].id,
+      fullName: "Admin",
+      email: "admin@gmail.com",
+      isAdmin: true,
+    },
+  ];
   await User.bulkCreate(userAdmin);
   const user = await User.findAll({
     limit: 1,
@@ -50,9 +56,6 @@ async function addPlan(plan) {
   event[0].eventUsers.push(user[0]);
 
   return event[0];
-
-  
- 
 }
 
 const insertItemsBytype = async (type, eventId) => {
@@ -61,29 +64,29 @@ const insertItemsBytype = async (type, eventId) => {
     items.push({
       itemName: "Snacks",
       bringName: "",
-      quantity: "0",
-      status: "pending",
+      quantity: 1,
+      status: false,
       eventId: eventId,
     });
     items.push({
       itemName: "Ice",
       bringName: "",
-      quantity: "0",
-      status: "pending",
+      quantity: 1,
+      status: false,
       eventId: eventId,
     });
     items.push({
       itemName: "Tongs",
       bringName: "",
-      quantity: "0",
-      status: "pending",
+      quantity: 1,
+      status: false,
       eventId: eventId,
     }),
       items.push({
         itemName: "BBQ",
         bringName: "",
-        quantity: "0",
-        status: "pending",
+        quantity: 1,
+        status: false,
         eventId: eventId,
       });
 
@@ -115,14 +118,15 @@ const getEventPageById = async (id) => {
 };
 
 const itemAdding = async (newItem) => {
-  const { itemName, bringName, quantity, status, eventId } = newItem;
-  await Item.create({ itemName, bringName, quantity, status, eventId });
+  newItem.status = false;
+  const { itemName, quantity, status, eventId } = newItem;
+  await Item.create({ itemName, quantity, status, eventId });
   const item = await Item.findAll({
     limit: 1,
     order: [["id", "DESC"]],
     raw: true,
   });
-  console.log(item,'server');
+  console.log("item", item);
   return item;
 };
 
