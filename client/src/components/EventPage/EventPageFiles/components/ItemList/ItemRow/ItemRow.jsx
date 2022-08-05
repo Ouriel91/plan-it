@@ -60,7 +60,6 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction }) => {
             InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
           />
         </TableCell>
-
         <TableCell>
           <TextField
             style={{ width: "200px" }}

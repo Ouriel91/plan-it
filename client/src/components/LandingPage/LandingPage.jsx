@@ -10,6 +10,7 @@ import AboutUsCards from '../AboutUsCards/AboutUsCards';
 import Footer from '../Footer/Footer'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import LoginLogout from '../LoginLogout/LoginLogout'
 
 const LandingPage = () => {
   const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
@@ -74,18 +75,11 @@ const LandingPage = () => {
               </Link>
             </li>
 
-            <li>
-              <Link
-                to='/sign-up'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
+            <li className='nav-item'>
+              <LoginLogout />
+            </li>  
           </ul>
-          <button className="btn--outline">SIGN UP</button>
-          {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
+ 
         </div>
         <div className="App">
           {isCreateEventClicked && <MultiStepDialog setIsCreateEventClicked={setIsCreateEventClicked} />}

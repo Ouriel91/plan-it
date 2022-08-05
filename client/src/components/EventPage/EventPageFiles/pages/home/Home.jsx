@@ -36,10 +36,12 @@ const Home = ({event}) => {
     setDate(date)
   }
 
+
   useEffect(() => {
     getGeocode()
-  },[])
+  },[event])
 
+  if(!event)return <div>Loading ...</div>
   return (
     <div className="home">
       <div className="homeContainer">

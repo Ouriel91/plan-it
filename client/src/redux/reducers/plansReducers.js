@@ -6,26 +6,21 @@ const initialState = {
 
 const plansReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.FETCH_ALL_PLANS:
-      return {
-        ...state,
-        plans: [...action.payload],
-      };
     case actionTypes.ADD_PLAN:
       return {
         ...state,
         plans: [...state.plans, ...action.payload],
       };
-    case actionTypes.DELETE_PLAN: 
+    case actionTypes.DELETE_PLAN:
       return {
-          ...state,
-          plans: state.plans.filter(plan => plan.id !== action.payload)
-      }
+        ...state,
+        plans: state.plans.filter((plan) => plan.id !== action.payload),
+      };
     case actionTypes.ADD_ITEM:
       return {
         ...state,
         plans: state.plans.map((plan) =>
-          plan.eventId === action.eventId
+          plan.id == action.eventId
             ? { ...plan, eventItems: [...plan.eventItems, ...action.payload] }
             : plan
         ),
@@ -44,7 +39,6 @@ const plansReducer = (state = initialState, action) => {
       };
 
     case actionTypes.DELETE_ITEM:
-
       return {
         ...state,
         plans: state.plans.map((plan) =>
@@ -58,10 +52,20 @@ const plansReducer = (state = initialState, action) => {
             : plan
         ),
       };
-      case actionTypes.FETCH_ALL_PLANS_AND_ITEMS:
+    case actionTypes.FETCH_ALL_PLANS_AND_ITEMS_USERS:
       return {
         ...state,
         plans: [...action.payload],
+      };
+
+    case actionTypes.ADD_USER:
+      return {
+        ...state,
+        plans: state.plans.map((plan) =>
+          plan.eventId === action.payload.eventId
+            ? { ...plan, eventUsers: [...plan.eventUsers, ...action.payload] }
+            : plan
+        ),
       };
     default:
       return state;

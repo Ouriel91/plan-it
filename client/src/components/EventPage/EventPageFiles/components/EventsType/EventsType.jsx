@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
+import {Table} from "@material-ui/core";
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Weather from "../../components/Weather/Weather";
@@ -24,6 +25,7 @@ import party_img from '../../../../../images/party.jpg'
 import NewItemInputConnector from "../NewItemInput/NewItemInputConnector"
 import ItemListConnector from '../ItemList/ItemListConnector';
 import clock_gif from '../../../../../images/clock2.gif'
+import UserListConnector from '../UserCard/UserListConnector';
 const EventsType = ({ type, setEventObj, event }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
@@ -139,7 +141,7 @@ const EventsType = ({ type, setEventObj, event }) => {
       <div className='participants-container'>
         <p className='title'>Invite Friends</p>
         <p className='description'>Add your buddies to enjoy with you!</p>
-        <UserList />
+        <UserListConnector event={event.id} />
       </div>
 
       <section >
@@ -151,7 +153,7 @@ const EventsType = ({ type, setEventObj, event }) => {
           <div className="listContainer">
             <p className="listTitle">Event Equipment List</p>
             <NewItemInputConnector event={event} />
-            <ItemListConnector event={event} />
+            <Table><ItemListConnector event={event} /></Table>
           </div>
         </div>
 

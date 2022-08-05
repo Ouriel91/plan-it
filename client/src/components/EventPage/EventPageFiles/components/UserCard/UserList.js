@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
+import emailjs from "emailjs-com";
 
 const getLocalData = () => {
   const lists = localStorage.getItem("UsersList");
@@ -17,8 +18,10 @@ const getLocalData = () => {
   }
 };
 
-const App = ({ lists }) => {
+const App = ({ lists,addUserAction,eventId }) => {
   const [data, setData] = useState("");
+  const [email, setEmail] = useState("");
+
   const [items, setItems] = useState(getLocalData());
   const [counter, setCounter] = useState(0);
   const [avatarName, setAvatarName] = useState("");
@@ -41,6 +44,7 @@ const App = ({ lists }) => {
     setIsShown(!isShown);
   };
   const handleClickAdd = () => {
+    addUserAction(data,email,eventId);
     addItem();
     setIsShown(!isShown);
   };
@@ -102,6 +106,35 @@ const App = ({ lists }) => {
     localStorage.setItem("UsersList", JSON.stringify(items));
   }, [items]);
 
+
+
+
+  async function sendEmail(e) {
+    e.preventDefault();
+  
+    await emailjs
+    .sendForm(
+      "service_h7okkuk",
+      "template_qf4dk09",
+      e.target,
+      "zmx11m5tKMK8u3SeQ"
+    )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
+
+  useEffect(() => {
+    localStorage.setItem("UsersList", JSON.stringify(items));
+  }, [items]);
+
+
   return (
     <>
       <div className="main-div">
@@ -111,24 +144,40 @@ const App = ({ lists }) => {
             <Dialog open={isShown} onClose={handleClick}>
               <DialogTitle>Add New User</DialogTitle>
               <DialogContent>
-                <input
-                  type="text"
-                  placeholder="Enter Full User Name..."
-                  className="form-control"
-                  value={data}
-                  onChange={(event) => {
-                    setData(event.target.value);
-                  }}
-                />
-                <input
-                  type="text"
-                  placeholder="Enter Email..."
-                  className="form-control"
-                />
+                <form onSubmit={sendEmail}>
+                  <input
+                    type="text"
+                    placeholder="Enter Full User Name..."
+                    className="form-control"
+                    name="name"
+                    value={data}
+                    onChange={(event) => {
+                      setData(event.target.value);
+                    }}
+                  />
+
+                  <input
+                    onSubmit={sendEmail}
+                    type="email"
+                    className="form-control"
+                    placeholder="Email Address"
+                    name="user_email"
+                  />
+                  <div>
+                    <input name="reply_to"></input>
+                  </div>
+                  <div>
+                    <input
+                      onClick={handleClickAdd}
+                      type="submit"
+                      className="btn btn-info"
+                      value="ADD"
+                    ></input>
+                  </div>
+                </form>
               </DialogContent>
               <DialogActions>
                 <Button onClick={handleClick}>Cancel</Button>
-                <Button onClick={handleClickAdd}>Add</Button>
               </DialogActions>
             </Dialog>
 
@@ -164,14 +213,14 @@ const App = ({ lists }) => {
                   />
 
                   <div className="delete-btn">
-                    <i
+                    {/* <i
                       className="far fa-edit add-btn"
                       onClick={() => editItem(curElem.id)}
-                    ></i>
+                    ></i> */}
                     <i
-                      className="far fa-trash-alt add-btn"
+                      className="far fa-trash-alt "
                       onClick={() => deleteItem(curElem.id)}
-                    >-</i>
+                    ></i>
                   </div>
                 </div>
               );

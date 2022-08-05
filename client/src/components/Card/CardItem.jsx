@@ -113,20 +113,20 @@ const CardItem = ({plan, deleteEventAction}) => {
             {plan.headline}
           </Typography>
         </CardContent>
-        <Box p={1}>
+        <Box>
           <CardActions>
-            <div style={{padding: '5px'}}>
-            <IconButton aria-label="delete" onClick={() => deleteEventAction(plan.id)}>
-              <DeleteIcon/>
-            </IconButton>
-            <IconButton aria-label="share" style={{marginLeft: '10px'}}>
-            <a 
-              href={`https://web.whatsapp.com/send?text=${plan.headline} - ${plan.type} event in ${plan.location} at ${plan.date}`}  
-              rel="nofollow noopener noreferrer" 
-              target="_blank">
-              <ShareIcon />
-            </a>              
-            </IconButton>
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <IconButton aria-label="delete" onClick={() => deleteEventAction(plan.id)}>
+                <DeleteIcon style={{fontSize: 30}}/>
+              </IconButton>
+              <IconButton aria-label="share">
+              <a 
+                href={`https://web.whatsapp.com/send?text=${plan.headline} - ${plan.type} event in ${plan.location} at ${plan.date}`}  
+                rel="nofollow noopener noreferrer" 
+                target="_blank">
+                <ShareIcon style={{fontSize: 30, marginTop: '-15px'}}/>
+              </a>              
+              </IconButton>
             </div>
             <ExpandMore
               expand={expanded}
@@ -134,7 +134,7 @@ const CardItem = ({plan, deleteEventAction}) => {
               aria-expanded={expanded}
               aria-label="show more"
             >
-              <ExpandMoreIcon />
+              <ExpandMoreIcon style={{fontSize: 30}}/>
             </ExpandMore>
           </CardActions>
         </Box>
