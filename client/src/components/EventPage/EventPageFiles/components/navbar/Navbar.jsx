@@ -10,10 +10,17 @@ import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import {Link} from "react-router-dom";
 import logo from '../../../../../images/app-logo.png'
 import defaultUser from '../../../../../images/default-user.png'
+import { useEffect, useState } from "react";
 
 
 const Navbar = ({ event, user }) => {
-  const image = user.image === '' ? defaultUser : user.image 
+  const [image, setImage] = useState();
+  useEffect(() => {
+    const realoadImage = user.image === '' ? defaultUser : user.image 
+    setImage(realoadImage)
+  },[user.image])
+  console.log("user",user);
+  
 
   return (
     <div className="navbar-event">

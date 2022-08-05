@@ -1,9 +1,10 @@
 import {GoogleLogin} from 'react-google-login';
-
+import './LoginLogout.css'
 
 function Login({clientId, setIsLoggedIn, loginAction}) {
 
     const onSuccess = (res) => {
+        console.log(res)
         setIsLoggedIn(true)
         loginAction({
             name: res.profileObj.givenName + " " + res.profileObj.familyName,
@@ -21,6 +22,9 @@ function Login({clientId, setIsLoggedIn, loginAction}) {
             buttonText="Login"
             onSuccess={onSuccess}
             onFailure={onFailure}
+            render={renderProps => (
+                <button className="login-logout-btn" onClick={renderProps.onClick}> Login </button>
+            )}
             cookiePolicy={'single_host_origin'}
             isSignedIn={true}
             />
