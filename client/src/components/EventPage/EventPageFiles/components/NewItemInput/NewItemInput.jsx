@@ -7,8 +7,6 @@ const NewItemInput = ({ event, addItemAction }) => {
   const [state, setState] = useState({
     itemName: "",
     quantity: "",
-    bringName: "",
-    status: "pending",
   });
 
   const handleInputValue = (e) => {
@@ -26,8 +24,6 @@ const NewItemInput = ({ event, addItemAction }) => {
       setState({
         itemName: "",
         quantity: "",
-        bringName: "",
-        status: "",
       });
     } catch (err) {
       throw new Error(err);
@@ -49,7 +45,7 @@ const NewItemInput = ({ event, addItemAction }) => {
         <input
           className="input-table"
           id="taskInput"
-          type="text"
+          type="number"
           placeholder="Quantity"
           name="quantity"
           value={state.quantity}

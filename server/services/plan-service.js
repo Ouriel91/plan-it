@@ -115,14 +115,15 @@ const getEventPageById = async (id) => {
 };
 
 const itemAdding = async (newItem) => {
-  const { itemName, bringName, quantity, status, eventId } = newItem;
-  await Item.create({ itemName, bringName, quantity, status, eventId });
+  newItem.status = false;
+  const { itemName, quantity, status, eventId } = newItem;
+  await Item.create({ itemName, quantity, status, eventId });
   const item = await Item.findAll({
     limit: 1,
     order: [["id", "DESC"]],
     raw: true,
   });
-  console.log(item,'server');
+  console.log('item',item);
   return item;
 };
 

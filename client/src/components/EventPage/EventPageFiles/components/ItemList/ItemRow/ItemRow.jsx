@@ -1,15 +1,15 @@
 import { Checkbox, TableCell, TextField } from "@material-ui/core";
-import Autocomplete from '@mui/material/Autocomplete';
+import Autocomplete from "@mui/material/Autocomplete";
 import React from "react";
 import { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
-import FormControl from '@mui/material/FormControl';
+import FormControl from "@mui/material/FormControl";
 import "./ItemRow.css";
 
-const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
+const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
   const [itemName, setItemName] = useState(item.itemName);
   const [quantity, setQuantity] = useState(item.quantity);
   const [bringName, setBringName] = useState(item.bringName);
@@ -35,17 +35,24 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
     }
   };
 
+ const  handleBringNameChange = (e,value) => {
+  setBringName(value);
+  
+ }
+
   const handleDeleteClick = async () => {
     await deleteItemAction(item.id, item.eventId);
   };
 
   return (
     <>
-      <tr className="table-row" id={item.id}               
-      style={{
-                className: !isEditClicked ? 'table-row-edit' : 'table-row',
-              }} 
-              >
+      <tr
+        className="table-row"
+        id={item.id}
+        style={{
+          className: !isEditClicked ? "table-row-edit" : "table-row",
+        }}
+      >
         <TableCell>
           <TextField
             style={{ width: "200px" }}
@@ -55,7 +62,14 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
             disabled={!isEditClicked}
             onChange={(e) => setItemName(e.target.value)}
             name="itemName"
-            InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
+            InputProps={{
+              style: {
+                fontSize: 20,
+                fontFamily: "Abel",
+                fontStyle: "normal",
+                fontWeight: "bold",
+              },
+            }}
           />
         </TableCell>
         <TableCell>
@@ -65,39 +79,46 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
             name="quantity"
             type="number"
             disabled={!isEditClicked}
-            onChange={(e) => setQuantity(e.target.value < 0
-              ? (e.target.value = 0)
-              : e.target.value)}
-            InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
+            onChange={(e) =>
+              setQuantity(
+                e.target.value < 0 ? (e.target.value = 0) : e.target.value
+              )
+            }
+            InputProps={{
+              style: {
+                fontSize: 20,
+                fontFamily: "Abel",
+                fontStyle: "normal",
+                fontWeight: "bold",
+              },
+            }}
           />
         </TableCell>
         <TableCell>
-        <Autocomplete
-        multiple
-        style = {{width: "200px"}}
-        id="tags-standard"
-        options={users.map(users => users.fullName)}
-        readOnly = {!isEditClicked}
-        renderInput={(params) => (
-          <TextField {...params} label="who bring" />
-        )}
-      />
+          <Autocomplete
+            style={{ width: "200px" }}
+            id="tags-standard"
+            options={users.map((users) => users.fullName)}
+            value={bringName}
+            readOnly={!isEditClicked}
+            onChange={handleBringNameChange}
+            renderInput={(params) => <TextField {...params} />}
+          />
         </TableCell>
         <TableCell>
-          <FormControl >
+          <FormControl>
             <Checkbox
-              value={status}
               label="Status"
               name="status"
               defaultChecked={status}
               disabled={!isEditClicked}
               InputProps={{ style: { fontSize: 40 } }}
-              onChange={(e) => setStatus(e.target.value)}>
-            </Checkbox>
+              onChange={(e) => setStatus(e.target.checked)}
+            ></Checkbox>
           </FormControl>
-        </TableCell>    
+        </TableCell>
         <TableCell className="hello">
-        <TableCell>
+          <TableCell>
             {!isEditClicked && (
               <IconButton
                 onClick={handleEditButtonClick}
@@ -116,25 +137,23 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
               >
                 <SaveIcon className="saveIcon" style={{ fontSize: 25 }} />
               </IconButton>
-
             )}
           </TableCell>
-   
-          <TableCell>
-                    <IconButton
-            aria-label="delete"
-            size="large"
-            color="error"
-            onClick={handleDeleteClick}
-          >
-            <DeleteIcon className="deleteButton" style={{ fontSize: 25 }} />
-          </IconButton>
-          </TableCell>
 
+          <TableCell>
+            <IconButton
+              aria-label="delete"
+              size="large"
+              color="error"
+              onClick={handleDeleteClick}
+            >
+              <DeleteIcon className="deleteButton" style={{ fontSize: 25 }} />
+            </IconButton>
+          </TableCell>
         </TableCell>
       </tr>
     </>
-  )
-}
+  );
+};
 
 export default ItemRow;

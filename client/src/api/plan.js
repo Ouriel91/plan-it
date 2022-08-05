@@ -63,9 +63,7 @@ export const getEventPageById = async (url) => {
 export const postItem = async (item, eventId) => {
   const postedItem = {
     itemName: item.itemName,
-    bringName: item.bringName,
     quantity: item.quantity,
-    status: item.status,
     eventId: eventId,
   };
   const response = await axios({
@@ -76,7 +74,6 @@ export const postItem = async (item, eventId) => {
       postedItem,
     },
   });
-  console.log(response.data, "api");
   return response.data;
 };
 
