@@ -44,7 +44,8 @@ const App = ({ lists,addUserAction,eventId }) => {
     setIsShown(!isShown);
   };
   const handleClickAdd = () => {
-    addUserAction(data,email,eventId);
+  console.log(data,email,eventId,'usercard')
+  addUserAction(data,email,eventId);
     addItem();
     setIsShown(!isShown);
   };
@@ -162,6 +163,7 @@ const App = ({ lists,addUserAction,eventId }) => {
                     className="form-control"
                     placeholder="Email Address"
                     name="user_email"
+                    onChange={event => setEmail(event.target.value)}
                   />
                   <div>
                     <input name="reply_to"></input>

@@ -110,7 +110,7 @@ const fetchPlans = async (req, res) => {
 };
 
 const userAdding = async (req, res) => {
-  const { postedUser } = req.body;
+  const  postedUser  = req.body;
   if (!postedUser) {
     return res.status(400).json({ error: "Invalid user, user is null" });
   }
