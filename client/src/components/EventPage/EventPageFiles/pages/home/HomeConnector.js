@@ -7,11 +7,10 @@ import { fetchPlansWithItemsAction } from "../../../../../redux/actions/plansAct
 const mapStateToProps = (state, ownProps) => {
  
   const eventId = parseInt(ownProps.paramId)
-   
   const event = state.plansReducer.plans.find(plan => plan.id === eventId);
- 
+  const user = state.plansReducer.user;
 
-  return { event };
+  return { event, user };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
