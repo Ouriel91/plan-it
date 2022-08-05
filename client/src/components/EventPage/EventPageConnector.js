@@ -6,12 +6,11 @@ import { fetchPlansWithItemsAction } from "../../redux/actions/plansActions"
 
 const mapStateToProps = (state, ownProps) => {
 const events = state.plansReducer.plans;
- 
+  
   return {events};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    console.log('here1')
   return bindActionCreators({
     
     fetchPlansWithItemsAction

@@ -76,9 +76,9 @@
 
 .timer-container {
   margin-top: 100px;
-  border: 2px solid #faedcd;
+  border: 2px solid #acb58c92;
   // background-image: linear-gradient(135deg, #fffcd3ce 60%, #fcffe1ce 69%, #ffffffbe 100%);
-  border-radius: 30px;
+  border-radius: 3px 30px;
   border-style:outset;
   box-shadow: 5px 30px 38px #888888;
   display: grid;
@@ -89,7 +89,7 @@
   text-align: center;
   height: 250px;
   position: relative;
-  background-color: #faedcd;
+  background-color: #acb58c92;
 }
 
 #confetti{
@@ -188,12 +188,16 @@
 }
 .listContainer {
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-  padding: 20px;
+  box-shadow: 15px 20px 30px 25px rgba(201, 201, 201, 0.47);
+  padding: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
   margin: 20px;
   margin-left: 100px;
   margin-right: 100px;
   margin-top: 100px;
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
 }
 
 .weather-event-page{
@@ -201,14 +205,14 @@
 }
 .participants-event-page{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .participants-container{
-  padding-top: 100px;
-  padding-bottom: 150px;
   display: flex;
-  flex-direction: column;
+
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .event-page-details{

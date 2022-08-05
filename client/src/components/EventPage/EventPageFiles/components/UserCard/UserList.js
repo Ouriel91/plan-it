@@ -162,6 +162,7 @@ const App = ({ lists }) => {
                     className="form-control"
                     placeholder="Email Address"
                     name="user_email"
+                    // onChange={event => setEmail(event.target.value)}
                   />
                   <div>
                     <input name="reply_to"></input>

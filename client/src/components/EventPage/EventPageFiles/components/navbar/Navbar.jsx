@@ -7,18 +7,28 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 // import { DarkModeContext } from "../../context/darkModeContext";
 // import { useContext } from "react";
+import {Link} from "react-router-dom";
 import logo from '../../../../../images/app-logo.png'
+import defaultUser from '../../../../../images/default-user.png'
+import { useEffect, useState } from "react";
 
 
-
-const Navbar = ({ event }) => {
-  /* const { dispatch } = useContext(DarkModeContext); */
+const Navbar = ({ event, user }) => {
+  const [image, setImage] = useState();
+  useEffect(() => {
+    const realoadImage = user.image === '' ? defaultUser : user.image 
+    setImage(realoadImage)
+  },[user.image])
+  console.log("user",user);
+  
 
   return (
     <div className="navbar-event">
       <div className="wrapper-event">
         <div className="logo-container">
-          <img src={logo} alt="Plan it." height={90} width={90} />
+          <Link to="/">
+            <img src={logo} alt="Plan it." height={90} width={90} />
+          </Link>
           <div className="navbar-title" >
             <a style={{color: "#555", textDecoration: "none"}} href="/" >Plan it.</a>
             <p className="navbar-sub-title">
@@ -29,38 +39,11 @@ const Navbar = ({ event }) => {
           <div className="centered-title-container">
             <p className="centered-title">{event.headline}</p>
           </div>
-         
         </div>
-        {/* <div className="items">
-        
-          <div className="item">
-            <DarkModeOutlinedIcon
-              className="icon"
-              /* onClick={() => dispatch({ type: "TOGGLE" })} 
-            />
-          </div>
-          <div className="item">
-            <FullscreenExitOutlinedIcon className="icon" />
-          </div>
-          <div className="item">
-            <NotificationsNoneOutlinedIcon className="icon" />
-            <div className="counter">1</div>
-          </div>
-          <div className="item">
-            <ChatBubbleOutlineOutlinedIcon className="icon" />
-            <div className="counter">2</div>
-          </div>
-          <div className="item">
-            <ListOutlinedIcon className="icon" />
-          </div>
-          <div className="item">
-            <img
-              src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-              className="avatar"
-            />
-          </div>
-        </div> */}
+        <div >
+          <Link to="/my-events">my events</Link>
+          <img className="user-image" src={image} alt={user.name} />
+        </div>
       </div>
     </div>
   );

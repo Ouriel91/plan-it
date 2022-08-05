@@ -5,16 +5,15 @@ import EventsType from "../../components/EventsType/EventsType";
 import Location from "../../components/Location/Location";
 import {useState} from "react";
 import Weather from "../../components/Weather/Weather";
-import UserList from '../../components/UserCard/UserList';
 import Footer from "../../../../Footer/Footer";
 import {useParams} from 'react-router-dom'
 import location_gif from '../../../../../images/location.gif'
+import loading_gif from '../../../../../images/loading_gif.gif'
 
 // import ImgUploader from "../../components/ImgUploader/ImgUploader,";
 // import UserList from "../../components/UserCard/UserList";
 
-const Home = ({event}) => {
-  //console.log("home",event)
+const Home = ({event, user}) => {
   const [lat, setLat] = useState(0.0)
   const [lng, setLng] = useState(0.0)
   const [date, setDate] = useState("")
@@ -41,11 +40,11 @@ const Home = ({event}) => {
     getGeocode()
   },[event])
 
-  if(!event)return <div>Loading ...</div>
+  if(!event)return <div className='center-loading'><img className='center-loading-img' alt='loading' src={loading_gif}></img></div>
   return (
     <div className="home">
       <div className="homeContainer">
-        <Navbar event={event}/>
+        <Navbar event={event} user={user}/>
         <div className="EventsTypes">
           <EventsType event={event} />
         </div> 

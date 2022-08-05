@@ -7,12 +7,14 @@ const NewItemInput = ({ event, addItemAction }) => {
   const [state, setState] = useState({
     itemName: "",
     quantity: "",
-    bringName: "",
-    status: "pending",
   });
 
   const handleInputValue = (e) => {
     const value = e.target.value;
+    // if(e.target.value < "0"){
+    //   alert("You can't insert negative quantity")
+    //   return
+    // }
     setState({
       ...state,
       [e.target.name]: value,
@@ -22,12 +24,9 @@ const NewItemInput = ({ event, addItemAction }) => {
   const handlePressClick = async () => {
     try {
       await addItemAction(state, event.id);
-
       setState({
         itemName: "",
         quantity: "",
-        bringName: "",
-        status: "",
       });
     } catch (err) {
       throw new Error(err);
@@ -49,29 +48,21 @@ const NewItemInput = ({ event, addItemAction }) => {
         <input
           className="input-table"
           id="taskInput"
-          type="text"
+          type="number"
+          min="0"
           placeholder="Quantity"
           name="quantity"
           value={state.quantity}
           onChange={handleInputValue}
         />
-        <input
-          className="input-table"
-          id="taskInput"
-          type="text"
-          placeholder="Who brings"
-          onChange={handleInputValue}
-          value={state.bringName}
-          name="bringName"
-        />
-        <Button
+        <button
           id="add-button"
           type="submit"
           onClick={handlePressClick}
           className="input-button"
         >
           +
-        </Button>
+        </button>
       </div>
     </div>
   );
