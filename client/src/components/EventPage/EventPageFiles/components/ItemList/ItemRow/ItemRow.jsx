@@ -42,10 +42,10 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
     <>
       <tr className="table-row" id={item.id}               
       style={{
-                className: !isEditClicked ? 'table-row-edit' : 'table-row',
+                backgroundColor: !isEditClicked ? 'table-row-edit' : 'table-row',
               }} 
               >
-        <TableCell style={{marginTop:"15px"}}>
+        <TableCell >
           <TextField
             style={{ width: "200px" }}
             type="text"
@@ -57,7 +57,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
             InputProps={{ style: { fontSize: 20, fontFamily: 'Abel', fontStyle: "normal", fontWeight: "bold" } }}
           />
         </TableCell>
-        <TableCell style={{marginTop:"15px", textAlign: "center"}}>
+        <TableCell >
           <TextField
             style={{ width: "200px" }}
             value={quantity}
@@ -71,7 +71,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
           />
         </TableCell>
 
-        <TableCell style={{marginTop:"15px"}}>
+        <TableCell >
         <Autocomplete
         multiple
         style = {{width: "200px", fontSize: "20px"}}
@@ -83,19 +83,19 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
         )}/>
         </TableCell>
 
-        <TableCell style={{marginTop:"25px", size:"30px"}}>
-            <Checkbox
+        <div className="margin-checkbox">
+            <input
               value={status}
               label="Status"
               name="status"
+              type="checkbox"
               defaultChecked="false"
               disabled={!isEditClicked}
-              style={{fontSize:"30px"}}
               onChange={(e) => setStatus(e.target.value)}>
-            </Checkbox>
-        </TableCell>    
-        <TableCell className="hello">
-        <TableCell style={{borderBottom:"none"}}>
+            </input>
+        </div>    
+
+
             {!isEditClicked && (
               <IconButton
                 onClick={handleEditButtonClick}
@@ -111,12 +111,11 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
                 aria-label="save"
                 size="large"
               >
-                <SaveIcon className="saveIcon" style={{ fontSize: 25 }} />
+                <SaveIcon className="saveIcon " style={{ fontSize: 25}} />
               </IconButton>
 
             )}
-          </TableCell>
-          <TableCell style={{borderBottom:"none"}}>
+
                     <IconButton
             aria-label="delete"
             size="large"
@@ -124,8 +123,8 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction ,users}) => {
           >
             <DeleteIcon className="deleteButton" style={{ fontSize: 25 }} />
           </IconButton>
-          </TableCell>
-        </TableCell>
+
+
       </tr>
     </>
   )

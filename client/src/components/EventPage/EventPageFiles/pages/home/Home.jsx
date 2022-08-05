@@ -5,7 +5,6 @@ import EventsType from "../../components/EventsType/EventsType";
 import Location from "../../components/Location/Location";
 import {useState} from "react";
 import Weather from "../../components/Weather/Weather";
-import UserList from '../../components/UserCard/UserList';
 import Footer from "../../../../Footer/Footer";
 import {useParams} from 'react-router-dom'
 import location_gif from '../../../../../images/location.gif'
@@ -15,7 +14,6 @@ import loading_gif from '../../../../../images/loading_gif.gif'
 // import UserList from "../../components/UserCard/UserList";
 
 const Home = ({event}) => {
-  //console.log("home",event)
   const [lat, setLat] = useState(0.0)
   const [lng, setLng] = useState(0.0)
   const [date, setDate] = useState("")

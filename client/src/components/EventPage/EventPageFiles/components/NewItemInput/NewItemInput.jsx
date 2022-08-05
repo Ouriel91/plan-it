@@ -13,6 +13,10 @@ const NewItemInput = ({ event, addItemAction }) => {
 
   const handleInputValue = (e) => {
     const value = e.target.value;
+    // if(e.target.value < "0"){
+    //   alert("You can't insert negative quantity")
+    //   return
+    // }
     setState({
       ...state,
       [e.target.name]: value,
@@ -22,7 +26,6 @@ const NewItemInput = ({ event, addItemAction }) => {
   const handlePressClick = async () => {
     try {
       await addItemAction(state, event.id);
-
       setState({
         itemName: "",
         quantity: "",
@@ -49,7 +52,8 @@ const NewItemInput = ({ event, addItemAction }) => {
         <input
           className="input-table"
           id="taskInput"
-          type="text"
+          type="number"
+          min="0"
           placeholder="Quantity"
           name="quantity"
           value={state.quantity}

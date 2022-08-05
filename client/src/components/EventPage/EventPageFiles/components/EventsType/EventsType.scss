@@ -205,14 +205,14 @@
 }
 .participants-event-page{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .participants-container{
-  padding-top: 100px;
-  padding-bottom: 150px;
   display: flex;
-  flex-direction: column;
+
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .event-page-details{

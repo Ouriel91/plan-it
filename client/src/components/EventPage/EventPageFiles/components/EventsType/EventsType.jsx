@@ -9,13 +9,11 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import {Table} from "@material-ui/core";
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Weather from "../../components/Weather/Weather";
-import Map from '../../../../MultiStepDialog/Dialogs/LocationDialog/Map'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import bbq_img from '../../../../../images/bbq.jpg'
 import confetti from '../../../../../images/confetti.gif'
-import UserList from "../UserCard/UserList"
+import friends from '../../../../../images/friends6.png'
 import Calendar from 'react-calendar';
 import "./calendar.css";
 import camping_img from '../../../../../images/camping.jpg'
@@ -137,12 +135,17 @@ const EventsType = ({ type, setEventObj, event }) => {
 
         </div>
       </section>
-
-      <div className='participants-container'>
+<div className='participants-event-page'>
         <p className='title'>Invite Friends</p>
         <p className='description'>Add your buddies to enjoy with you!</p>
-        <UserListConnector eventId={event.id} />
+ 
+<div className='participants-container'>
+   <UserListConnector eventId={event.id} />
+        <img alt='friends' src={friends} width={500} height={400}></img>
+</div>
       </div>
+      
+      
 
       <section >
         <div className='date-counter-holder-sentence'>
