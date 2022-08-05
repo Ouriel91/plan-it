@@ -11,8 +11,8 @@ img {
 
 .user-image {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   margin-left: 20px;
 }
 
@@ -21,19 +21,27 @@ img {
   flex-direction: column;
 }
 
-a{
+.title22{
   font-size: 30px;
   font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.my-events22{
+  font-size: 20px;
+  font-family: 'Abel';
   margin-top: 10px;
   letter-spacing: 2px;
   color: #fff;
   text-decoration: none;
 }
 
-a:hover {
-  color: #00F
+.my-events22:hover {
+  border-bottom: 4px solid #fff;
+  transition: all 0.2s ease-out;
+  color: #f0f6dd;
+  font-weight: bold;
 }
 
 .navbar-sub-title {

@@ -46,11 +46,8 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
   return (
     <>
       <tr
-        className="table-row"
+        className={!isEditClicked ? "table-row" : "table-row-edit"}
         id={item.id}
-        style={{
-          className: !isEditClicked ? "table-row-edit" : "table-row",
-        }}
       >
         <TableCell>
           <TextField

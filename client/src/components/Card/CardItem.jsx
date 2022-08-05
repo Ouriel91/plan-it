@@ -2,7 +2,6 @@ import {useState} from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
@@ -10,17 +9,17 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
-import ShareIcon from '@mui/icons-material/Share';
+import ShareIcon from '@mui/icons-material/WhatsApp';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Box from '@mui/material/Box'
-import bbqImage from '../../images/bbq-img.jpg'
-import poolImage from '../../images/pool-party.jpg'
+import bbqImage from '../../images/card cliparts/bbq_clipart.png'
+import poolImage from '../../images/card cliparts/pool_clipart.png'
 import otherImage from '../../images/other.jpg'
-import campingImage from '../../images/camping.jpg'
-import partyImage from '../../images/party.jpg'
+import campingImage from '../../images/card cliparts/camping_clipart.png'
+import partyImage from '../../images/card cliparts/party_clipart.png'
 import {useNavigate} from 'react-router-dom'
-
+import "./CardList.css"
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -40,35 +39,35 @@ const CardItem = ({plan, deleteEventAction}) => {
   switch (plan.type) {
     case 'BBQ with friends':
       typeStyle = {
-        primaryColor : "#e31809",
+        primaryColor : "white",
         secondaryColor : "#FDF1F1",
-        image : bbqImage
+        image : bbqImage,
       }
       break;
       case 'Party':
         typeStyle = {
-          primaryColor : "#B964F7",
+          primaryColor : "white",
           secondaryColor : "#F3F0FD",
           image : partyImage
         }
       break;
       case 'Pool party':
         typeStyle = {
-          primaryColor : "#5D93E1",
+          primaryColor : "ehite",
           secondaryColor : "#ECF3FC",
           image : poolImage
         }
       break;
       case 'Camping':
         typeStyle = {
-          primaryColor : "#5DC250",
+          primaryColor : "white",
           secondaryColor : "#F2FAF1",
           image : campingImage
         }
       break;
       case 'Other':
         typeStyle = {
-          primaryColor : "#F9D288",
+          primaryColor : "white",
           secondaryColor : "#FEFAF1",
           image : otherImage
         }
@@ -87,8 +86,16 @@ const CardItem = ({plan, deleteEventAction}) => {
   };
 
   return (
-    <Box m={2} p={3}>
+    <div className='card-list-container'>
       <Card sx={{ maxWidth: 345, bgcolor: typeStyle.primaryColor,mt:10, p:1}}>
+      <img
+          component="img"
+          height="150"
+          src={typeStyle.image}
+          alt={plan.type}
+          style={{cursor: 'pointer',marginLeft: "60px" ,justifyContent: "center", alignItems: "center"}}
+          onClick={() => navigate(`/event-page/${plan.id}`)}
+        />
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">
@@ -100,14 +107,7 @@ const CardItem = ({plan, deleteEventAction}) => {
           title={plan.date}
           subheader={plan.type}
         />
-        <CardMedia
-          component="img"
-          height="194"
-          src={typeStyle.image}
-          alt={plan.type}
-          style={{cursor: 'pointer'}}
-          onClick={() => navigate(`/event-page/${plan.id}`)}
-        />
+
         <CardContent>
           <Typography variant="h4" color="text.secondary" style={{textAlign: 'center'}}>
             {plan.headline}
@@ -154,7 +154,7 @@ const CardItem = ({plan, deleteEventAction}) => {
           </CardContent>
         </Collapse>
       </Card>
-    </Box>
+    </div>
   );
 }
 
