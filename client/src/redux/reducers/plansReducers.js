@@ -66,7 +66,7 @@ const plansReducer = (state = initialState, action) => {
       return {
         ...state,
         plans: state.plans.map((plan) =>
-          plan.eventId === action.payload.eventId
+          plan.id === action.payload[0].eventId
             ? { ...plan, eventUsers: [...plan.eventUsers, ...action.payload] }
             : plan
         ),

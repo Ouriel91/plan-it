@@ -34,7 +34,7 @@ async function addPlan(plan) {
     raw: true,
 
   }); 
-  event[0].eventsUsers = [];
+  event[0].eventUsers = [];
   const eventId = event[0].id.toString();
   console.log('eventId',eventId);
   const itemsByType = await insertItemsBytype(event[0].type, eventId);
@@ -47,7 +47,7 @@ async function addPlan(plan) {
     order: [["id", "DESC"]],
     raw: true,
   });
-  event[0].eventsUsers.push(user[0]);
+  event[0].eventUsers.push(user[0]);
 
   return event[0];
 
@@ -154,7 +154,7 @@ const itemDeleting = async (id) => {
 };
 
 const userAdding = async (newUser) => {
-  const { eventId, fullName, email } = newUser;
+  const { eventId, fullName, email } = newUser.user;
   const isAdmin = false;
   await User.create({ eventId, fullName, email, eventId, isAdmin });
   const user = await User.findAll({

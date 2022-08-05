@@ -17,18 +17,20 @@ function ItemList({ items }) {
 
 
   return (
-    <TableBody className="datagrid">
-      <TableRow>
-        <TableCell className="table-titles">Item to bring</TableCell>
-        <TableCell className="table-titles">Quntity</TableCell>
-        <TableCell className="table-titles">Who bring</TableCell>
-        <TableCell className="table-titles">Status</TableCell>
-      </TableRow>
+    <>
+      <div className="table-row2">
+        <p className="table-titles">Item to bring</p>
+        <p className="table-titles">Quantity</p>
+        <p className="table-titles">Who brings</p>
+        <p className="table-titles">Status</p>
+      </div>
+
         {items.map((item) => {
           return <ItemRowConnector item={item} key={item.id} />;
         })}
 
-    </TableBody>
+    </>
+
   );
 }
 

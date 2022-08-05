@@ -11,7 +11,6 @@ const events = state.plansReducer.plans;
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    console.log('here1')
   return bindActionCreators({
     
     fetchPlansWithItemsAction

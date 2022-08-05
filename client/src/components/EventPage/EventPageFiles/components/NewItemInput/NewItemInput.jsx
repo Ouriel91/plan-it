@@ -55,23 +55,14 @@ const NewItemInput = ({ event, addItemAction }) => {
           value={state.quantity}
           onChange={handleInputValue}
         />
-        <input
-          className="input-table"
-          id="taskInput"
-          type="text"
-          placeholder="Who brings"
-          onChange={handleInputValue}
-          value={state.bringName}
-          name="bringName"
-        />
-        <Button
+        <button
           id="add-button"
           type="submit"
           onClick={handlePressClick}
           className="input-button"
         >
           +
-        </Button>
+        </button>
       </div>
     </div>
   );

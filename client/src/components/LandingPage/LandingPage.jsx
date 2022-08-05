@@ -87,7 +87,7 @@ const LandingPage = () => {
             <button
               className="createplan"
               onClick={() => setIsCreateEventClicked(true)}>
-              Create Plan
+              Plan your next event
             </button>
           </div>
         </div>

@@ -132,7 +132,7 @@ const EventsType = ({ type, setEventObj, event }) => {
               <p className='date-number'>{timerMins}</p>
               <p className='date-text'>Minutes</p>
             </section>
-            <img width={400} height={220} id="confetti" alt='party' src={confetti} hidden={!timerEnded ? true : undefined}></img>
+            <img width={400} height={285} id="confetti" alt='party' src={confetti} hidden={!timerEnded ? true : undefined}></img>
           </div>
 
         </div>
@@ -141,7 +141,7 @@ const EventsType = ({ type, setEventObj, event }) => {
       <div className='participants-container'>
         <p className='title'>Invite Friends</p>
         <p className='description'>Add your buddies to enjoy with you!</p>
-        <UserListConnector event={event.id} />
+        <UserListConnector eventId={event.id} />
       </div>
 
       <section >

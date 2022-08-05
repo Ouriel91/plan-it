@@ -5,11 +5,9 @@ import { fetchPlansWithItemsAction } from "../../../../../redux/actions/plansAct
 
 
 const mapStateToProps = (state, ownProps) => {
-  // const event = state.plansReducer.plans[state.plansReducer.plans.length - 1];
+ 
   const eventId = parseInt(ownProps.paramId)
-  //console.log('eventId home connector', eventId);  
   const event = state.plansReducer.plans.find(plan => plan.id === eventId);
-  //console.log(event,'event home connect')
   const user = state.plansReducer.user;
 
   return { event, user };
