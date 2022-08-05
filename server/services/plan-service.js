@@ -154,7 +154,7 @@ const itemDeleting = async (id) => {
 };
 
 const userAdding = async (newUser) => {
-  const { eventId, fullName, email } = newUser;
+  const { eventId, fullName, email } = newUser.user;
   const isAdmin = false;
   await User.create({ eventId, fullName, email, eventId, isAdmin });
   const user = await User.findAll({

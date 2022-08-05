@@ -120,11 +120,13 @@ export const fetchPlansWithItems = async () => {
 }
 
   export const postUser = async (fullName,email,eventId) => { 
+    console.log('add user api',fullName,email,eventId)
     const user ={
       fullName,
       email,
       eventId
     }
+    console.log(user,'user')
 
     const response = await axios({
       method: "post",
@@ -134,6 +136,7 @@ export const fetchPlansWithItems = async () => {
         user,
       },
     });
+    console.log(response.data,'api&&&&&&&&&&&&&&&&&&&&&&&&&&');
     return response.data;
 
   }

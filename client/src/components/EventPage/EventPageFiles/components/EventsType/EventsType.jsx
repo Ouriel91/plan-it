@@ -141,7 +141,7 @@ const EventsType = ({ type, setEventObj, event }) => {
       <div className='participants-container'>
         <p className='title'>Invite Friends</p>
         <p className='description'>Add your buddies to enjoy with you!</p>
-        <UserListConnector event={event.id} />
+        <UserListConnector eventId={event.id} />
       </div>
 
       <section >
