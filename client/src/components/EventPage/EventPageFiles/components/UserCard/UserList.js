@@ -4,7 +4,9 @@ import emailjs from "emailjs-com";
 import { Avatar, Grid } from "@nextui-org/react";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@mui/material/Button";
-
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -137,17 +139,21 @@ const App = ({ lists }) => {
     <>
       <div className="main-div">
         <div className="child-div">
-          <button onClick={handleClick} className="my-button">
-            +
-          </button>
           <div className="addItems">
             <Dialog open={isShown} onClose={handleClick}>
-              <DialogTitle>Add New User</DialogTitle>
+              <DialogTitle>
+              <Grid container justifyContent="space-between">
+          Add New User
+          <IconButton onClick={handleClick}>
+            <CloseIcon/>
+          </IconButton>
+        </Grid>
+              </DialogTitle>
               <DialogContent>
                 <form onSubmit={sendEmail}>
                   <input
                     type="text"
-                    placeholder="Enter Full User Name..."
+                    placeholder="Enter Full User Name"
                     className="form-control"
                     name="name"
                     value={data}
@@ -168,18 +174,16 @@ const App = ({ lists }) => {
                     <input name="reply_to"></input>
                   </div>
                   <div>
-                    <input
+                    <button
                       onClick={handleClickAdd}
                       type="submit"
                       className="btn btn-info"
-                      value="ADD"
-                    ></input>
+                      style={{width: "1050px"}}
+                    >ADD</button>
                   </div>
                 </form>
               </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClick}>Cancel</Button>
-              </DialogActions>
+
             </Dialog>
 
             {toggleButton ? (
@@ -225,8 +229,8 @@ const App = ({ lists }) => {
                       onClick={() => deleteItem(curElem.id)}
                     ></i> */}
                     <Dialog open={isDeleteShown} onClose={handleClick}>
-                      <DialogTitle>Delete</DialogTitle>
-                      <DialogContent>Sure? </DialogContent>
+                      <DialogTitle>Remove friend</DialogTitle>
+                      <DialogContent>Are you sure you want to remove this friend? </DialogContent>
                       <DialogActions>
                         <Button
                           onClick={() => deleteItem(curElem.id)}
@@ -256,6 +260,9 @@ const App = ({ lists }) => {
           ) : (
             <></>
           )}
+          <button onClick={handleClick} className="my-button">
+            +
+          </button>
         </div>
       </div>
     </>
