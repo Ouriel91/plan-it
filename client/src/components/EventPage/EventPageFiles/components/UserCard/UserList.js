@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./userList.css";
 import emailjs from "emailjs-com";
-import { Avatar, Grid } from "@nextui-org/react";
+import { Avatar } from "@nextui-org/react";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@mui/material/Button";
 
@@ -80,7 +80,7 @@ const App = ({ lists }) => {
         name: data,
         colors: color[Math.floor(Math.random() * color.length)]
       };
-      console.log(newData);
+      
       setItems([...items, newData]);
       setData("");
     }
