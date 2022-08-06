@@ -51,7 +51,7 @@ const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, e
             >
                 <DialogTitle>
                     <Grid container justifyContent="space-between" alignItems="center">
-                        <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px' }}>Choose Location</Typography>
+                        <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px', fontWeight: "600" }}>Choose Location</Typography>
                         <IconButton onClick={closeDialog}>
                             <CloseIcon />
                         </IconButton>
@@ -60,22 +60,20 @@ const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, e
                 <Map setEventObj={setEventObj} />
                 <div style={style}>
                     <Button
-                        style={{ height: "40px", width: "100px", backgroundColor: '#8b8b8bce',fontSize: '16px', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
-                        color="secondary"
-                        variant="contained"
+                        style={{ height: "40px", width: "100px", backgroundColor: '#8b8b8bce' }}
+                        className='btn'
                         onClick={handlePrevButton}>
-                        Back
+                        <Typography style={{ fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize" }}>back</Typography>
                     </Button>
                     <Button
-                        color="secondary"
-                        style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontSize: '16px', fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
-                        variant="contained"
-                        onClick={handleNextButton}
-                    >Next
+                        style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce' }}
+                        className='btn'
+                        onClick={handleNextButton}>
+                        <Typography style={{ fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize" }}>Next</Typography>
                     </Button>
                 </div>
             </Dialog>
-=        </>
+            =        </>
     );
 }
 

@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import "./ItemList.css";
 
-import {
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
 
 
 import ItemRowConnector from "./ItemRow/ItemRowConnector";

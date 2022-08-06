@@ -41,8 +41,8 @@ const PlacesAutocomplete = ({ setSelected, setEventObj }) => {
         onChange={(e, selectedValue) =>selectedValue !== null ? handleSelect(selectedValue.label) : null}
         isOptionEqualToValue={(option, inputValue)=> true}
         id="tags-standard"
-        renderInput={(params) => <TextField {...params} label={
-          <Typography variant={'h5'}> Location </Typography>}
+        renderInput={(params) => <TextField {...params} sx={{ mt: 2, outline: "3px outset #98a153ce", border: "none", borderRadius: "8px",boxShadow: "1px 8px 24px 3px rgba(0, 0, 0, 0.2)" }} 
+
           placeholder="Enter Location"/>
       }
       />

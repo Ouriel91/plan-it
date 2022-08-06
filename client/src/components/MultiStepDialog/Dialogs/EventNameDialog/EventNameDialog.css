@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Megrim&family=Playfair+Display:wght@400;500;700&family=Poiret+One&display=swap');
+.name-input{
+    width: 70%;
+    margin: auto;
+    font-size: 20px;
+    background-color: transparent;
+    font-family: 'Abel';
+    color: "#98a153";
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.name-input:focus{
+    outline: 3px outset #98a153ce;
+    border: none;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    margin-right: 20px;
+    margin-top: 160px;
+}

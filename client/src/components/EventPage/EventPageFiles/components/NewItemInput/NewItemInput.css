@@ -9,14 +9,18 @@
 
 
 .input-table {
-    width: 40%; 
+    width: 80%; 
     height: 30px;
-    background-color: #dde4c7a2;
     border: 2px solid whitesmoke;
     border-radius: 10px;
     padding: 30px;
     font-family: 'Abel';
     font-size: 23px;
+    margin-left: 15px;
+}
+
+.input-table::placeholder{
+    color: rgb(194, 194, 194);
 }
 
 .input-table:hover {
@@ -29,12 +33,12 @@
     background-color: whitesmoke;
     margin-top: 20px;
     border-radius: 20px;
-    border: 2px solid #dde4c7a2;
+    border: 2px solid #aaba7695;
     font-weight: bold;
-    color: #c5ccaf;
+    color: #aaba765e;
     font-size: 30px;
 }
 
 .input-button:hover {
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(233, 233, 233);
 }
