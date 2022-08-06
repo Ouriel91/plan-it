@@ -5,9 +5,11 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
+import "./User.css"
 
 const User = ({ user, deleteUserAction }) => {
   const [isDeleteShown, setIsDeleteShown] = useState(false);
+
 
   const handleAvatarClick = () => {
     setIsDeleteShown(!isDeleteShown);

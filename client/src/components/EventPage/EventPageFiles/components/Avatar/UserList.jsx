@@ -14,6 +14,7 @@ const App = ({ addUserAction, eventId, users }) => {
   const [data, setData] = useState("");
   const [isShown, setIsShown] = useState(false);
   const [email, setEmail] = useState("");
+  const [eventIdUrl,setEventIdUrl] = useState(eventId.toString())
   const [initials, setInitials] = useState("");
 
 
@@ -23,7 +24,9 @@ const App = ({ addUserAction, eventId, users }) => {
     addUserAction(data, email, eventId);
     setData("");
     setEmail("");
+    setEventIdUrl("")
     setIsShown(!isShown);
+    console.log(eventId);
   };
 
   function sendEmail(e) {
@@ -77,15 +80,21 @@ const App = ({ addUserAction, eventId, users }) => {
                     placeholder="Email Address"
                     name="user_email"
                     onChange={(event) => setEmail(event.target.value)}
+                    
                   />
                   <div>
-                    <input name="reply_to"></input>
+                    <input name ="event-page"
+                    className="my_content_container"
+                     value={eventId.toString()}
+                      onSubmit={sendEmail}
+                      onChange={(event) => setEventIdUrl(event.target.value)}></input>
                   </div>
                   <div>
                     <input
                       onClick={handleClickAdd}
                       type="submit"
                       className="btn btn-info"
+                      name ="event-page"
                       value="ADD"
                     ></input>
                   </div>
