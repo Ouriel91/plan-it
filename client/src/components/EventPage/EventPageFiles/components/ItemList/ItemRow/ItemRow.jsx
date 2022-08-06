@@ -103,13 +103,12 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
         </div>
         <div className="margin-checkbox">
             <input
-              value={status}
               label="Status"
               name="status"
               type="checkbox"
-              defaultChecked="false"
+              defaultChecked={status}
               disabled={!isEditClicked}
-              onChange={(e) => setStatus(e.target.value)}>
+              onChange={(e) => setStatus(e.target.checked)}>
             </input>
         </div>    
 
