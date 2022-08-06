@@ -82,12 +82,10 @@
   border-style:outset;
   box-shadow: 5px 30px 38px #888888;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   padding: 30px;
-  padding-left: 40px;
-  padding-right: 40px;
   text-align: center;
-  height: 250px;
+  height: 230px;
   position: relative;
   background-color: #acb58c92;
 }
@@ -101,19 +99,17 @@
 .date-number{
   font-size: 40px;
   background-image: linear-gradient(to top, rgba(237, 237, 237, 0.278), rgba(237, 237, 237, 0.547) 51%, #ffffffbe 100%);
-  margin: 20px;
+  margin: 15px;
   box-shadow: 1px 8px 15px #888888;
   padding: 10px;
   font-weight: 600;
-  padding-left: 15px;
-  padding-right: 15px;
   border-radius: 10px;
   font-family: 'Abel', sans-serif;
   font-style: normal;
 }
 
 .date-text{
-  margin: 20px;
+  margin: 15px;
   font-family: 'Abel', sans-serif;
   font-style: normal;
   font-size: 22px;
@@ -206,11 +202,14 @@
 .participants-event-page{
   display: flex;
   flex-direction: column;
+  padding-bottom: 250px;
 }
 
 .participants-container{
   display: flex;
-
+  position: absolute;
+  left: 67%;
+  top: 212%;
   flex-direction: row;
   justify-content: space-around;
 }

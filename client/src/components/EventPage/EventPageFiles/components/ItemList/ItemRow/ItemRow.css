@@ -7,7 +7,8 @@
     margin-bottom: 15px;
     border-radius: 8px;
     height: 70px;
-    padding-right: 15px;
+    padding-right: 25px;
+    padding-left: 10px;
 }
 
 .table-row-edit{
@@ -38,8 +39,8 @@
 }
 
 input[type='checkbox'] {
-    width:25px;
-    height:25px;
+    width:20px;
+    height:20px;
 }
 input[type='checkbox']:checked {
     width: 20px;
@@ -50,6 +51,16 @@ input[type='checkbox']:checked {
 .margin-checkbox{
     margin-top: 5px;
     margin-left: 24px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.margin-autocomplete{
+    margin-top: 32px;
+}
+
+.margin-icons{
+    margin-top: 10px;
 }
 
 
