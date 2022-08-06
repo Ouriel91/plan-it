@@ -33,8 +33,8 @@ const AboutUsNavbar = ({ event, user }) => {
           </div> */}
         </div>
         <div >
-          <Link to="/" className="my-events22-about-home">Home</Link>
-          <Link to="/my-events" className="my-events22-about">My Events</Link>
+          <a href="/" className="my-events22-about-home">Home</a>
+          <a href="/my-events" className="my-events22-about">My Events</a>
           
           
           

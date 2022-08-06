@@ -52,41 +52,35 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
       <DialogTitle>
         <Grid container justifyContent="space-between" alignItems="center">
           {/* <img src={app_logo} alt="logo" height={100} width={100}></img> */}
-          <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px' }}>Choose Event type</Typography>
+          <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px', fontWeight: "600" }}>Choose event type</Typography>
           <IconButton onClick={closeDialog}>
             <CloseIcon />
           </IconButton>
         </Grid>
       </DialogTitle>
       <div>
-        <FormControl sx={{ m: 1, mb: 20, width: "70%" }}>
-          <InputLabel id="demo-simple-select-required-label">
-            <Typography variant={'h6'}>Type</Typography>
-          </InputLabel>
+        <FormControl sx={{ m: 2, ml: 11, mt: 5, mb: 20, width: "70%" }}>
           <Select
-            labelId="demo-simple-select-required-label"
-            id="demo-simple-select-required"
+            sx={{ outline: "3px outset #98a153ce", border: "none", borderRadius: "8px",boxShadow: "1px 8px 24px 3px rgba(0, 0, 0, 0.2)", fontFamily: "Abel" }}
             value={type}
             onChange={handleChange}
             autoWidth
-            label="Type"
-            color="success"
-            size="big"
-          >
+            size="big">
+              <Typography style={{fontFamily: "Abel", fontSize: "18px"}}></Typography>
               <MenuItem value={"Pool party"}>
-                <Typography variant={'h5'}>Pool party</Typography>
+                <Typography style={{fontFamily: "Abel", fontSize: "18px"}} >Pool party</Typography>
               </MenuItem>
               <MenuItem value={"BBQ with friends"}>
-                <Typography variant={'h5'}>BBQ with friends</Typography>
+                <Typography style={{fontFamily: "Abel", fontSize: "18px"}} >BBQ with friends</Typography>
               </MenuItem>
               <MenuItem value={"Party"}>
-                <Typography variant={'h5'}>Party</Typography>
+                <Typography style={{fontFamily: "Abel", fontSize: "18px"}} >Party</Typography>
               </MenuItem>
               <MenuItem value={"Camping"}>
-                <Typography variant={'h5'}>Camping</Typography> 
+                <Typography style={{fontFamily: "Abel", fontSize: "18px"}} >Camping</Typography> 
               </MenuItem>
               <MenuItem value={"Other"}>
-                <Typography variant={'h5'}>Other</Typography>  
+                <Typography style={{fontFamily: "Abel"}} variant={'h5'}>Other</Typography>  
               </MenuItem>
           </Select>
         </FormControl>
@@ -94,19 +88,17 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
 
 
       <div style={style}>
-        <Button
-          style={{ height: "40px", width: "100px", backgroundColor: '#8b8b8bce',fontSize: "16px", fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
-          color="secondary"
-          variant="contained"
+      <Button
+        style={{height: "40px" , width: "100px", backgroundColor: '#8b8b8bce' }}
+          className='btn'
           onClick={handlePrevButton}>
-          Back
+            <Typography style={{fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize" }}>back</Typography>
         </Button>
         <Button
-          color="secondary"
-          style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontSize: "16px", fontFamily: 'Playfair Display', letterSpacing: '2px'  }}
-          variant="contained"
-          onClick={handleNextButton}
-        >Next
+        style={{height: "40px" , width: "100px", backgroundColor: '#98a153ce' }}
+          className='btn'
+          onClick={handleNextButton}>
+            <Typography style={{fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize" }}>Next</Typography>
         </Button>
       </div>
     </Dialog>

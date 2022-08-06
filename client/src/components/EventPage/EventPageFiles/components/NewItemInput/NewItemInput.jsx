@@ -19,7 +19,7 @@ const NewItemInput = ({ event, addItemAction }) => {
   };
 
   const handlePressClick = async () => {
-    if(state.itemName === "" || state.quantity === ""){
+    if(state.itemName === ""){
       alert("Please fill in all fields")
     }
     try {
@@ -45,22 +45,11 @@ const NewItemInput = ({ event, addItemAction }) => {
           name="itemName"
           onChange={handleInputValue}
         />
-        <input
-          className="input-table"
-          id="taskInput"
-          type="number"
-          min="0"
-          placeholder="Quantity"
-          name="quantity"
-          value={state.quantity}
-          onChange={handleInputValue}
-        />
         <button
           id="add-button"
           type="submit"
           onClick={handlePressClick}
-          className="input-button"
-        >
+          className="input-button">
           +
         </button>
       </div>
