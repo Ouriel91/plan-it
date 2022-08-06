@@ -101,7 +101,6 @@ const itemDeleting = async (req, res) => {
 
 const fetchPlans = async (req, res) => {
   try {
-    console.log('controller');
     const plans = await planService.fetchPlans();
     return res.status(200).json(plans);
   } catch (err) {
@@ -111,7 +110,6 @@ const fetchPlans = async (req, res) => {
 
 const userAdding = async (req, res) => {
   const  postedUser  = req.body;
-  console.log(postedUser, 'postedUser');
   if (!postedUser) {
     return res.status(400).json({ error: "Invalid user, user is null" });
   }
@@ -123,6 +121,22 @@ const userAdding = async (req, res) => {
     return res.status(500).json({ error: err.toString() });
   }
 }
+
+const userDeleting = async (req, res) => {
+  const  {userId} = req.body;
+  console.log(userId);
+
+  if (!userId) {
+    return res.status(400).json({ error: "Invalid user id" });
+  }
+
+  try {
+    await planService.userDeleting(userId);
+    return res.status(200).json("deleted successfully");
+  } catch (err) {
+    return res.status(500).json({ error: err.toString() });
+  }
+};
 
 
 module.exports = {
@@ -136,4 +150,6 @@ module.exports = {
   itemDeleting,
   fetchPlans,
   userAdding,
+  userDeleting
 };
+

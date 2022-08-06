@@ -6,30 +6,31 @@ import {
   fetchPlansWithItems,
   deletePlan,
   postUser,
+  userDeleting
 } from "../../api/plan";
 import actionTypes from "./constants";
 
 export const logout = (user) => ({
   type: actionTypes.LOGOUT,
-  payload: user
-})
+  payload: user,
+});
 
 export const logoutAction = (user) => {
   return async (dispatch) => {
     dispatch(logout(user));
-  }
-}
+  };
+};
 
 export const login = (user) => ({
   type: actionTypes.LOGIN,
-  payload: user
-})
+  payload: user,
+});
 
 export const loginAction = (user) => {
   return async (dispatch) => {
     dispatch(login(user));
-  }
-}
+  };
+};
 
 export const addPlan = (newEvent) => ({
   type: actionTypes.ADD_PLAN,
@@ -103,7 +104,6 @@ export const addPlansWithItemsToState = (fetchedPlans) => ({
 });
 
 export const fetchPlansWithItemsAction = () => {
- 
   return async (dispatch) => {
     const fetchedPlans = await fetchPlansWithItems();
     dispatch(addPlansWithItemsToState(fetchedPlans));
@@ -119,5 +119,19 @@ export const addUserAction = (fullName, email, eventId) => {
     const user = await postUser(fullName, email, eventId);
     dispatch(addUser(user));
     return user;
+  };
+};
+
+const deleteUser = (userId, eventId) => ({
+  type: actionTypes.DELETE_USER,
+  eventId,
+  payload: userId,
+});
+
+export const deleteUserAction = (userId, eventId) => {
+  console.log(userId, eventId,'deleteUserAction')
+  return async (dispatch) => {
+    await userDeleting(userId,eventId);
+    dispatch(deleteUser(userId, eventId));
   };
 };

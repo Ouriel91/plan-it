@@ -14,6 +14,7 @@ planRouter.put("/event-page/:id/items", planController.itemEditing)
 planRouter.delete("/event-page/:id/items", planController.itemDeleting)
 //users
 planRouter.post("/event-page/:id/users", planController.userAdding)
+planRouter.delete("/event-page/:id/users", planController.userDeleting)
 
 
 //fetch plans and items for event
