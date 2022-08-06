@@ -23,7 +23,7 @@ function Login({clientId, setIsLoggedIn, loginAction}) {
             onSuccess={onSuccess}
             onFailure={onFailure}
             render={renderProps => (
-                <button className="login-logout-btn" onClick={renderProps.onClick}> Login </button>
+                <button className="login-logout-btn" onClick={renderProps.onClick}> Sign in </button>
             )}
             cookiePolicy={'single_host_origin'}
             isSignedIn={true}

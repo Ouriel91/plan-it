@@ -11,7 +11,7 @@ import Footer from '../Footer/Footer'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import LoginLogout from '../LoginLogout/LoginLogout'
-import arrow from '../../images/arrow.gif'
+import arrow from '../../images/white_arrow.gif'
 
 const LandingPage = () => {
   const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
@@ -88,7 +88,7 @@ const LandingPage = () => {
             <button
               className="createplan"
               onClick={() => setIsCreateEventClicked(true)}>
-              Plan your next event <img height={30} width={50} alt='next' src={arrow}></img>
+              Plan your next event <img className='arrow-container' height={40} width={40} alt='next' src={arrow}></img>
             </button>
           </div>
         </div>

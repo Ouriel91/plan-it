@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap");
+* {
+  box-sizing: person-image;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.section-team {
+  font-family: "Poppins", sans-serif;
+  padding: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-team .header-section {
+  margin-bottom: 100px;
+  left: 300;
+}
+
+.section-team .header-section .small-title {
+  position: flex;
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #a04dff;
+}
+
+.section-team .header-section .title {
+  font-weight: 700;
+  font-size: 45px;
+}
+
+.section-team .single-person {
+  margin-top: 0px;
+  padding: 30px;
+  background-color: #f6f9ff;
+  border-radius: 5px;
+}
+/* #98a153ce, #9da275ce */
+.section-team .single-person:hover {
+  background: linear-gradient(to right, rgb(161, 173, 104), rgb(156, 163, 117));
+}
+
+.section-team .single-person .person-image {
+  position: relative;
+  margin-bottom: 50px;
+  border-radius: 50%;
+  border: 4px dashed transparent;
+  transition: padding 0.3s;
+}
+
+.section-team .single-person:hover .person-image {
+  padding: 12px;
+  border: 4px dashed #fff;
+}
+
+.section-team .single-person .person-image img {
+  width: 100%;
+  border-radius: 60%;
+}
+
+.section-team .single-person .person-image .icon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: linear-gradient(to right, rgb(161, 173, 104), rgb(131, 148, 45));
+  color: #fff;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.section-team .single-person:hover .person-image .icon {
+  background: none;
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+}
+
+.section-team .single-person .person-info .full-name {
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.section-team .single-person .person-info .speciality {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #016cec;
+}
+
+.section-team .single-person:hover .full-name,
+.section-team .single-person:hover .speciality {
+  color: #fff;
+  font-size: 2.5rem;
+}
+.back-home-about{
+    width:20%;
+}
+
+.goal-section{
+    font-size:3rem;
+
+}
+.paragrah-about{
+    text-align: left;
+    margin-left: 30%;
+    margin-top: 30px;
+}
+
+.opening-sentence-container-about{
+    margin-top: 30px;
+    padding-bottom: 35px;
+  }
+  
+  .opening-sentence-about{
+      font-size: 70px;
+      font-weight: bold;
+      color: #575757;
+      text-shadow: 3px 3px 3px #bcbcbc;
+      font-family: Arial ,(sans-serif);
+  }
+  
+  .opening2-sentence-about{
+    font-size: 25px;
+    font-weight: bold;
+    color: #808080;
+    font-family: Helvetica ,(sans-serif);
+  }
+  
+  .opening-sentence-about-meet{
+    font-size: 40px;
+      font-weight: bold;
+      color: #40813e;
+     margin-bottom: -10;
+      font-family: Arial ,(sans-serif);
+  }

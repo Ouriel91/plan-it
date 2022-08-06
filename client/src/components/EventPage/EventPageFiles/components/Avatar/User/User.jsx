@@ -5,9 +5,11 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
+import "./User.css"
 
 const User = ({ user, deleteUserAction }) => {
   const [isDeleteShown, setIsDeleteShown] = useState(false);
+
 
   const handleAvatarClick = () => {
     setIsDeleteShown(!isDeleteShown);
@@ -30,21 +32,19 @@ const User = ({ user, deleteUserAction }) => {
           text={user.fullName}
           onClick={handleAvatarClick}
           stacked
-          NormalWeights="black"
-          bordered
-          color="primary"
+          NormalWeights="bold"
+          color="success"
         />
 
         <div className="delete-btn">
           <Dialog open={isDeleteShown} onClose={() => setIsDeleteShown(false)}>
-            <DialogTitle>Delete</DialogTitle>
-            <DialogContent>Sure? </DialogContent>
+            <DialogTitle>Remove Friend</DialogTitle>
+            <DialogContent>Are you sure you want to remove this friend? </DialogContent>
             <DialogActions>
+              <Button onClick={handleAvatarClick}>Cancel</Button>
               <Button id={user.id} onClick={deleteItem}>
                 Yes
               </Button>
-
-              <Button onClick={handleAvatarClick}>Cancel</Button>
             </DialogActions>
           </Dialog>
         </div>

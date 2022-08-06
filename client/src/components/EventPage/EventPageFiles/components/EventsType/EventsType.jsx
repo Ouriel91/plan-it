@@ -158,7 +158,7 @@ const EventsType = ({ type, setEventObj, event }) => {
           <p className='description'>First and foremost, bring yourself. The rest is already written here</p>
         </div>
         <div className='events-type-container'>
-          <div className="listContainer">
+          <div data-aos="zoom-out" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className="listContainer">
             <p className="listTitle">Event Equipment List</p>
             <NewItemInputConnector event={event} />
             <Table><ItemListConnector event={event} /></Table>

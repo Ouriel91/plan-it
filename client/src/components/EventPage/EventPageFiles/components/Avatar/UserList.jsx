@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./userList.css";
 import emailjs from "emailjs-com";
-
+import IconButton from "@material-ui/core/IconButton";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@mui/material/Button";
-
+import CloseIcon from "@material-ui/icons/Close";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -14,6 +14,7 @@ const App = ({ addUserAction, eventId, users }) => {
   const [data, setData] = useState("");
   const [isShown, setIsShown] = useState(false);
   const [email, setEmail] = useState("");
+  const [eventIdUrl,setEventIdUrl] = useState(eventId.toString())
   const [initials, setInitials] = useState("");
 
 
@@ -23,7 +24,9 @@ const App = ({ addUserAction, eventId, users }) => {
     addUserAction(data, email, eventId);
     setData("");
     setEmail("");
+    setEventIdUrl("")
     setIsShown(!isShown);
+    console.log(eventId);
   };
 
   function sendEmail(e) {
@@ -51,12 +54,13 @@ const App = ({ addUserAction, eventId, users }) => {
     <>
       <div className="main-div">
         <div className="child-div">
-          <button onClick={() => setIsShown(true)} className="my-button">
-            +
-          </button>
           <div className="addItems">
             <Dialog open={isShown} onClose={() => setIsShown(false)}>
-              <DialogTitle>Add New User</DialogTitle>
+              <DialogTitle>Add New User
+              <IconButton onClick={() => setIsShown(false)}>
+            <CloseIcon />
+          </IconButton>
+              </DialogTitle>
               <DialogContent>
                 <form onSubmit={sendEmail}>
                   <input
@@ -77,30 +81,35 @@ const App = ({ addUserAction, eventId, users }) => {
                     placeholder="Email Address"
                     name="user_email"
                     onChange={(event) => setEmail(event.target.value)}
+                    
                   />
                   <div>
-                    <input name="reply_to"></input>
+                    <input name ="event-page"
+                    className="my_content_container"
+                     value={eventId.toString()}
+                      onSubmit={sendEmail}
+                      onChange={(event) => setEventIdUrl(event.target.value)}></input>
                   </div>
                   <div>
                     <input
                       onClick={handleClickAdd}
                       type="submit"
                       className="btn btn-info"
+                      name ="event-page"
                       value="ADD"
                     ></input>
                   </div>
                 </form>
               </DialogContent>
-              <DialogActions>
-                <Button onClick={() => setIsShown(false)}>Cancel</Button>
-              </DialogActions>
             </Dialog>
           </div>
 
           {users.map((user) => (
             <UserConnector key={user.id} user={user}  />
           ))}
-
+          <button onClick={() => setIsShown(true)} className="my-button">
+            +
+          </button>
         </div>
       </div>
     </>

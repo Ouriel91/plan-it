@@ -1,4 +1,4 @@
-import { Checkbox, TableCell, TextField } from "@material-ui/core";
+import { Checkbox, TableCell, TextField} from "@material-ui/core";
 import Autocomplete from "@mui/material/Autocomplete";
 import React from "react";
 import { useState } from "react";
@@ -49,12 +49,13 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
         className={!isEditClicked ? "table-row" : "table-row-edit"}
         id={item.id}
       >
-        <TableCell>
+        <TableCell style={{borderBottom: "none"}}>
           <TextField
-            style={{ width: "200px" }}
+            style={{ width: "200px"}}
             type="text"
             value={itemName}
             size="medium"
+            id="standard-basic" variant="standard"
             disabled={!isEditClicked}
             onChange={(e) => setItemName(e.target.value)}
             name="itemName"
@@ -68,7 +69,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
             }}
           />
         </TableCell>
-        <TableCell >
+        <TableCell style={{borderBottom: "none"}}>
           <TextField
             style={{ width: "200px" }}
             value={quantity}
@@ -93,7 +94,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
         <div className="margin-autocomplete">
           <Autocomplete
             style={{ width: "200px" }}
-            id="tags-standard"
+            variant="standard"
             options={users.map((users) => users.fullName)}
             value={bringName}
             readOnly={!isEditClicked}

@@ -4,6 +4,7 @@ import CardListConnector from  './components/Card/CardListConnector'
 import AppContainerConnector from './components/AppContainer/AppContainerConnector';
 import EventPageConnector from './components/EventPage/EventPageConnector';
 import LoginLogout from './components/LoginLogout/LoginLogout';
+import AboutUs from './components/EventPage/EventPageFiles/pages/home/AboutUs';
 
 import {Helmet} from "react-helmet";
 function App() {
@@ -21,6 +22,8 @@ function App() {
           <Route path="/event-page/:id" element={<EventPageConnector />} />
           <Route path="/my-events" element={<CardListConnector />} />
           <Route path="/login-logout" element={<LoginLogout />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          
           {/* <Route index element={<Footer />} /> */}
         </Route>
       </Routes>
