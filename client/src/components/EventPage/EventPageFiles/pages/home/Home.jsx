@@ -40,7 +40,7 @@ const Home = ({event, user}) => {
     getGeocode()
   },[event])
 
-  if(!event)return <div className='center-loading'><img className='center-loading-img' alt='loading' src={loading_gif}></img></div>
+  if(!event)return <div className='center-loading-container'><img className='center-loading-img' alt='loading' src={loading_gif}></img></div>
   return (
     <div className="home">
       <div className="homeContainer">
