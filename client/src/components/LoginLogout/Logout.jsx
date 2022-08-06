@@ -16,7 +16,7 @@ function Logout({clientId, setIsLoggedIn, logoutAction}) {
             buttonText="Logout"
             onLogoutSuccess={logout}
             render={renderProps => (
-                <button className="login-logout-btn" onClick={renderProps.onClick}> Logout </button>
+                <button className="login-logout-btn" onClick={renderProps.onClick}> Sign out </button>
             )}
         />
     )

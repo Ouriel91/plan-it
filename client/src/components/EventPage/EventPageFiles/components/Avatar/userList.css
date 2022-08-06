@@ -26,10 +26,10 @@ html {
 
 .avatars-container{
   display: flex;
-  margin: 1rem;
   flex-direction: row;
   justify-content:flex-end;
-  
+  margin-top: 8px;
+  margin-right: 5px;
 }
 
 .child-div {
@@ -39,10 +39,6 @@ html {
   flex-direction: row;
 }
 
-/* .child-div figure img {
-  width: 10rem;
-  height: 8rem;
-} */
 
 /* .child-div figure figcaption {
   color: #fff;
@@ -55,6 +51,19 @@ html {
   border-color: #acb58c92;
   font-size: 17px;
   color: rgb(157, 157, 157);
+  width: 300px;
+}
+
+.form-control:focus{
+  border-color: #acb58c92;
+  font-size: 17px;
+  color: rgb(157, 157, 157);
+  width: 300px;
+}
+
+
+.add-btn-margin{
+  margin-top: 30px;
 }
 
 input {
@@ -76,20 +85,9 @@ input,
 input:focus,
 input:active,
 input:active:focus {
-  border: none;
   padding: 2.3rem 1.5rem;
-  outline: none;
 }
-input {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-input:focus {
-  -webkit-box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
-}
+
 
 .delete-btn {
   width: 2rem;
