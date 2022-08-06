@@ -82,7 +82,7 @@ const insertBBQdefaultItems = async (eventId) => {
     eventId: eventId,
   }),
     items.push({
-      itemName: "Pool",
+      itemName: "BBQ",
       bringName: "",
       quantity: 1,
       status: false,

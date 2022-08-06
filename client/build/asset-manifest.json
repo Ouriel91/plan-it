@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bc126a77.css",
-    "main.js": "/static/js/main.c3ad5035.js",
+    "main.js": "/static/js/main.d8eae2df.js",
     "static/js/787.6b507812.chunk.js": "/static/js/787.6b507812.chunk.js",
     "static/media/picnic-logo.mp4": "/static/media/picnic-logo.f3078b73f53a6730087e.mp4",
     "static/media/my-events-logo.jpg": "/static/media/my-events-logo.066ef30c39c6a33d5574.jpg",
@@ -42,11 +42,11 @@
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
     "index.html": "/index.html",
     "main.bc126a77.css.map": "/static/css/main.bc126a77.css.map",
-    "main.c3ad5035.js.map": "/static/js/main.c3ad5035.js.map",
+    "main.d8eae2df.js.map": "/static/js/main.d8eae2df.js.map",
     "787.6b507812.chunk.js.map": "/static/js/787.6b507812.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bc126a77.css",
-    "static/js/main.c3ad5035.js"
+    "static/js/main.d8eae2df.js"
   ]
 }
