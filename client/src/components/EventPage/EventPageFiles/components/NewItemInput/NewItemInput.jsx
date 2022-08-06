@@ -11,10 +11,7 @@ const NewItemInput = ({ event, addItemAction }) => {
 
   const handleInputValue = (e) => {
     const value = e.target.value;
-    // if(e.target.value < "0"){
-    //   alert("You can't insert negative quantity")
-    //   return
-    // }
+    
     setState({
       ...state,
       [e.target.name]: value,
@@ -22,6 +19,9 @@ const NewItemInput = ({ event, addItemAction }) => {
   };
 
   const handlePressClick = async () => {
+    if(state.itemName === "" || state.quantity === ""){
+      alert("Please fill in all fields")
+    }
     try {
       await addItemAction(state, event.id);
       setState({
