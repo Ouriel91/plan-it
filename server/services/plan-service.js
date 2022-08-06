@@ -35,10 +35,10 @@ async function addPlan(plan) {
   });
   event[0].eventUsers = [];
   const eventId = event[0].id.toString();
-  console.log("eventId", eventId);
+
   const itemsByType = await insertItemsBytype(event[0].type, eventId);
   event[0].eventItems = [...itemsByType];
-  console.log("value", event[0]);
+
   const userAdmin = [
     {
       eventId: event[0].id,
@@ -57,7 +57,6 @@ async function addPlan(plan) {
 
   return event[0];
 }
-
 
 const insertBBQdefaultItems = async (eventId) => {
   const items = [];
@@ -95,10 +94,7 @@ const insertBBQdefaultItems = async (eventId) => {
     order: [["id", "DESC"]],
     raw: true,
   });
-    
-
-}
-
+};
 
 const insertPoolPartydefaultItems = async (eventId) => {
   const items = [];
@@ -136,24 +132,13 @@ const insertPoolPartydefaultItems = async (eventId) => {
     order: [["id", "DESC"]],
     raw: true,
   });
-  
-}
+};
 
 const insertItemsBytype = async (type, eventId) => {
-  
- 
-  if (type === "BBQ with friends") 
-    return  insertBBQdefaultItems(eventId)
-    
-     else if (type === "Pool party") 
-      return insertPoolPartydefaultItems(eventId)
-      else return []
-}
-     
-    
-
-
-
+  if (type === "BBQ with friends") return insertBBQdefaultItems(eventId);
+  else if (type === "Pool party") return insertPoolPartydefaultItems(eventId);
+  else return [];
+};
 
 async function deletePlan(id) {
   const removedPlan = await Event.findOne({ where: { id } });
@@ -223,14 +208,13 @@ const userAdding = async (newUser) => {
   return user;
 };
 
-
 const userDeleting = async (userId) => {
   try {
     await User.destroy({ where: { id: userId } });
   } catch (err) {
     throw `There is no item with id: ${userId} `;
   }
-}
+};
 
 module.exports = {
   getAllPlans,
@@ -243,5 +227,5 @@ module.exports = {
   itemDeleting,
   fetchPlans,
   userAdding,
-  userDeleting
+  userDeleting,
 };
