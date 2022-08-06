@@ -51,7 +51,7 @@ function CardList({ fetchPlansWithItemsAction, deleteEventAction, plans, event, 
             <img className="user-image" src={image} alt={user.name} /> */}
                     {/* </div>
                 </div>
-            </div> */} */}
+            </div> */} 
             {renderings}
             </div>
     )
