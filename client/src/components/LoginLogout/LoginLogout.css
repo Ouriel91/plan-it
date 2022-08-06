@@ -1,29 +1,21 @@
 /* CSS */
 .login-logout-btn {
-  display: flex;
-  align-items: center;
-  font-family: inherit;
-  font-weight: 500;
-  padding: 0.7em 1.4em 0.7em 1.1em;
-  color: white;
-  background: #ad5389;
-  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 20px;
   border: none;
-  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
-  letter-spacing: 0.05em;
-  border-radius: 20em;
-  cursor: pointer;
-  user-select: none;
-  opacity: 0.8;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-top: 20px;
-  font-size: 16px;
+  transition: all 0.3s ease-out;
+  border-radius: 10px;
+  margin-top: 24px;
+  font-size: 18px;
+  font-family: 'Abel';
 }
 
 .login-logout-btn:hover {
-  box-shadow: 0 0.5em 1.5em -0.5em #497c5898;
-  opacity: 1;
+  border: 2px solid #fff;
+  transition: all 0.2s ease-out;
+  color: #727a39;
+  font-weight: bold;
 }
 
 .login-logout-btn:active {

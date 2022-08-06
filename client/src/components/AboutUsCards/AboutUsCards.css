@@ -1,21 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display&display=swap');
 
+.about-us-container{
 
-.about-us-description{
-    font-size: 25px;
-    color: #fffdecd7;
-    text-align: center;
-    margin-top: 50px;
-    font-weight: bold;
-    font-family: 'Abel';
-    text-shadow: 3px 7px 3px #969696;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f5f5f5;
+    position:relative;
+    margin-bottom: -60px;
 }
 
+
+.about-us-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.title{
+    font-size: 25px;
+    color: #dde4c7;
+    text-shadow: 1px 1px 3px #707859;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Abel';
+  }
+  
+  .description{
+    color: #b7b7b7;
+    font-family: 'Abel';
+    font-style: normal;
+    margin: auto;
+    font-size: 35px;
+  }
 .card{
    box-shadow: 3px 3px 13px 6px #00000092; 
-   background-color: #fffdecd7;
+   background-color: #fffdecc1;
    margin-top: 40px;
-   height: 200px;
 }
 
 .card-header{
@@ -31,4 +52,5 @@
     font-family: 'Abel';
     color: rgb(111, 111, 111);
     text-shadow: 3px 3px 3px #bcbcbc;
+    height: 130px;
 }

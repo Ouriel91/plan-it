@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./userList.css";
 import emailjs from "emailjs-com";
-
+import IconButton from "@material-ui/core/IconButton";
 import Dialog from "@material-ui/core/Dialog";
 import Button from "@mui/material/Button";
-
+import CloseIcon from "@material-ui/icons/Close";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -54,12 +54,13 @@ const App = ({ addUserAction, eventId, users }) => {
     <>
       <div className="main-div">
         <div className="child-div">
-          <button onClick={() => setIsShown(true)} className="my-button">
-            +
-          </button>
           <div className="addItems">
             <Dialog open={isShown} onClose={() => setIsShown(false)}>
-              <DialogTitle>Add New User</DialogTitle>
+              <DialogTitle>Add New User
+              <IconButton onClick={() => setIsShown(false)}>
+            <CloseIcon />
+          </IconButton>
+              </DialogTitle>
               <DialogContent>
                 <form onSubmit={sendEmail}>
                   <input
@@ -100,16 +101,15 @@ const App = ({ addUserAction, eventId, users }) => {
                   </div>
                 </form>
               </DialogContent>
-              <DialogActions>
-                <Button onClick={() => setIsShown(false)}>Cancel</Button>
-              </DialogActions>
             </Dialog>
           </div>
 
           {users.map((user) => (
             <UserConnector key={user.id} user={user}  />
           ))}
-
+          <button onClick={() => setIsShown(true)} className="my-button">
+            +
+          </button>
         </div>
       </div>
     </>

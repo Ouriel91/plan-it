@@ -5,10 +5,13 @@ import 'aos/dist/aos.css'
 function AboutUsCards() {
   return (
     <section className='about-us-container'>
-      <div data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='about-us-description'>We all know how much effort it takes to organize a<br />meet-up with friends. You don't know where to start? <br />Plan it. is the perfect place to get the fun started!</div>
+      <div data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='about-us-description'>
+        <p className='title'>We all know how much effort it takes to organize a meet-up with friends. </p>
+        <p className='description'>You don't know where to start? Plan it. is the perfect place to get the fun started!</p>
+        </div>
       <div className='row d-flex justify-content-center'>
         <div data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className=' col-11 col-md-3 col-lg-3 mx-0 mb-4'>
-          <div className="card text-center " >
+          <div className="card text-center " style={{backgroundColor: "#fffdecc1"}} >
             <div className="card-header">
               Easy Arrangments
             </div>
@@ -19,7 +22,7 @@ function AboutUsCards() {
           </div>
         </div>
         <div data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-delay="300" data-aos-duration="1000" className='col-11 col-md-3 col-lg-3 mx-0 mb-4'>
-          <div className="card text-center" >
+          <div className="card text-center" style={{backgroundColor: "#fffdecc1"}} >
             <div className="card-header">
               Equipment Suggestions
             </div>
@@ -30,7 +33,7 @@ function AboutUsCards() {
           </div>
         </div>
         <div data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-delay="600" data-aos-duration="1000" className='col-11 col-md-3 col-lg-3 mx-0 mb-4'>
-          <div className="card text-center" >
+          <div className="card text-center" style={{backgroundColor: "#fffdecc1"}}>
             <div className="card-header">
               Cool Spots
             </div>
