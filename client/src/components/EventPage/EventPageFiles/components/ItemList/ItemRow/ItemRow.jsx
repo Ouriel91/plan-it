@@ -90,7 +90,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
             }}
           />
         </TableCell>
-        <TableCell>
+        <div className="margin-autocomplete">
           <Autocomplete
             style={{ width: "200px" }}
             id="tags-standard"
@@ -100,7 +100,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
             onChange={handleBringNameChange}
             renderInput={(params) => <TextField {...params} />}
           />
-        </TableCell>
+        </div>
         <div className="margin-checkbox">
             <input
               label="Status"
@@ -112,8 +112,8 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
             </input>
         </div>    
 
-
-            {!isEditClicked && (
+<div className="margin-icons">
+   {!isEditClicked && (
               <IconButton
                 onClick={handleEditButtonClick}
                 aria-label="edit"
@@ -139,6 +139,8 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
           >
             <DeleteIcon className="deleteButton" style={{ fontSize: 25 }} />
           </IconButton>
+</div>
+           
 
 
       </tr>

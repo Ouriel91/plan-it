@@ -23,7 +23,7 @@ import party_img from '../../../../../images/party.jpg'
 import NewItemInputConnector from "../NewItemInput/NewItemInputConnector"
 import ItemListConnector from '../ItemList/ItemListConnector';
 import clock_gif from '../../../../../images/clock2.gif'
-import UserListConnector from '../UserCard/UserListConnector';
+import UserListConnector from '../Avatar/UserListConnector';
 const EventsType = ({ type, setEventObj, event }) => {
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState('');
@@ -44,6 +44,7 @@ const EventsType = ({ type, setEventObj, event }) => {
       const days = Math.floor(distance / (1000 * 60 * 60 * 24))
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((distance % (1000 * 60 )) / (1000))
 
       if (distance <= 0) {
         setTimerEnded(true)
@@ -52,6 +53,7 @@ const EventsType = ({ type, setEventObj, event }) => {
       setTimerDays(days)
       setTimerHours(hours)
       setTimerMins(minutes)
+      setTimerSecs(seconds)
     }, 1000)
   }
 
@@ -130,7 +132,11 @@ const EventsType = ({ type, setEventObj, event }) => {
               <p className='date-number'>{timerMins}</p>
               <p className='date-text'>Minutes</p>
             </section>
-            <img width={400} height={285} id="confetti" alt='party' src={confetti} hidden={!timerEnded ? true : undefined}></img>
+            <section>
+              <p className='date-number'>{timerSecs}</p>
+              <p className='date-text'>Seconds</p>
+            </section>
+            <img width={455} height={260} id="confetti" alt='party' src={confetti} hidden={!timerEnded ? true : undefined}></img>
           </div>
 
         </div>
@@ -138,9 +144,8 @@ const EventsType = ({ type, setEventObj, event }) => {
 <div className='participants-event-page'>
         <p className='title'>Invite Friends</p>
         <p className='description'>Add your buddies to enjoy with you!</p>
- 
+ <UserListConnector eventId={event.id} />
 <div className='participants-container'>
-   <UserListConnector eventId={event.id} />
         <img alt='friends' src={friends} width={500} height={400}></img>
 </div>
       </div>

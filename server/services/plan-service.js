@@ -58,47 +58,102 @@ async function addPlan(plan) {
   return event[0];
 }
 
-const insertItemsBytype = async (type, eventId) => {
-  const items = [];
-  if (type === "BBQ with friends") {
-    items.push({
-      itemName: "Snacks",
-      bringName: "",
-      quantity: 1,
-      status: false,
-      eventId: eventId,
-    });
-    items.push({
-      itemName: "Ice",
-      bringName: "",
-      quantity: 1,
-      status: false,
-      eventId: eventId,
-    });
-    items.push({
-      itemName: "Tongs",
-      bringName: "",
-      quantity: 1,
-      status: false,
-      eventId: eventId,
-    }),
-      items.push({
-        itemName: "BBQ",
-        bringName: "",
-        quantity: 1,
-        status: false,
-        eventId: eventId,
-      });
 
-    await Item.bulkCreate(items);
-    return await Item.findAll({
-      limit: 4,
-      order: [["id", "DESC"]],
-      raw: true,
+const insertBBQdefaultItems = async (eventId) => {
+  const items = [];
+  items.push({
+    itemName: "Snacks",
+    bringName: "",
+    quantity: 1,
+    status: false,
+    eventId: eventId,
+  });
+  items.push({
+    itemName: "Ice",
+    bringName: "",
+    quantity: 1,
+    status: false,
+    eventId: eventId,
+  });
+  items.push({
+    itemName: "Tongs",
+    bringName: "",
+    quantity: 1,
+    status: false,
+    eventId: eventId,
+  }),
+    items.push({
+      itemName: "Pool",
+      bringName: "",
+      quantity: 1,
+      status: false,
+      eventId: eventId,
     });
-  }
-  return items;
-};
+  await Item.bulkCreate(items);
+  return await Item.findAll({
+    limit: 4,
+    order: [["id", "DESC"]],
+    raw: true,
+  });
+    
+
+}
+
+
+const insertPoolPartydefaultItems = async (eventId) => {
+  const items = [];
+  items.push({
+    itemName: "Towels",
+    bringName: "",
+    quantity: 1,
+    status: false,
+    eventId: eventId,
+  });
+  items.push({
+    itemName: "Ice",
+    bringName: "",
+    quantity: 1,
+    status: false,
+    eventId: eventId,
+  });
+  items.push({
+    itemName: "Sunscreen",
+    bringName: "",
+    quantity: 1,
+    status: false,
+    eventId: eventId,
+  }),
+    items.push({
+      itemName: "Sancks",
+      bringName: "",
+      quantity: 1,
+      status: false,
+      eventId: eventId,
+    });
+  await Item.bulkCreate(items);
+  return await Item.findAll({
+    limit: 4,
+    order: [["id", "DESC"]],
+    raw: true,
+  });
+  
+}
+
+const insertItemsBytype = async (type, eventId) => {
+  
+ 
+  if (type === "BBQ with friends") 
+    return  insertBBQdefaultItems(eventId)
+    
+     else if (type === "Pool party") 
+      return insertPoolPartydefaultItems(eventId)
+      else return []
+}
+     
+    
+
+
+
 
 async function deletePlan(id) {
   const removedPlan = await Event.findOne({ where: { id } });
@@ -167,6 +222,16 @@ const userAdding = async (newUser) => {
   });
   return user;
 };
+
+
+const userDeleting = async (userId) => {
+  try {
+    await User.destroy({ where: { id: userId } });
+  } catch (err) {
+    throw `There is no item with id: ${userId} `;
+  }
+}
+
 module.exports = {
   getAllPlans,
   addPlan,
@@ -178,4 +243,5 @@ module.exports = {
   itemDeleting,
   fetchPlans,
   userAdding,
+  userDeleting
 };

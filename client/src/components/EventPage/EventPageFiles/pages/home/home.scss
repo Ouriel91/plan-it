@@ -19,7 +19,7 @@
   background-color: white;
 }
 
-.center-loading{
+.center-loading-container{
   display: flex;
   justify-content: center;
   margin: auto;
@@ -29,6 +29,8 @@
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  position: absolute;
+  left:50%;
 }
 .title{
   text-align: center;

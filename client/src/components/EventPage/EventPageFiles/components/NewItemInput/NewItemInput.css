@@ -31,10 +31,10 @@
     border-radius: 20px;
     border: 2px solid #dde4c7a2;
     font-weight: bold;
+    color: #c5ccaf;
     font-size: 30px;
-    color: #dde4c7;
 }
 
 .input-button:hover {
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(241, 241, 241);
 }

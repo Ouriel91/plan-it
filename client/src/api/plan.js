@@ -131,3 +131,17 @@ export const postUser = async (fullName, email, eventId) => {
   });
   return response.data;
 };
+
+
+export const userDeleting = async (userId,eventId) => {
+  
+  const response = await axios({
+    method: "delete",
+    url: `${url}/event-page/${eventId}/users`,
+    headers: { "Content-Type": "application/json" },
+    data: {
+      userId,
+    },
+  });
+  return response.data;
+}
