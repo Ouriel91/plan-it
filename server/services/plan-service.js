@@ -126,7 +126,6 @@ const itemAdding = async (newItem) => {
     order: [["id", "DESC"]],
     raw: true,
   });
-  console.log("item", item);
   return item;
 };
 
