@@ -16,17 +16,30 @@ const Weather = ({lng, lat, location, date}) => {
   )
 
   const getFutureWeather = async (lat, lng, date) => {
-    const req = await fetch(`http://api.weatherapi.com/v1/future.json?key=${process.env.REACT_APP_WEATHER_API_14_DAYS}&q=${lat},${lng}&dt=${date}`)
-    if(req.statusText === "Bad Request") //can happen because event is less than 14 days or above 300 days, so use 10 days from current date
-    {
-      const newReq = await fetch( `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_14_DAYS}&q=${lat},${lng}&days=10&aqi=no&alerts=no`)
-      const res = await newReq.json()
-      const description = res.current.condition.text
-      const forecast = res.forecast.forecastday[9] //for 10 days from now
-      const futureDate = forecast.date + ' (10 days from now)'
-      setResData(description,futureDate,forecast)
-      return
+
+    const givenDate = new Date(date)
+    //console.log("givenDate", givenDate.getTime());
+    
+    let currentTime = new Date();
+    //console.log("currentTime", new Date().setDate(currentTime.getDate()))
+
+    const fromNow14Days = currentTime.setDate(currentTime.getDate()+14)
+    //console.log("14 days from now", fromNow14Days)
+
+    const newDate  = new Date(fromNow14Days).toISOString().slice(0,10)
+    //console.log("newDate", newDate);
+
+    let sentDay
+    if(givenDate < fromNow14Days){
+      sentDay = newDate
     }
+    else{
+      sentDay = date
+    }
+
+    //console.log("sentDay",sentDay)
+    
+    const req = await fetch(`http://api.weatherapi.com/v1/future.json?key=${process.env.REACT_APP_WEATHER_API_14_DAYS}&q=${lat},${lng}&dt=${sentDay}`)
     const res = await req.json()
     const forecast = res.forecast.forecastday[0]
     const futureDate = forecast.date

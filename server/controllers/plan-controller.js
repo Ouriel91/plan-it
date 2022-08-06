@@ -124,7 +124,6 @@ const userAdding = async (req, res) => {
 
 const userDeleting = async (req, res) => {
   const  {userId} = req.body;
-  console.log(userId);
 
   if (!userId) {
     return res.status(400).json({ error: "Invalid user id" });
