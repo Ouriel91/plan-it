@@ -167,6 +167,16 @@ const userAdding = async (newUser) => {
   });
   return user;
 };
+
+
+const userDeleting = async (userId) => {
+  try {
+    await User.destroy({ where: { id: userId } });
+  } catch (err) {
+    throw `There is no item with id: ${userId} `;
+  }
+}
+
 module.exports = {
   getAllPlans,
   addPlan,
@@ -178,4 +188,5 @@ module.exports = {
   itemDeleting,
   fetchPlans,
   userAdding,
+  userDeleting
 };
