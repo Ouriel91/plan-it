@@ -7,6 +7,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import './EventNameDialog.css'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 function EventNameDialog({ nextStep, setEventObj, closeDialog  }) {
   const [input, setInput] = useState('')
@@ -57,10 +58,13 @@ function EventNameDialog({ nextStep, setEventObj, closeDialog  }) {
       </div>
       <div className='button-container'>
         <Button
+
         style={{height: "40px" , width: "100px", backgroundColor: '#98a153ce' }}
           className='btn'
           onClick={handleNextButton}>
-            <Typography style={{fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize" }}>Next</Typography>
+
+            <Typography style={{fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize"}}>Next</Typography>
+                    
         </Button>
       </div>
     </Dialog>

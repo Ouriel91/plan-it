@@ -1,4 +1,3 @@
-import { Button } from 'bootstrap';
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 import yuliaImg from "./img-members/yulia.png"
@@ -21,12 +20,12 @@ const AboutUs = (event, user) =>
             <div className="row justify-content-center text-center">
             <AboutUsNavbar event={event} user={user}/>
                 <section className='opening-sentence-container-about'>
-                <p className='opening-sentence-about'>Our Dream And Goals </p>
-                <p className='opening2-sentence-about'> Build A Tool that can help to Creact And Manage Your next Event 
-                <br /> In the easiest and most efficient way 
-                <br /> Because sometimes , this task can be quite complicated  </p>
+                <p className='opening-sentence-about'>Our Dream and Goals </p>
+                <p className='opening2-sentence-about'> Building a tool that helps to creact and manage your next trip 
+                <br /> in the easiest and most efficient way.
+                <br /> Because sometimes, this task can be quite complicated..  </p>
                 </section>
-                <p className='opening-sentence-about-meet'>Let's Meet Team Plan it</p>
+                <p className='opening-sentence-about-meet'>Introducing the goal achievers...</p>
               <div className="section-team">
               
                 <div className="header-section"></div>
@@ -46,7 +45,7 @@ const AboutUs = (event, user) =>
                       </div>
                       <div className="person-info">
                         <h3 className="full-name">Avihai Kuperberg</h3>
-                        <span className="speciality">Fraek of Fps Games And Hates Avatars!  </span>
+                        <span className="speciality">Freak of Fps games and a hater of avatars!  </span>
                       </div>
                     </div>
                   </div>
@@ -61,7 +60,7 @@ const AboutUs = (event, user) =>
                       </div>
                       <div className="person-info">
                         <h3 className="full-name">Yulia Kuderko </h3>
-                        <span className="speciality">The Design Queen ,And a Pro Project Manager</span>
+                        <span className="speciality">The design queen and a pro project manager</span>
                       </div>
                     </div>
                   </div>
@@ -76,7 +75,7 @@ const AboutUs = (event, user) =>
                       </div>
                       <div className="person-info">
                         <h3 className="full-name">Ouriel Ohayon</h3>
-                        <span className="speciality">Google API's Master! and Macabbi Haifa Biggest Fan </span>
+                        <span className="speciality">Google API's master and a Macabbi Haifa biggest fan </span>
                       </div>
                     </div>
                   </div>
@@ -91,7 +90,7 @@ const AboutUs = (event, user) =>
                       </div>
                       <div className="person-info">
                         <h3 className="full-name">Ori Hassid</h3>
-                        <span className="speciality">Redux Beast And Perfect Crew Member</span>
+                        <span className="speciality">Redux beast and a perfect crew member</span>
                       </div>
                     </div>
                     
@@ -102,7 +101,7 @@ const AboutUs = (event, user) =>
               </div>
               
              
-              <button onClick={handleBackHomeClick} type="button" class="btn btn-outline-success">Home</button>
+              <button onClick={handleBackHomeClick} type="button" class="btn22">Home Page</button>
              <Footer/>
             </div>
           );

@@ -5,7 +5,7 @@ import { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import SaveIcon from "@mui/icons-material/Save";
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import "./ItemRow.css";
 
 const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
@@ -93,13 +93,14 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
         </TableCell>
         <div className="margin-autocomplete">
           <Autocomplete
-            style={{ width: "200px" }}
+            style={{ width: "200px", fontSize: "25px" }}
             variant="standard"
             options={users.map((users) => users.fullName)}
             value={bringName}
             readOnly={!isEditClicked}
             onChange={handleBringNameChange}
-            renderInput={(params) => <TextField {...params} />}
+            renderInput={(params) => <TextField {...params} InputProps={{ style: { fontSize: 22, fontFamily: "Abel", fontStyle: "normal" } }} />}
+          
           />
         </div>
         <div className="margin-checkbox">
@@ -129,7 +130,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
                 aria-label="save"
                 size="large"
               >
-                <SaveIcon className="saveIcon " style={{ fontSize: 25}} />
+                <SaveAltIcon className="saveIcon " style={{ fontSize: 25}} />
               </IconButton>
             )}
 

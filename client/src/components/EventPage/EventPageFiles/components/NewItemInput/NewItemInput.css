@@ -7,7 +7,6 @@
 
 }
 
-
 .input-table {
     width: 80%; 
     height: 30px;
@@ -27,12 +26,13 @@
     background-color: #dde4c7e5;
 }
 
+
 .input-button {
     width: 100px;
     height: 62px;
     background-color: whitesmoke;
     margin-top: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 2px solid #aaba7695;
     font-weight: bold;
     color: #aaba765e;

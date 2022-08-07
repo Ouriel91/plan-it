@@ -21,6 +21,7 @@ const NewItemInput = ({ event, addItemAction }) => {
   const handlePressClick = async () => {
     if(state.itemName === ""){
       alert("Please fill in all fields")
+      return
     }
     try {
       await addItemAction(state, event.id);
@@ -40,7 +41,7 @@ const NewItemInput = ({ event, addItemAction }) => {
           className="input-table"
           id="taskInput"
           type="text"
-          placeholder="What to bring"
+          placeholder="Add an item to the table"
           value={state.itemName}
           name="itemName"
           onChange={handleInputValue}

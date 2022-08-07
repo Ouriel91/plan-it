@@ -118,6 +118,7 @@ const EventsType = ({ type, setEventObj, event }) => {
         </div>
         <div className='date-counter-holder'>
           <Calendar
+            disabled={true}
             onChange={setCalendar}
             value={calendar}
             touchUi={true}
