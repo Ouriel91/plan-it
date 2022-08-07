@@ -54,7 +54,6 @@ export const editPlan = async (id, plan) => {
 export const postItem = async (item, eventId) => {
   const postedItem = {
     itemName: item.itemName,
-    quantity: item.quantity,
     eventId: eventId,
   };
   const response = await axios({
