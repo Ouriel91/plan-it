@@ -1,49 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display:wght@400;500;700&family=Poiret+One&family=Urbanist&display=swap');
 .card-item-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 40px 0;
+    max-width: 400px;
+    max-height: 500px;
+    margin: auto;
+    margin-bottom: 100px;
 }
 
 .card-item {
     position: relative;
     min-width: 320px;
     height: 550px;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
-        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-        5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+    box-shadow: 1px 5px 8px 2px rgb(165, 165, 165);
+    border-radius: 5px;
     margin: 30px;
     transition: 0.5s;
+    background-color: rgba(245, 245, 245, 0.908);
 }
 
 .card-box {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    background: #98d58ada;
-    opacity: 0.8;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    background: rgba(245, 245, 245, 0.908);
+    opacity: 0.9;
+    height: 230px;
+    border-radius: 5px;
     transition: 0.5s;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    -5px -5px 15px rgba(255, 255, 255, 0.1);
 }
 
-.card-box:hover {
-    transform: translateY(-50px);
+.card-item:hover {
+    transform: translateY(-20px);
+    box-shadow: 
+    2px 8px 20px 5px rgba(0, 0, 0, 0.3);
+    background-color: white;
 }
 
 .card-content {
-    padding: 20px;
     text-align: center;
+    padding: 10px;
+
 }
 
 .card-navigate {
@@ -51,26 +49,77 @@
 }
 
 .card-title {
-    font-size: 25px;
+    font-size: 28px;
     font-weight: bold;
-    color: #fff;
+    color: black;
     z-index: 1;
     transition: 0.5s;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    font-family: 'Urbanist', sans-serif;
 }
 
 .card-image {
-    margin-top: 15px;
+    opacity: 0.95;
 }
 
-.card-details, .card-footer {
+.card-details {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5px;
 }
 
-.card-date {
+.card-details-emoji{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+    border-top: 1px solid rgb(209, 209, 209);
+}
+
+.card-date, .card-location {
     padding: 5px;
     font-weight: bold;
+    font-size: 18px;
+    font-family: 'Urbanist', sans-serif;
+}
+
+
+.go-to-btn{
+    margin-top: 20px;
+    padding: 5px;
+    width: 150px;
+    border-radius: 5px;
+    border: 2px solid #d2deaa;
+    background-color: transparent;
+    color: #bfd184;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.go-to-btn:hover{
+    background-color: #d2deaa;
+    color: white;
+    transition: 1s ease-in-out;
+}
+
+.delete-icon:hover{
+    color: rgb(222, 0, 0);
+}
+
+.whatsapp-icon{
+    color: grey;
+}
+
+.whatsapp-icon:hover{
+    color: #53ec67;
+}
+
+.waze-icon:hover{
+    color: blue;
+    filter: hue-rotate(22deg) saturate(37);
 }
