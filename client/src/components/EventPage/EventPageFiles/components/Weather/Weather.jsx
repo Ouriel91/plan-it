@@ -23,14 +23,14 @@ const Weather = ({lng, lat, location, date}) => {
     let currentTime = new Date();
     //console.log("currentTime", new Date().setDate(currentTime.getDate()))
 
-    const fromNow14Days = currentTime.setDate(currentTime.getDate()+14)
+    const fromNow15Days = currentTime.setDate(currentTime.getDate()+15) //give 15 from now to make sure cover all api options (14-300 days)
     //console.log("14 days from now", fromNow14Days)
 
-    const newDate  = new Date(fromNow14Days).toISOString().slice(0,10)
+    const newDate  = new Date(fromNow15Days).toISOString().slice(0,10)
     //console.log("newDate", newDate);
 
     let sentDay
-    if(givenDate < fromNow14Days){
+    if(givenDate < fromNow15Days){
       sentDay = newDate
     }
     else{
