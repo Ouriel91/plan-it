@@ -129,10 +129,9 @@ const CardItem = ({ plan, deleteEventAction }) => {
               Go to event
             </button>
           </div>
-          <div className="card-footer">
+          <div className="card-footer" style={{borderTop: "1px solid rgb(206, 206, 206)"}} >
             <IconButton
               aria-label="delete"
-              sx={{ "&:hover": { color: "red" } }}
               onClick={() => deleteEventAction(plan.id)}
             >
               <DeleteIcon className="delete-icon" style={{ fontSize: 30 }} />
