@@ -73,7 +73,6 @@ const plansReducer = (state = initialState, action) => {
       };
 
       case actionTypes.DELETE_USER:
-        console.log(action,'delete user');
         return {
           ...state,
           plans: state.plans.map((plan) =>

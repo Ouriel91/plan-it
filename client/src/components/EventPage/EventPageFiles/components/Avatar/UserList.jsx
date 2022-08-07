@@ -21,7 +21,6 @@ const App = ({ addUserAction, eventId, users }) => {
     setEmail("");
     setEventIdUrl("")
     setIsShown(!isShown);
-    console.log(eventId);
   };
 
   function sendEmail(e) {
