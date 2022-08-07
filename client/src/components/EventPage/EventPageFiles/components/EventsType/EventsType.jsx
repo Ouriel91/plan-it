@@ -163,7 +163,7 @@ const EventsType = ({ type, setEventObj, event }) => {
       <section data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='events-type-container-first-img'>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description-event-page'>Sit tight, enjoy a day with your friends and family </p>
         <p data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000" className='description2-event-page'>and let us help you with the arrangments</p>
-        <img width={850} height={500} alt={event.type} src={image}></img>
+        <img width={850} height={500} style={{borderRadius: "30px", boxShadow: "1px 1px 10px 1px black", marginLeft: 250}} alt={event.type} src={image}></img>
       </section>
   
     </>
