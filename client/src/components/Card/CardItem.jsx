@@ -7,8 +7,6 @@ import waze from '../../images/waze.png'
 import IconButton from '@mui/material/IconButton';
 import ShareIcon from '@mui/icons-material/WhatsApp';
 import DeleteIcon from '@mui/icons-material/Delete';
-import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useNavigate } from 'react-router-dom'
 import "./CardItem.css"
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
@@ -78,12 +76,6 @@ const CardItem = ({ plan, deleteEventAction }) => {
   return (
     <div className='card-item-container'>
       <div className="card-item">
-      {/* <div className="card-details-emoji">
-            <IconButton aria-label="emoji">
-              <typeStyle.icon style={{ fontSize: 30, color: 'gray' }} alt={plan.type} />
-            </IconButton>
-            <p>{plan.type}</p>
-          </div> */}
         <div className="card-box">
           <img
             className="card-image"
@@ -93,7 +85,6 @@ const CardItem = ({ plan, deleteEventAction }) => {
             src={typeStyle.image}
             alt={plan.type}
             style={{ objectFit: "cover", borderRadius: "8px 8px 0 0" }} />
-
         </div>
         <div className="card-content">
           <div className="card-navigate" onClick={() => navigate(`/event-page/${plan.id}`)}>
@@ -127,15 +118,13 @@ const CardItem = ({ plan, deleteEventAction }) => {
                 className='whatsapp-icon'>
                 <ShareIcon style={{ fontSize: 30 }} />
               </a>
-            </IconButton>
-           
+            </IconButton>     
               <a
                 href={`https://waze.com/ul?q=${plan.location.replace('', '%20')}&navigate=yes`}
                 target="_blank"
                 rel='noreferrer'>
                 <img className='waze-icon' src={waze} alt="waze" height={35} width={35} />
               </a>
-     
           </div>
         </div>
 

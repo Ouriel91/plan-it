@@ -5,7 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
     max-width: 400px;
-    max-height: 500px;
+    max-height: 600px;
     margin: auto;
     margin-bottom: 100px;
 }
@@ -13,7 +13,7 @@
 .card-item {
     position: relative;
     min-width: 320px;
-    height: 550px;
+    height: 600px;
     box-shadow: 1px 5px 8px 2px rgb(165, 165, 165);
     border-radius: 5px;
     margin: 30px;
