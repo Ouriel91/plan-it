@@ -70,7 +70,7 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
             }}
           />
         </TableCell>
-        <TableCell style={{borderBottom: "none"}}>
+        <TableCell className="quantity-container" style={{borderBottom: "none"}}>
           <TextField
             style={{ width: "200px" }}
             value={quantity}

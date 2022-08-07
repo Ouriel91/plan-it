@@ -1,7 +1,7 @@
 .table-row{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     margin-bottom: 15px;
@@ -62,16 +62,19 @@ input[type='checkbox']:checked {
     height: 20px;
 }
 
+.quantity-container{
+    margin-left: 50px;
+}
+
 .margin-checkbox{
     margin-top: 5px;
-    margin-left: 24px;
-    padding-left: 70px;
-    padding-right: 70px;
+
+    margin-right: 38px;
 }
 
 .margin-autocomplete{
     margin-top: 18px;
-    margin-left: 10px;
+    margin-left: 50px;
 }
 
 .margin-icons{

@@ -5,15 +5,14 @@
     align-items: center;
     flex-wrap: wrap;
     max-width: 400px;
-    max-height: 500px;
     margin: auto;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 .card-item {
     position: relative;
     min-width: 320px;
-    height: 550px;
+    height: 500px;
     box-shadow: 1px 5px 8px 2px rgb(165, 165, 165);
     border-radius: 5px;
     margin: 30px;
@@ -54,7 +53,6 @@
     color: black;
     z-index: 1;
     transition: 0.5s;
-    margin-top: 10px;
     font-family: 'Urbanist', sans-serif;
 }
 
@@ -78,12 +76,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 35px;
-    border-top: 1px solid rgb(209, 209, 209);
+    margin-top: 12px;
+    border-top: 1px solid black;
 }
 
 .card-date, .card-location {
-    padding: 5px;
     font-weight: bold;
     font-size: 18px;
     font-family: 'Urbanist', sans-serif;
@@ -91,7 +88,7 @@
 
 
 .go-to-btn{
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 5px;
     width: 150px;
     border-radius: 5px;
