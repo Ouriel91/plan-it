@@ -154,6 +154,13 @@ input:active:focus {
   color: #fff;
   
 }
+
+.dialog-space{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+}
+
 .btn-info{
   height: 50px;
   display: flex;
@@ -162,6 +169,11 @@ input:active:focus {
   margin: auto;
   font-weight: bolder;
   background-color: #acb58c92;
+  border-color: #acb58c;
+}
+
+.btn-info:hover{
+  background-color: #acb58cc3;
   border-color: #acb58c;
 }
 .fa-trash-alt,

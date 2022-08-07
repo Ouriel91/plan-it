@@ -29,7 +29,6 @@ const Confirm = ({
   const navigateToEventPage = async () => {
     setIsCreateEventClicked(false);
     const plan = await addEventAction(eventObj);
-    console.log("plan",plan);
     navigate(`/event-page/${plan.id.toString()}`);
   };
 

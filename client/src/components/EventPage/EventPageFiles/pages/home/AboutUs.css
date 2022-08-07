@@ -85,6 +85,20 @@ h4 {
   font-size: 24px;
 }
 
+.btn22{
+  border: 1px solid#9fa763;
+  width: 200px;
+  height: 50px;
+  color: #9fa763;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.btn22:hover{
+  background-color: #9fa763c5;
+  transition: 1s ease-out;
+  color: white;
+}
 .section-team .single-person:hover .person-image .icon {
   background: none;
   background-color: #fff;
@@ -128,18 +142,19 @@ h4 {
   }
   
   .opening-sentence-about{
-      font-size: 70px;
+      font-size: 60px;
       font-weight: bold;
-      color: #575757;
+      color: #9fa763;
       text-shadow: 3px 3px 3px #bcbcbc;
       font-family: Arial ,(sans-serif);
   }
   
   .opening2-sentence-about{
-    font-size: 25px;
-    font-weight: bold;
-    color: #808080;
-    font-family: Helvetica ,(sans-serif);
+    color: #b7b7b7;
+    font-family: 'Abel';
+    font-style: normal;
+    margin: auto;
+    font-size: 23px;
   }
   
   .opening-sentence-about-meet{
@@ -149,3 +164,4 @@ h4 {
      margin-bottom: -10;
       font-family: Arial ,(sans-serif);
   }
+

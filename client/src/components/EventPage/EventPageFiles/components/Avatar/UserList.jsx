@@ -51,7 +51,7 @@ const App = ({ addUserAction, eventId, users }) => {
         <div className="child-div">
           <div className="addItems">
             <Dialog open={isShown} onClose={() => setIsShown(false)}>
-              <DialogTitle>Add New User
+              <DialogTitle style={{fontSize: "20px", fontFamily: "Abel", marginTop: "5px"}} className="dialog-space">Add New User
               <IconButton onClick={() => setIsShown(false)}>
             <CloseIcon />
           </IconButton>

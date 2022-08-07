@@ -5,7 +5,6 @@ import "./NewItemInput.css"
 const NewItemInput = ({ event, addItemAction }) => {
   const [state, setState] = useState({
     itemName: "",
-    quantity: "",
   });
 
   const handleInputValue = (e) => {
@@ -20,12 +19,12 @@ const NewItemInput = ({ event, addItemAction }) => {
   const handlePressClick = async () => {
     if(state.itemName === ""){
       alert("Please fill in all fields")
+      return
     }
     try {
       await addItemAction(state, event.id);
       setState({
         itemName: "",
-        quantity: "",
       });
     } catch (err) {
       throw new Error(err);
@@ -39,7 +38,7 @@ const NewItemInput = ({ event, addItemAction }) => {
           className="input-table"
           id="taskInput"
           type="text"
-          placeholder="What to bring"
+          placeholder="Add an item to the table"
           value={state.itemName}
           name="itemName"
           onChange={handleInputValue}
