@@ -3,9 +3,7 @@ import "./userList.css";
 import emailjs from "emailjs-com";
 import IconButton from "@material-ui/core/IconButton";
 import Dialog from "@material-ui/core/Dialog";
-import Button from "@mui/material/Button";
 import CloseIcon from "@material-ui/icons/Close";
-import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import UserConnector from "./User/UserConnector";
@@ -16,9 +14,6 @@ const App = ({ addUserAction, eventId, users }) => {
   const [email, setEmail] = useState("");
   const [eventIdUrl,setEventIdUrl] = useState(eventId.toString())
   const [initials, setInitials] = useState("");
-
-
-
 
   const handleClickAdd = () => {
     addUserAction(data, email, eventId);

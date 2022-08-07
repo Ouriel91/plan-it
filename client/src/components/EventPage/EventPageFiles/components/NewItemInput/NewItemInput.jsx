@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Button } from "monday-ui-react-core";
 import "monday-ui-react-core/dist/main.css";
 import "./NewItemInput.css"
 

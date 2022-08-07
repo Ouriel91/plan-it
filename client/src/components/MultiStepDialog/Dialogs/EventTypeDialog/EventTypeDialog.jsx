@@ -1,6 +1,5 @@
 import { useState } from "react";
 import FormControl from "@mui/material/FormControl";
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@mui/material/Select';
 import Dialog from '@material-ui/core/Dialog'
@@ -51,7 +50,6 @@ const EventTypeDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style }
     >
       <DialogTitle>
         <Grid container justifyContent="space-between" alignItems="center">
-          {/* <img src={app_logo} alt="logo" height={100} width={100}></img> */}
           <Typography style={{ color: '#9da275ce', fontFamily: 'Playfair Display', fontSize: '35px', fontWeight: "600" }}>Choose event type</Typography>
           <IconButton onClick={closeDialog}>
             <CloseIcon />

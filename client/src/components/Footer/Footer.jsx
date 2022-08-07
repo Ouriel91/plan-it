@@ -1,5 +1,5 @@
 import React from 'react';
-import { CDBFooter, CDBBtn, CDBIcon, CDBBox } from 'cdbreact';
+import { CDBFooter, CDBIcon, CDBBox } from 'cdbreact';
 import "./Footer.css"
 import logo from "../../images/app-logo.png"
 

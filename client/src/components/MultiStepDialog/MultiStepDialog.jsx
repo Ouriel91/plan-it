@@ -3,8 +3,6 @@ import DatesDialog from "./Dialogs/DatesDialog/DatesDialog";
 import EventTypeDialog from "./Dialogs/EventTypeDialog/EventTypeDialog";
 import LocationDialog from "./Dialogs/LocationDialog/LocationDialog";
 import ConfirmDialogConnector from "./Dialogs/ConfirmDialog/ConfirmDialogConnector";
-
-
 import { useState } from "react";
 
 const MultiStepDialog = ({setIsCreateEventClicked}) => {

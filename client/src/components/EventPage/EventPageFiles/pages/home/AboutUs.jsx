@@ -1,4 +1,3 @@
-import { Button } from 'bootstrap';
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 import yuliaImg from "./img-members/yulia.png"
@@ -7,8 +6,6 @@ import ourielImg from "./img-members/ouriel.jpg"
 import AboutUsNavbar from './AboutUsNavbar/AboutUsNavbar';
 import "./AboutUs.css";
 import Footer from '../../../../Footer/Footer';
-
-
 
 const AboutUs = (event, user) =>
     {
@@ -93,15 +90,11 @@ const AboutUs = (event, user) =>
                         <h3 className="full-name">Ori Hassid</h3>
                         <span className="speciality">Redux Beast And Perfect Crew Member</span>
                       </div>
-                    </div>
-                    
-                  </div>
-                  
-                </div>
-                
+                    </div>            
+                  </div>           
+                </div>               
               </div>
-              
-             
+            
               <button onClick={handleBackHomeClick} type="button" class="btn btn-outline-success">Home</button>
              <Footer/>
             </div>

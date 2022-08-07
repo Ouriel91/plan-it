@@ -3,8 +3,6 @@ import { bindActionCreators } from "redux";
 import{addItemAction}  from "../../../../../redux/actions/plansActions"
 import NewItemInput from "./NewItemInput";
 
-
-
 const mapStateToProps = (state, ownProps) => {
 
   return { };

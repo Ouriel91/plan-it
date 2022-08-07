@@ -3,7 +3,6 @@ import { bindActionCreators } from "redux";
 import  Logout from "./Logout";
 import { logoutAction } from "../../redux/actions/plansActions"
 
-
 const mapStateToProps = (state, ownProps) => {
   return {}
 };

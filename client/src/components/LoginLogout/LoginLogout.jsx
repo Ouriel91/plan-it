@@ -2,8 +2,6 @@ import {useEffect, useState} from 'react'
 import { gapi } from "gapi-script";
 import LoginConnector from './LoginConnector'
 import LogoutConnector from './LogoutConnector'
-import Logout from './Logout'
-
 
 const clientId = '149435838456-4offmbhjtl0jlsoejmhnmdrrfsajgaah.apps.googleusercontent.com'
 

@@ -3,7 +3,6 @@ import { bindActionCreators } from "redux";
 import Home from "./Home";
 import { fetchPlansWithItemsAction } from "../../../../../redux/actions/plansActions"
 
-
 const mapStateToProps = (state, ownProps) => {
  
   const eventId = parseInt(ownProps.paramId)

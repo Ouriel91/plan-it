@@ -1,14 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import "./EventsType.scss";
 import "../../pages/home/Home";
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
 import { Table } from "@material-ui/core";
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import bbq_img from '../../../../../images/bbq.jpg'
@@ -25,7 +18,6 @@ import ItemListConnector from '../ItemList/ItemListConnector';
 import clock_gif from '../../../../../images/clock2.gif'
 import UserListConnector from '../Avatar/UserListConnector';
 import pencil from '../../../../../images/pencil.gif'
-import left_arrow from '../../../../../images/left_arrow.gif'
 
 const EventsType = ({ type, setEventObj, event }) => {
   const [expanded, setExpanded] = useState(false);
