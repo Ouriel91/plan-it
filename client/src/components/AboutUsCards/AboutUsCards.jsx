@@ -33,10 +33,10 @@ function AboutUsCards() {
         <div data-aos="zoom-in-down" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-delay="1200" data-aos-duration="1000" className='col-11 col-md-3 col-lg-3 mx-0 mb-4'>
           <div className="card text-center" style={{backgroundColor: "#fffdecc1"}}>
             <div className="card-header" style={{color: "#aaba76c6"}}>
-              Cool Spots
+              Weather Forecast
             </div>
             <div className="card-body">
-              <p className="card-text">Our application gives you a list of places to choose from, <br /> for you and your friends, based on the event type you picked.</p>
+              <p className="card-text">The perfect gathering needs the perfect weather. <br /> Check the average temperature with a click of a button, to make sure it's just the way you expected it to be. </p>
             </div>
           </div>
         </div>

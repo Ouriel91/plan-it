@@ -75,7 +75,7 @@ const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, e
                         style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce' }}
                         className='btn'
                         onClick={handleNextButton}>
-                        <Typography style={{ fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize" }}>Next</Typography>
+                        <Typography style={{ fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize" }}>Create Plan</Typography>
                     </Button>
                 </div>
             </Dialog>

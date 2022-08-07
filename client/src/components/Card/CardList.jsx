@@ -20,7 +20,6 @@ function CardList({ fetchPlansWithItemsAction, deleteEventAction, plans, event, 
         : ( 
             
             
-            
             <div style={{ marginLeft: '30px' }}>
             
                 <Box sx={{ flexGrow: 1 }}>

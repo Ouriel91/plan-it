@@ -1,10 +1,8 @@
 import axios from "axios";
 
-
-
 export const fetchPlans = async () => {
   let data;
-  await axios.get('/plan').then((res) => {
+  await axios.get('http://localhost:8083/plan').then((res) => {
     data = res.data;
   });
 
@@ -20,7 +18,7 @@ export const postPlan = async (plan) => {
   };
   const response = await axios({
     method: "post",
-    url: "/plan",
+    url: "http://localhost:8083/plan",
     headers: { "Content-Type": "application/json" },
     data: {
       postedPlan,
@@ -32,7 +30,7 @@ export const postPlan = async (plan) => {
 export const deletePlan = async (id) => {
   const removedItem = await axios({
     method: "delete",
-    url: `/plan/${id}`,
+    url: `http://localhost:8083/plan/${id}`,
   });
 
   return removedItem;
@@ -41,7 +39,7 @@ export const deletePlan = async (id) => {
 export const editPlan = async (id, plan) => {
   const editeddItem = await axios({
     method: "put",
-    url: `/plan/${id}`,
+    url: `http://localhost:8083/plan/${id}`,
     headers: { "Content-Type": "application/json" },
     data: {
       plan,
@@ -56,12 +54,11 @@ export const editPlan = async (id, plan) => {
 export const postItem = async (item, eventId) => {
   const postedItem = {
     itemName: item.itemName,
-    quantity: item.quantity,
     eventId: eventId,
   };
   const response = await axios({
     method: "post",
-    url: `/plan/event-page/${eventId}/items`,
+    url: `http://localhost:8083/plan/event-page/${eventId}/items`,
     headers: { "Content-Type": "application/json" },
     data: {
       postedItem,
@@ -80,7 +77,7 @@ export const itemToEdit = async (item, itemId, eventId) => {
   };
   const response = await axios({
     method: "put",
-    url: `/plan/event-page/${eventId}/items`,
+    url: `http://localhost:8083/plan/event-page/${eventId}/items`,
     headers: { "Content-Type": "application/json" },
     data: {
       editItem,
@@ -92,7 +89,7 @@ export const itemToEdit = async (item, itemId, eventId) => {
 export const deleteItem = async (itemId, eventId) => {
   const removedItem = await axios({
     method: "delete",
-    url: `/plan/event-page/${eventId}/items`,
+    url: `http://localhost:8083/plan/event-page/${eventId}/items`,
     data: { itemId },
   });
 
@@ -102,7 +99,7 @@ export const fetchPlansWithItems = async () => {
 
   const response = await axios({
     method: "get",
-    url: `/plan/events`,
+    url: `http://localhost:8083/plan/events`,
   });
   return response.data;
 };
@@ -116,7 +113,7 @@ export const postUser = async (fullName, email, eventId) => {
 
   const response = await axios({
     method: "post",
-    url: `/plan/event-page/${eventId}/users`,
+    url: `http://localhost:8083/plan/event-page/${eventId}/users`,
     headers: { "Content-Type": "application/json" },
     data: {
       user,
@@ -130,7 +127,7 @@ export const userDeleting = async (userId,eventId) => {
   
   const response = await axios({
     method: "delete",
-    url: `/plan/event-page/${eventId}/users`,
+    url: `http://localhost:8083/plan/event-page/${eventId}/users`,
     headers: { "Content-Type": "application/json" },
     data: {
       userId,

@@ -61,7 +61,7 @@
 .title2{
   text-align: center;
   margin: auto;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
   font-family: 'Abel';
   padding-top: 30px;
@@ -70,11 +70,11 @@
 }
 
 .description{
-  color: #b7b7b7;
+  color: #636363;
   font-family: 'Abel';
   font-style: normal;
   margin: auto;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .timer-container {
@@ -146,17 +146,21 @@
 .description-event-page{
   position: absolute;
   top: 270px;
-  left: 10px;
-  font-size: 28px;
-  color: rgb(167, 167, 167);
+  left: 70px;
+  font-size: 30px;
+  color: #ffffff;
+  text-shadow: 1px 2px 5px black;
+  font-family: 'Urbanist', sans-serif;
 }
 
 .description2-event-page{
   position: absolute;
   top: 305px;
-  left: 86px;
-  font-size: 28px;
-  color: rgb(167, 167, 167);
+  left: 136px;
+  color: #ffffff;
+  text-shadow: 1px 2px 5px black;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 27px;
 }
 
 .head-section {
