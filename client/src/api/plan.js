@@ -30,7 +30,7 @@ export const postPlan = async (plan) => {
 export const deletePlan = async (id) => {
   const removedItem = await axios({
     method: "delete",
-    url: `${url}${id}`,
+    url: `${url}/${id}`,
   });
 
   return removedItem;
