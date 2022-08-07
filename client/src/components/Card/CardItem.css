@@ -81,12 +81,17 @@
     margin-top: 12px;
 }
 
-.card-date, .card-location {
+.card-date {
     font-weight: bold;
     font-size: 18px;
     font-family: 'Urbanist', sans-serif;
 }
 
+.card-location{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Assistant', sans-serif;
+}
 
 .go-to-btn{
     margin-top: 5px;
