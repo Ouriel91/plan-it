@@ -20,16 +20,16 @@ const Footer = () => {
               width="50px"
               height={50}
             />
-            <span className="ml-4 h5 mb-0 font-weight-bold">Plan it.</span>
+            <span className="ml-4 h2 mb-0 font-weight-bold">Plan it.</span>
           </a>
         </CDBBox>
         <CDBBox>
           <small className="ml-2">&copy; Plan it. 2022. All rights reserved.</small>
         </CDBBox>
         <CDBBox display="flex">
-            <CDBIcon fab size="lg" icon="facebook" />
-            <CDBIcon fab size="lg" icon="whatsapp mx-3" />
-            <CDBIcon fab size="lg" icon="instagram" />
+            <CDBIcon fab size="md" icon="facebook" />
+            <CDBIcon fab size="md" icon="whatsapp mx-3" />
+            <CDBIcon fab size="md" icon="instagram" />
         </CDBBox>
       </CDBBox>
     </CDBFooter>

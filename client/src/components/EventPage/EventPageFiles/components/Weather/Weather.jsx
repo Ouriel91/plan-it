@@ -65,7 +65,7 @@ const Weather = ({lng, lat, location, date}) => {
   },[lat, lng])
   
   return (
-    <div className='weather' style={{width: '23%'}}>
+    <div className='weather' style={{width: '23%', height: "200px"}}>
     <ReactWeather
       isLoading={false}
       errorMessage={null}
