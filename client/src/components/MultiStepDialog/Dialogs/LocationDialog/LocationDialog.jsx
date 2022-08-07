@@ -8,18 +8,24 @@ import CloseIcon from "@material-ui/icons/Close";
 import { useLoadScript } from "@react-google-maps/api";
 import Map from './Map';
 import loading_gif from '../../../../images/loading_gif.gif'
+import {useNavigate} from 'react-router-dom'
 
 const libraries = ["places"]
 
-const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, eventObj }) => {
+const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, eventObj,addEventAction,setIsCreateEventClicked }) => {
 
-    const handleNextButton = (e) => {
+    const navigate = useNavigate();
+
+    const handleNextButton = async (e) => {
         e.preventDefault();
         if (eventObj.location === "") {
             alert("Location can not be empty")
             return
         }
-        nextStep();
+
+    setIsCreateEventClicked(false);
+    const plan = await addEventAction(eventObj);
+    navigate(`/event-page/${plan.id.toString()}`);
     };
 
     const handlePrevButton = (e) => {

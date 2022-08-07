@@ -9,6 +9,7 @@ import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import "./ItemRow.css";
 
 const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
+  console.log(users,'autocomplete')
   const [itemName, setItemName] = useState(item.itemName);
   const [quantity, setQuantity] = useState(item.quantity);
   const [bringName, setBringName] = useState(item.bringName);
@@ -95,11 +96,11 @@ const ItemRow = ({ item, saveItemAction, deleteItemAction, users }) => {
           <Autocomplete
             style={{ width: "200px", fontSize: "25px" }}
             variant="standard"
-            options={users.map((users) => users.fullName)}
+            options={users.map((user) => user.fullName)}
             value={bringName}
             readOnly={!isEditClicked}
             onChange={handleBringNameChange}
-            renderInput={(params) => <TextField {...params} InputProps={{ style: { fontSize: 22, fontFamily: "Abel", fontStyle: "normal" } }} />}
+            renderInput={(params) => <TextField {...params} InputProps={{...params.InputProps ,...{ style: { fontSize: 22, fontFamily: "Abel", fontStyle: "normal" } }}} />}
           
           />
         </div>

@@ -28,6 +28,7 @@ const User = ({ user, deleteUserAction }) => {
           key={user.id}
           textColor="white"
           size="xl"
+          css={{ size: "$20" }}
           pointer
           text={user.fullName}
           onClick={handleAvatarClick}

@@ -1,9 +1,9 @@
 import EventNameDialog from "./Dialogs/EventNameDialog/EventNameDialog";
 import DatesDialog from "./Dialogs/DatesDialog/DatesDialog";
 import EventTypeDialog from "./Dialogs/EventTypeDialog/EventTypeDialog";
-import LocationDialog from "./Dialogs/LocationDialog/LocationDialog";
 import ConfirmDialogConnector from "./Dialogs/ConfirmDialog/ConfirmDialogConnector";
 import { useState } from "react";
+import LocationDialogConnector from "./Dialogs/LocationDialog/LocationDialogConnector";
 
 const MultiStepDialog = ({setIsCreateEventClicked}) => {
   
@@ -68,13 +68,14 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
       ); 
     case 4:
       return (
-        <LocationDialog
+        <LocationDialogConnector
           nextStep={nextStep}
           prevStep={prevStep}
           setEventObj={setEventObj}
           closeDialog={closeDialog}
           style={style}
           eventObj={eventObj}
+          setIsCreateEventClicked={setIsCreateEventClicked}
         />
       )
 

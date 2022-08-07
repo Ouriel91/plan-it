@@ -15,6 +15,8 @@
   html {
     font-size: 62.5%;
   }
+
+
   .btn-info {
     font-size: 4rem;
     margin-bottom: 20px;
@@ -124,8 +126,8 @@
     text-align: center;
   }
   .my-button {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
     border: none;
     border-radius: 100px;
     outline: none;
@@ -251,3 +253,9 @@
     transform: translateY(0) scale(1, 1);
   }
   
+  .todo-row{
+    font-size: 2rem;
+  }
+ .nextui-avatar-text{
+    font-size: 2rem;
+ }
