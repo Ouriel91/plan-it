@@ -25,6 +25,9 @@ const CardNavbar = ({ event, user }) => {
               Friends, Plan, Travel
             </p>
           </div>
+          <div className="centered-title-container-card">
+            <p className="centered-title-card">My Events</p>
+          </div>
         </div>
         <div >
           <a href="/" className="my-events22-card-home">Home</a>
