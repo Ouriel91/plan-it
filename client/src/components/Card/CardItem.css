@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display:wght@400;500;700&family=Poiret+One&family=Urbanist&display=swap');
+
 .card-item-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     max-width: 400px;
+    max-height: 600px;
     margin: auto;
     margin-bottom: 30px;
     margin-top: 100px;
@@ -13,7 +15,7 @@
 .card-item {
     position: relative;
     min-width: 320px;
-    height: 500px;
+    height: 600px;
     box-shadow: 1px 5px 8px 2px rgb(165, 165, 165);
     border-radius: 5px;
     margin: 30px;
