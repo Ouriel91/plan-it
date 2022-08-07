@@ -3,9 +3,7 @@ import { bindActionCreators } from "redux";
 import  AppContainer from "./AppContainer";
 import { fetchPlansWithItemsAction } from "../../redux/actions/plansActions"
 
-
 const mapStateToProps = (state, ownProps) => {
- 
   return {  };
 };
 

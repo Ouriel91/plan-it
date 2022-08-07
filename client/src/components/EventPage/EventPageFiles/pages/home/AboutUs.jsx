@@ -7,8 +7,6 @@ import AboutUsNavbar from './AboutUsNavbar/AboutUsNavbar';
 import "./AboutUs.css";
 import Footer from '../../../../Footer/Footer';
 
-
-
 const AboutUs = (event, user) =>
     {
         const navigate = useNavigate();
@@ -92,12 +90,9 @@ const AboutUs = (event, user) =>
                         <h3 className="full-name">Ori Hassid</h3>
                         <span className="speciality">Redux beast and a perfect crew member</span>
                       </div>
-                    </div>
-                    
-                  </div>
-                  
-                </div>
-                
+                    </div>            
+                  </div>           
+                </div>               
               </div>
               
              

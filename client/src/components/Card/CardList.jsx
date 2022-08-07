@@ -2,13 +2,9 @@ import { useEffect } from 'react'
 import CardItem from '../Card/CardItem'
 import Box from '@mui/material/Box'
 import Grid from "@mui/material/Grid";
-import { Link } from "react-router-dom";
-import logo from "../../images/my-events-logo.jpg"
 import "../EventPage/EventPageFiles/components/navbar/navbar.scss";
 
 function CardList({ fetchPlansWithItemsAction, deleteEventAction, plans, event, user }) {
-
-    console.log("plans", plans)
 
     useEffect(() => {
         fetchPlansWithItemsAction()
@@ -29,31 +25,8 @@ function CardList({ fetchPlansWithItemsAction, deleteEventAction, plans, event, 
 
     return (
         <div>
-            {/* <div className="navbar-event">
-                <div className="wrapper-event">
-                    <div className="logo-container">
-                        <Link to="/">
-                            <img src={logo} alt="Plan it." height={90} width={90} />
-                        </Link>
-                        <div className="navbar-title" >
-                            <p className="title22" >Plan it.</p>
-                            <p className="navbar-sub-title">
-                                Friends, Plan, Travel
-                            </p>
-                        </div>
-
-                        <div className="centered-title-container">
-                            <p className="centered-title">{event.headline}</p>
-                        </div>
-                    </div>
-                    <div >
-                        {/* <Link to="/my-events" className="my-events22">My Events</Link>
-            <img className="user-image" src={image} alt={user.name} /> */}
-                    {/* </div>
-                </div>
-            </div> */} 
             {renderings}
-            </div>
+        </div>
     )
 }
 

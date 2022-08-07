@@ -60,7 +60,6 @@ input[type='checkbox'] {
 input[type='checkbox']:checked {
     width: 20px;
     height: 20px;
-    
 }
 
 .margin-checkbox{

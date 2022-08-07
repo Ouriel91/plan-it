@@ -1,7 +1,5 @@
 import axios from "axios";
 
-
-
 export const fetchPlans = async () => {
   let data;
   await axios.get('http://localhost:8083/plan').then((res) => {
@@ -56,7 +54,6 @@ export const editPlan = async (id, plan) => {
 export const postItem = async (item, eventId) => {
   const postedItem = {
     itemName: item.itemName,
-    quantity: item.quantity,
     eventId: eventId,
   };
   const response = await axios({

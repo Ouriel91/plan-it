@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display&display=swap');
  
-
 .createplan {
   width: 400px;
   height: 60px;
@@ -30,12 +29,6 @@
   font-size:30px;
   color: white;
 }
-
-/* .title-event{
-    margin-top: -40px;
-    margin-bottom: 60px;
-} */
-
  
 .container {
     width: 400px;
@@ -47,20 +40,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  .center {
-    width: 180px;
-    height: 60px;
-    position: absolute;
-  }
-  
+.center {
+  width: 180px;
+  height: 60px;
+  position: absolute;
+}
 
-  .btn span {
-    color: white;
-    font-size: 18px;
-    font-weight: 100;
-  } 
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+} 
 
 .my-events{
     font-size: 2rem;

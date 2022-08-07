@@ -73,7 +73,7 @@ const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, e
                     </Button>
                 </div>
             </Dialog>
-            =        </>
+           </>
     );
 }
 

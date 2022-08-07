@@ -11,9 +11,7 @@ const Navbar = ({ event, user }) => {
     const realoadImage = user.image === '' ? defaultUser : user.image 
     setImage(realoadImage)
   },[user.image])
-  console.log("user",user);
   
-
   return (
     <div className="navbar-event">
       <div className="wrapper-event">

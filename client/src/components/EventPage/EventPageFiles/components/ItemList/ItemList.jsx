@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ItemList.css";
-
-
-
 import ItemRowConnector from "./ItemRow/ItemRowConnector";
 
-
 function ItemList({ items }) {
-
 
   return (
     <>
@@ -21,9 +16,7 @@ function ItemList({ items }) {
         {items.map((item) => {
           return <ItemRowConnector item={item} key={item.id} />;
         })}
-
     </>
-
   );
 }
 

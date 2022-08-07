@@ -103,7 +103,7 @@ const Confirm = ({
             </Button>
             <Button
               color="secondary"
-              style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px' }}
+              style={{ height: "40px", width: "120px", backgroundColor: '#98a153ce', fontFamily: 'Playfair Display', letterSpacing: '2px'}}
               variant="contained"
               onClick={navigateToEventPage}
             >Confirm

@@ -3,12 +3,9 @@ import { bindActionCreators } from "redux";
 import{addUserAction,deleteUserAction}  from "../../../../../redux/actions/plansActions"
 import UserList from "./UserList";
 
-
-
 const mapStateToProps = (state, ownProps) => {
-const eventId = ownProps.eventId;
-const users = state.plansReducer.plans.find((plan)=>plan.id ===eventId).eventUsers;
-console.log(users,'avatar');
+  const eventId = ownProps.eventId;
+  const users = state.plansReducer.plans.find((plan)=>plan.id ===eventId).eventUsers;
   return {users};
 };
 

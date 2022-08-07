@@ -6,12 +6,8 @@ import Location from "../../components/Location/Location";
 import {useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import Footer from "../../../../Footer/Footer";
-import {useParams} from 'react-router-dom'
 import location_gif from '../../../../../images/location.gif'
 import loading_gif from '../../../../../images/loading_gif.gif'
-
-// import ImgUploader from "../../components/ImgUploader/ImgUploader,";
-// import UserList from "../../components/UserCard/UserList";
 
 const Home = ({event, user}) => {
   const [lat, setLat] = useState(0.0)

@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import ReactWeather, {useOpenWeather} from 'react-open-weather';
+import ReactWeather from 'react-open-weather';
 
 const Weather = ({lng, lat, location, date}) => {
   const [data, setData] = useState(
@@ -17,27 +17,19 @@ const Weather = ({lng, lat, location, date}) => {
 
   const getFutureWeather = async (lat, lng, date) => {
 
-    const givenDate = new Date(date)
-    //console.log("givenDate", givenDate.getTime());
-    
+    const givenDate = new Date(date)    
     let currentTime = new Date();
-    //console.log("currentTime", new Date().setDate(currentTime.getDate()))
 
-    const fromNow14Days = currentTime.setDate(currentTime.getDate()+14)
-    //console.log("14 days from now", fromNow14Days)
-
-    const newDate  = new Date(fromNow14Days).toISOString().slice(0,10)
-    //console.log("newDate", newDate);
+    const fromNow15Days = currentTime.setDate(currentTime.getDate()+15) //give 15 from now to make sure cover all api options (14-300 days)
+    const newDate  = new Date(fromNow15Days).toISOString().slice(0,10)
 
     let sentDay
-    if(givenDate < fromNow14Days){
+    if(givenDate < fromNow15Days){
       sentDay = newDate
     }
     else{
       sentDay = date
     }
-
-    //console.log("sentDay",sentDay)
     
     const req = await fetch(`http://api.weatherapi.com/v1/future.json?key=${process.env.REACT_APP_WEATHER_API_14_DAYS}&q=${lat},${lng}&dt=${sentDay}`)
     const res = await req.json()

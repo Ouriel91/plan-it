@@ -23,8 +23,6 @@ function App() {
           <Route path="/my-events" element={<CardListConnector />} />
           <Route path="/login-logout" element={<LoginLogout />} />
           <Route path="/about-us" element={<AboutUs />} />
-          
-          {/* <Route index element={<Footer />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

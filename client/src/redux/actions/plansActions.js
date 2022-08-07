@@ -129,7 +129,6 @@ const deleteUser = (userId, eventId) => ({
 });
 
 export const deleteUserAction = (userId, eventId) => {
-  console.log(userId, eventId,'deleteUserAction')
   return async (dispatch) => {
     await userDeleting(userId,eventId);
     dispatch(deleteUser(userId, eventId));

@@ -10,9 +10,7 @@ const AboutUsNavbar = ({ event, user }) => {
   useEffect(() => {
     const realoadImage = user.image === '' ? defaultUser : user.image 
     setImage(realoadImage)
-  },[user.image])
-  console.log("user",user);
-  
+  },[user.image])  
 
   return (
     <div className="navbar-event-about">
@@ -27,17 +25,11 @@ const AboutUsNavbar = ({ event, user }) => {
               Friends, Plan, Travel
             </p>
           </div>
-
-          {/* <div className="centered-title-container-about">
-            <p className="centered-title-about">{event.headline}</p>
-          </div> */}
         </div>
+
         <div >
           <a href="/" className="my-events22-about-home">Home</a>
-          <a href="/my-events" className="my-events22-about">My Events</a>
-          
-          
-          
+          <a href="/my-events" className="my-events22-about">My Events</a>    
         </div>
       </div>
     </div>

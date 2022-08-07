@@ -4,7 +4,6 @@ import usePlacesAutocomplete, {
 } from "use-places-autocomplete";
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import Typography from "@material-ui/core/Typography";
 
 const PlacesAutocomplete = ({ setSelected, setEventObj }) => {
     const {

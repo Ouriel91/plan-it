@@ -43,10 +43,8 @@ const LandingPage = () => {
       <nav className='navbar'>
         <div className='navbar-container'>
           <video src={video_logo} autoPlay loop muted></video>
-          {/* <img src={app_logo} alt="Plan_It" height="60px" width="60px"></img> */}
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             Plan it.
-            {/* <i className='fab fa-typo3' /> */}
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

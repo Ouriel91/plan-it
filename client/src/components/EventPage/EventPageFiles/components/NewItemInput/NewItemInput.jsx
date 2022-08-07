@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { Button } from "monday-ui-react-core";
 import "monday-ui-react-core/dist/main.css";
 import "./NewItemInput.css"
 
 const NewItemInput = ({ event, addItemAction }) => {
   const [state, setState] = useState({
     itemName: "",
-    quantity: "",
   });
 
   const handleInputValue = (e) => {
@@ -27,7 +25,6 @@ const NewItemInput = ({ event, addItemAction }) => {
       await addItemAction(state, event.id);
       setState({
         itemName: "",
-        quantity: "",
       });
     } catch (err) {
       throw new Error(err);

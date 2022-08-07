@@ -42,7 +42,7 @@ async function addPlan(plan) {
   const userAdmin = [
     {
       eventId: event[0].id,
-      fullName: "Admin",
+      fullName: "You",
       email: "admin@gmail.com",
       isAdmin: true,
     },
@@ -159,6 +159,7 @@ const getEventPageById = async (id) => {
 
 const itemAdding = async (newItem) => {
   newItem.status = false;
+  newItem.quantity = 0
   const { itemName, quantity, status, eventId } = newItem;
   await Item.create({ itemName, quantity, status, eventId });
   const item = await Item.findAll({
