@@ -102,6 +102,12 @@ const CardItem = ({ plan, deleteEventAction }) => {
           >
             <p className="card-title">{plan.headline}</p>
           </div>
+          <div className="card-details-emoji">
+            <IconButton aria-label="emoji">
+              <typeStyle.icon style={{ fontSize: 30, color: 'gray' }} alt={plan.type} />
+            </IconButton>
+            <p>{plan.type}</p>
+          </div>
           <div className="card-details">
             <IconButton aria-label="calendar">
               <CalendarMonthOutlinedIcon style={{ fontSize: 30 }} />
@@ -132,7 +138,7 @@ const CardItem = ({ plan, deleteEventAction }) => {
               <DeleteIcon className="delete-icon" style={{ fontSize: 30 }} />
             </IconButton>
             <IconButton aria-label="share">
-              {/* send in the future link to heroku event */}
+      
               <a
                 href={`https://web.whatsapp.com/send?text=${text}`}
                 rel="nofollow noopener noreferrer"

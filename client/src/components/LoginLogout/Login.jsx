@@ -4,7 +4,7 @@ import './LoginLogout.css'
 function Login({clientId, setIsLoggedIn, loginAction}) {
 
     const onSuccess = (res) => {
-        console.log(res)
+    
         setIsLoggedIn(true)
         loginAction({
             name: res.profileObj.givenName + " " + res.profileObj.familyName,
