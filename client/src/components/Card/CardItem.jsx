@@ -106,7 +106,7 @@ const CardItem = ({ plan, deleteEventAction }) => {
             <IconButton aria-label="emoji">
               <typeStyle.icon style={{ fontSize: 30, color: 'gray' }} alt={plan.type} />
             </IconButton>
-            <p>{plan.type}</p>
+            <p className="card-details-emoji2">{plan.type}</p>
           </div>
           <div className="card-details">
             <IconButton aria-label="calendar">

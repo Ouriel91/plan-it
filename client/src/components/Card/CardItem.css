@@ -14,7 +14,7 @@
 .card-item {
     position: relative;
     min-width: 320px;
-    height: 500px;
+    height: 550px;
     box-shadow: 1px 5px 8px 2px rgb(165, 165, 165);
     border-radius: 5px;
     margin: 30px;
@@ -42,7 +42,12 @@
 .card-content {
     text-align: center;
     padding: 10px;
+}
 
+.card-details-emoji{
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Urbanist', sans-serif;
 }
 
 .card-navigate {
@@ -50,12 +55,13 @@
 }
 
 .card-title {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     color: black;
     z-index: 1;
     transition: 0.5s;
     font-family: 'Urbanist', sans-serif;
+    text-shadow: 2px 2px rgb(173, 173, 173);
 }
 
 .card-image {
@@ -74,6 +80,7 @@
     justify-content: center;
 }
 
+
 .card-footer{
     display: flex;
     align-items: center;
@@ -81,16 +88,24 @@
     margin-top: 12px;
 }
 
+.card-details-emoji2{
+    font-size: 18px;
+    font-family: 'Urbanist', sans-serif;
+    color: grey;
+}
+
 .card-date {
     font-weight: bold;
     font-size: 18px;
     font-family: 'Urbanist', sans-serif;
+    color: grey;
 }
 
 .card-location{
     font-weight: bold;
     font-size: 18px;
     font-family: 'Assistant', sans-serif;
+    color: grey;
 }
 
 .go-to-btn{
