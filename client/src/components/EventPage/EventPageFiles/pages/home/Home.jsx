@@ -7,7 +7,7 @@ import {useState} from "react";
 import Weather from "../../components/Weather/Weather";
 import Footer from "../../../../Footer/Footer";
 import location_gif from '../../../../../images/location.gif'
-import loading_gif from '../../../../../images/loading_gif.gif'
+import loading_gif from '../../../../../images/loading3.gif'
 
 const Home = ({event, user}) => {
   const [lat, setLat] = useState(0.0)

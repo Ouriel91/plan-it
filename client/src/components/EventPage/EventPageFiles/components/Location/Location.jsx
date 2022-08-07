@@ -1,7 +1,7 @@
 import { GoogleMap, MarkerF } from "@react-google-maps/api";
 import { useLoadScript } from "@react-google-maps/api";
 import './Location.css'
-import loading_gif from '../../../../../images/loading_gif.gif'
+import loading_gif from '../../../../../images/loading3.gif'
 function Location({lat, lng}) {
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY

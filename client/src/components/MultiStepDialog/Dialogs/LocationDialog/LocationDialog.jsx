@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import { useLoadScript } from "@react-google-maps/api";
 import Map from './Map';
-import loading_gif from '../../../../images/loading_gif.gif'
+import loading_gif from '../../../../images/loading3.gif'
 import {useNavigate} from 'react-router-dom'
 
 const libraries = ["places"]
@@ -75,7 +75,7 @@ const LocationDialog = ({ nextStep, prevStep, setEventObj, closeDialog, style, e
                         style={{ height: "40px", width: "100px", backgroundColor: '#98a153ce' }}
                         className='btn'
                         onClick={handleNextButton}>
-                        <Typography style={{ fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize" }}>Create Plan</Typography>
+                        <Typography style={{ fontFamily: 'Playfair Display', fontSize: '20px', letterSpacing: 2, textTransform: "capitalize" }}>Create</Typography>
                     </Button>
                 </div>
             </Dialog>
