@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display:wght@400;500;700&family=Poiret+One&family=Urbanist&display=swap');
+
 .card-item-container{
     display: flex;
     justify-content: center;
@@ -7,7 +8,7 @@
     max-width: 400px;
     max-height: 600px;
     margin: auto;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 .card-item {
@@ -54,7 +55,6 @@
     color: black;
     z-index: 1;
     transition: 0.5s;
-    margin-top: 10px;
     font-family: 'Urbanist', sans-serif;
 }
 
@@ -78,12 +78,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 35px;
-    border-top: 1px solid rgb(209, 209, 209);
+    margin-top: 12px;
+    border-top: 1px solid black;
 }
 
 .card-date, .card-location {
-    padding: 5px;
     font-weight: bold;
     font-size: 18px;
     font-family: 'Urbanist', sans-serif;
@@ -91,7 +90,7 @@
 
 
 .go-to-btn{
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 5px;
     width: 150px;
     border-radius: 5px;

@@ -16,7 +16,7 @@ function CardList({ fetchPlansWithItemsAction, deleteEventAction, plans, event, 
     const renderings = plans.length === 0 ?       
             <h1>Have no Events yet? 😪, create a new one 😉</h1>  
         : ( 
-            <div style={{ marginLeft: '30px' }}>
+            <div style={{ marginLeft: '30px', marginTop: '50px' }}>
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={2}>
                         {renderItems}
