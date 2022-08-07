@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Megrim&family=Playfair+Display:wght@400;500;700&family=Poiret+One&display=swap');
+.center-loading-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .home {
 
 .weather-location-container{
@@ -19,19 +27,6 @@
   background-color: white;
 }
 
-.center-loading-container{
-  display: flex;
-  justify-content: center;
-  margin: auto;
-}
-
-.center-loading-img{
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-  position: absolute;
-  left:50%;
-}
 .title{
   text-align: center;
   margin: auto;
