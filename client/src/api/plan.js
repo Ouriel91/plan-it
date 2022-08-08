@@ -48,3 +48,90 @@ export const editPlan = async (id, plan) => {
 
   return editeddItem;
 };
+
+
+
+export const postItem = async (item, eventId) => {
+  const postedItem = {
+    itemName: item.itemName,
+    eventId: eventId,
+  };
+  const response = await axios({
+    method: "post",
+    url: `/plan/event-page/${eventId}/items`,
+    headers: { "Content-Type": "application/json" },
+    data: {
+      postedItem,
+    },
+  });
+  return response.data;
+};
+
+export const itemToEdit = async (item, itemId, eventId) => {
+  const editItem = {
+    itemName: item.itemName,
+    bringName: item.bringName,
+    quantity: item.quantity,
+    status: item.status,
+    id: itemId,
+  };
+  const response = await axios({
+    method: "put",
+    url: `/plan/event-page/${eventId}/items`,
+    headers: { "Content-Type": "application/json" },
+    data: {
+      editItem,
+    },
+  });
+  return response.data;
+};
+
+export const deleteItem = async (itemId, eventId) => {
+  const removedItem = await axios({
+    method: "delete",
+    url: `/plan/event-page/${eventId}/items`,
+    data: { itemId },
+  });
+
+  return removedItem;
+};
+export const fetchPlansWithItems = async () => {
+
+  const response = await axios({
+    method: "get",
+    url: `/plan/events`,
+  });
+  return response.data;
+};
+
+export const postUser = async (fullName, email, eventId) => {
+  const user = {
+    fullName,
+    email,
+    eventId,
+  };
+
+  const response = await axios({
+    method: "post",
+    url: `/plan/event-page/${eventId}/users`,
+    headers: { "Content-Type": "application/json" },
+    data: {
+      user,
+    },
+  });
+  return response.data;
+};
+
+
+export const userDeleting = async (userId,eventId) => {
+  
+  const response = await axios({
+    method: "delete",
+    url: `/plan/event-page/${eventId}/users`,
+    headers: { "Content-Type": "application/json" },
+    data: {
+      userId,
+    },
+  });
+  return response.data;
+}
