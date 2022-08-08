@@ -123,6 +123,7 @@
   margin-left: 300px;
   padding: 100px;
   position: relative;
+  margin-top: 80px;
 }
 
 .pencil-container{
@@ -132,7 +133,7 @@
 
 .description-event-page{
   position: absolute;
-  top: 270px;
+  top: 280px;
   left: 70px;
   font-size: 30px;
   color: #ffffff;
@@ -142,7 +143,7 @@
 
 .description2-event-page{
   position: absolute;
-  top: 305px;
+  top: 315px;
   left: 136px;
   color: #ffffff;
   text-shadow: 1px 2px 5px black;
@@ -206,8 +207,8 @@
 .participants-container{
   display: flex;
   position: absolute;
-  left: 67%;
-  top: 205%;
+  left: 65%;
+  top: 275%;
   flex-direction: row;
   justify-content: space-around;
 }
